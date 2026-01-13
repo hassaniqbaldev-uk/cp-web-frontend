@@ -1,0 +1,156 @@
+"use client";
+import RightArrowIcon from "@/components/icons/RightArrowIcon";
+import SectionTitle from "@/components/ui/SectionTitle";
+import Image from "next/image";
+import Link from "next/link";
+import MagnifyingGlassIcon3 from "@/assets/icons/ui/magnifying-glass-icon-3.svg";
+import MegaphoneIcon from "@/assets/icons/ui/megaphone-icon.svg";
+import BoostIcon from "@/assets/icons/ui/boost-icon.svg";
+import EmailIcon2 from "@/assets/icons/ui/email-icon-2.svg";
+import DataAnalysticsIcon from "@/assets/icons/ui/data-analytics-icon.svg";
+import ProcessBg from "@/assets/images/backgrounds/process-bg.png";
+
+export const themeColors = {
+  primary: {
+    color: "#3078FF",
+    shadow: "5px 5px 44px 0px #3078FFCC",
+  },
+  secondary: {
+    color: "#ED910C",
+    shadow: "5px 5px 44px 0px #ED910CCC",
+  },
+  accent: {
+    color: "#FF37B3",
+    shadow: "5px 5px 44px 0px #FF37B3CC",
+  },
+  success: {
+    color: "#44B276",
+    shadow: "5px 5px 44px 0px #44B276CC",
+  },
+  highlight: {
+    color: "#BF00B4",
+    shadow: "5px 5px 44px 0px #BF00B4CC",
+  },
+};
+
+export const growthData = [
+  {
+    icon: MagnifyingGlassIcon3,
+    iconWidth: 30,
+    iconHeight: 30,
+    title: "SEO",
+    description: "Rank higher on Google",
+    link: "",
+  },
+  {
+    icon: MegaphoneIcon,
+    iconWidth: 30,
+    iconHeight: 30,
+    title: "PPC",
+    description: "Google & Social Ads",
+    link: "",
+  },
+  {
+    icon: BoostIcon,
+    iconWidth: 30,
+    iconHeight: 30,
+    title: "CRO",
+    description: "Boost conversion rates",
+    link: "",
+  },
+  {
+    icon: EmailIcon2,
+    iconWidth: 30,
+    iconHeight: 30,
+    title: "Email",
+    description: "Automated flows",
+    link: "",
+  },
+  {
+    icon: DataAnalysticsIcon,
+    iconWidth: 30,
+    iconHeight: 30,
+    title: "Analytics",
+    description: "Data & tracking",
+    link: "",
+  },
+];
+
+export const themeColorList = Object.values(themeColors);
+
+const Growth2 = () => {
+  const getThemeColor = (index) =>
+    themeColorList[index % themeColorList.length];
+
+  return (
+    <>
+      <section className="relative py-[10rem]">
+        {/*Background Image*/}
+        <Image
+          src={ProcessBg}
+          alt="Background Image"
+          fill
+          priority
+          className="pointer-events-none absolute inset-0 z-[1] object-cover select-none"
+        />
+
+        <div className="relative z-[10] container">
+          <div className="flex flex-col items-center justify-center gap-[5rem]">
+            <div className="flex w-full items-center justify-center gap-[6rem]">
+              <hr className="w-full border-t border-white/20" />
+              <div className="min-w-max">
+                <SectionTitle text="Growth" textColor="#FFFFFF" />
+              </div>
+              <hr className="w-full border-t border-white/20" />
+            </div>
+
+            <div className="grid w-full grid-cols-3 gap-[3rem]">
+              {growthData.map((item, idx) => {
+                const theme = getThemeColor(idx);
+
+                return (
+                  <div key={idx} className="growth-2-card">
+                    <div className="absolute inset-0 z-[10] flex flex-col items-start justify-center px-[3rem] text-left">
+                      <i
+                        style={{
+                          boxShadow: theme.shadow,
+                          background: theme.color,
+                        }}
+                        className="inline-flex size-[5.8rem] min-w-max items-center justify-center rounded-[1.5rem]"
+                      >
+                        <Image
+                          src={item.icon}
+                          width={item.iconWidth}
+                          height={item.iconHeight}
+                          alt="Icon"
+                        />
+                      </i>
+
+                      <h4 className="mt-[2rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white">
+                        {item.title}
+                      </h4>
+
+                      <p className="mt-[1rem] mb-[3rem] text-[1.6rem] leading-[2.4rem] font-normal tracking-normal text-white">
+                        {item.description}
+                      </p>
+
+                      <Link
+                        href={item.link}
+                        className="inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold text-white"
+                      >
+                        Explore Service
+                        <RightArrowIcon color="#ffffff" />
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default Growth2;
