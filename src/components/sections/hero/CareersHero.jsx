@@ -9,7 +9,7 @@ import PrimaryButton from "@/components/ui/PrimaryButton";
 const CareersHero = () => {
   return (
     <>
-      <section className="relative w-full overflow-hidden pt-[18.3rem] pb-[11.2rem]">
+      <section className="relative w-full overflow-hidden px-[2rem] pt-[18.3rem] pb-[11.2rem] xl:px-[0rem]">
         {/*Background Image*/}
         <Image
           src={HeroBg}
@@ -42,7 +42,7 @@ const CareersHero = () => {
           <div className="flex flex-col items-center justify-center text-center">
             <SectionLabel text="Careers" textColor="#FF37B3" />
 
-            <h1 className="mt-[1rem] mb-[2rem] text-[7rem] leading-[8.5rem] font-bold tracking-[-0.03em] text-white">
+            <h1 className="mt-[1rem] mb-[2rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
               Build the{" "}
               <span className="bg-gradient-yellow-orange bg-clip-text text-transparent">
                 Extraordinary.

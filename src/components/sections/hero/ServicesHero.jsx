@@ -12,7 +12,7 @@ import Link from "next/link";
 const ServicesHero = () => {
   return (
     <>
-      <section className="relative w-full overflow-hidden pt-[19rem] pb-[13rem]">
+      <section className="relative w-full overflow-hidden px-[2rem] pt-[19rem] pb-[13rem] xl:px-[0rem]">
         {/*Background Image*/}
         <Image
           src={HeroBg}
@@ -55,7 +55,7 @@ const ServicesHero = () => {
           <div className="flex flex-col items-center text-center">
             <SectionLabel text="Tailored Services" textColor="#FF37B3" />
 
-            <h1 className="mt-[1.5rem] mb-[2.5rem] max-w-[89rem] text-[7rem] leading-[8rem] font-bold tracking-[-0.03em] text-[#312749]">
+            <h1 className="mt-[1.5rem] mb-[2.5rem] max-w-[89rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8rem]">
               Services built around your goals, not templates.
             </h1>
 
@@ -66,17 +66,17 @@ const ServicesHero = () => {
               />
             </div>
 
-            <div className="mt-[3rem] mb-[4rem] flex h-[6.4rem] w-full max-w-[57rem] items-center justify-center gap-[1.2rem] rounded-[2rem] border border-[#3078FF] bg-white p-[2rem]">
-              <i className="inline-flex size-[2.6rem] items-center justify-center rounded-full bg-[#3078ff]/20">
+            <div className="mt-[3rem] mb-[4rem] flex h-[5rem] w-full max-w-[57rem] items-center justify-center gap-[1.2rem] rounded-[1.5rem] border border-[#3078FF] bg-white p-[1rem] text-left md:h-[6.4rem] md:rounded-[2rem] md:p-[2rem]">
+              <i className="inline-flex size-[2.6rem] min-w-[2.6rem] items-center justify-center rounded-full bg-[#3078ff]/20">
                 <CheckMarkIcon2 fillColor="#3078FF" width="16" height="16" />
               </i>
 
-              <span className="text-[1.8rem] font-semibold tracking-normal text-[#625C70]">
+              <span className="text-[1.4rem] leading-[2rem] font-semibold tracking-normal text-[#625C70] md:text-[1.8rem]">
                 Flexible monthly payment plans available for all projects.
               </span>
             </div>
 
-            <div className="flex items-center justify-center gap-[1.8rem]">
+            <div className="flex flex-wrap items-center justify-center gap-[1.8rem]">
               <PrimaryButton
                 text="See Case Studies"
                 textColor="#FFFFFF"

@@ -51,10 +51,10 @@ export const questionsData = [
 const Questions = () => {
   return (
     <>
-      <section className="py-[10rem]">
+      <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <div className="container">
-          <div className="flex items-start justify-center gap-[12.4rem]">
-            <div className="flex w-[33rem] flex-col items-start text-left">
+          <div className="flex flex-col justify-center gap-[5rem] xl:flex-row xl:items-start xl:gap-[12.4rem]">
+            <div className="flex flex-col items-center text-center xl:w-[33rem] xl:items-start xl:text-left">
               <div>
                 <SectionTitle text="Common Questions" textColor="#312749" />
               </div>
@@ -84,13 +84,15 @@ const Questions = () => {
                     value={`item-${idx}`}
                     className={`border-b-2 border-[#F1F1F3] py-[1.5rem] ${idx === 0 ? "pt-[0rem]" : ""}`}
                   >
-                    <AccordionTrigger className="group flex w-full items-center justify-between gap-[1rem] text-[2.2rem] leading-[4rem] font-semibold tracking-[-0.02em] text-[#312749]">
+                    <AccordionTrigger className="group flex w-full items-center justify-between gap-[1rem] text-left text-[1.6rem] leading-[2.4rem] font-semibold tracking-[-0.02em] text-[#312749] md:text-[2.2rem] md:leading-[4rem]">
                       <span>{item.question}</span>{" "}
                       <i className="origin-center stroke-[#312749] transition-all duration-200 group-data-[state=open]:rotate-180">
                         <ChevronDownIcon />
                       </i>
                     </AccordionTrigger>
-                    <AccordionContent>{item.answer}</AccordionContent>
+                    <AccordionContent>
+                      <p className="pt-[1rem]">{item.answer}</p>
+                    </AccordionContent>
                   </AccordionItem>
                 ))}
 

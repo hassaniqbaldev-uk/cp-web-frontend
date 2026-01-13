@@ -41,6 +41,7 @@ const Header = () => {
     "/audit",
     "/case-studies",
     "/services",
+    "/services/slug",
   ];
   const isHeaderSecondary = headerSecondaryPaths.includes(pathname);
 

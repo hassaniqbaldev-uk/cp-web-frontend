@@ -57,10 +57,10 @@ const Growth = () => {
 
   return (
     <>
-      <section className="py-[10rem]">
+      <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <div className="container">
-          <div className="flex items-center justify-center gap-[5.7rem]">
-            <div className="flex w-[61rem] flex-col items-start gap-[3rem] text-left">
+          <div className="flex flex-col items-center justify-center gap-[5.7rem] xl:flex-row">
+            <div className="flex w-full flex-col items-center gap-[3rem] text-center md:w-[61rem] xl:items-start xl:text-left">
               <div className="flex flex-col gap-[1rem]">
                 <div>
                   <SectionTitle text={heading} textColor="#312749" />
@@ -71,15 +71,15 @@ const Growth = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-[2rem]">
+              <div className="flex flex-col gap-[2rem] text-left">
                 {features.map((item, idx) => (
                   <div key={idx} className="flex items-start gap-[1.7rem]">
-                    <i className="inline-flex size-[24px] items-center justify-center rounded-[6px] bg-[#ee8d00]/10">
+                    <i className="inline-flex size-[24px] min-w-[24px] items-center justify-center rounded-[6px] bg-[#ee8d00]/10">
                       <CheckMarkIcon3 fillColor="#EE8D00" />
                     </i>
 
                     <div className="flex flex-col gap-[5px]">
-                      <h4 className="text-[2.2rem] leading-[2.6rem] font-semibold tracking-[-0.02em] text-[#312749]">
+                      <h4 className="text-[2rem] leading-[2.4rem] font-semibold tracking-[-0.02em] text-[#312749] md:text-[2.2rem] md:leading-[2.6rem]">
                         {item.title}
                       </h4>
 
@@ -96,7 +96,7 @@ const Growth = () => {
               style={{
                 boxShadow: "0px 12px 40px 0px #00000014",
               }}
-              className="flex w-[53.6rem] flex-col items-center justify-center gap-[5rem] rounded-[3rem] border border-[#E4E3E8] bg-white p-[3rem] backdrop-blur-[10px]"
+              className="flex w-full flex-col items-center justify-center gap-[5rem] rounded-[3rem] border border-[#E4E3E8] bg-white p-[2rem] backdrop-blur-[10px] md:w-[53.6rem] md:p-[3rem]"
             >
               <div className="flex items-start justify-center gap-[10rem]">
                 {stats.map((item, idx) => (
@@ -104,28 +104,28 @@ const Growth = () => {
                     key={idx}
                     className="flex flex-col items-center gap-[6px] text-center"
                   >
-                    <h4 className="text-[4.8rem] leading-[6rem] font-bold tracking-[-0.02em] text-[#312749]">
+                    <h4 className="text-[4rem] leading-[5rem] font-bold tracking-[-0.02em] text-[#312749] md:text-[4.8rem] md:leading-[6rem]">
                       {item.value}
                     </h4>
 
-                    <span className="text-[1.6rem] leading-[1.8rem] font-semibold tracking-normal">
+                    <span className="text-[1.4rem] leading-[1.8rem] font-semibold tracking-normal md:text-[1.6rem]">
                       {item.label}
                     </span>
                   </div>
                 ))}
               </div>
 
-              <div className="flex w-full flex-col gap-[2.4rem] rounded-[1.6rem] bg-[#ED910C] px-[3rem] py-[4rem]">
+              <div className="flex w-full flex-col gap-[2.4rem] rounded-[1.6rem] bg-[#ED910C] px-[1rem] py-[2rem] md:px-[3rem] md:py-[4rem]">
                 {comparison.map((item, idx) => (
                   <div
                     key={idx}
                     className={`flex items-center justify-between ${idx === 2 ? "border-b-0 border-[transparent] pb-[0rem]" : "border-b border-white/40 pb-[2.3rem]"}`}
                   >
-                    <h5 className="text-[1.8rem] leading-[2.8rem] font-black tracking-normal text-white">
+                    <h5 className="text-[1.4rem] leading-[2.4rem] font-black tracking-normal text-white md:text-[1.8rem] md:leading-[2.8rem]">
                       {item.label}
                     </h5>
 
-                    <span className="text-[1.8rem] leading-[2.8rem] font-medium tracking-normal text-white">
+                    <span className="text-right text-[1.2rem] leading-[2.4rem] font-medium tracking-normal text-white md:text-[1.8rem] md:leading-[2.8rem]">
                       {item.value}
                     </span>
                   </div>

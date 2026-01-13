@@ -15,13 +15,13 @@ const ServicesPage = () => {
       <Growth2 />
       <Support />
       <Expertise2 />
-      <section className="py-[10rem]">
+      <section className="overflow-hidden px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <Cta />
       </section>
-      <section className="bg-[#ed910c]/13 py-[10rem]">
+      <section className="bg-[#ed910c]/13 px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <Testimonials />
       </section>
-      <section className="py-[10rem]">
+      <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <Contact />
       </section>
     </>

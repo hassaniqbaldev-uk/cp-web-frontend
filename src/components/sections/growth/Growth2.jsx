@@ -9,6 +9,10 @@ import BoostIcon from "@/assets/icons/ui/boost-icon.svg";
 import EmailIcon2 from "@/assets/icons/ui/email-icon-2.svg";
 import DataAnalysticsIcon from "@/assets/icons/ui/data-analytics-icon.svg";
 import ProcessBg from "@/assets/images/backgrounds/process-bg.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 export const themeColors = {
   primary: {
@@ -84,7 +88,7 @@ const Growth2 = () => {
 
   return (
     <>
-      <section className="relative py-[10rem]">
+      <section className="relative px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         {/*Background Image*/}
         <Image
           src={ProcessBg}
@@ -97,14 +101,14 @@ const Growth2 = () => {
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center justify-center gap-[5rem]">
             <div className="flex w-full items-center justify-center gap-[6rem]">
-              <hr className="w-full border-t border-white/20" />
+              <hr className="hidden w-full border-t border-white/20 md:block" />
               <div className="min-w-max">
                 <SectionTitle text="Growth" textColor="#FFFFFF" />
               </div>
-              <hr className="w-full border-t border-white/20" />
+              <hr className="hidden w-full border-t border-white/20 md:block" />
             </div>
 
-            <div className="grid w-full grid-cols-3 gap-[3rem]">
+            <div className="hidden w-full grid-cols-3 gap-[3rem] xl:grid">
               {growthData.map((item, idx) => {
                 const theme = getThemeColor(idx);
 
@@ -145,6 +149,76 @@ const Growth2 = () => {
                   </div>
                 );
               })}
+            </div>
+
+            {/* Responsive */}
+            <div className="block w-full xl:hidden">
+              <Swiper
+                pagination={{ clickable: true }}
+                modules={[Pagination, Autoplay]}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                slidesPerView={1}
+                spaceBetween={0}
+                breakpoints={{
+                  767: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 0,
+                  },
+                }}
+                className="mySwiper"
+              >
+                {growthData.map((item, idx) => {
+                  const theme = getThemeColor(idx);
+                  return (
+                    <SwiperSlide
+                      key={idx}
+                      className="!flex !h-auto !items-center !justify-center px-[1rem] pb-[10rem]"
+                    >
+                      <div className="growth-2-card">
+                        <div className="absolute inset-0 z-[10] flex flex-col items-start justify-center px-[3rem] text-left">
+                          <i
+                            style={{
+                              background: theme.color,
+                            }}
+                            className="inline-flex size-[5.8rem] min-w-max items-center justify-center rounded-[1.5rem]"
+                          >
+                            <Image
+                              src={item.icon}
+                              width={item.iconWidth}
+                              height={item.iconHeight}
+                              alt="Icon"
+                            />
+                          </i>
+
+                          <h4 className="mt-[2rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white">
+                            {item.title}
+                          </h4>
+
+                          <p className="mt-[1rem] mb-[3rem] text-[1.6rem] leading-[2.4rem] font-normal tracking-normal text-white">
+                            {item.description}
+                          </p>
+
+                          <Link
+                            href={item.link}
+                            className="inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold text-white"
+                          >
+                            Explore Service
+                            <RightArrowIcon color="#ffffff" />
+                          </Link>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
             </div>
           </div>
         </div>

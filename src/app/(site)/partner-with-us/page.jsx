@@ -16,10 +16,10 @@ const PartnerWithUsPage = () => {
       <Process3 />
       <WhatClientsSay />
       <Questions />
-      <section className="pb-[10rem]">
+      <section className="overflow-hidden px-[2rem] pb-[5rem] xl:px-[0rem] xl:pb-[10rem]">
         <Cta />
       </section>
-      <section className="bg-[#ed910c]/13 py-[10rem]">
+      <section className="bg-[#ed910c]/13 px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <Testimonials />
       </section>
     </>

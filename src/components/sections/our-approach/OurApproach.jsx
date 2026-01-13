@@ -40,7 +40,7 @@ const OurApproach = ({ caseStudy }) => {
                       className="size-[1.5rem] md:size-[2.6rem]"
                     />
                   </i>
-                  <span className="max-w-[47rem] text-[1.4rem] leading-[2.4rem] tracking-normal text-[#263238] md:text-[1.8rem] md:leading-[2.8rem]">
+                  <span className="max-w-[47rem] text-[1.4rem] leading-[2rem] tracking-normal text-[#263238] md:text-[1.8rem] md:leading-[2.8rem]">
                     {item}
                   </span>
                 </li>

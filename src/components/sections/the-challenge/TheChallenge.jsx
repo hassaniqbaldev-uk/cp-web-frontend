@@ -47,7 +47,7 @@ const TheChallenge = ({ caseStudy }) => {
                           className="size-[1.5rem] md:size-[2.6rem]"
                         />
                       </i>
-                      <span className="max-w-[50rem] text-[1.6rem] leading-[2.4rem] tracking-normal text-[#263238] md:text-[2.2rem] md:leading-[2.8rem]">
+                      <span className="max-w-[50rem] text-[1.6rem] leading-[2rem] tracking-normal text-[#263238] md:text-[2.2rem] md:leading-[2.8rem]">
                         {item}
                       </span>
                     </li>

@@ -55,7 +55,7 @@ const PartnerWithUsHero = () => {
               textColor="#FF37B3"
             />
 
-            <h1 className="mt-[1rem] mb-[2rem] text-[7rem] leading-[8.5rem] font-bold tracking-[-0.03em] text-white">
+            <h1 className="mt-[1rem] mb-[2rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
               An agency, for{" "}
               <span className="bg-gradient-yellow-pink bg-clip-text text-transparent">
                 your agency
