@@ -86,7 +86,7 @@ const ServicesHero = () => {
 
               <Link
                 href=""
-                className="inline-flex h-[5rem] items-center justify-center rounded-[60px] border-2 border-[#312749]/40 px-[30px] py-[8px] text-center text-[1.8rem] font-semibold tracking-normal text-[#312749]"
+                className="inline-flex h-[4rem] items-center justify-center rounded-[60px] border-2 border-[#312749]/40 px-[30px] py-[8px] text-center text-[1.4rem] font-semibold tracking-normal text-[#312749] md:h-[5rem] md:text-[1.8rem]"
               >
                 Book a Strategy Call
               </Link>

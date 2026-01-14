@@ -12,7 +12,7 @@ import HeroCardImg from "@/assets/images/cards/services-detail-hero-card-img.png
 const ServicesDetailHero = () => {
   return (
     <>
-      <section className="relative w-full overflow-hidden px-[2rem] pt-[20rem] pb-[10rem] xl:px-[0rem]">
+      <section className="relative w-full overflow-hidden px-[2rem] pt-[15rem] pb-[5rem] md:pt-[20rem] md:pb-[10rem] xl:px-[0rem]">
         {/*Background Image*/}
         <Image
           src={HeroBg}
@@ -52,8 +52,8 @@ const ServicesDetailHero = () => {
         </div>
 
         <div className="relative z-[10] container">
-          <div className="flex w-full items-center justify-between gap-[2rem]">
-            <div className="w-[53rem]">
+          <div className="flex w-full flex-col items-center justify-between gap-[4rem] text-center xl:flex-row xl:text-left">
+            <div className="w-full md:w-[53rem]">
               <SectionLabel text="Our Expertise" textColor="#FF37B3" />
 
               <h1 className="mt-[1.5rem] mb-[2.5rem] max-w-[89rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8rem]">
@@ -67,7 +67,7 @@ const ServicesDetailHero = () => {
                 />
               </div>
 
-              <div className="flex w-full flex-wrap items-center gap-[1.8rem]">
+              <div className="flex w-full flex-wrap items-center justify-center gap-[1.8rem] xl:justify-start">
                 <PrimaryButton
                   text="See Case Studies"
                   textColor="#FFFFFF"
@@ -77,20 +77,21 @@ const ServicesDetailHero = () => {
 
                 <Link
                   href=""
-                  className="inline-flex h-[5rem] items-center justify-center rounded-[60px] border-2 border-[#312749]/40 px-[30px] py-[8px] text-center text-[1.8rem] font-semibold tracking-normal text-[#312749]"
+                  className="inline-flex h-[4rem] items-center justify-center rounded-[60px] border-2 border-[#312749]/40 px-[30px] py-[8px] text-center text-[1.4rem] font-semibold tracking-normal text-[#312749] md:h-[5rem] md:text-[1.8rem]"
                 >
                   Book a Call
                 </Link>
               </div>
             </div>
 
-            <div className="w-[63rem]">
-              <div className="flex h-[45rem] w-full items-center justify-center rounded-[2rem] bg-white">
+            <div className="w-full md:w-[63rem]">
+              <div className="flex h-[32rem] w-full items-center justify-center rounded-[2rem] bg-white md:h-[45rem]">
                 <Image
                   src={HeroCardImg}
                   width={534}
                   height={355}
                   alt="Card Image"
+                  className="w-[30rem] md:w-[53.4rem]"
                 />
               </div>
             </div>

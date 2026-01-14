@@ -32,7 +32,10 @@ import Marquee from "react-fast-marquee";
 const Footer = () => {
   return (
     <>
-      <footer className="relative overflow-hidden px-[2rem] pt-[5rem] pb-[3.5rem] xl:px-[0rem] xl:pt-[8.5rem]">
+      <footer
+        id="site-footer"
+        className="relative overflow-hidden px-[2rem] pt-[5rem] pb-[3.5rem] xl:px-[0rem] xl:pt-[8.5rem]"
+      >
         {/*Background Image*/}
         <Image
           src={FooterBg}

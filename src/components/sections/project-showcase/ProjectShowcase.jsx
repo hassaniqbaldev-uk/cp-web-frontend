@@ -19,8 +19,8 @@ const ProjectShowcase = () => {
           }}
         >
           <Marquee speed={50} pauseOnHover gradient={false}>
-            <div className="mx-[1.5rem] flex w-[58.5rem] flex-col items-start gap-[2rem]">
-              <div className="h-[39rem] w-full overflow-hidden rounded-[2rem]">
+            <div className="mx-[1rem] flex w-[30rem] flex-col items-start gap-[2rem] md:mx-[1.5rem] md:w-[58.5rem]">
+              <div className="h-[22rem] w-full overflow-hidden rounded-[2rem] md:h-[39rem]">
                 <Image
                   src={CardImg1}
                   width={585}
@@ -31,7 +31,7 @@ const ProjectShowcase = () => {
               </div>
 
               <div className="flex w-full flex-col items-start border-b border-black/20 pb-[1.4rem] text-left">
-                <h4 className="text-[3.4rem] leading-[4.8rem] font-bold tracking-[-0.02em] text-[#312749]">
+                <h4 className="text-[2.8rem] leading-[4rem] font-bold tracking-[-0.02em] text-[#312749] md:text-[3.4rem] md:leading-[4.8rem]">
                   Ivy & Duke
                 </h4>
 
@@ -41,8 +41,8 @@ const ProjectShowcase = () => {
               </div>
             </div>
 
-            <div className="mx-[1.5rem] flex w-[58.5rem] flex-col items-start gap-[2rem]">
-              <div className="h-[39rem] w-full overflow-hidden rounded-[2rem]">
+            <div className="mx-[1rem] flex w-[30rem] flex-col items-start gap-[2rem] md:mx-[1.5rem] md:w-[58.5rem]">
+              <div className="h-[22rem] w-full overflow-hidden rounded-[2rem] md:h-[39rem]">
                 <Image
                   src={CardImg2}
                   width={585}
@@ -53,7 +53,7 @@ const ProjectShowcase = () => {
               </div>
 
               <div className="flex w-full flex-col items-start border-b border-black/20 pb-[1.4rem] text-left">
-                <h4 className="text-[3.4rem] leading-[4.8rem] font-bold tracking-[-0.02em] text-[#312749]">
+                <h4 className="text-[2.8rem] leading-[4rem] font-bold tracking-[-0.02em] text-[#312749] md:text-[3.4rem] md:leading-[4.8rem]">
                   Tappizza
                 </h4>
 
@@ -63,8 +63,8 @@ const ProjectShowcase = () => {
               </div>
             </div>
 
-            <div className="mx-[1.5rem] flex w-[58.5rem] flex-col items-start gap-[2rem]">
-              <div className="h-[39rem] w-full overflow-hidden rounded-[2rem]">
+            <div className="mx-[1rem] flex w-[30rem] flex-col items-start gap-[2rem] md:mx-[1.5rem] md:w-[58.5rem]">
+              <div className="h-[22rem] w-full overflow-hidden rounded-[2rem] md:h-[39rem]">
                 <Image
                   src={CardImg3}
                   width={585}
@@ -75,7 +75,7 @@ const ProjectShowcase = () => {
               </div>
 
               <div className="flex w-full flex-col items-start border-b border-black/20 pb-[1.4rem] text-left">
-                <h4 className="text-[3.4rem] leading-[4.8rem] font-bold tracking-[-0.02em] text-[#312749]">
+                <h4 className="text-[2.8rem] leading-[4rem] font-bold tracking-[-0.02em] text-[#312749] md:text-[3.4rem] md:leading-[4.8rem]">
                   Virtue Property
                 </h4>
 
@@ -85,8 +85,8 @@ const ProjectShowcase = () => {
               </div>
             </div>
 
-            <div className="mx-[1.5rem] flex w-[58.5rem] flex-col items-start gap-[2rem]">
-              <div className="h-[39rem] w-full overflow-hidden rounded-[2rem]">
+            <div className="mx-[1rem] flex w-[30rem] flex-col items-start gap-[2rem] md:mx-[1.5rem] md:w-[58.5rem]">
+              <div className="h-[22rem] w-full overflow-hidden rounded-[2rem] md:h-[39rem]">
                 <Image
                   src={CardImg1}
                   width={585}
@@ -97,7 +97,7 @@ const ProjectShowcase = () => {
               </div>
 
               <div className="flex w-full flex-col items-start border-b border-black/20 pb-[1.4rem] text-left">
-                <h4 className="text-[3.4rem] leading-[4.8rem] font-bold tracking-[-0.02em] text-[#312749]">
+                <h4 className="text-[2.8rem] leading-[4rem] font-bold tracking-[-0.02em] text-[#312749] md:text-[3.4rem] md:leading-[4.8rem]">
                   Ivy & Duke
                 </h4>
 
@@ -107,8 +107,8 @@ const ProjectShowcase = () => {
               </div>
             </div>
 
-            <div className="mx-[1.5rem] flex w-[58.5rem] flex-col items-start gap-[2rem]">
-              <div className="h-[39rem] w-full overflow-hidden rounded-[2rem]">
+            <div className="mx-[1rem] flex w-[30rem] flex-col items-start gap-[2rem] md:mx-[1.5rem] md:w-[58.5rem]">
+              <div className="h-[22rem] w-full overflow-hidden rounded-[2rem] md:h-[39rem]">
                 <Image
                   src={CardImg2}
                   width={585}
@@ -119,7 +119,7 @@ const ProjectShowcase = () => {
               </div>
 
               <div className="flex w-full flex-col items-start border-b border-black/20 pb-[1.4rem] text-left">
-                <h4 className="text-[3.4rem] leading-[4.8rem] font-bold tracking-[-0.02em] text-[#312749]">
+                <h4 className="text-[2.8rem] leading-[4rem] font-bold tracking-[-0.02em] text-[#312749] md:text-[3.4rem] md:leading-[4.8rem]">
                   Tappizza
                 </h4>
 
@@ -129,8 +129,8 @@ const ProjectShowcase = () => {
               </div>
             </div>
 
-            <div className="mx-[1.5rem] flex w-[58.5rem] flex-col items-start gap-[2rem]">
-              <div className="h-[39rem] w-full overflow-hidden rounded-[2rem]">
+            <div className="mx-[1rem] flex w-[30rem] flex-col items-start gap-[2rem] md:mx-[1.5rem] md:w-[58.5rem]">
+              <div className="h-[22rem] w-full overflow-hidden rounded-[2rem] md:h-[39rem]">
                 <Image
                   src={CardImg3}
                   width={585}
@@ -141,7 +141,7 @@ const ProjectShowcase = () => {
               </div>
 
               <div className="flex w-full flex-col items-start border-b border-black/20 pb-[1.4rem] text-left">
-                <h4 className="text-[3.4rem] leading-[4.8rem] font-bold tracking-[-0.02em] text-[#312749]">
+                <h4 className="text-[2.8rem] leading-[4rem] font-bold tracking-[-0.02em] text-[#312749] md:text-[3.4rem] md:leading-[4.8rem]">
                   Virtue Property
                 </h4>
 
@@ -153,7 +153,7 @@ const ProjectShowcase = () => {
           </Marquee>
         </div>
 
-        <div className="container mt-[10rem]">
+        {/* <div className="container mt-[10rem]">
           <div className="flex gap-[3rem]">
             <div className="flex w-full flex-col items-start rounded-[3rem] bg-[#f0f6ff]/50 p-[2rem] text-left md:p-[4rem]">
               <div className="relative size-[6.3rem]">
@@ -237,7 +237,7 @@ const ProjectShowcase = () => {
               </ul>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
     </>
   );
