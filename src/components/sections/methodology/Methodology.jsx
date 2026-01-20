@@ -133,6 +133,7 @@ const Methodology = ({ service }) => {
                         width={130}
                         height={140}
                         alt="Icon"
+                        unoptimized
                       />
                     </div>
                   </div>
@@ -207,6 +208,7 @@ const Methodology = ({ service }) => {
                             width={130}
                             height={140}
                             alt="Icon"
+                            unoptimized
                           />
                         </div>
                       </div>

@@ -123,6 +123,7 @@ const Expertise3 = ({ service }) => {
             alt="Services Logo Shape"
             width={129}
             height={177}
+            unoptimized
           />
         </div>
 
@@ -167,6 +168,7 @@ const Expertise3 = ({ service }) => {
                         alt="Icon"
                         width={35}
                         height={35}
+                        unoptimized
                       />
                     </div>
 
@@ -254,6 +256,7 @@ const Expertise3 = ({ service }) => {
                             alt="Icon"
                             width={35}
                             height={35}
+                            unoptimized
                           />
                         </div>
 

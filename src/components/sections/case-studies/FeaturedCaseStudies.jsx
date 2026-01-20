@@ -210,6 +210,7 @@ const FeaturedCaseStudies = ({
                         width={429}
                         height={289}
                         className="w-full object-cover object-center"
+                        unoptimized
                       />
                     </div>
 

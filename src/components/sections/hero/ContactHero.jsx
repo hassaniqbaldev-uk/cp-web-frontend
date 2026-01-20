@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
-import HeroBg from "@/assets/images/backgrounds/home-hero-bg.png";
+import HeroBg from "@/assets/images/backgrounds/home-hero-bg.webp";
 import ContactHeroLogoShape1 from "@/assets/svgs/contact-hero-logo-shape-1.svg";
 import HomeHeroLogoShape1 from "@/assets/svgs/home-hero-logo-shape-1.svg";
 import HomeHeroLogoShape2 from "@/assets/svgs/home-hero-logo-shape-2.svg";
 import SectionLabel from "@/components/ui/SectionLabel";
-import PhoneIcon from "@/assets/icons/ui/phone-icon.svg";
+import HeadphoneIcon from "@/assets/icons/ui/headphone-icon.svg";
 import EmailIcon from "@/assets/icons/ui/email-icon.svg";
 import TimelineIcon from "@/assets/icons/ui/timeline-icon.svg";
 import Link from "next/link";
@@ -150,7 +150,12 @@ const ContactHero = () => {
                     }}
                     className="inline-flex size-[6.5rem] min-w-max items-center justify-center rounded-[1.5rem] bg-[#FF37B3]"
                   >
-                    <Image src={PhoneIcon} width={34} height={34} alt="Icon" />
+                    <Image
+                      src={HeadphoneIcon}
+                      width={34}
+                      height={34}
+                      alt="Icon"
+                    />
                   </i>
 
                   <h4 className="mt-[2rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white">
@@ -286,7 +291,7 @@ const ContactHero = () => {
                           className="inline-flex size-[6.5rem] min-w-max items-center justify-center rounded-[1.5rem] bg-[#FF37B3]"
                         >
                           <Image
-                            src={PhoneIcon}
+                            src={HeadphoneIcon}
                             width={34}
                             height={34}
                             alt="Icon"

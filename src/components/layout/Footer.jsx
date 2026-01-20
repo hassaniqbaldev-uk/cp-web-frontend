@@ -1,4 +1,4 @@
-import FooterBg from "@/assets/images/backgrounds/footer-bg.png";
+import FooterBg from "@/assets/images/backgrounds/footer-bg.webp";
 import PhoneIcon from "@/assets/icons/ui/phone-icon.svg";
 import EmailIcon from "@/assets/icons/ui/email-icon.svg";
 import HeadphoneIcon from "@/assets/icons/ui/headphone-icon.svg";

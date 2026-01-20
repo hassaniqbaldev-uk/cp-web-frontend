@@ -7,7 +7,7 @@ import RightArrowIcon from "@/components/icons/RightArrowIcon";
 import AuditContactBox from "@/assets/svgs/audit-contact-box.svg";
 import ServicesLogoShape from "@/assets/svgs/services-logo-shape.svg";
 import HomeHeroLogoShape1 from "@/assets/svgs/home-hero-logo-shape-1.svg";
-import HeroBg from "@/assets/images/backgrounds/audit-hero-bg.png";
+import HeroBg from "@/assets/images/backgrounds/audit-hero-bg.webp";
 import Image from "next/image";
 import {
   Select,

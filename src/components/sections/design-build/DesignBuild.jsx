@@ -136,6 +136,7 @@ const DesignBuild = ({ services = [] }) => {
                           alt={item.title}
                           width={30}
                           height={30}
+                          unoptimized
                         />
                       </div>
 
@@ -212,6 +213,7 @@ const DesignBuild = ({ services = [] }) => {
                               alt={item.title}
                               width={30}
                               height={30}
+                              unoptimized
                             />
                           </div>
 

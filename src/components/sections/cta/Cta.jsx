@@ -1,5 +1,5 @@
 import Image from "next/image";
-import CtaBg from "@/assets/images/backgrounds/cta-bg.png";
+import CtaBg from "@/assets/images/backgrounds/cta-bg.webp";
 import WaveHandIcon from "@/assets/icons/ui/wave-hand-icon.svg";
 import SectionTitle from "@/components/ui/SectionTitle";
 import SectionDescription from "@/components/ui/SectionDescription";
@@ -19,6 +19,7 @@ const Cta = () => {
           fill
           priority
           className="pointer-events-none absolute inset-0 z-[1] rounded-[3rem] object-cover select-none"
+          unoptimized
         />
 
         <div className="pointer-events-none absolute top-[35rem] right-[-3rem] z-[2] select-none xl:top-[3.6rem]">
@@ -56,7 +57,13 @@ const Cta = () => {
               <GradientButton text="Get Free Consultation" />
 
               <i className="hidden md:block">
-                <Image src={WaveHandIcon} alt="Icon" width={58} height={58} />
+                <Image
+                  src={WaveHandIcon}
+                  alt="Icon"
+                  width={58}
+                  height={58}
+                  unoptimized
+                />
               </i>
             </div>
           </div>
@@ -76,6 +83,7 @@ const Cta = () => {
                   className=""
                   width={99}
                   height={99}
+                  unoptimized
                 />
               </div>
 

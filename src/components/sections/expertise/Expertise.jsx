@@ -53,6 +53,7 @@ const Expertise = () => {
                         alt="Icon"
                         width={item.iconWidth}
                         height={item.iconHeight}
+                        unoptimized
                       />
                     </i>
                   </div>
@@ -132,6 +133,7 @@ const Expertise = () => {
                               alt="Icon"
                               width={item.iconWidth}
                               height={item.iconHeight}
+                              unoptimized
                             />
                           </i>
                         </div>

@@ -1,8 +1,8 @@
 import Image from "next/image";
-import HeroBg from "@/assets/images/backgrounds/home-hero-bg.png";
+import HeroBg from "@/assets/images/backgrounds/home-hero-bg.webp";
 import CRatingIcon from "@/assets/icons/ui/c-rating-icon.svg";
 import GradientButton from "@/components/ui/GradientButton";
-import HomeHeroCardImg from "@/assets/images/cards/home-hero-card-img.png";
+import HomeHeroCardImg from "@/assets/images/cards/home-hero-card-img.webp";
 import HomeHeroLoginBox from "@/assets/images/hero/home-hero-login-box.svg";
 import HomeHeroLogo3d from "@/assets/svgs/home-hero-logo-3d.svg";
 import HomeHeroTooltip1 from "@/assets/images/hero/home-hero-tooltip-1.svg";
@@ -25,6 +25,7 @@ const HomeHero = () => {
           fill
           priority
           className="pointer-events-none absolute inset-0 z-[1] object-cover select-none"
+          unoptimized
         />
 
         {/*Background Element*/}
@@ -34,6 +35,7 @@ const HomeHero = () => {
             alt="Card Logo Shape"
             width={91}
             height={184}
+            unoptimized
           />
         </div>
 
@@ -60,6 +62,7 @@ const HomeHero = () => {
                       width={15}
                       height={18}
                       className="h-[1.2rem] w-[1rem] md:h-[1.8rem] md:w-[1.5rem]"
+                      unoptimized
                     />
                   </i>
 
@@ -95,6 +98,7 @@ const HomeHero = () => {
                   width={424}
                   height={415}
                   className="h-[20.7rem] w-[21.1rem] md:h-[41.5rem] md:w-[42.4rem]"
+                  unoptimized
                 />
 
                 <div className="absolute top-[-1.5rem] left-[.5rem] h-[6.8rem] w-[3.4rem] rotate-[34deg] md:top-[-10.5rem] md:left-[-3.8rem] md:h-[17.1rem] md:w-[8.5rem]">
@@ -103,6 +107,7 @@ const HomeHero = () => {
                     alt="Card Logo Shape"
                     width={85}
                     height={171}
+                    unoptimized
                   />
                 </div>
 
@@ -112,6 +117,7 @@ const HomeHero = () => {
                     alt="Card Tooltip"
                     width={107}
                     height={38}
+                    unoptimized
                   />
                 </div>
 
@@ -121,6 +127,7 @@ const HomeHero = () => {
                     alt="Card Tooltip"
                     width={108}
                     height={38}
+                    unoptimized
                   />
                 </div>
 
@@ -130,6 +137,7 @@ const HomeHero = () => {
                     alt="Card Logo"
                     width={124}
                     height={136}
+                    unoptimized
                   />
                 </div>
 
@@ -160,6 +168,7 @@ const HomeHero = () => {
                     alt="Card Box"
                     width={182}
                     height={113}
+                    unoptimized
                   />
 
                   <Link
@@ -195,6 +204,7 @@ const HomeHero = () => {
                     height={logo.height}
                     className={`object-contain opacity-70 grayscale-100 transition-all duration-300 hover:opacity-100 hover:grayscale-0 ${logo.size}`}
                     priority={index < 3}
+                    unoptimized
                   />
                 </div>
               ))}

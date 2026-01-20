@@ -1,7 +1,7 @@
 "use client";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Image from "next/image";
-import ProcessBg from "@/assets/images/backgrounds/process-bg.png";
+import ProcessBg from "@/assets/images/backgrounds/process-bg.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -58,6 +58,7 @@ const PartnerWithUs2 = ({ service }) => {
           fill
           priority
           className="pointer-events-none absolute inset-0 z-[1] object-cover select-none"
+          unoptimized
         />
 
         <div className="relative z-[10] container">

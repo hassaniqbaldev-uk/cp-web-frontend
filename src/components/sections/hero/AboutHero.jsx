@@ -1,6 +1,6 @@
 import Image from "next/image";
-import HeroBg from "@/assets/images/backgrounds/home-hero-bg.png";
-import AboutHeroCardImg from "@/assets/images/cards/about-hero-card-img.png";
+import HeroBg from "@/assets/images/backgrounds/home-hero-bg.webp";
+import AboutHeroCardImg from "@/assets/images/cards/about-hero-card-img.webp";
 import HomeHeroLogoShape1 from "@/assets/svgs/home-hero-logo-shape-1.svg";
 import AboutHeroLogoShape1 from "@/assets/svgs/about-hero-logo-shape-1.svg";
 import AboutHeroLogoShape2 from "@/assets/svgs/about-hero-logo-shape-2.svg";
@@ -22,6 +22,7 @@ const AboutHero = () => {
           fill
           priority
           className="pointer-events-none absolute inset-0 z-[1] object-cover select-none"
+          unoptimized
         />
 
         {/*Background Element*/}
@@ -31,6 +32,7 @@ const AboutHero = () => {
             alt="Logo Shape"
             width={91}
             height={184}
+            unoptimized
           />
         </div>
 
@@ -40,6 +42,7 @@ const AboutHero = () => {
             alt="Logo Shape"
             width={112}
             height={225}
+            unoptimized
           />
         </div>
 
@@ -50,6 +53,7 @@ const AboutHero = () => {
             width={179}
             height={166}
             className="absolute right-[0] bottom-[25rem] rotate-[35deg]"
+            unoptimized
           />
         </div>
 
@@ -81,6 +85,7 @@ const AboutHero = () => {
                 width={464}
                 height={487}
                 alt="Card Image"
+                unoptimized
               />
             </div>
           </div>
@@ -88,7 +93,13 @@ const AboutHero = () => {
           <div className="mt-[5rem] flex flex-wrap justify-center gap-[2.4rem] xl:mt-[9rem] xl:mb-[-36rem]">
             <div className="about-hero-card flex flex-col items-center justify-center text-center">
               <i>
-                <Image src={SparkStarIcon} width={55} height={55} alt="Icon" />
+                <Image
+                  src={SparkStarIcon}
+                  width={55}
+                  height={55}
+                  alt="Icon"
+                  unoptimized
+                />
               </i>
 
               <h4 className="mt-[2.5rem] text-[7rem] leading-[8rem] font-bold tracking-[-0.03em] text-white">
@@ -102,7 +113,13 @@ const AboutHero = () => {
 
             <div className="about-hero-card flex flex-col items-center justify-center text-center">
               <i>
-                <Image src={RocketIcon2} width={55} height={55} alt="Icon" />
+                <Image
+                  src={RocketIcon2}
+                  width={55}
+                  height={55}
+                  alt="Icon"
+                  unoptimized
+                />
               </i>
 
               <h4 className="mt-[2.5rem] text-[7rem] leading-[8rem] font-bold tracking-[-0.03em] text-white">
@@ -116,7 +133,13 @@ const AboutHero = () => {
 
             <div className="about-hero-card flex flex-col items-center justify-center text-center">
               <i>
-                <Image src={RetentionIcon} width={55} height={55} alt="Icon" />
+                <Image
+                  src={RetentionIcon}
+                  width={55}
+                  height={55}
+                  alt="Icon"
+                  unoptimized
+                />
               </i>
 
               <h4 className="mt-[2.5rem] text-[7rem] leading-[8rem] font-bold tracking-[-0.03em] text-white">
@@ -130,7 +153,13 @@ const AboutHero = () => {
 
             <div className="about-hero-card flex flex-col items-center justify-center text-center">
               <i>
-                <Image src={NetworkingIcon} width={55} height={55} alt="Icon" />
+                <Image
+                  src={NetworkingIcon}
+                  width={55}
+                  height={55}
+                  alt="Icon"
+                  unoptimized
+                />
               </i>
 
               <h4 className="mt-[2.5rem] text-[7rem] leading-[8rem] font-bold tracking-[-0.03em] text-white">

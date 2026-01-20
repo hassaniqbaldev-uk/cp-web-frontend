@@ -1,11 +1,11 @@
 import Image from "next/image";
-import HeroBg from "@/assets/images/backgrounds/audit-hero-bg.png";
+import HeroBg from "@/assets/images/backgrounds/audit-hero-bg.webp";
 import HomeHeroLogoShape2 from "@/assets/svgs/home-hero-logo-shape-2.svg";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionDescription from "@/components/ui/SectionDescription";
-import ShapeIcon from "@/assets/icons/ui/shape-icon.svg";
-import SendIcon3 from "@/assets/icons/ui/send-icon-3.svg";
-import FastTimelineIcon from "@/assets/icons/ui/fast-timeline-icon.svg";
+import GraphicDesignIcon from "@/assets/icons/ui/graphic-design-icon.svg";
+import SentIcon from "@/assets/icons/ui/sent-icon.svg";
+import LoadingIcon from "@/assets/icons/ui/loading-icon.svg";
 
 const CaseStudiesHero = () => {
   return (
@@ -54,7 +54,12 @@ const CaseStudiesHero = () => {
               <div className="relative size-[6.3rem]">
                 <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
                   <i>
-                    <Image src={ShapeIcon} alt="Icon" width={28} height={28} />
+                    <Image
+                      src={GraphicDesignIcon}
+                      alt="Icon"
+                      width={28}
+                      height={28}
+                    />
                   </i>
                 </div>
 
@@ -76,7 +81,7 @@ const CaseStudiesHero = () => {
               <div className="relative size-[6.3rem]">
                 <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
                   <i>
-                    <Image src={SendIcon3} alt="Icon" width={30} height={30} />
+                    <Image src={SentIcon} alt="Icon" width={30} height={30} />
                   </i>
                 </div>
                 <div className="absolute right-0 bottom-0 z-[0] size-[5.8rem] rounded-[1.3rem] bg-[#3078FF]" />
@@ -98,10 +103,10 @@ const CaseStudiesHero = () => {
                 <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
                   <i>
                     <Image
-                      src={FastTimelineIcon}
+                      src={LoadingIcon}
                       alt="Icon"
-                      width={44}
-                      height={44}
+                      width={30}
+                      height={30}
                     />
                   </i>
                 </div>

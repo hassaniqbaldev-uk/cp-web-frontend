@@ -89,6 +89,7 @@ const Values = () => {
                         alt="Icon"
                         width={30}
                         height={30}
+                        unoptimized
                       />
                     </i>
                   </div>
@@ -154,6 +155,7 @@ const Values = () => {
                             alt="Icon"
                             width={30}
                             height={30}
+                            unoptimized
                           />
                         </i>
                       </div>

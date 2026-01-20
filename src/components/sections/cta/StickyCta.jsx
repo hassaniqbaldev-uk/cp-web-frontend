@@ -3,7 +3,7 @@ import WaveHandIcon from "@/assets/icons/ui/wave-hand-icon.svg";
 import Image from "next/image";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import CtaBgStroke from "@/components/decorative-elements/CtaBgStroke";
-import CtaBg from "@/assets/images/backgrounds/sticky-cta-bg.png";
+import CtaBg from "@/assets/images/backgrounds/sticky-cta-bg.webp";
 import { useEffect, useState } from "react";
 
 const StickyCta = () => {
@@ -39,6 +39,7 @@ const StickyCta = () => {
         fill
         priority
         className="pointer-events-none absolute inset-0 z-[1] object-cover select-none"
+        unoptimized
       />
 
       {/*Background Element*/}
@@ -50,7 +51,13 @@ const StickyCta = () => {
         <div className="flex flex-col items-center justify-center gap-[1rem] md:flex-row md:gap-[4rem] xl:justify-start">
           <div className="flex items-center gap-[2rem]">
             <i className="hidden min-w-max xl:block">
-              <Image src={WaveHandIcon} alt="Icon" width={58} height={58} />
+              <Image
+                src={WaveHandIcon}
+                alt="Icon"
+                width={58}
+                height={58}
+                unoptimized
+              />
             </i>
 
             <h4 className="text-[1.4rem] leading-[2rem] font-bold tracking-[-0.02em] text-white md:text-[2.8rem] md:leading-[4rem] xl:text-[3.4rem] xl:leading-[4.8rem]">

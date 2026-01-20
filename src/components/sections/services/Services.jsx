@@ -27,6 +27,7 @@ const Services = () => {
             alt="Services Logo Shape"
             width={129}
             height={177}
+            unoptimized
           />
         </div>
 
@@ -64,6 +65,7 @@ const Services = () => {
                         alt="Icon"
                         width={item.iconWidth}
                         height={item.iconHeight}
+                        unoptimized
                       />
                     </i>
                   </div>
@@ -160,6 +162,7 @@ const Services = () => {
                               alt="Icon"
                               width={item.iconWidth}
                               height={item.iconHeight}
+                              unoptimized
                             />
                           </i>
                         </div>

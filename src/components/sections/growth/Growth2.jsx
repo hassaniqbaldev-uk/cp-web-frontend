@@ -8,7 +8,7 @@ import MegaphoneIcon from "@/assets/icons/ui/megaphone-icon.svg";
 import BoostIcon from "@/assets/icons/ui/boost-icon.svg";
 import EmailIcon2 from "@/assets/icons/ui/email-icon-2.svg";
 import DataAnalysticsIcon from "@/assets/icons/ui/data-analytics-icon.svg";
-import ProcessBg from "@/assets/images/backgrounds/process-bg.png";
+import ProcessBg from "@/assets/images/backgrounds/process-bg.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -96,6 +96,7 @@ const Growth2 = ({ services = [] }) => {
           fill
           priority
           className="pointer-events-none absolute inset-0 z-[1] object-cover select-none"
+          unoptimized
         />
 
         <div className="relative z-[10] container">
@@ -127,6 +128,7 @@ const Growth2 = ({ services = [] }) => {
                           alt={item.title}
                           width={30}
                           height={30}
+                          unoptimized
                         />
                       </i>
 
@@ -195,6 +197,7 @@ const Growth2 = ({ services = [] }) => {
                               alt={item.title}
                               width={30}
                               height={30}
+                              unoptimized
                             />
                           </i>
 

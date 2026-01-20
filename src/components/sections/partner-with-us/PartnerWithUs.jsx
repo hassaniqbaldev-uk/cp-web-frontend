@@ -1,8 +1,8 @@
 import SectionDescription from "@/components/ui/SectionDescription";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionTitle from "@/components/ui/SectionTitle";
-import PartnerWithUsBg from "@/assets/images/backgrounds/partner-with-us-bg.png";
-import PartnerWithUsCardImg from "@/assets/images/cards/partner-with-us-card-img.png";
+import PartnerWithUsBg from "@/assets/images/backgrounds/partner-with-us-bg.webp";
+import PartnerWithUsCardImg from "@/assets/images/cards/partner-with-us-card-img.webp";
 import PenIcon from "@/assets/icons/ui/pen-icon.svg";
 import XIcon from "@/assets/icons/ui/x-icon.svg";
 import CpIcon from "@/assets/icons/ui/cp-icon.svg";
@@ -20,6 +20,7 @@ const PartnerWithUs = () => {
           fill
           priority
           className="pointer-events-none absolute inset-0 z-[1] object-cover select-none"
+          unoptimized
         />
 
         <div className="relative z-[10] container">
@@ -45,7 +46,13 @@ const PartnerWithUs = () => {
               <div className="relative size-[6.3rem]">
                 <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
                   <i>
-                    <Image src={PenIcon} alt="Icon" width={35} height={35} />
+                    <Image
+                      src={PenIcon}
+                      alt="Icon"
+                      width={35}
+                      height={35}
+                      unoptimized
+                    />
                   </i>
                 </div>
                 <div
@@ -70,7 +77,13 @@ const PartnerWithUs = () => {
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-[1.6rem]">
                     <i className="min-w-max">
-                      <Image src={XIcon} alt="Icon" width={12} height={12} />
+                      <Image
+                        src={XIcon}
+                        alt="Icon"
+                        width={12}
+                        height={12}
+                        unoptimized
+                      />
                     </i>
 
                     <span className="text-[1.4rem] leading-[2.4rem] font-normal tracking-normal text-[#625C70] md:text-[1.8rem]">
@@ -89,6 +102,7 @@ const PartnerWithUs = () => {
                 fill
                 priority
                 className="pointer-events-none absolute inset-0 z-[1] object-cover select-none"
+                unoptimized
               />
 
               <div className="relative z-[10] flex flex-col items-start text-left">
@@ -99,7 +113,13 @@ const PartnerWithUs = () => {
                   className="relative inline-flex size-[6.3rem] items-center justify-center rounded-[1.5rem] bg-[#FF37B3]"
                 >
                   <i>
-                    <Image src={CpIcon} alt="Icon" width={35} height={35} />
+                    <Image
+                      src={CpIcon}
+                      alt="Icon"
+                      width={35}
+                      height={35}
+                      unoptimized
+                    />
                   </i>
                 </div>
 

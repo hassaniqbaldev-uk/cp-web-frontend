@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroBg from "@/assets/images/backgrounds/audit-hero-bg.png";
+import HeroBg from "@/assets/images/backgrounds/audit-hero-bg.webp";
 import AboutHeroLogoShape1 from "@/assets/svgs/about-hero-logo-shape-1.svg";
 import AboutHeroLogoShape2 from "@/assets/svgs/about-hero-logo-shape-2.svg";
 import HomeHeroLogoShape1 from "@/assets/svgs/home-hero-logo-shape-1.svg";
@@ -7,7 +7,6 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import SectionDescription from "@/components/ui/SectionDescription";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import Link from "next/link";
-import HeroCardImg from "@/assets/images/cards/services-detail-hero-card-img.png";
 
 const ServicesDetailHero = ({ service }) => {
   return (
@@ -20,6 +19,7 @@ const ServicesDetailHero = ({ service }) => {
           fill
           priority
           className="pointer-events-none absolute inset-0 z-[1] object-cover select-none"
+          unoptimized
         />
 
         {/*Background Element*/}
@@ -29,6 +29,7 @@ const ServicesDetailHero = ({ service }) => {
             alt="Logo Shape"
             width={84}
             height={170}
+            unoptimized
           />
         </div>
 
@@ -38,6 +39,7 @@ const ServicesDetailHero = ({ service }) => {
             alt="Logo Shape"
             width={53}
             height={100}
+            unoptimized
           />
         </div>
 
@@ -48,6 +50,7 @@ const ServicesDetailHero = ({ service }) => {
             width={133}
             height={124}
             className="absolute top-[15rem] right-[5rem] rotate-[35deg]"
+            unoptimized
           />
         </div>
 
@@ -92,6 +95,7 @@ const ServicesDetailHero = ({ service }) => {
                   height={355}
                   alt="Card Image"
                   className="w-[30rem] md:w-[53.4rem]"
+                  unoptimized
                 />
               </div>
             </div>

@@ -1,5 +1,5 @@
 import SectionLabel from "@/components/ui/SectionLabel";
-import EstimateCardImg from "@/assets/images/cards/estimate-card-img.png";
+import EstimateCardImg from "@/assets/images/cards/estimate-card-img.webp";
 import Image from "next/image";
 import SectionTitle from "@/components/ui/SectionTitle";
 import PrimaryButton from "@/components/ui/PrimaryButton";
@@ -17,6 +17,7 @@ const Estimate = () => {
             alt="Logo Shape"
             width={92}
             height={185}
+            unoptimized
           />
         </div>
 
@@ -27,6 +28,7 @@ const Estimate = () => {
             width={137}
             height={128}
             className="absolute right-[0] bottom-[5rem] rotate-[35deg] opacity-70"
+            unoptimized
           />
         </div>
 
@@ -51,6 +53,7 @@ const Estimate = () => {
                 height={440}
                 alt="Card Image"
                 className="object-cover object-center"
+                unoptimized
               />
             </div>
 

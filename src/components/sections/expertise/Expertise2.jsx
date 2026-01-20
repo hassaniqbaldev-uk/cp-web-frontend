@@ -58,6 +58,7 @@ const Expertise2 = () => {
             alt="Services Logo Shape"
             width={129}
             height={177}
+            unoptimized
           />
         </div>
 

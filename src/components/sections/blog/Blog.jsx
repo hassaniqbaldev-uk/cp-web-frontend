@@ -1,9 +1,9 @@
 "use client";
 import BlogCard from "@/components/ui/BlogCard";
-import BlogCardImg1 from "@/assets/images/cards/blog-card-img-1.png";
-import BlogCardImg2 from "@/assets/images/cards/blog-card-img-2.png";
-import BlogCardImg3 from "@/assets/images/cards/blog-card-img-3.png";
-import BlogCardImg4 from "@/assets/images/cards/blog-card-img-4.png";
+import BlogCardImg1 from "@/assets/images/cards/blog-card-img-1.webp";
+import BlogCardImg2 from "@/assets/images/cards/blog-card-img-2.webp";
+import BlogCardImg3 from "@/assets/images/cards/blog-card-img-3.webp";
+import BlogCardImg4 from "@/assets/images/cards/blog-card-img-4.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";

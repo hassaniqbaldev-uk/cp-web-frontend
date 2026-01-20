@@ -59,6 +59,7 @@ const Established = () => {
                       width={44}
                       height={44}
                       className="size-[2.2rem] md:size-[4.4rem]"
+                      unoptimized
                     />
                   </i>
 
@@ -85,6 +86,7 @@ const Established = () => {
                       width={44}
                       height={44}
                       className="size-[2.2rem] md:size-[4.4rem]"
+                      unoptimized
                     />
                   </i>
 

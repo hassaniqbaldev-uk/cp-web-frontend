@@ -7,7 +7,7 @@ import TestimonialAvatar1 from "@/assets/icons/ui/testimonial-avatar-1.svg";
 import TestimonialAvatar2 from "@/assets/icons/ui/testimonial-avatar-2.svg";
 import TestimonialAvatar3 from "@/assets/icons/ui/testimonial-avatar-3.svg";
 import TestimonialAvatar4 from "@/assets/icons/ui/testimonial-avatar-4.svg";
-import TestimonialCardImg from "@/assets/images/cards/testimonial-card-img.png";
+import TestimonialCardImg from "@/assets/images/cards/testimonial-card-img.webp";
 import Image from "next/image";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -51,6 +51,7 @@ const Testimonials = () => {
                 alt="Card Image"
                 width={319}
                 height={319}
+                unoptimized
               />
             </div>
 
@@ -78,6 +79,7 @@ const Testimonials = () => {
                     alt="Avatar Image"
                     width={56}
                     height={56}
+                    unoptimized
                   />
                 </div>
 
@@ -117,6 +119,7 @@ const Testimonials = () => {
                   alt="Avatar Image"
                   width={56}
                   height={56}
+                  unoptimized
                 />
               </div>
 
@@ -156,6 +159,7 @@ const Testimonials = () => {
                   alt="Avatar Image"
                   width={56}
                   height={56}
+                  unoptimized
                 />
               </div>
 
@@ -198,6 +202,7 @@ const Testimonials = () => {
                   alt="Avatar Image"
                   width={56}
                   height={56}
+                  unoptimized
                 />
               </div>
 
@@ -267,6 +272,7 @@ const Testimonials = () => {
                         alt="Avatar Image"
                         width={40}
                         height={40}
+                        unoptimized
                       />
                     </div>
 

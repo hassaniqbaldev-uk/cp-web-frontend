@@ -67,6 +67,7 @@ const Process3 = () => {
                       width={item.iconWidth}
                       height={item.iconHeight}
                       alt="Icon"
+                      unoptimized
                     />
                   </i>
 
@@ -139,6 +140,7 @@ const Process3 = () => {
                           width={item.iconWidth}
                           height={item.iconHeight}
                           alt="Icon"
+                          unoptimized
                         />
                       </i>
 

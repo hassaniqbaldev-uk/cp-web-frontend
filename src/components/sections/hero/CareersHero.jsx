@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroBg from "@/assets/images/backgrounds/home-hero-bg.png";
+import HeroBg from "@/assets/images/backgrounds/home-hero-bg.webp";
 import HomeHeroLogoShape1 from "@/assets/svgs/home-hero-logo-shape-1.svg";
 import AboutHeroLogoShape2 from "@/assets/svgs/about-hero-logo-shape-2.svg";
 import SectionLabel from "@/components/ui/SectionLabel";
@@ -17,6 +17,7 @@ const CareersHero = () => {
           fill
           priority
           className="pointer-events-none absolute inset-0 z-[1] object-cover select-none"
+          unoptimized
         />
 
         {/*Background Element*/}
@@ -26,6 +27,7 @@ const CareersHero = () => {
             alt="Logo Shape"
             width={107}
             height={216}
+            unoptimized
           />
         </div>
 
@@ -35,6 +37,7 @@ const CareersHero = () => {
             alt="Logo Shape"
             width={186}
             height={173}
+            unoptimized
           />
         </div>
 

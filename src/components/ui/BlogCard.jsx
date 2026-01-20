@@ -19,6 +19,7 @@ const BlogCard = ({ category, img, title, excerpt, link = "" }) => {
             height={336}
             alt="Card Image"
             className="w-full object-cover"
+            unoptimized
           />
         </div>
 

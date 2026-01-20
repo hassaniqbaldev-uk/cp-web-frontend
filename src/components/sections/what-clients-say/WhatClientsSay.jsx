@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroBg from "@/assets/images/backgrounds/home-hero-bg.png";
+import HeroBg from "@/assets/images/backgrounds/home-hero-bg.webp";
 import StarIcon from "@/components/icons/StarIcon";
 import SectionTitle from "@/components/ui/SectionTitle";
 import EyeAvatarIcon from "@/assets/icons/ui/eye-avatar-icon.svg";
@@ -16,6 +16,7 @@ const WhatClientsSay = () => {
           fill
           priority
           className="pointer-events-none absolute inset-0 z-[1] object-cover select-none"
+          unoptimized
         />
 
         <div className="relative z-[10] container">
@@ -52,6 +53,7 @@ const WhatClientsSay = () => {
                     alt="Avatar Image"
                     width={40}
                     height={30}
+                    unoptimized
                   />
                 </div>
 
@@ -75,6 +77,7 @@ const WhatClientsSay = () => {
                   height={245}
                   alt="icon"
                   className="w-[20rem] md:h-[24.5rem] md:w-[28.2rem]"
+                  unoptimized
                 />
               </div>
             </div>

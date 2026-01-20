@@ -13,8 +13,6 @@ import "swiper/css/pagination";
 import { urlFor } from "@/sanity/image";
 
 const Work = ({ caseStudies }) => {
-  console.log(caseStudies);
-
   return (
     <>
       <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">

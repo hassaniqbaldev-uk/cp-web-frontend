@@ -28,7 +28,7 @@ const ServicesDetailPage = async (props) => {
       {/* Sticky Cta */}
       <StickyCta />
       <ServicesDetailHero service={service.detailHero} />
-      <ProjectShowcase service={service.projectShowcase} />
+      {/* <ProjectShowcase service={service.projectShowcase} /> */}
       <PartnerWithUs2 service={service.partnerWithUs2} />
       <div className="overflow-hidden px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <Cta2 />

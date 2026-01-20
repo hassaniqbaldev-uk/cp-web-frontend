@@ -38,6 +38,7 @@ const Opportunities = () => {
                             width={18}
                             height={16}
                             alt="Icon"
+                            unoptimized
                           />
                         </i>
 
@@ -67,6 +68,7 @@ const Opportunities = () => {
                             width={14}
                             height={16}
                             alt="Icon"
+                            unoptimized
                           />
                         </i>
 

@@ -1,6 +1,6 @@
 import Image from "next/image";
-import HeroBg from "@/assets/images/backgrounds/home-hero-bg.png";
-import HowWeWorkHeroCardImg from "@/assets/images/cards/how-we-work-hero-card-img.png";
+import HeroBg from "@/assets/images/backgrounds/home-hero-bg.webp";
+import HowWeWorkHeroCardImg from "@/assets/images/cards/how-we-work-hero-card-img.webp";
 import HomeHeroLogoShape1 from "@/assets/svgs/home-hero-logo-shape-1.svg";
 import AboutHeroLogoShape1 from "@/assets/svgs/about-hero-logo-shape-1.svg";
 import AboutHeroLogoShape2 from "@/assets/svgs/about-hero-logo-shape-2.svg";
@@ -18,6 +18,7 @@ const HowWeWorkHero = () => {
           fill
           priority
           className="pointer-events-none absolute inset-0 z-[1] object-cover select-none"
+          unoptimized
         />
 
         {/*Background Element*/}
@@ -27,6 +28,7 @@ const HowWeWorkHero = () => {
             alt="Logo Shape"
             width={91}
             height={184}
+            unoptimized
           />
         </div>
 
@@ -36,6 +38,7 @@ const HowWeWorkHero = () => {
             alt="Logo Shape"
             width={72}
             height={185}
+            unoptimized
           />
         </div>
 
@@ -45,6 +48,7 @@ const HowWeWorkHero = () => {
             alt="Logo Shape"
             width={120}
             height={112}
+            unoptimized
           />
         </div>
 
@@ -74,6 +78,7 @@ const HowWeWorkHero = () => {
                 width={484}
                 height={484}
                 alt="Card Image"
+                unoptimized
               />
             </div>
           </div>

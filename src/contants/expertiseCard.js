@@ -2,7 +2,7 @@ import SuitcaseIcon from "@/assets/icons/ui/suitcase-icon.svg";
 import StoreIcon from "@/assets/icons/ui/store-icon.svg";
 import HeartIcon from "@/assets/icons/ui/heart-icon.svg";
 import ShakeHandIcon from "@/assets/icons/ui/shake-hand-icon.svg";
-import TwoPeopleIcon from "@/assets/icons/ui/two-people-icon.svg";
+import FileIcon from "@/assets/icons/ui/file-icon.svg";
 import RocketIcon from "@/assets/icons/ui/rocket-icon.svg";
 
 export const EXPERTISE_CARD = [
@@ -55,7 +55,7 @@ export const EXPERTISE_CARD = [
     boxShadow: "4px 12px 30px 0px #44B2761C",
   },
   {
-    icon: TwoPeopleIcon,
+    icon: FileIcon,
     iconWidth: 30,
     iconHeight: 30,
     title: "Agencies",

@@ -53,6 +53,7 @@ const Process2 = () => {
                     width={item.cardImageWidth}
                     height={item.cardImageHeight}
                     alt="Card Image"
+                    unoptimized
                   />
                 </div>
 
@@ -71,6 +72,7 @@ const Process2 = () => {
                           alt="Icon"
                           width={30}
                           height={30}
+                          unoptimized
                         />
                       </i>
                     </div>
@@ -180,6 +182,7 @@ const Process2 = () => {
                     width={item.cardImageWidth}
                     height={item.cardImageHeight}
                     alt="Card Image"
+                    unoptimized
                   />
                 </div>
 
@@ -192,6 +195,7 @@ const Process2 = () => {
                           alt="Icon"
                           width={30}
                           height={30}
+                          unoptimized
                         />
                       </i>
                     </div>

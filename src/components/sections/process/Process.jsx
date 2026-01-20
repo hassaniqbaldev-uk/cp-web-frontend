@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import ProcessBg from "@/assets/images/backgrounds/process-bg.png";
+import ProcessBg from "@/assets/images/backgrounds/process-bg.webp";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionDescription from "@/components/ui/SectionDescription";
 import PrimaryButton from "@/components/ui/PrimaryButton";
@@ -21,6 +21,7 @@ const Process = () => {
           fill
           priority
           className="pointer-events-none absolute inset-0 z-[1] object-cover select-none"
+          unoptimized
         />
 
         <div className="relative z-[10] container">

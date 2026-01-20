@@ -1,13 +1,13 @@
 import SectionLabel from "@/components/ui/SectionLabel";
 import Image from "next/image";
-import BlogHeroBg from "@/assets/images/backgrounds/blog-hero-bg.png";
+import BlogHeroBg from "@/assets/images/backgrounds/blog-hero-bg.webp";
 import SectionTitle from "@/components/ui/SectionTitle";
 import SectionDescription from "@/components/ui/SectionDescription";
 import RightArrowIcon from "@/components/icons/RightArrowIcon";
-import TimelineIcon from "@/assets/icons/ui/timeline-icon.svg";
 import HomeHeroLogoShape1 from "@/assets/svgs/home-hero-logo-shape-1.svg";
 import HomeHeroLogoShape2 from "@/assets/svgs/home-hero-logo-shape-2.svg";
 import Link from "next/link";
+import TimelineIcon from "@/components/icons/TimelineIcon";
 
 const BlogHero = () => {
   return (
@@ -20,6 +20,7 @@ const BlogHero = () => {
             alt="Logo Shape"
             width={91}
             height={184}
+            unoptimized
           />
         </div>
 
@@ -29,6 +30,7 @@ const BlogHero = () => {
             alt="Logo Shape"
             width={91}
             height={184}
+            unoptimized
           />
         </div>
 
@@ -65,6 +67,7 @@ const BlogHero = () => {
               fill
               priority
               className="pointer-events-none absolute inset-0 z-[1] object-cover select-none"
+              unoptimized
             />
 
             <div className="absolute inset-0 z-[2] flex flex-col items-center justify-center p-[2rem] text-center md:p-[5rem] xl:items-start xl:text-left">
@@ -75,12 +78,7 @@ const BlogHero = () => {
 
                 <div className="inline-flex items-center justify-center gap-[6px] text-center">
                   <i className="inline-flex size-[1.4rem] items-center justify-center">
-                    <Image
-                      src={TimelineIcon}
-                      width={14}
-                      height={14}
-                      alt="Icon"
-                    />
+                    <TimelineIcon color="#ffffff" />
                   </i>
 
                   <span className="text-[1.1rem] leading-[2.4rem] font-bold tracking-normal text-white md:text-[1.4rem]">

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroBg from "@/assets/images/backgrounds/home-hero-bg.png";
+import HeroBg from "@/assets/images/backgrounds/home-hero-bg.webp";
 import HomeHeroLogoShape1 from "@/assets/svgs/home-hero-logo-shape-1.svg";
 import AboutHeroLogoShape1 from "@/assets/svgs/about-hero-logo-shape-1.svg";
 import AboutHeroLogoShape2 from "@/assets/svgs/about-hero-logo-shape-2.svg";
@@ -18,6 +18,7 @@ const PartnerWithUsHero = () => {
           fill
           priority
           className="pointer-events-none absolute inset-0 z-[1] object-cover select-none"
+          unoptimized
         />
 
         {/*Background Element*/}
@@ -27,6 +28,7 @@ const PartnerWithUsHero = () => {
             alt="Logo Shape"
             width={107}
             height={216}
+            unoptimized
           />
         </div>
 
@@ -36,6 +38,7 @@ const PartnerWithUsHero = () => {
             alt="Logo Shape"
             width={92}
             height={195}
+            unoptimized
           />
         </div>
 
@@ -45,6 +48,7 @@ const PartnerWithUsHero = () => {
             alt="Logo Shape"
             width={186}
             height={173}
+            unoptimized
           />
         </div>
 

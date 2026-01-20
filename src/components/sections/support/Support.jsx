@@ -100,6 +100,7 @@ const Support = ({ services = [] }) => {
             width={106}
             height={98}
             className="absolute right-[5rem] bottom-[6rem] rotate-[35deg]"
+            unoptimized
           />
         </div>
 
@@ -136,6 +137,7 @@ const Support = ({ services = [] }) => {
                           alt={item.title}
                           width={30}
                           height={30}
+                          unoptimized
                         />
                       </div>
 
@@ -212,6 +214,7 @@ const Support = ({ services = [] }) => {
                               alt={item.title}
                               width={30}
                               height={30}
+                              unoptimized
                             />
                           </div>
 

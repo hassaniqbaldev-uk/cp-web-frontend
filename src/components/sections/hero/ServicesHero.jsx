@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroBg from "@/assets/images/backgrounds/audit-hero-bg.png";
+import HeroBg from "@/assets/images/backgrounds/audit-hero-bg.webp";
 import AboutHeroLogoShape1 from "@/assets/svgs/about-hero-logo-shape-1.svg";
 import AboutHeroLogoShape2 from "@/assets/svgs/about-hero-logo-shape-2.svg";
 import HomeHeroLogoShape1 from "@/assets/svgs/home-hero-logo-shape-1.svg";
@@ -20,6 +20,7 @@ const ServicesHero = () => {
           fill
           priority
           className="pointer-events-none absolute inset-0 z-[1] object-cover select-none"
+          unoptimized
         />
 
         {/*Background Element*/}
@@ -29,6 +30,7 @@ const ServicesHero = () => {
             alt="Logo Shape"
             width={84}
             height={170}
+            unoptimized
           />
         </div>
 
@@ -38,6 +40,7 @@ const ServicesHero = () => {
             alt="Logo Shape"
             width={85}
             height={170}
+            unoptimized
           />
         </div>
 
@@ -48,6 +51,7 @@ const ServicesHero = () => {
             width={133}
             height={124}
             className="absolute top-[15rem] right-[5rem] rotate-[35deg]"
+            unoptimized
           />
         </div>
 
