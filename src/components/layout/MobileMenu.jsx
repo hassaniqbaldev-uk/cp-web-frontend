@@ -32,9 +32,22 @@ import {
 } from "@/contants";
 import PrimaryButton from "../ui/PrimaryButton";
 import { useMenuStore } from "@/store/mobileMenuStore";
+import { useEffect } from "react";
 
 const MobileMenu = () => {
   const { isOpen, closeMenu } = useMenuStore();
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   return (
     <>
@@ -44,7 +57,7 @@ const MobileMenu = () => {
       />
 
       <div
-        className={`fixed top-0 z-[600] h-screen w-[95%] overflow-y-auto rounded-tr-[2.5rem] rounded-br-[2.5rem] bg-white py-[2.2rem] pr-[1.2rem] pb-[2.2rem] pl-[2.4rem] transition-all duration-200 ${isOpen ? "left-0" : "-left-full"}`}
+        className={`fixed top-0 z-[600] h-screen w-[95%] overflow-y-auto rounded-tr-[2.5rem] rounded-br-[2.5rem] bg-white py-[2.2rem] pr-[1.2rem] pb-[5rem] pl-[2.4rem] transition-all duration-200 ${isOpen ? "left-0" : "-left-full"}`}
       >
         {/* Header */}
         <div className="flex items-center justify-between gap-[2rem]">
@@ -73,7 +86,13 @@ const MobileMenu = () => {
               onClick={closeMenu}
               className="inline-flex size-[3.3rem] min-w-[3.3rem] items-center justify-center rounded-full bg-[#FF37B3] xl:hidden"
             >
-              <Image src={CloseIcon} width={8.5} height={8.5} alt="Icon" />
+              <Image
+                src={CloseIcon}
+                width={8.5}
+                height={8.5}
+                alt="Icon"
+                unoptimized
+              />
             </button>
           </div>
         </div>
@@ -105,6 +124,7 @@ const MobileMenu = () => {
                                     width={20}
                                     height={20}
                                     alt="Icon"
+                                    unoptimized
                                   />
                                 </i>
 
@@ -156,6 +176,7 @@ const MobileMenu = () => {
                                     width={20}
                                     height={20}
                                     alt="Icon"
+                                    unoptimized
                                   />
                                 </i>
 
@@ -207,6 +228,7 @@ const MobileMenu = () => {
                                     width={20}
                                     height={20}
                                     alt="Icon"
+                                    unoptimized
                                   />
                                 </i>
 
@@ -277,6 +299,7 @@ const MobileMenu = () => {
                                     width={20}
                                     height={20}
                                     alt="Icon"
+                                    unoptimized
                                   />
                                 </i>
 
@@ -328,6 +351,7 @@ const MobileMenu = () => {
                                     width={20}
                                     height={20}
                                     alt="Icon"
+                                    unoptimized
                                   />
                                 </i>
 
@@ -428,6 +452,7 @@ const MobileMenu = () => {
                                     width={20}
                                     height={20}
                                     alt="Icon"
+                                    unoptimized
                                   />
                                 </i>
 
@@ -556,6 +581,7 @@ const MobileMenu = () => {
                     width={28}
                     height={28}
                     alt="Icon"
+                    unoptimized
                   />
                 </i>
 
@@ -585,6 +611,7 @@ const MobileMenu = () => {
                   width={23}
                   height={23}
                   alt="Icon"
+                  unoptimized
                 />
               </Link>
             </li>
@@ -599,6 +626,7 @@ const MobileMenu = () => {
                   width={23}
                   height={23}
                   alt="Icon"
+                  unoptimized
                 />
               </Link>
             </li>
@@ -613,6 +641,7 @@ const MobileMenu = () => {
                   width={23}
                   height={23}
                   alt="Icon"
+                  unoptimized
                 />
               </Link>
             </li>
