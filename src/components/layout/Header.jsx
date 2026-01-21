@@ -7,12 +7,14 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import HamburgerIcon from "@/assets/icons/ui/hamburger-icon.svg";
+import { useMenuStore } from "@/store/mobileMenuStore";
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const pathname = usePathname();
+  const { toggleMenu } = useMenuStore();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,6 +44,7 @@ const Header = () => {
     "/case-studies",
     "/services",
   ];
+
   const isHeaderSecondary =
     headerSecondaryPaths.includes(pathname) ||
     pathname.startsWith("/services/");
@@ -104,7 +107,10 @@ const Header = () => {
               </Link>
 
               {/* Hamburger Button */}
-              <button className="inline-flex size-[3.3rem] min-w-[3.3rem] items-center justify-center rounded-full bg-[#FF37B3] xl:hidden">
+              <button
+                onClick={toggleMenu}
+                className="inline-flex size-[3.3rem] min-w-[3.3rem] items-center justify-center rounded-full bg-[#FF37B3] xl:hidden"
+              >
                 <Image src={HamburgerIcon} width={12} height={9} alt="Icon" />
               </button>
             </div>
