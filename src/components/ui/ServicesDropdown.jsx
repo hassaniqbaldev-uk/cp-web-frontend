@@ -38,7 +38,7 @@ const ServicesDropdown = ({ className }) => {
       >
         <span>Services</span>{" "}
         <i
-          className={`relative top-[1rem] transition-all duration-200 ${isOpen ? "-rotate-180" : "-rotate-0"}`}
+          className={`relative top-[1rem] origin-center transition-all duration-200 ${isOpen ? "-rotate-180" : "-rotate-0"}`}
         >
           <ChevronDownIcon height="6" width="10" />
         </i>
@@ -46,7 +46,7 @@ const ServicesDropdown = ({ className }) => {
 
       <div
         onMouseLeave={() => setIsOpen(false)}
-        className={`absolute top-full left-1/2 w-[127.2rem] -translate-x-1/2 transition-all duration-200 ${isOpen ? "pointer-events-auto visible pt-[4rem] opacity-100 select-auto" : "pointer-events-none invisible pt-[0rem] opacity-0 select-none"}`}
+        className={`absolute top-full left-1/2 z-[600] w-[127.2rem] -translate-x-1/2 transition-all duration-200 ${isOpen ? "pointer-events-auto visible pt-[4rem] opacity-100 select-auto" : "pointer-events-none invisible pt-[0rem] opacity-0 select-none"}`}
       >
         <div
           style={{
@@ -60,7 +60,7 @@ const ServicesDropdown = ({ className }) => {
 
         <div
           style={{
-            boxShadow: "11px 11px 65px 0px #00000012",
+            boxShadow: "11px 11px 65px 0px #00000040",
           }}
           className="flex w-full gap-[3.8rem] rounded-[3rem] bg-white px-[3.5rem] py-[4rem]"
         >
@@ -94,6 +94,7 @@ const ServicesDropdown = ({ className }) => {
                     className="border-[#818181]/30 pb-[1.5rem] not-last:border-b"
                   >
                     <Link
+                      onClick={() => setIsOpen(false)}
                       href={item.href}
                       className="flex items-start justify-between gap-[1rem]"
                     >
@@ -143,6 +144,7 @@ const ServicesDropdown = ({ className }) => {
                     className="border-[#818181]/30 pb-[1.5rem] not-last:border-b"
                   >
                     <Link
+                      onClick={() => setIsOpen(false)}
                       href={item.href}
                       className="flex items-start justify-between gap-[1rem]"
                     >
@@ -192,6 +194,7 @@ const ServicesDropdown = ({ className }) => {
                     className="border-[#818181]/30 pb-[1.5rem] not-last:border-b"
                   >
                     <Link
+                      onClick={() => setIsOpen(false)}
                       href={item.href}
                       className="flex items-start justify-between gap-[1rem]"
                     >

@@ -16,35 +16,67 @@ export const COMPANY_ABOUT_NAV = [
 ];
 
 export const DESIGN_SERVICE_NAV = [
-  { label: "Branding", excerpt: "Identity & Strategy", href: "/" },
-  { label: "UI/UX Design", excerpt: "Web & Product design", href: "/about" },
-  { label: "Wordpress", excerpt: "Custom theme & plugins", href: "/services" },
+  {
+    label: "Branding",
+    excerpt: "Identity & Strategy",
+    href: "/services/branding",
+  },
+  {
+    label: "UI/UX Design",
+    excerpt: "Web & Product design",
+    href: "/services/ui-ux-design",
+  },
+  {
+    label: "Wordpress",
+    excerpt: "Custom theme & plugins",
+    href: "/services/wordpress",
+  },
   {
     label: "Shopify",
     excerpt: "High-converting stores",
-    href: "/case-studies",
+    href: "/services/shopify",
   },
   {
     label: "Custom Apps & AI",
     excerpt: "React, Next.js & Automation",
-    href: "/contact",
+    href: "/services/custom-apps-and-ai",
   },
 ];
 
 export const GROWTH_SERVICE_NAV = [
-  { label: "SEO", excerpt: "Rank higher on google", href: "/" },
-  { label: "PPC", excerpt: "Google & Social Ads", href: "/about" },
-  { label: "CRO", excerpt: "Boost conversion rates", href: "/services" },
-  { label: "Email", excerpt: "Automated Flows", href: "/case-studies" },
-  { label: "Analytics", excerpt: "Data & tracking", href: "/contact" },
+  { label: "SEO", excerpt: "Rank higher on google", href: "/services/seo" },
+  { label: "PPC", excerpt: "Google & Social Ads", href: "/services/ppc" },
+  { label: "CRO", excerpt: "Boost conversion rates", href: "/services/cro" },
+  { label: "Email", excerpt: "Automated Flows", href: "/services/email" },
+  {
+    label: "Analytics",
+    excerpt: "Data & tracking",
+    href: "/services/analytics",
+  },
 ];
 
 export const SUPPORT_SERVICE_NAV = [
-  { label: "Maintenance", excerpt: "Updates & Security", href: "/" },
-  { label: "Speed", excerpt: "Core web vitals", href: "/about" },
-  { label: "Security", excerpt: "Audits & Protection", href: "/services" },
-  { label: "Migrations", excerpt: "Replatforming safe", href: "/case-studies" },
-  { label: "Accessibility", excerpt: "WCAG Compliance", href: "/contact" },
+  {
+    label: "Maintenance",
+    excerpt: "Updates & Security",
+    href: "/services/maintenance",
+  },
+  { label: "Speed", excerpt: "Core web vitals", href: "/services/speed" },
+  {
+    label: "Security",
+    excerpt: "Audits & Protection",
+    href: "/services/security",
+  },
+  {
+    label: "Migrations",
+    excerpt: "Replatforming safe",
+    href: "/services/migrations",
+  },
+  {
+    label: "Accessibility",
+    excerpt: "WCAG Compliance",
+    href: "/services/accessibility",
+  },
 ];
 
 export const SECTOR_SOLUTION_NAV = [
