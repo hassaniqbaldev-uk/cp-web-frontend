@@ -195,11 +195,14 @@ const FeaturedCaseStudies = ({
               <div className="grid grid-cols-1 gap-x-[3rem] gap-y-[3rem] md:grid-cols-2 md:gap-y-[6rem]">
                 {caseStudies.map((caseStudy) => (
                   <Link
+                    style={{
+                      boxShadow: "7.69px 6.59px 40.64px 0px #0000000F",
+                    }}
                     key={caseStudy._id}
                     href={`/case-studies/${caseStudy.slug}`}
-                    className="flex w-full flex-col gap-[2.7rem]"
+                    className="flex w-full flex-col gap-[2.7rem] px-[1.5rem] pt-[1.5rem] pb-[3rem] rounded-[3rem] bg-white"
                   >
-                    <div className="flex h-[25rem] w-full overflow-hidden rounded-[1.1rem] xl:h-[28.9rem]">
+                    <div className="flex h-[25rem] w-full overflow-hidden rounded-[1.7rem] xl:h-[28.9rem]">
                       <Image
                         src={urlFor(caseStudy.thumbnailImage)
                           ?.width(429)
@@ -216,7 +219,7 @@ const FeaturedCaseStudies = ({
 
                     <div className="flex items-center justify-between">
                       <div className="flex flex-col items-start text-left">
-                        <h4 className="text-[2.5rem] leading-[3.6rem] font-bold tracking-[-0.02em] text-[#312749] xl:text-[3.4rem] xl:leading-[4.8rem]">
+                        <h4 className="text-[2.5rem] leading-[3.6rem] font-bold tracking-[-0.02em] text-[#312749]">
                           {caseStudy.title}
                         </h4>
 

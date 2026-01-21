@@ -42,13 +42,16 @@ const Work = ({ caseStudies }) => {
             </div>
           </div>
 
-          <div className="mt-[7.4rem] hidden w-full gap-[4.1rem] xl:flex">
+          <div className="mt-[7.4rem] hidden w-full gap-[3rem] xl:flex">
             <div className="w-[79.1rem]">
               <Link
+                style={{
+                  boxShadow: "11px 11px 65px 0px #00000012",
+                }}
                 href={`/case-studies/${caseStudies[6].slug}`}
-                className="flex flex-col gap-[3.9rem]"
+                className="flex flex-col gap-[3.9rem] rounded-[3rem] bg-white px-[2rem] pt-[2rem] pb-[4rem]"
               >
-                <div className="flex h-[53rem] w-full overflow-hidden rounded-[1rem]">
+                <div className="flex h-[53rem] w-full overflow-hidden rounded-[2rem]">
                   <Image
                     src={urlFor(caseStudies[6].thumbnailImage)
                       ?.width(805)
@@ -58,7 +61,7 @@ const Work = ({ caseStudies }) => {
                     alt={caseStudies[0].title || "Case Study Thumbnail Image"}
                     width={801}
                     height={551}
-                    className="w-full object-cover object-center"
+                    className="w-full object-center"
                     unoptimized
                   />
                 </div>
@@ -103,10 +106,13 @@ const Work = ({ caseStudies }) => {
               </Link>
             </div>
 
-            <div className="flex w-[40rem] flex-col gap-[3rem]">
+            <div className="flex w-[40rem] flex-col gap-[2rem]">
               <Link
+                style={{
+                  boxShadow: "11px 11px 65px 0px #00000012",
+                }}
                 href={`/case-studies/${caseStudies[5].slug}`}
-                className="flex w-full flex-col gap-[2rem]"
+                className="flex w-full flex-col gap-[2rem] rounded-[3rem] bg-white px-[1.5rem] pt-[1.5rem] pb-[3rem]"
               >
                 <div className="flex h-[24.2rem] w-full overflow-hidden rounded-[1.5rem]">
                   <Image
@@ -125,7 +131,7 @@ const Work = ({ caseStudies }) => {
 
                 <div className="flex items-center justify-between">
                   <div className="flex flex-col items-start text-left">
-                    <h4 className="text-[3.4rem] leading-[4.8rem] font-bold tracking-[-0.02em] text-[#312749]">
+                    <h4 className="text-[2.6rem] leading-[4rem] font-bold tracking-[-0.02em] text-[#312749]">
                       {caseStudies[5].title}
                     </h4>
 
@@ -146,8 +152,11 @@ const Work = ({ caseStudies }) => {
               </Link>
 
               <Link
+                style={{
+                  boxShadow: "11px 11px 65px 0px #00000012",
+                }}
                 href={`/case-studies/${caseStudies[4].slug}`}
-                className="flex w-full flex-col gap-[2rem]"
+                className="flex w-full flex-col gap-[2rem] rounded-[3rem] bg-white px-[1.5rem] pt-[1.5rem] pb-[3rem]"
               >
                 <div className="flex h-[24.2rem] w-full overflow-hidden rounded-[1.5rem]">
                   <Image
@@ -166,7 +175,7 @@ const Work = ({ caseStudies }) => {
 
                 <div className="flex items-center justify-between">
                   <div className="flex flex-col items-start text-left">
-                    <h4 className="text-[3.4rem] leading-[4.8rem] font-bold tracking-[-0.02em] text-[#312749]">
+                    <h4 className="text-[2.6rem] leading-[4rem] font-bold tracking-[-0.02em] text-[#312749]">
                       {caseStudies[4].title}
                     </h4>
 

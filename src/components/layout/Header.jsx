@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import NavigationDropdown from "../ui/NavigationDropdown";
 import PrimaryButton from "../ui/PrimaryButton";
 import Logo from "../decorative-elements/Logo";
 import { useEffect, useState } from "react";
@@ -8,6 +7,9 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import HamburgerIcon from "@/assets/icons/ui/hamburger-icon.svg";
 import { useMenuStore } from "@/store/mobileMenuStore";
+import ServicesDropdown from "../ui/ServicesDropdown";
+import SolutionsDropdown from "../ui/SolutionsDropdown";
+import AboutDropdown from "../ui/AboutDropdown";
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -73,15 +75,9 @@ const Header = () => {
             </Link>
 
             <nav className="mr-[2.8rem] ml-[4.8rem] hidden items-center justify-center gap-[3rem] xl:flex">
-              <NavigationDropdown
-                label="Services"
-                items={[{ label: "Services", href: "/services" }]}
-              />
+              <ServicesDropdown className="nav-link" />
 
-              <NavigationDropdown
-                label="Solutions"
-                items={[{ label: "Solutions", href: "/solutions" }]}
-              />
+              <SolutionsDropdown className="nav-link" />
 
               <Link href="/work" className="nav-link">
                 Work
@@ -95,10 +91,7 @@ const Header = () => {
                 Pricing
               </Link>
 
-              <NavigationDropdown
-                label="About"
-                items={[{ label: "About", href: "/about" }]}
-              />
+              <AboutDropdown className="nav-link" />
             </nav>
 
             <div className="flex items-center justify-end gap-[4px]">

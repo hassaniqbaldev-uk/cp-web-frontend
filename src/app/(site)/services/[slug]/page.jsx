@@ -26,7 +26,7 @@ const ServicesDetailPage = async (props) => {
   return (
     <>
       {/* Sticky Cta */}
-      <StickyCta />
+      {/* <StickyCta /> */}
       <ServicesDetailHero service={service.detailHero} />
       {/* <ProjectShowcase service={service.projectShowcase} /> */}
       <PartnerWithUs2 service={service.partnerWithUs2} />
@@ -35,7 +35,7 @@ const ServicesDetailPage = async (props) => {
       </div>
       <Expertise3 service={service.expertise3} />
       <Methodology service={service.methodology} />
-      <Options service={service.options} />
+      {/* <Options service={service.options} /> */}
       <section className="bg-[#ed910c]/13 px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <Testimonials />
       </section>

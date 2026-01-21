@@ -99,15 +99,6 @@
       font-weight: 500;
     }
 
-    & .nav-dropdown {
-      & span {
-        font-size: 1.6rem;
-        line-height: 2.4rem;
-        font-weight: 500;
-        letter-spacing: normal;
-      }
-    }
-
     & .nav-btn {
       height: 4rem;
       margin-right: 3.5rem;
@@ -142,14 +133,8 @@
 
     & .nav-link {
       color: #ffffff;
-    }
 
-    & .nav-dropdown {
-      & span {
-        color: #ffffff;
-      }
-
-      & i {
+      & > i {
         stroke: #ffffff;
       }
     }
@@ -171,14 +156,8 @@
 
     & .nav-link {
       color: #312749;
-    }
 
-    & .nav-dropdown {
-      & span {
-        color: #312749;
-      }
-
-      & i {
+      & > i {
         stroke: #312749;
       }
     }

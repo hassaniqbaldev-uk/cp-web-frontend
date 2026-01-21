@@ -16,27 +16,35 @@ export const COMPANY_ABOUT_NAV = [
 ];
 
 export const DESIGN_SERVICE_NAV = [
-  { label: "Branding", href: "/" },
-  { label: "UI/UX Design", href: "/about" },
-  { label: "Wordpress", href: "/services" },
-  { label: "Shopify", href: "/case-studies" },
-  { label: "Custom Apps & AI", href: "/contact" },
+  { label: "Branding", excerpt: "Identity & Strategy", href: "/" },
+  { label: "UI/UX Design", excerpt: "Web & Product design", href: "/about" },
+  { label: "Wordpress", excerpt: "Custom theme & plugins", href: "/services" },
+  {
+    label: "Shopify",
+    excerpt: "High-converting stores",
+    href: "/case-studies",
+  },
+  {
+    label: "Custom Apps & AI",
+    excerpt: "React, Next.js & Automation",
+    href: "/contact",
+  },
 ];
 
 export const GROWTH_SERVICE_NAV = [
-  { label: "SEO", href: "/" },
-  { label: "PPC", href: "/about" },
-  { label: "CRO", href: "/services" },
-  { label: "Email", href: "/case-studies" },
-  { label: "Analytics", href: "/contact" },
+  { label: "SEO", excerpt: "Rank higher on google", href: "/" },
+  { label: "PPC", excerpt: "Google & Social Ads", href: "/about" },
+  { label: "CRO", excerpt: "Boost conversion rates", href: "/services" },
+  { label: "Email", excerpt: "Automated Flows", href: "/case-studies" },
+  { label: "Analytics", excerpt: "Data & tracking", href: "/contact" },
 ];
 
 export const SUPPORT_SERVICE_NAV = [
-  { label: "Maintenance", href: "/" },
-  { label: "Speed", href: "/about" },
-  { label: "Security", href: "/services" },
-  { label: "Migrations", href: "/case-studies" },
-  { label: "Accessibility", href: "/contact" },
+  { label: "Maintenance", excerpt: "Updates & Security", href: "/" },
+  { label: "Speed", excerpt: "Core web vitals", href: "/about" },
+  { label: "Security", excerpt: "Audits & Protection", href: "/services" },
+  { label: "Migrations", excerpt: "Replatforming safe", href: "/case-studies" },
+  { label: "Accessibility", excerpt: "WCAG Compliance", href: "/contact" },
 ];
 
 export const SECTOR_SOLUTION_NAV = [
