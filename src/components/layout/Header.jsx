@@ -83,6 +83,7 @@ const Header = () => {
     "/audit",
     "/case-studies",
     "/services",
+    "/solutions",
   ];
 
   const isHeaderSecondary =
