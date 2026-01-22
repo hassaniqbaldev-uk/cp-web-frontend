@@ -62,13 +62,16 @@ const Footer = () => {
                 text="Get Free Consultation"
                 textColor="#312749"
                 bGcolor="#FFFFFF"
-                href=""
+                href="/contact"
               />
             </div>
 
             <div className="flex w-full flex-col">
               <div className="flex w-full flex-wrap justify-center gap-[1.6rem] md:gap-[2rem]">
-                <div className="flex h-[9rem] w-full items-center justify-start gap-[1.5rem] rounded-[1.6rem] border border-white/20 bg-white/10 px-[2rem] backdrop-blur-[10px] md:h-[14rem] md:w-[37.9rem] md:justify-center md:gap-[2.4rem] md:px-[0rem]">
+                <Link
+                  href="tel:01618202667"
+                  className="flex h-[9rem] w-full items-center justify-start gap-[1.5rem] rounded-[1.6rem] border border-white/20 bg-white/10 px-[2rem] backdrop-blur-[10px] md:h-[14rem] md:w-[37.9rem] md:justify-center md:gap-[2.4rem] md:px-[0rem]"
+                >
                   <i
                     style={{
                       boxShadow: "5px 5px 44px 0px #FF37B3CC",
@@ -93,9 +96,12 @@ const Footer = () => {
                       0161 820 2667
                     </h4>
                   </div>
-                </div>
+                </Link>
 
-                <div className="flex h-[9rem] w-full items-center justify-start gap-[1.5rem] rounded-[1.6rem] border border-white/20 bg-white/10 px-[2rem] backdrop-blur-[10px] md:h-[14rem] md:w-[43rem] md:justify-center md:gap-[2.4rem] md:px-[0rem]">
+                <Link
+                  href="mailto:hello@cp.agency"
+                  className="flex h-[9rem] w-full items-center justify-start gap-[1.5rem] rounded-[1.6rem] border border-white/20 bg-white/10 px-[2rem] backdrop-blur-[10px] md:h-[14rem] md:w-[43rem] md:justify-center md:gap-[2.4rem] md:px-[0rem]"
+                >
                   <i
                     style={{
                       boxShadow: "5px 5px 44px 0px #3078FFCC",
@@ -120,9 +126,12 @@ const Footer = () => {
                       hello@cp.agency
                     </h4>
                   </div>
-                </div>
+                </Link>
 
-                <div className="flex h-[9rem] w-full items-center justify-start gap-[1.5rem] rounded-[1.6rem] border border-white/20 bg-white/10 px-[2rem] backdrop-blur-[10px] md:h-[14rem] md:w-[33.4rem] md:justify-center md:gap-[2.4rem] md:px-[0rem]">
+                <Link
+                  href="/contact"
+                  className="flex h-[9rem] w-full items-center justify-start gap-[1.5rem] rounded-[1.6rem] border border-white/20 bg-white/10 px-[2rem] backdrop-blur-[10px] md:h-[14rem] md:w-[33.4rem] md:justify-center md:gap-[2.4rem] md:px-[0rem]"
+                >
                   <i
                     style={{
                       boxShadow: "5px 5px 44px 0px #ED910CCC",
@@ -147,7 +156,7 @@ const Footer = () => {
                       Book a Call
                     </h4>
                   </div>
-                </div>
+                </Link>
               </div>
 
               <div className="my-[5rem] hidden grid-cols-4 xl:grid">
@@ -267,7 +276,7 @@ const Footer = () => {
                     <ul>
                       <li>
                         <Link
-                          href=""
+                          href="/privacy-policy"
                           className="text-[1.8rem] leading-[4rem] font-medium tracking-normal text-white"
                         >
                           Privacy Policy
@@ -276,7 +285,7 @@ const Footer = () => {
 
                       <li>
                         <Link
-                          href=""
+                          href="/cookies-policy"
                           className="text-[1.8rem] leading-[4rem] font-medium tracking-normal text-white"
                         >
                           Cookies Policy
@@ -293,7 +302,7 @@ const Footer = () => {
                     <ul>
                       <li>
                         <Link
-                          href=""
+                          href="/services"
                           className="text-[1.8rem] leading-[4rem] font-medium tracking-normal text-white"
                         >
                           By Sector
@@ -302,7 +311,7 @@ const Footer = () => {
 
                       <li>
                         <Link
-                          href=""
+                          href="/services"
                           className="text-[1.8rem] leading-[4rem] font-medium tracking-normal text-white"
                         >
                           By Goals
@@ -330,7 +339,7 @@ const Footer = () => {
                   <ul className="flex items-center gap-[8px]">
                     <li>
                       <Link
-                        href=""
+                        href="https://www.facebook.com/CPAgencyUK"
                         className="inline-flex size-[5.7rem] items-center justify-center rounded-full bg-white/15"
                       >
                         <Image
@@ -344,7 +353,7 @@ const Footer = () => {
 
                     <li>
                       <Link
-                        href=""
+                        href="https://www.instagram.com/cpagencyuk/"
                         className="inline-flex size-[5.7rem] items-center justify-center rounded-full bg-white/15"
                       >
                         <Image
@@ -358,7 +367,7 @@ const Footer = () => {
 
                     <li>
                       <Link
-                        href=""
+                        href="https://www.linkedin.com/company/creativepixels/"
                         className="inline-flex size-[5.7rem] items-center justify-center rounded-full bg-white/15"
                       >
                         <Image
@@ -515,7 +524,7 @@ const Footer = () => {
               <ul className="mb-[4.8rem] flex items-center justify-center gap-[8px] xl:hidden">
                 <li>
                   <Link
-                    href=""
+                    href="https://www.facebook.com/CPAgencyUK"
                     className="inline-flex size-[5.7rem] items-center justify-center rounded-full bg-white/15"
                   >
                     <Image
@@ -529,7 +538,7 @@ const Footer = () => {
 
                 <li>
                   <Link
-                    href=""
+                    href="https://www.instagram.com/cpagencyuk/"
                     className="inline-flex size-[5.7rem] items-center justify-center rounded-full bg-white/15"
                   >
                     <Image
@@ -543,7 +552,7 @@ const Footer = () => {
 
                 <li>
                   <Link
-                    href=""
+                    href="https://www.linkedin.com/company/creativepixels/"
                     className="inline-flex size-[5.7rem] items-center justify-center rounded-full bg-white/15"
                   >
                     <Image
@@ -571,11 +580,11 @@ const Footer = () => {
                       />
                     </div>
 
-                    <div className="absolute inset-0 flex items-center justify-center bg-white opacity-0 transition-all duration-200 group-hover:opacity-100">
+                    {/* <div className="absolute inset-0 flex items-center justify-center bg-white opacity-0 transition-all duration-200 group-hover:opacity-100">
                       <span className="text-[1.8rem] font-bold tracking-normal text-black">
                         80+ Reviews
                       </span>
-                    </div>
+                    </div> */}
                   </li>
                 ))}
               </ul>
@@ -604,11 +613,11 @@ const Footer = () => {
                         />
                       </div>
 
-                      <div className="absolute inset-0 flex items-center justify-center bg-white opacity-0 transition-all duration-200 group-hover:opacity-100">
+                      {/* <div className="absolute inset-0 flex items-center justify-center bg-white opacity-0 transition-all duration-200 group-hover:opacity-100">
                         <span className="text-[1.8rem] font-bold tracking-normal text-black">
                           80+ Reviews
                         </span>
-                      </div>
+                      </div> */}
                     </div>
                   ))}
                 </Marquee>
@@ -626,37 +635,43 @@ const Footer = () => {
 
                   <ul className="flex items-center gap-[1.4rem] md:gap-[2rem]">
                     <li>
-                      <Image
-                        src={HostingIcon}
-                        width={73}
-                        height={34}
-                        alt="Logo"
-                        className="h-[2.5rem] w-[5.4rem] md:h-[3.4rem] md:w-[7.3rem]"
-                      />
+                      <Link href="https://creativehosting.io/">
+                        <Image
+                          src={HostingIcon}
+                          width={73}
+                          height={34}
+                          alt="Logo"
+                          className="h-[2.5rem] w-[5.4rem] md:h-[3.4rem] md:w-[7.3rem]"
+                        />
+                      </Link>
                     </li>
 
                     <li className="h-[24px] w-[1px] bg-white md:h-[32px]" />
 
                     <li>
-                      <Image
-                        src={WpFixedIcon}
-                        width={75}
-                        height={31}
-                        alt="Logo"
-                        className="h-[2.3rem] w-[5.5rem] md:h-[3.1rem] md:w-[7.5rem]"
-                      />
+                      <Link href="">
+                        <Image
+                          src={WpFixedIcon}
+                          width={75}
+                          height={31}
+                          alt="Logo"
+                          className="h-[2.3rem] w-[5.5rem] md:h-[3.1rem] md:w-[7.5rem]"
+                        />
+                      </Link>
                     </li>
 
                     <li className="h-[24px] w-[1px] bg-white md:h-[32px]" />
 
                     <li>
-                      <Image
-                        src={MonthlyIcon}
-                        width={137}
-                        height={23}
-                        alt="Logo"
-                        className="h-[1.7rem] w-[10.2rem] md:h-[2.3rem] md:w-[13.7rem]"
-                      />
+                      <Link href="">
+                        <Image
+                          src={MonthlyIcon}
+                          width={137}
+                          height={23}
+                          alt="Logo"
+                          className="h-[1.7rem] w-[10.2rem] md:h-[2.3rem] md:w-[13.7rem]"
+                        />
+                      </Link>
                     </li>
                   </ul>
                 </div>

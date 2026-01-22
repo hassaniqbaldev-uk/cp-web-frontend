@@ -95,7 +95,7 @@ const Cta = () => {
                 text="Book a Call"
                 textColor="#FFFFFF"
                 bGcolor="#FF37B3"
-                href=""
+                href="/contact"
               />
             </div>
           </div>

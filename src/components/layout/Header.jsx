@@ -132,7 +132,7 @@ const Header = () => {
               />
 
               <Link
-                href="/work"
+                href="/case-studies"
                 className="nav-link"
                 onClick={closeAllDropdowns}
               >

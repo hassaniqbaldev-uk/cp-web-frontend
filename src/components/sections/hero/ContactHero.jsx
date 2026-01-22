@@ -102,12 +102,9 @@ const ContactHero = () => {
                   </p>
 
                   <div className="w-full px-[3rem]">
-                    <Link
-                      href=""
-                      className="flex h-[5.6rem] w-full items-center justify-center rounded-[6rem] border border-white/20 px-[3rem] py-[8px] text-[1.8rem] font-medium tracking-normal text-white transition-all duration-300 hover:border-[#3078FF] hover:bg-[#3078FF]"
-                    >
+                    <button className="flex h-[5.6rem] w-full items-center justify-center rounded-[6rem] border border-white/20 px-[3rem] py-[8px] text-[1.8rem] font-medium tracking-normal text-white transition-all duration-300 hover:border-[#3078FF] hover:bg-[#3078FF]">
                       15-min chat with Hassan
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -133,7 +130,7 @@ const ContactHero = () => {
 
                   <div className="w-full px-[3rem]">
                     <Link
-                      href=""
+                      href="mailto:hello@cp.agency"
                       className="flex h-[5.6rem] w-full items-center justify-center rounded-[6rem] border border-white/20 px-[3rem] py-[8px] text-[1.8rem] font-medium tracking-normal text-white transition-all duration-300 hover:border-[#ED910C] hover:bg-[#ED910C]"
                     >
                       hello@cp.agency
@@ -168,7 +165,7 @@ const ContactHero = () => {
 
                   <div className="w-full px-[3rem]">
                     <Link
-                      href=""
+                      href="tel:01618202667"
                       className="flex h-[5.6rem] w-full items-center justify-center rounded-[6rem] border border-white/20 px-[3rem] py-[8px] text-[1.8rem] font-medium tracking-normal text-white transition-all duration-300 hover:border-[#FF37B3] hover:bg-[#FF37B3]"
                     >
                       0161 820 2667

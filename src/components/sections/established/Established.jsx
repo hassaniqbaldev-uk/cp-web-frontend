@@ -32,7 +32,7 @@ const Established = () => {
               <PrimaryButton
                 color="#312749"
                 text="Read Our Story"
-                href="/"
+                href="/about"
                 textColor="#ffffff"
               />
             </div>

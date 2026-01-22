@@ -9,10 +9,10 @@ export const MAIN_NAV = [
 ];
 
 export const COMPANY_ABOUT_NAV = [
-  { label: "About Us", href: "/" },
-  { label: "How we work", href: "/about" },
-  { label: "Careers", href: "/services" },
-  { label: "Partner with us (White Label)", href: "/case-studies" },
+  { label: "About Us", href: "/about" },
+  { label: "How we work", href: "/how-we-work" },
+  { label: "Careers", href: "/careers" },
+  { label: "Partner with us (White Label)", href: "/partner-with-us" },
 ];
 
 export const DESIGN_SERVICE_NAV = [
@@ -129,28 +129,4 @@ export const GOAL_SOLUTION_NAV = [
     excerpt: "Move safely to shopify/Wordpress",
     href: "/contact",
   },
-];
-
-export const CASESTUDIES_SERVICE_NAV = [
-  { label: "All Services", href: "/case-studies" },
-  { label: "Branding", href: "/" },
-  { label: "UI/UX Design", href: "/" },
-  { label: "Wordpress", href: "/" },
-  { label: "Shopify", href: "/" },
-  { label: "SEO", href: "/" },
-  { label: "Email", href: "/" },
-  { label: "Maintenance", href: "/" },
-  { label: "Security", href: "/" },
-];
-
-export const CASESTUDIES_INDUSTRIES_NAV = [
-  { label: "All Industries", href: "/" },
-  { label: "Branding", href: "/" },
-  { label: "UI/UX Design", href: "/" },
-  { label: "Wordpress", href: "/" },
-  { label: "Shopify", href: "/" },
-  { label: "SEO", href: "/" },
-  { label: "Email", href: "/" },
-  { label: "Maintenance", href: "/" },
-  { label: "Security", href: "/" },
 ];

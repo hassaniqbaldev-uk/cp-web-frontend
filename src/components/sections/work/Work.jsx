@@ -36,7 +36,7 @@ const Work = ({ caseStudies }) => {
               <PrimaryButton
                 text="View All Projects"
                 textColor="#FFFFFF"
-                href=""
+                href="/case-studies"
                 bGcolor="#FF37B3"
               />
             </div>
@@ -49,7 +49,7 @@ const Work = ({ caseStudies }) => {
                   boxShadow: "11px 11px 65px 0px #00000012",
                 }}
                 href={`/case-studies/${caseStudies[6].slug}`}
-                className="flex h-full flex-col gap-[3.9rem] rounded-[3rem] bg-white px-[2rem] pt-[2rem] pb-[4rem]"
+                className="flex  flex-col gap-[3.9rem] rounded-[3rem] bg-white px-[3rem] pt-[2rem] pb-[4rem]"
               >
                 <div className="flex h-[49.7rem] w-full overflow-hidden rounded-[2rem]">
                   <Image
@@ -80,9 +80,9 @@ const Work = ({ caseStudies }) => {
                     )}
                   </ul> */}
 
-                  <hr className="mb-[2.7rem] w-full border-t border-black/20" />
+                  <hr className="my-[3.2rem] w-full border-t border-black/20" />
 
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center  h-full justify-between">
                     <div className="flex flex-col items-start text-left">
                       <h4 className="text-[3.4rem] leading-[4.8rem] font-bold tracking-[-0.02em] text-[#312749]">
                         {caseStudies[6].title}
@@ -112,7 +112,7 @@ const Work = ({ caseStudies }) => {
                   boxShadow: "11px 11px 65px 0px #00000012",
                 }}
                 href={`/case-studies/${caseStudies[5].slug}`}
-                className="flex w-full flex-col gap-[2rem] rounded-[3rem] bg-white px-[1.5rem] pt-[1.5rem] pb-[3rem]"
+                className="flex w-full flex-col gap-[2rem] rounded-[3rem] bg-white px-[2rem] pt-[1.5rem] pb-[3rem]"
               >
                 <div className="flex h-[22.7rem] w-full overflow-hidden rounded-[1.5rem]">
                   <Image
@@ -156,7 +156,7 @@ const Work = ({ caseStudies }) => {
                   boxShadow: "11px 11px 65px 0px #00000012",
                 }}
                 href={`/case-studies/${caseStudies[4].slug}`}
-                className="flex w-full flex-col gap-[2rem] rounded-[3rem] bg-white px-[1.5rem] pt-[1.5rem] pb-[3rem]"
+                className="flex w-full flex-col gap-[2rem] rounded-[3rem] bg-white px-[2rem] pt-[1.5rem] pb-[3rem]"
               >
                 <div className="flex h-[22.7rem] w-full overflow-hidden rounded-[1.5rem]">
                   <Image
@@ -198,7 +198,7 @@ const Work = ({ caseStudies }) => {
           </div>
 
           {/* Responsive */}
-          <div className="mt-[5rem] block w-full xl:hidden">
+          <div className="mt-[3rem] block w-full xl:hidden">
             <Swiper
               pagination={{ clickable: true }}
               modules={[Pagination, Autoplay]}
@@ -219,12 +219,12 @@ const Work = ({ caseStudies }) => {
                   spaceBetween: 0,
                 },
               }}
-              className="mySwiper !pt-[1.5rem]"
+              className="mySwiper"
             >
               {caseStudies.map((item, idx) => (
                 <SwiperSlide
                   key={idx}
-                  className="!flex !h-auto !justify-center pb-[5rem]"
+                  className="!flex !h-auto !justify-center !pt-[2rem] pb-[5rem]"
                 >
                   <Link
                     style={{
@@ -249,8 +249,8 @@ const Work = ({ caseStudies }) => {
                     </div>
 
                     <div className="flex items-center justify-between">
-                      <div className="flex flex-col items-start text-left">
-                        <h4 className="text-[2rem] leading-[3.2rem] font-bold tracking-[-0.02em] text-[#312749]">
+                      <div className="flex flex-col items-start text-left gap-[1rem]">
+                        <h4 className="text-[2rem] leading-[2.4rem] font-bold tracking-[-0.02em] text-[#312749]">
                           {item.title}
                         </h4>
 
