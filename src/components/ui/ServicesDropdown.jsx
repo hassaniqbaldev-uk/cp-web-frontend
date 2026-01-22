@@ -13,27 +13,12 @@ import {
 } from "@/contants";
 import Link from "next/link";
 import PrimaryButton from "./PrimaryButton";
-import { useEffect, useState } from "react";
 
-const ServicesDropdown = ({ className }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsOpen(false);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+const ServicesDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
   return (
     <>
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={onToggle}
         className={`inline-flex items-start justify-center gap-[.6rem] ${className}`}
       >
         <span>Services</span>{" "}
@@ -45,7 +30,6 @@ const ServicesDropdown = ({ className }) => {
       </button>
 
       <div
-        onMouseLeave={() => setIsOpen(false)}
         className={`absolute top-full left-1/2 z-[600] w-[127.2rem] -translate-x-1/2 transition-all duration-200 ${isOpen ? "pointer-events-auto visible pt-[4rem] opacity-100 select-auto" : "pointer-events-none invisible pt-[0rem] opacity-0 select-none"}`}
       >
         <div
@@ -59,6 +43,7 @@ const ServicesDropdown = ({ className }) => {
         />
 
         <div
+          onMouseLeave={() => setIsOpen(false)}
           style={{
             boxShadow: "11px 11px 65px 0px #00000040",
           }}
@@ -108,7 +93,9 @@ const ServicesDropdown = ({ className }) => {
                         </span>
                       </div>
 
-                      <TiltArrowIcon color="#ED910C" width="12" height="12" />
+                      <i className="min-w-max">
+                        <TiltArrowIcon color="#ED910C" width="12" height="12" />
+                      </i>
                     </Link>
                   </li>
                 ))}
@@ -158,7 +145,9 @@ const ServicesDropdown = ({ className }) => {
                         </span>
                       </div>
 
-                      <TiltArrowIcon color="#FF37B3" width="12" height="12" />
+                      <i className="min-w-max">
+                        <TiltArrowIcon color="#FF37B3" width="12" height="12" />
+                      </i>
                     </Link>
                   </li>
                 ))}
@@ -208,7 +197,9 @@ const ServicesDropdown = ({ className }) => {
                         </span>
                       </div>
 
-                      <TiltArrowIcon color="#F14A58" width="12" height="12" />
+                      <i className="min-w-max">
+                        <TiltArrowIcon color="#F14A58" width="12" height="12" />
+                      </i>
                     </Link>
                   </li>
                 ))}
@@ -221,7 +212,7 @@ const ServicesDropdown = ({ className }) => {
               <Image src={Stroke} width={348} height={193} alt="Stroke" />
             </div>
 
-            <span className="inline-flex h-[2.8rem] items-center justify-center rounded-[2rem] bg-[#ff37b3]/20 px-[1.2rem] text-center text-[1.4rem] leading-[.4rem] font-bold tracking-normal text-[#FF37B3] uppercase">
+            <span className="inline-flex h-[2.8rem] items-center justify-center rounded-[2rem] bg-[#ff37b3]/20 px-[1.2rem] text-center text-[1.4rem] leading-[2.4rem] font-bold tracking-normal text-[#FF37B3] uppercase">
               Special offer
             </span>
 

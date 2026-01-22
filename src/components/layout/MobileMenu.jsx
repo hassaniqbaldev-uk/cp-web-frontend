@@ -57,7 +57,7 @@ const MobileMenu = () => {
       />
 
       <div
-        className={`no-scrollbar fixed top-0 z-[600] h-screen w-[95%] overflow-y-auto rounded-tr-[2.5rem] rounded-br-[2.5rem] bg-white py-[2.2rem] pr-[1.2rem] pb-[10rem] pl-[2.4rem] transition-all duration-200 ${isOpen ? "left-0" : "-left-full"}`}
+        className={`no-scrollbar fixed top-0 z-[600] h-screen w-[95%] md:w-[50%] overflow-y-auto rounded-tr-[2.5rem] rounded-br-[2.5rem] bg-white py-[2.2rem] pr-[1.2rem] pb-[10rem] pl-[2.4rem] transition-all duration-200 ${isOpen ? "left-0" : "-left-full"}`}
       >
         {/* Header */}
         <div className="flex items-center justify-between gap-[2rem]">

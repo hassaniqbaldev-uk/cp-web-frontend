@@ -1,4 +1,3 @@
-"use client";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { gsap } from "gsap";
@@ -10,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function SiteLayout({ children }) {
   return (
     <>
-      <MobileMenu/>
+      <MobileMenu />
       <Header />
       <main>{children}</main>
       <Footer />

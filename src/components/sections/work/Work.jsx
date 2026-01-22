@@ -49,19 +49,19 @@ const Work = ({ caseStudies }) => {
                   boxShadow: "11px 11px 65px 0px #00000012",
                 }}
                 href={`/case-studies/${caseStudies[6].slug}`}
-                className="flex flex-col gap-[3.9rem] rounded-[3rem] bg-white px-[2rem] pt-[2rem] pb-[4rem]"
+                className="flex h-full flex-col gap-[3.9rem] rounded-[3rem] bg-white px-[2rem] pt-[2rem] pb-[4rem]"
               >
-                <div className="flex h-[53rem] w-full overflow-hidden rounded-[2rem]">
+                <div className="flex h-[49.7rem] w-full overflow-hidden rounded-[2rem]">
                   <Image
                     src={urlFor(caseStudies[6].thumbnailImage)
-                      ?.width(805)
-                      .height(551)
+                      ?.width(737)
+                      .height(497)
                       .fit("crop")
                       .url()}
-                    alt={caseStudies[0].title || "Case Study Thumbnail Image"}
-                    width={801}
-                    height={551}
-                    className="w-full object-center"
+                    alt={caseStudies[6].title || "Case Study Thumbnail Image"}
+                    width={737}
+                    height={497}
+                    className="size-full"
                     unoptimized
                   />
                 </div>
@@ -114,17 +114,17 @@ const Work = ({ caseStudies }) => {
                 href={`/case-studies/${caseStudies[5].slug}`}
                 className="flex w-full flex-col gap-[2rem] rounded-[3rem] bg-white px-[1.5rem] pt-[1.5rem] pb-[3rem]"
               >
-                <div className="flex h-[24.2rem] w-full overflow-hidden rounded-[1.5rem]">
+                <div className="flex h-[22.7rem] w-full overflow-hidden rounded-[1.5rem]">
                   <Image
                     src={urlFor(caseStudies[5].thumbnailImage)
-                      ?.width(363)
-                      .height(242)
+                      ?.width(365)
+                      .height(227)
                       .fit("crop")
                       .url()}
                     alt={caseStudies[5].title || "Case Study Thumbnail Image"}
-                    width={363}
-                    height={242}
-                    className="w-full object-cover object-center"
+                    width={365}
+                    height={227}
+                    className="size-full"
                     unoptimized
                   />
                 </div>
@@ -158,17 +158,17 @@ const Work = ({ caseStudies }) => {
                 href={`/case-studies/${caseStudies[4].slug}`}
                 className="flex w-full flex-col gap-[2rem] rounded-[3rem] bg-white px-[1.5rem] pt-[1.5rem] pb-[3rem]"
               >
-                <div className="flex h-[24.2rem] w-full overflow-hidden rounded-[1.5rem]">
+                <div className="flex h-[22.7rem] w-full overflow-hidden rounded-[1.5rem]">
                   <Image
                     src={urlFor(caseStudies[4].thumbnailImage)
-                      ?.width(363)
-                      .height(242)
+                      ?.width(365)
+                      .height(227)
                       .fit("crop")
                       .url()}
                     alt={caseStudies[4].title || "Case Study Thumbnail Image"}
-                    width={363}
-                    height={242}
-                    className="w-full object-cover object-center"
+                    width={365}
+                    height={227}
+                    className="size-full"
                     unoptimized
                   />
                 </div>
@@ -219,7 +219,7 @@ const Work = ({ caseStudies }) => {
                   spaceBetween: 0,
                 },
               }}
-              className="mySwiper"
+              className="mySwiper !pt-[1.5rem]"
             >
               {caseStudies.map((item, idx) => (
                 <SwiperSlide
@@ -227,10 +227,13 @@ const Work = ({ caseStudies }) => {
                   className="!flex !h-auto !justify-center pb-[5rem]"
                 >
                   <Link
+                    style={{
+                      boxShadow: "11px 11px 65px 0px #00000012",
+                    }}
                     href={`/case-studies/${item.slug}`}
-                    className="flex h-full w-[27.5rem] flex-col gap-[2.2rem]"
+                    className="flex h-full w-[27.5rem] flex-col gap-[2.2rem] rounded-[3rem] bg-white px-[1.5rem] pt-[1.5rem] pb-[2rem]"
                   >
-                    <div className="flex h-[18.3rem] w-full overflow-hidden rounded-[1.1rem]">
+                    <div className="flex h-[18.3rem] w-full overflow-hidden rounded-[1.5rem]">
                       <Image
                         src={urlFor(item.thumbnailImage)
                           ?.width(275)

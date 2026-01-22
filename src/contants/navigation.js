@@ -80,23 +80,55 @@ export const SUPPORT_SERVICE_NAV = [
 ];
 
 export const SECTOR_SOLUTION_NAV = [
-  { label: "For SMEs", href: "/" },
-  { label: "For Ecommerce", href: "/about" },
-  { label: "For Interiors", href: "/services" },
-  { label: "For Resturant", href: "/case-studies" },
-  { label: "For Pharmacies", href: "/contact" },
-  { label: "For Fashion", href: "/contact" },
-  { label: "For SaaS", href: "/contact" },
-  { label: "For driving schools", href: "/contact" },
+  { label: "For SMEs", excerpt: "", href: "/" },
+  { label: "For Ecommerce", excerpt: "", href: "/about" },
+  {
+    label: "For Interiors",
+    excerpt: "Soft Furnishing & bespoke",
+    href: "/services",
+  },
+  { label: "For Resturant", excerpt: "", href: "/case-studies" },
+  {
+    label: "For Pharmacies",
+    excerpt: "NHIS integrations & Bookings",
+    href: "/contact",
+  },
+  { label: "For Fashion", excerpt: "", href: "/contact" },
+  { label: "For SaaS", excerpt: "", href: "/contact" },
+  { label: "For driving schools", excerpt: "", href: "/contact" },
 ];
 
 export const GOAL_SOLUTION_NAV = [
-  { label: "Increase Leads", href: "/" },
-  { label: "Rebuild Website", href: "/about" },
-  { label: "Scale Marketing", href: "/services" },
-  { label: "Launch New Product", href: "/case-studies" },
-  { label: "Automate operations", href: "/contact" },
-  { label: "Migrate platform", href: "/contact" },
+  {
+    label: "Increase Leads",
+    excerpt: "Get more qualified enquiries",
+    href: "/",
+  },
+  {
+    label: "Rebuild Website",
+    excerpt: "Modernize your digital presence",
+    href: "/about",
+  },
+  {
+    label: "Scale Marketing",
+    excerpt: "Expand your reach & ROI",
+    href: "/services",
+  },
+  {
+    label: "Launch New Product",
+    excerpt: "Go-to-market strategy",
+    href: "/case-studies",
+  },
+  {
+    label: "Automate operations",
+    excerpt: "AI & workflow efficiency",
+    href: "/contact",
+  },
+  {
+    label: "Migrate platform",
+    excerpt: "Move safely to shopify/Wordpress",
+    href: "/contact",
+  },
 ];
 
 export const CASESTUDIES_SERVICE_NAV = [

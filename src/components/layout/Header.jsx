@@ -17,6 +17,44 @@ const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const pathname = usePathname();
   const { toggleMenu } = useMenuStore();
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
+
+  const toggleServices = () => {
+    setIsServicesOpen((prev) => !prev);
+    setIsSolutionsOpen(false);
+    setIsAboutOpen(false);
+  };
+
+  const toggleSolutions = () => {
+    setIsSolutionsOpen((prev) => !prev);
+    setIsServicesOpen(false);
+    setIsAboutOpen(false);
+  };
+
+  const toggleAbout = () => {
+    setIsAboutOpen((prev) => !prev);
+    setIsServicesOpen(false);
+    setIsSolutionsOpen(false);
+  };
+
+  const closeAllDropdowns = () => {
+    setIsServicesOpen(false);
+    setIsSolutionsOpen(false);
+    setIsAboutOpen(false);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsServicesOpen(false);
+      setIsSolutionsOpen(false);
+      setIsAboutOpen(false);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,7 +104,11 @@ const Header = () => {
                   : "header-primary"
             }`}
           >
-            <Link href="/" className="inline-flex items-center justify-center">
+            <Link
+              href="/"
+              className="inline-flex items-center justify-center"
+              onClick={closeAllDropdowns}
+            >
               <Logo
                 width="121"
                 height="46"
@@ -75,27 +117,54 @@ const Header = () => {
             </Link>
 
             <nav className="mr-[2.8rem] ml-[4.8rem] hidden items-center justify-center gap-[3rem] xl:flex">
-              <ServicesDropdown className="nav-link" />
+              <ServicesDropdown
+                className="nav-link"
+                isOpen={isServicesOpen}
+                setIsOpen={setIsServicesOpen}
+                onToggle={toggleServices}
+              />
 
-              <SolutionsDropdown className="nav-link" />
+              <SolutionsDropdown
+                className="nav-link"
+                isOpen={isSolutionsOpen}
+                setIsOpen={setIsSolutionsOpen}
+                onToggle={toggleSolutions}
+              />
 
-              <Link href="/work" className="nav-link">
+              <Link
+                href="/work"
+                className="nav-link"
+                onClick={closeAllDropdowns}
+              >
                 Work
               </Link>
 
-              <Link href="/blog" className="nav-link">
+              <Link
+                href="/blog"
+                className="nav-link"
+                onClick={closeAllDropdowns}
+              >
                 Insights
               </Link>
 
-              <Link href="" className="nav-link">
+              <Link href="" className="nav-link" onClick={closeAllDropdowns}>
                 Pricing
               </Link>
 
-              <AboutDropdown className="nav-link" />
+              <AboutDropdown
+                className="nav-link"
+                isOpen={isAboutOpen}
+                setIsOpen={setIsAboutOpen}
+                onToggle={toggleAbout}
+              />
             </nav>
 
             <div className="flex items-center justify-end gap-[4px]">
-              <Link href="/audit" className="nav-btn">
+              <Link
+                href="/audit"
+                className="nav-btn"
+                onClick={closeAllDropdowns}
+              >
                 Free Audit
               </Link>
 
@@ -108,7 +177,7 @@ const Header = () => {
               </button>
             </div>
 
-            <div className="hidden xl:block">
+            <div className="hidden xl:block" onClick={closeAllDropdowns}>
               <PrimaryButton
                 text="Book with Hassan"
                 textColor="#FFFFFF"
