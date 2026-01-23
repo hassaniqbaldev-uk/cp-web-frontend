@@ -19,6 +19,7 @@ export const SERVICES_CARD = [
     link: "/services",
     linkText: "Explore Website Services",
     color: "#F14A58",
+    boxShadow: "4px 12px 30px 0px #F14A581C",
   },
   {
     icon: PaintIcon,
@@ -36,6 +37,7 @@ export const SERVICES_CARD = [
     link: "/services",
     linkText: "Explore Branding Services",
     color: "#44B276",
+    boxShadow: "4px 12px 30px 0px #44B2761C",
   },
   {
     icon: UpsideIcon,
@@ -53,5 +55,6 @@ export const SERVICES_CARD = [
     link: "/services",
     linkText: "Explore Growth Services",
     color: "#3078FF",
+    boxShadow: "4px 12px 30px 0px #3078FF1C",
   },
 ];

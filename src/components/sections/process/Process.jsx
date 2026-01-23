@@ -31,7 +31,7 @@ const Process = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 1,
         ease: "easeOut",
       },
     },
@@ -98,7 +98,7 @@ const Process = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{
-              duration: 0.6,
+              duration: 1,
               ease: "easeOut",
             }}
             className="mt-[6.5rem] hidden grid-cols-4 xl:grid"
@@ -162,7 +162,7 @@ const Process = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{
-              duration: 0.6,
+              duration: 1,
               ease: "easeOut",
             }}
             className="block w-full xl:hidden"

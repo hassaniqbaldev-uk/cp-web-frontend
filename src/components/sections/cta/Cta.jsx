@@ -18,7 +18,7 @@ const Cta = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{
-          duration: 0.6,
+          duration: 1,
           ease: "easeOut",
         }}
         className="relative container px-[3rem] pt-[2.3rem] pb-[3rem] md:px-[10rem] md:pt-[5.6rem] md:pb-[4rem]"

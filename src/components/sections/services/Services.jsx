@@ -3,7 +3,6 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import SectionTitle from "@/components/ui/SectionTitle";
 import SectionDescription from "@/components/ui/SectionDescription";
 import Image from "next/image";
-import ServicesLogoShape from "@/assets/svgs/services-logo-shape.svg";
 import { SERVICES_CARD } from "@/contants";
 import Link from "next/link";
 import RightArrowIcon from "@/components/icons/RightArrowIcon";
@@ -14,6 +13,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { motion } from "framer-motion";
+import ServicesLogoShape from "@/components/decorative-elements/ServicesLogoShape";
 
 const Services = () => {
   const [hovered, setHovered] = useState(null);
@@ -37,7 +37,7 @@ const Services = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 1,
         ease: "easeOut",
       },
     },
@@ -47,17 +47,11 @@ const Services = () => {
     <>
       <section className="relative overflow-hidden bg-[#F0F6FF] px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         {/*Background Element*/}
-        <div className="pointer-events-none absolute top-[2rem] right-[-1rem] h-[7.1rem] w-[5.2rem] rotate-[-34deg] select-none md:top-[7.8rem] md:h-[17.7rem] md:w-[12.9rem]">
-          <Image
-            src={ServicesLogoShape}
-            alt="Services Logo Shape"
-            width={129}
-            height={177}
-            unoptimized
-          />
+        <div className="absolute inset-0 z-[2]">
+          <ServicesLogoShape className="pointer-events-none absolute top-[2rem] right-[-1rem] h-[7.1rem] w-[5.2rem] rotate-[-34deg] select-none md:top-[7.8rem] md:h-[17.7rem] md:w-[12.9rem]" />
         </div>
 
-        <div className="container">
+        <div className="relative z-[10] container">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -98,6 +92,7 @@ const Services = () => {
                   onMouseLeave={() => setHovered(null)}
                   style={{
                     borderColor: hovered === idx ? item.color : "transparent",
+                    boxShadow: hovered === idx ? item.boxShadow : "",
                   }}
                   className="flex w-full flex-col items-start justify-between rounded-[3rem] border bg-white px-[3rem] pt-[3.1rem] pb-[2.8rem] text-left backdrop-blur-[10px] transition-all duration-200"
                 >
@@ -169,7 +164,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{
-              duration: 0.6,
+              duration: 1,
               ease: "easeOut",
             }}
             className="mt-[3rem] block w-full xl:hidden"

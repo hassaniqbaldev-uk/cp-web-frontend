@@ -33,7 +33,7 @@ const Work = ({ caseStudies }) => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 1,
         ease: "easeOut",
       },
     },
@@ -250,7 +250,7 @@ const Work = ({ caseStudies }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{
-              duration: 0.6,
+              duration: 1,
               ease: "easeOut",
             }}
             className="mt-[3rem] block w-full xl:hidden"

@@ -8,13 +8,13 @@ import HomeHeroLoginBox from "@/assets/images/hero/home-hero-login-box.svg";
 import HomeHeroLogo3d from "@/assets/svgs/home-hero-logo-3d.svg";
 import HomeHeroTooltip1 from "@/assets/images/hero/home-hero-tooltip-1.svg";
 import HomeHeroTooltip2 from "@/assets/images/hero/home-hero-tooltip-2.svg";
-import HomeHeroLogoShape1 from "@/assets/svgs/home-hero-logo-shape-1.svg";
 import HomeHeroLogoShape2 from "@/assets/svgs/home-hero-logo-shape-2.svg";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
 import { CLIENT_LOGO } from "@/contants";
 import SectionDescription from "@/components/ui/SectionDescription";
 import { motion, useReducedMotion } from "framer-motion";
+import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
 
 const HomeHero = () => {
   const containerVariants = {
@@ -22,7 +22,7 @@ const HomeHero = () => {
     visible: {
       transition: {
         staggerChildren: 0.12,
-        delayChildren: 0.2,
+        delayChildren: 0.1,
       },
     },
   };
@@ -36,7 +36,22 @@ const HomeHero = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const lineVariants = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
         ease: "easeOut",
       },
     },
@@ -57,14 +72,8 @@ const HomeHero = () => {
         />
 
         {/*Background Element*/}
-        <div className="absolute top-[70px] left-[-10px] z-[2] h-[8rem] w-[4rem] rotate-[25deg] md:top-[5.8px] md:left-[12px] md:h-[18.4rem] md:w-[9.1rem]">
-          <Image
-            src={HomeHeroLogoShape1}
-            alt="Card Logo Shape"
-            width={91}
-            height={184}
-            unoptimized
-          />
+        <div className="pointer-events-none absolute inset-0 z-[2] select-none">
+          <HomeHeroLogoShape1 className="absolute top-[70px] left-[-10px] h-[8rem] w-[4rem] rotate-[25deg] md:top-[5.8px] md:h-[18.4rem] md:w-[9.1rem]" />
         </div>
 
         <div className="relative z-[10] container px-[2rem] lg:px-[0rem]">
@@ -108,15 +117,43 @@ const HomeHero = () => {
                 </div>
               </motion.div>
 
-              <motion.h1
-                variants={itemVariants}
-                className="mt-[1.5rem] mb-[1rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]"
-              >
-                Grow your digital presence with real
-                <span className="bg-gradient-yellow-orange block bg-clip-text text-transparent">
-                  human-led strategy
+              <h1 className="mt-[1.5rem] mb-[1rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
+                <span className="block overflow-hidden">
+                  <motion.span
+                    variants={lineVariants}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{ delay: 0.6 }}
+                    className="block"
+                  >
+                    Grow your digital
+                  </motion.span>
                 </span>
-              </motion.h1>
+
+                <span className="block overflow-hidden">
+                  <motion.span
+                    variants={lineVariants}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{ delay: 0.8 }}
+                    className="block"
+                  >
+                    presence with real
+                  </motion.span>
+                </span>
+
+                <span className="block overflow-hidden">
+                  <motion.span
+                    variants={lineVariants}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{ delay: 1 }}
+                    className="bg-gradient-yellow-orange block bg-clip-text text-transparent"
+                  >
+                    human-led strategy
+                  </motion.span>
+                </span>
+              </h1>
 
               <motion.div
                 variants={itemVariants}
@@ -263,14 +300,14 @@ const HomeHero = () => {
           <motion.hr
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
             className="mt-[3rem] mb-[2.4rem] w-full border-t border-white/15 md:mt-[8rem]"
           />
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 1.2 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 1.2 }}
             className="w-full"
             style={{
               maskImage:
