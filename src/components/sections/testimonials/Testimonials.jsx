@@ -14,21 +14,59 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { motion } from "framer-motion";
 
 const Testimonials = () => {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <div className="container">
-        <div className="flex flex-col items-center text-center">
-          <div>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="flex flex-col items-center text-center"
+        >
+          <motion.div variants={itemVariants}>
             <SectionLabel text="Testimonials" textColor="#3078FF" />
-          </div>
+          </motion.div>
 
-          <div className="mt-[10px] mb-[18px] md:mt-[5px] md:mb-[14px]">
+          <motion.div
+            variants={itemVariants}
+            className="mt-[10px] mb-[18px] md:mt-[5px] md:mb-[14px]"
+          >
             <SectionTitle text="Built with Pixels. Backed by people." />
-          </div>
+          </motion.div>
 
-          <div className="flex items-center justify-center gap-[1.2rem]">
+          <motion.div
+            variants={itemVariants}
+            className="flex items-center justify-center gap-[1.2rem]"
+          >
             <ul className="flex items-center gap-[3px]">
               {Array.from({ length: 5 }).map((_, index) => (
                 <li key={index}>
@@ -40,11 +78,20 @@ const Testimonials = () => {
             <span className="text-[1.4rem] leading-[3.2rem] font-bold text-[#625C70] md:text-[2rem]">
               4.9/5 from 47+ Clients
             </span>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="my-[5rem] hidden grid-cols-3 gap-[1.3rem] xl:grid">
-          <div className="row-span-2 flex h-full w-full flex-col items-center gap-[2rem] rounded-[2rem] border border-[#E4E3E8] bg-white px-[3rem] pt-[3rem] pb-[4.1rem] backdrop-blur-[10px]">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="my-[5rem] hidden grid-cols-3 gap-[1.3rem] xl:grid"
+        >
+          <motion.div
+            variants={itemVariants}
+            className="row-span-2 flex h-full w-full flex-col items-center gap-[2rem] rounded-[2rem] border border-[#E4E3E8] bg-white px-[3rem] pt-[3rem] pb-[4.1rem] backdrop-blur-[10px]"
+          >
             <div className="flex overflow-hidden rounded-[1.2rem]">
               <Image
                 src={TestimonialCardImg}
@@ -94,9 +141,12 @@ const Testimonials = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="flex h-[31.5rem] w-full flex-col justify-between rounded-[2rem] border border-[#E4E3E8] bg-white px-[3rem] py-[4.1rem] backdrop-blur-[10px]">
+          <motion.div
+            variants={itemVariants}
+            className="flex h-[31.5rem] w-full flex-col justify-between rounded-[2rem] border border-[#E4E3E8] bg-white px-[3rem] py-[4.1rem] backdrop-blur-[10px]"
+          >
             <div className="flex flex-col items-start gap-[1.9rem] text-left">
               <ul className="flex items-center gap-[3px]">
                 {Array.from({ length: 5 }).map((_, index) => (
@@ -133,9 +183,12 @@ const Testimonials = () => {
                 </span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="flex h-[31.5rem] w-full flex-col justify-between rounded-[2rem] border border-[#E4E3E8] bg-white px-[3rem] py-[4.1rem] backdrop-blur-[10px]">
+          <motion.div
+            variants={itemVariants}
+            className="flex h-[31.5rem] w-full flex-col justify-between rounded-[2rem] border border-[#E4E3E8] bg-white px-[3rem] py-[4.1rem] backdrop-blur-[10px]"
+          >
             <div className="flex flex-col items-start gap-[1.9rem] text-left">
               <ul className="flex items-center gap-[3px]">
                 {Array.from({ length: 5 }).map((_, index) => (
@@ -173,9 +226,12 @@ const Testimonials = () => {
                 </span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="col-span-2 flex h-[31.5rem] w-full flex-col justify-between rounded-[2rem] border border-[#E4E3E8] bg-white px-[3rem] py-[4.1rem] backdrop-blur-[10px]">
+          <motion.div
+            variants={itemVariants}
+            className="col-span-2 flex h-[31.5rem] w-full flex-col justify-between rounded-[2rem] border border-[#E4E3E8] bg-white px-[3rem] py-[4.1rem] backdrop-blur-[10px]"
+          >
             <div className="flex flex-col items-start gap-[1.9rem] text-left">
               <ul className="flex items-center gap-[3px]">
                 {Array.from({ length: 5 }).map((_, index) => (
@@ -216,11 +272,17 @@ const Testimonials = () => {
                 </span>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Responsive */}
-        <div className="my-[3rem] block w-full xl:hidden">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="my-[3rem] block w-full xl:hidden"
+        >
           <Swiper
             pagination={{ clickable: true }}
             modules={[Pagination, Autoplay]}
@@ -290,16 +352,25 @@ const Testimonials = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
+        </motion.div>
 
-        <div className="flex justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{
+            duration: 0.6,
+            ease: "easeOut",
+          }}
+          className="flex justify-center"
+        >
           <PrimaryButton
             text="See More Reviews & Results"
             textColor="#FFFFFF"
             href=""
             bGcolor="#312749"
           />
-        </div>
+        </motion.div>
       </div>
     </>
   );

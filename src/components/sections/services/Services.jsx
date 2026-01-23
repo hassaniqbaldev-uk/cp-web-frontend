@@ -62,7 +62,7 @@ const Services = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             className="flex flex-col items-center text-center"
           >
             <motion.div variants={itemVariants}>
@@ -88,7 +88,7 @@ const Services = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             className="mt-[5rem] hidden grid-cols-3 gap-[3.3rem] xl:grid"
           >
             {SERVICES_CARD.map((item, idx) => (
@@ -167,7 +167,7 @@ const Services = () => {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{
               duration: 0.6,
               ease: "easeOut",

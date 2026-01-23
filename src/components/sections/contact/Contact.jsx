@@ -1,3 +1,4 @@
+"use client";
 import SectionDescription from "@/components/ui/SectionDescription";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -9,26 +10,61 @@ import ContactJoinBox from "@/assets/svgs/contact-join-box.svg";
 import ContactAssistantImg from "@/assets/images/cards/contact-assistant-img.png";
 import Image from "next/image";
 import ContactForm from "@/components/ui/ContactForm";
+import { motion } from "framer-motion";
 
 const Contact = () => {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <div className="container">
         <div className="flex flex-col items-center gap-[4rem] xl:flex-row xl:items-start">
-          <div className="flex w-[30rem] flex-col items-center text-center md:w-[56.3rem] xl:items-start xl:text-left">
-            <div>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="flex w-[30rem] flex-col items-center text-center md:w-[56.3rem] xl:items-start xl:text-left"
+          >
+            <motion.div variants={itemVariants}>
               <SectionLabel text="Book a call" textColor="#FF37B3" />
-            </div>
+            </motion.div>
 
-            <div className="mt-[1rem] mb-[2rem]">
+            <motion.div variants={itemVariants} className="mt-[1rem] mb-[2rem]">
               <SectionTitle text="Unlock your brand's hidden potential." />
-            </div>
+            </motion.div>
 
-            <div>
+            <motion.div variants={itemVariants}>
               <SectionDescription text="Stop guessing. Let's build a data-driven roadmap to scale your digital presence with a custom strategy." />
-            </div>
+            </motion.div>
 
-            <div className="mt-[3.2rem] mb-[2.2rem] flex w-full flex-col items-start gap-[1.2rem] rounded-[2rem] border border-[#3078FF] bg-white px-[3rem] py-[3.5rem] text-left md:mt-[4rem] md:mb-[2rem] md:gap-[2.5rem]">
+            <motion.div
+              variants={itemVariants}
+              className="mt-[3.2rem] mb-[2.2rem] flex w-full flex-col items-start gap-[1.2rem] rounded-[2rem] border border-[#3078FF] bg-white px-[3rem] py-[3.5rem] text-left md:mt-[4rem] md:mb-[2rem] md:gap-[2.5rem]"
+            >
               <div className="flex items-start gap-[1.2rem] md:items-center">
                 <i>
                   <Image src={ClockIcon} alt="Icon" width={24} height={24} />
@@ -62,17 +98,20 @@ const Contact = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
-            <div className="flex overflow-hidden">
+            <motion.div
+              variants={itemVariants}
+              className="flex overflow-hidden"
+            >
               <Image
                 src={ContactJoinBox}
                 width={282}
                 height={44}
                 alt="Image Box"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           <div
             style={{
@@ -137,7 +176,14 @@ const Contact = () => {
           </div>
 
           {/* New Form */}
-          <ContactForm />
+          <motion.div
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <ContactForm />
+          </motion.div>
         </div>
       </div>
     </>

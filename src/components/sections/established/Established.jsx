@@ -42,7 +42,7 @@ const Established = () => {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3 }}
               className="flex w-[30rem] flex-col items-center text-center md:w-[58.5rem] xl:items-start xl:text-left"
             >
               <motion.div variants={itemVariants}>
@@ -82,7 +82,7 @@ const Established = () => {
               variants={itemVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3 }}
               className="relative h-[27.3rem] w-[27.5rem] md:h-[53.6rem] md:w-[53.8rem]"
             >
               <div className="absolute top-0 left-0 inline-flex size-[13.6rem] flex-col items-center justify-center gap-[.7rem] rounded-full bg-[#0073F8] text-center md:size-[26.8rem] md:gap-[1.4rem]">

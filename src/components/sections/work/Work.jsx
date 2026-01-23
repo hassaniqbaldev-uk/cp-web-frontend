@@ -47,7 +47,7 @@ const Work = ({ caseStudies }) => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             className="flex flex-col items-center justify-between gap-[3rem] xl:flex-row xl:items-end"
           >
             <div className="flex w-[30rem] flex-col items-center text-center md:w-[58.5rem] xl:items-start xl:text-left">
@@ -81,7 +81,7 @@ const Work = ({ caseStudies }) => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             className="mt-[7.4rem] hidden w-full gap-[3rem] xl:flex"
           >
             <div className="w-[79.1rem]">
@@ -248,7 +248,7 @@ const Work = ({ caseStudies }) => {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{
               duration: 0.6,
               ease: "easeOut",

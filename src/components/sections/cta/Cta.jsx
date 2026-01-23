@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import CtaBg from "@/assets/images/backgrounds/cta-bg.webp";
 import WaveHandIcon from "@/assets/icons/ui/wave-hand-icon.svg";
@@ -7,11 +8,21 @@ import GradientButton from "@/components/ui/GradientButton";
 import CtaBgStroke from "@/components/decorative-elements/CtaBgStroke";
 import HassanAvatar from "@/assets/icons/ui/hassan-avatar.png";
 import PrimaryButton from "@/components/ui/PrimaryButton";
+import { motion } from "framer-motion";
 
 const Cta = () => {
   return (
     <>
-      <div className="relative container px-[3rem] pt-[2.3rem] pb-[3rem] md:px-[10rem] md:pt-[5.6rem] md:pb-[4rem]">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{
+          duration: 0.6,
+          ease: "easeOut",
+        }}
+        className="relative container px-[3rem] pt-[2.3rem] pb-[3rem] md:px-[10rem] md:pt-[5.6rem] md:pb-[4rem]"
+      >
         {/*Background Image*/}
         <Image
           src={CtaBg}
@@ -100,7 +111,7 @@ const Cta = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
