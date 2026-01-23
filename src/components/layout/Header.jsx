@@ -10,6 +10,7 @@ import { useMenuStore } from "@/store/mobileMenuStore";
 import ServicesDropdown from "../ui/ServicesDropdown";
 import SolutionsDropdown from "../ui/SolutionsDropdown";
 import AboutDropdown from "../ui/AboutDropdown";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -92,7 +93,11 @@ const Header = () => {
 
   return (
     <>
-      <header
+      <motion.header
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        viewport={{ once: true }}
         className={`fixed top-0 left-0 z-[500] w-full px-[2rem] pt-[1.3rem] transition-transform duration-300 ease-out md:pt-[2.5rem] xl:px-[0rem] ${isHidden ? "-translate-y-full" : "translate-y-0"} `}
       >
         <div className="container">
@@ -188,7 +193,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </header>
+      </motion.header>
     </>
   );
 };
