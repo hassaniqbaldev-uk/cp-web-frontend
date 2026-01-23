@@ -9,8 +9,34 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { motion } from "framer-motion";
 
 const Process = () => {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <section className="relative px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
@@ -25,34 +51,58 @@ const Process = () => {
         />
 
         <div className="relative z-[10] container">
-          <div className="flex flex-col items-center justify-between gap-[1.5rem] md:gap-[4rem] xl:flex-row xl:items-start">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="flex flex-col items-center justify-between gap-[1.5rem] md:gap-[4rem] xl:flex-row xl:items-start"
+          >
             <div className="flex w-[30rem] flex-col items-center gap-[1rem] text-center md:w-[58.5rem] xl:items-start xl:text-left">
-              <SectionLabel text="The Process" textColor="#FF37B3" />
+              <motion.div variants={itemVariants}>
+                <SectionLabel text="The Process" textColor="#FF37B3" />
+              </motion.div>
 
-              <h4 className="text-[3rem] leading-[3.5rem] font-bold tracking-[-0.02em] text-white md:text-[4.8rem] md:leading-[6rem]">
+              <motion.h4
+                variants={itemVariants}
+                className="text-[3rem] leading-[3.5rem] font-bold tracking-[-0.02em] text-white md:text-[4.8rem] md:leading-[6rem]"
+              >
                 Your roadmap from
                 <span className="bg-gradient-orange-pink block bg-clip-text text-transparent">
                   idea to impact.
                 </span>
-              </h4>
+              </motion.h4>
             </div>
 
             <div className="flex w-[30rem] flex-col items-center gap-[3.2rem] text-center md:w-[58.5rem] xl:items-start xl:text-left">
-              <SectionDescription
-                text="We've refined our delivery process over 10 years to minimize risk and maximize speed to market."
-                textColor="#ffffff"
-              />
+              <motion.div variants={itemVariants}>
+                <SectionDescription
+                  text="We've refined our delivery process over 10 years to minimize risk and maximize speed to market."
+                  textColor="#ffffff"
+                />
+              </motion.div>
 
-              <PrimaryButton
-                text="Start Your Project"
-                textColor="#312749"
-                bGcolor="#ffffff"
-                href="/contact"
-              />
+              <motion.div variants={itemVariants}>
+                <PrimaryButton
+                  text="Start Your Project"
+                  textColor="#312749"
+                  bGcolor="#ffffff"
+                  href="/contact"
+                />
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="mt-[6.5rem] hidden grid-cols-4 xl:grid">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+            className="mt-[6.5rem] hidden grid-cols-4 xl:grid"
+          >
             {PROCESS_CARD.map((item) => (
               <div
                 key={item.step}
@@ -104,10 +154,19 @@ const Process = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Responsive */}
-          <div className="block w-full xl:hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+            className="block w-full xl:hidden"
+          >
             <Swiper
               pagination={{ clickable: true }}
               modules={[Pagination, Autoplay]}
@@ -183,7 +242,7 @@ const Process = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>

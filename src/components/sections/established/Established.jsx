@@ -1,43 +1,90 @@
+"use client";
 import SectionTitle from "@/components/ui/SectionTitle";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SendIcon from "@/assets/icons/ui/send-icon.svg";
 import BusinessIcon from "@/assets/icons/ui/business-icon.svg";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Established = () => {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <div className="container">
           <div className="flex flex-col items-center gap-[4.6rem] md:gap-[8rem] xl:flex-row">
-            <div className="flex w-[30rem] flex-col items-center text-center md:w-[58.5rem] xl:items-start xl:text-left">
-              <div>
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="flex w-[30rem] flex-col items-center text-center md:w-[58.5rem] xl:items-start xl:text-left"
+            >
+              <motion.div variants={itemVariants}>
                 <SectionLabel text="Established in 2018" textColor="#3078FF" />
-              </div>
+              </motion.div>
 
-              <div className="mt-[1rem] mb-[2rem]">
+              <motion.div
+                variants={itemVariants}
+                className="mt-[1rem] mb-[2rem]"
+              >
                 <SectionTitle text="Not just another agency. Your long-term digital partner." />
-              </div>
+              </motion.div>
 
-              <p className="mb-[4rem] text-[1.8rem] leading-[2.8rem] font-normal text-[#625C70]">
+              <motion.p
+                variants={itemVariants}
+                className="mb-[4rem] text-[1.8rem] leading-[2.8rem] font-normal text-[#625C70]"
+              >
                 In an industry of &quot;churn and burn,&quot; we&apos;ve been
                 building lasting relationships for over a decade. We don&apos;t
                 just ship code; we solve business problems. <br /> <br />{" "}
                 Founded by Hassan Iqbal, CreativePixels is a human-led agency
                 that combines data-driven strategy with world-class design. No
                 jargon, no hidden fees—just real results.
-              </p>
+              </motion.p>
 
-              <PrimaryButton
-                color="#312749"
-                text="Read Our Story"
-                href="/about"
-                textColor="#ffffff"
-              />
-            </div>
+              <motion.div variants={itemVariants}>
+                <PrimaryButton
+                  color="#312749"
+                  text="Read Our Story"
+                  href="/about"
+                  textColor="#ffffff"
+                />
+              </motion.div>
+            </motion.div>
 
-            <div className="relative h-[27.3rem] w-[27.5rem] md:h-[53.6rem] md:w-[53.8rem]">
+            <motion.div
+              variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="relative h-[27.3rem] w-[27.5rem] md:h-[53.6rem] md:w-[53.8rem]"
+            >
               <div className="absolute top-0 left-0 inline-flex size-[13.6rem] flex-col items-center justify-center gap-[.7rem] rounded-full bg-[#0073F8] text-center md:size-[26.8rem] md:gap-[1.4rem]">
                 <span className="text-[3.4rem] leading-[3rem] font-semibold tracking-[-0.02em] text-white md:text-[6.8rem] md:leading-[6rem]">
                   £5M+
@@ -111,7 +158,7 @@ const Established = () => {
                   Human-Led Strategy
                 </span>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

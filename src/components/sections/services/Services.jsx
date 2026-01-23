@@ -13,9 +13,35 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { motion } from "framer-motion";
 
 const Services = () => {
   const [hovered, setHovered] = useState(null);
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
 
   return (
     <>
@@ -32,94 +58,122 @@ const Services = () => {
         </div>
 
         <div className="container">
-          <div className="flex flex-col items-center text-center">
-            <div>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="flex flex-col items-center text-center"
+          >
+            <motion.div variants={itemVariants}>
               <SectionLabel text="Our Services" textColor="#EE8D00" />
-            </div>
+            </motion.div>
 
-            <div className="mt-[5px] mb-[14px] max-w-[25rem] md:max-w-[85rem]">
+            <motion.div
+              variants={itemVariants}
+              className="mt-[5px] mb-[14px] max-w-[25rem] md:max-w-[85rem]"
+            >
               <SectionTitle text="Everything you need to grow online" />
-            </div>
+            </motion.div>
 
-            <div className="max-w-[25rem] md:max-w-[85rem]">
+            <motion.div
+              variants={itemVariants}
+              className="max-w-[25rem] md:max-w-[85rem]"
+            >
               <SectionDescription text="From strategy to launch to long-term growth—we're with you every step." />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="mt-[5rem] hidden grid-cols-3 gap-[3.3rem] xl:grid">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mt-[5rem] hidden grid-cols-3 gap-[3.3rem] xl:grid"
+          >
             {SERVICES_CARD.map((item, idx) => (
-              <div
-                onMouseEnter={() => setHovered(idx)}
-                onMouseLeave={() => setHovered(null)}
-                key={idx}
-                style={{
-                  borderColor: hovered === idx ? item.color : "transparent",
-                }}
-                className="flex w-full flex-col items-start justify-between rounded-[3rem] border bg-white px-[3rem] pt-[3.1rem] pb-[2.8rem] text-left backdrop-blur-[10px] transition-all duration-200"
-              >
-                <div className="relative size-[6.3rem]">
-                  <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
-                    <i>
-                      <Image
-                        src={item.icon}
-                        alt="Icon"
-                        width={item.iconWidth}
-                        height={item.iconHeight}
-                        unoptimized
-                      />
-                    </i>
+              <motion.div variants={itemVariants} key={idx}>
+                <div
+                  onMouseEnter={() => setHovered(idx)}
+                  onMouseLeave={() => setHovered(null)}
+                  style={{
+                    borderColor: hovered === idx ? item.color : "transparent",
+                  }}
+                  className="flex w-full flex-col items-start justify-between rounded-[3rem] border bg-white px-[3rem] pt-[3.1rem] pb-[2.8rem] text-left backdrop-blur-[10px] transition-all duration-200"
+                >
+                  <div className="relative size-[6.3rem]">
+                    <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
+                      <i>
+                        <Image
+                          src={item.icon}
+                          alt="Icon"
+                          width={item.iconWidth}
+                          height={item.iconHeight}
+                          unoptimized
+                        />
+                      </i>
+                    </div>
+                    <div
+                      style={{
+                        background: item.color,
+                      }}
+                      className="absolute right-0 bottom-0 z-[0] size-[5.8rem] rounded-[1.3rem]"
+                    />
                   </div>
-                  <div
-                    style={{
-                      background: item.color,
-                    }}
-                    className="absolute right-0 bottom-0 z-[0] size-[5.8rem] rounded-[1.3rem]"
-                  />
+
+                  <div>
+                    <h3 className="mt-[3rem] mb-[1rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-[#312749]">
+                      {item.title}
+                    </h3>
+
+                    <p className="text-[1.6rem] leading-[2.4rem] font-normal text-[#625C70]">
+                      {item.description}
+                    </p>
+
+                    <ul className="mt-[1.5rem] mb-[5.3rem] flex flex-col items-start">
+                      {item.listItem.map((list, idx) => (
+                        <li
+                          key={idx}
+                          className="inline-flex items-center gap-[1.3rem] text-[1.6rem] leading-[2.8rem] tracking-normal text-[#625C70]"
+                        >
+                          <i>
+                            <CheckMarkIcon color={item.color} />
+                          </i>
+
+                          <span>{list}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Link
+                      href={item.link}
+                      style={{
+                        color: item.color,
+                      }}
+                      className="inline-flex items-center gap-[.8rem] text-[1.6rem] leading-[1.4rem] font-semibold tracking-normal"
+                    >
+                      {item.linkText}{" "}
+                      <i>
+                        <RightArrowIcon color={item.color} />
+                      </i>
+                    </Link>
+                  </div>
                 </div>
-
-                <div>
-                  <h3 className="mt-[3rem] mb-[1rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-[#312749]">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-[1.6rem] leading-[2.4rem] font-normal text-[#625C70]">
-                    {item.description}
-                  </p>
-
-                  <ul className="mt-[1.5rem] mb-[5.3rem] flex flex-col items-start">
-                    {item.listItem.map((list, idx) => (
-                      <li
-                        key={idx}
-                        className="inline-flex items-center gap-[1.3rem] text-[1.6rem] leading-[2.8rem] tracking-normal text-[#625C70]"
-                      >
-                        <i>
-                          <CheckMarkIcon color={item.color} />
-                        </i>
-
-                        <span>{list}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Link
-                    href={item.link}
-                    style={{
-                      color: item.color,
-                    }}
-                    className="inline-flex items-center gap-[.8rem] text-[1.6rem] leading-[1.4rem] font-semibold tracking-normal"
-                  >
-                    {item.linkText}{" "}
-                    <i>
-                      <RightArrowIcon color={item.color} />
-                    </i>
-                  </Link>
-                </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Responsive */}
-          <div className="mt-[3rem] block w-full xl:hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+            className="mt-[3rem] block w-full xl:hidden"
+          >
             <Swiper
               pagination={{ clickable: true }}
               modules={[Pagination, Autoplay]}
@@ -214,7 +268,7 @@ const Services = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>

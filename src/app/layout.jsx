@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import { Onest } from "next/font/google";
+import Script from "next/script";
 
 const onest = Onest({
   subsets: ["latin"],
@@ -29,7 +30,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${onest.className} antialiased`}>{children}</body>
+      <body className={`${onest.className} antialiased`}>
+        {children}
+
+        <Script
+          src="https://cdn.feedbucket.app/assets/feedbucket.js"
+          strategy="afterInteractive"
+          data-feedbucket="3rHNb3lcgqe226C8ghh5"
+        />
+      </body>
     </html>
   );
 }
