@@ -1,52 +1,83 @@
+"use client";
 import SectionLabel from "@/components/ui/SectionLabel";
 import EstimateCardImg from "@/assets/images/cards/estimate-card-img.webp";
 import Image from "next/image";
 import SectionTitle from "@/components/ui/SectionTitle";
 import PrimaryButton from "@/components/ui/PrimaryButton";
-import AboutHeroLogoShape1 from "@/assets/svgs/about-hero-logo-shape-1.svg";
 import AboutHeroLogoShape2 from "@/assets/svgs/about-hero-logo-shape-2.svg";
+import { motion } from "framer-motion";
+import AboutHeroLogoShape1 from "@/components/decorative-elements/AboutHeroLogoShape1";
+import ContactHeroLogoShape1 from "@/components/decorative-elements/ContactHeroLogoShape1";
 
 const Estimate = () => {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <section className="relative overflow-hidden px-[2rem] pt-[5rem] pb-[5rem] xl:px-[0rem] xl:pt-[24.8rem] xl:pb-[10rem]">
         {/*Background Element*/}
-        <div className="pointer-events-none absolute top-[20rem] left-[5rem] z-[2] h-[18.5rem] w-[9.2rem] rotate-[35deg] select-none">
-          <Image
-            src={AboutHeroLogoShape1}
-            alt="Logo Shape"
-            width={92}
-            height={185}
-            unoptimized
-          />
+        <div className="pointer-events-none absolute inset-0 z-[2] select-none">
+          <AboutHeroLogoShape1 className="absolute top-[20rem] left-[5rem] h-[18.5rem] w-[9.2rem] rotate-[35deg] opacity-50" />
         </div>
 
-        <div className="pointer-events-none absolute inset-0 z-[2] overflow-hidden select-none">
-          <Image
-            src={AboutHeroLogoShape2}
-            alt="Logo Shape"
-            width={137}
-            height={128}
-            className="absolute right-[0] bottom-[5rem] rotate-[35deg] opacity-70"
-            unoptimized
-          />
+        <div className="pointer-events-none absolute inset-0 z-[2] select-none">
+          <ContactHeroLogoShape1 className="absolute right-[0] bottom-[5rem] rotate-[35deg] opacity-50" />
         </div>
 
         <div className="relative z-[10] container">
-          <div className="flex flex-col items-center gap-[5px] text-center">
-            <SectionLabel
-              text="Est. 2012 • Manchester, UK"
-              textColor="#3078FF"
-            />
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="flex flex-col items-center gap-[5px] text-center"
+          >
+            <motion.div variants={itemVariants}>
+              <SectionLabel
+                text="Est. 2012 • Manchester, UK"
+                textColor="#3078FF"
+              />
+            </motion.div>
 
-            <SectionTitle
-              text="Born in Manchester, working globally."
-              textColor="#312749"
-            />
-          </div>
+            <motion.div variants={itemVariants}>
+              <SectionTitle
+                text="Born in Manchester, working globally."
+                textColor="#312749"
+              />
+            </motion.div>
+          </motion.div>
 
           <div className="mt-[5rem] flex flex-col items-center justify-center gap-[4rem] text-center md:gap-[6.8rem] xl:flex-row xl:text-left">
-            <div className="w-full overflow-hidden rounded-[2rem] md:w-[44.8rem]">
+            <motion.div
+              variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="w-full overflow-hidden rounded-[2rem] md:w-[44.8rem]"
+            >
               <Image
                 src={EstimateCardImg}
                 width={448}
@@ -55,10 +86,19 @@ const Estimate = () => {
                 className="object-cover object-center"
                 unoptimized
               />
-            </div>
+            </motion.div>
 
-            <div className="w-full md:w-[68.4rem]">
-              <p className="mb-[3rem] text-[1.8rem] leading-[3rem] font-normal tracking-normal text-[#625C70] md:mb-[5rem] md:text-[2.2rem] md:leading-[3.6rem]">
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="w-full md:w-[68.4rem]"
+            >
+              <motion.p
+                variants={itemVariants}
+                className="mb-[3rem] text-[1.8rem] leading-[3rem] font-normal tracking-normal text-[#625C70] md:mb-[5rem] md:text-[2.2rem] md:leading-[3.6rem]"
+              >
                 <span className="font-bold text-[#FF37B3]">In 2012,</span> two
                 designers met in a coffee shop in the Northern Quarter. They
                 shared a frustration: websites were getting prettier, but they
@@ -67,15 +107,17 @@ const Estimate = () => {
                 hard-nosed business strategy. Twelve years later, CreativePixels
                 has helped over 200 businesses across the UK, US, and Europe
                 transform their digital presence.
-              </p>
+              </motion.p>
 
-              <PrimaryButton
-                href=""
-                text="Book a Call"
-                textColor="#FFFFFF"
-                bGcolor="#FF37B3"
-              />
-            </div>
+              <motion.div variants={itemVariants}>
+                <PrimaryButton
+                  href=""
+                  text="Book a Call"
+                  textColor="#FFFFFF"
+                  bGcolor="#FF37B3"
+                />
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>

@@ -1,25 +1,67 @@
+"use client";
 import Image from "next/image";
 import CheckMarkIcon from "@/components/icons/CheckMarkIcon";
 import { urlFor } from "@/sanity/image";
+import { motion } from "framer-motion";
 
 const TheChallenge = ({ caseStudy }) => {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <section className="px-[2rem] pb-[5rem] xl:px-[0rem] xl:pb-[10rem]">
         <div className="container">
-          <div className="flex flex-col gap-[2rem] md:gap-[5rem]">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="flex flex-col gap-[2rem] md:gap-[5rem]"
+          >
             <div className="flex w-full flex-col items-center justify-between gap-[2rem] text-center xl:flex-row xl:gap-[5rem] xl:text-left">
-              <h2 className="text-[2.3rem] leading-[3rem] font-bold tracking-[-0.03em] text-[#263238] md:text-[7rem] md:leading-[8rem]">
+              <motion.h2
+                variants={itemVariants}
+                className="text-[2.3rem] leading-[3rem] font-bold tracking-[-0.03em] text-[#263238] md:text-[4.8rem] md:leading-[6rem]"
+              >
                 {caseStudy.theChallenge.title}
-              </h2>
+              </motion.h2>
 
-              <p className="max-w-[65rem] text-[1.6rem] leading-[2.6rem] font-medium tracking-normal text-[#263238] md:text-[2.2rem] md:leading-[4rem]">
+              <motion.p
+                variants={itemVariants}
+                className="max-w-[65rem] text-[1.6rem] leading-[2.6rem] font-medium tracking-normal text-[#263238] md:text-[2.2rem] md:leading-[4rem]"
+              >
                 {caseStudy.theChallenge.description}
-              </p>
+              </motion.p>
             </div>
 
             <div className="flex w-full flex-col items-center gap-[4rem] xl:flex-row xl:items-stretch">
-              <div className="flex h-full w-full items-center justify-center md:w-[57.8rem]">
+              <motion.div
+                variants={itemVariants}
+                className="flex h-full w-full items-center justify-center md:w-[57.8rem]"
+              >
                 <Image
                   src={urlFor(caseStudy.theChallenge.cardImage1)
                     .width(578)
@@ -30,12 +72,13 @@ const TheChallenge = ({ caseStudy }) => {
                   height={820}
                   unoptimized
                 />
-              </div>
+              </motion.div>
 
               <div className="flex w-full flex-col justify-between gap-[5rem] md:w-[58.4rem]">
                 <ul className="flex flex-col gap-[2rem] md:gap-[3.8rem]">
                   {caseStudy.theChallenge.points.map((item, idx) => (
-                    <li
+                    <motion.li
+                      variants={itemVariants}
                       key={idx}
                       className="inline-flex gap-[1rem] md:gap-[2rem]"
                     >
@@ -50,11 +93,14 @@ const TheChallenge = ({ caseStudy }) => {
                       <span className="max-w-[50rem] text-[1.6rem] leading-[2rem] tracking-normal text-[#263238] md:text-[2.2rem] md:leading-[2.8rem]">
                         {item}
                       </span>
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
 
-                <div className="flex h-full w-full items-end justify-center">
+                <motion.div
+                  variants={itemVariants}
+                  className="flex h-full w-full items-end justify-center"
+                >
                   <Image
                     src={urlFor(caseStudy.theChallenge.cardImage2)
                       .width(584)
@@ -65,10 +111,10 @@ const TheChallenge = ({ caseStudy }) => {
                     height={375}
                     unoptimized
                   />
-                </div>
+                </motion.div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>

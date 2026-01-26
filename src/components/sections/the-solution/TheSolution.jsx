@@ -1,10 +1,37 @@
+"use client";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import SectionDescription from "@/components/ui/SectionDescription";
-import SectionTitle from "@/components/ui/SectionTitle";
+import AlertLogo from "@/assets/icons/ui/alert-icon.svg";
 import Image from "next/image";
 import { urlFor } from "@/sanity/image";
+import { motion } from "framer-motion";
 
 const TheSolution = ({ caseStudy }) => {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <section
@@ -15,7 +42,13 @@ const TheSolution = ({ caseStudy }) => {
       >
         <div className="container">
           <div className="flex flex-col-reverse items-center justify-center gap-[5rem] text-center xl:flex-row xl:items-start xl:gap-[10rem] xl:text-left">
-            <div className="flex w-full items-center justify-center md:w-[51.1rem]">
+            <motion.div
+              variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="flex w-full items-center justify-center md:w-[51.1rem]"
+            >
               <Image
                 src={urlFor(caseStudy.theSolution.cardImage)
                   .width(511)
@@ -26,35 +59,71 @@ const TheSolution = ({ caseStudy }) => {
                 height={495}
                 unoptimized
               />
-            </div>
+            </motion.div>
 
-            <div className="w-full md:w-[51.6rem]">
-              <div>
-                <SectionTitle
-                  text={caseStudy.theSolution.title}
-                  textColor="#FFFFFF"
-                />
-              </div>
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="w-full md:w-[51.6rem]"
+            >
+              <motion.div variants={itemVariants}>
+                <h2 className="text-[2.3rem] leading-[3rem] font-bold tracking-[-0.03em] text-white md:text-[4.8rem] md:leading-[6rem]">
+                  {caseStudy.theSolution.title}
+                </h2>
+              </motion.div>
 
-              <div className="mt-[1.9rem] mb-[5.5rem]">
+              <motion.div
+                variants={itemVariants}
+                className="mt-[1.9rem] mb-[5.5rem]"
+              >
                 <SectionDescription
                   text={caseStudy.theSolution.description}
                   textColor="#FFFFFF"
                 />
-              </div>
+              </motion.div>
 
-              <div>
+              <motion.div variants={itemVariants}>
                 <PrimaryButton
                   href=""
                   text="Book a Call"
                   textColor="#05020B"
                   bGcolor={caseStudy.primaryColor}
                 />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
+
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{
+          duration: 1,
+          ease: "easeOut",
+        }}
+        className="mx-auto mt-[3rem] flex max-w-[120rem] flex-col items-start justify-start gap-[3.5rem] rounded-[1.5rem] bg-[#f14a58]/15 px-[3rem] py-[2.5rem] md:mt-[5rem] md:flex-row md:items-center md:px-[4.5rem]"
+      >
+        <div className="relative size-[6.3rem] min-w-[6.3rem]">
+          <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
+            <Image src={AlertLogo} alt="Icon" width={32} height={32} />
+          </div>
+
+          <div
+            className="absolute right-0 bottom-0 z-[0] size-[5.8rem] rounded-[1.3rem]"
+            style={{ backgroundColor: "#F14A58" }}
+          />
+        </div>
+
+        <p className="text-[1.8rem] leading-[3rem] font-bold tracking-normal text-[#625C70] md:text-[2.2rem] md:leading-[3.7rem]">
+          All visuals used in these case studies are provided by our clients or
+          their partners. All such images remain the property of their
+          respective owners and may be subject to copyright.
+        </p>
+      </motion.div>
     </>
   );
 };

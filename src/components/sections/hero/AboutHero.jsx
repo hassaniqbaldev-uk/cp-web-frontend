@@ -1,17 +1,59 @@
+"use client";
 import Image from "next/image";
 import HeroBg from "@/assets/images/backgrounds/home-hero-bg.webp";
 import AboutHeroCardImg from "@/assets/images/cards/about-hero-card-img.webp";
-import HomeHeroLogoShape1 from "@/assets/svgs/home-hero-logo-shape-1.svg";
-import AboutHeroLogoShape1 from "@/assets/svgs/about-hero-logo-shape-1.svg";
-import AboutHeroLogoShape2 from "@/assets/svgs/about-hero-logo-shape-2.svg";
 import SparkStarIcon from "@/assets/icons/ui/spark-star-icon.svg";
 import RocketIcon2 from "@/assets/icons/ui/rocket-icon-2.svg";
 import RetentionIcon from "@/assets/icons/ui/retention-icon.svg";
 import NetworkingIcon from "@/assets/icons/ui/networking-icon.svg";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionDescription from "@/components/ui/SectionDescription";
+import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
+import ContactHeroLogoShape1 from "@/components/decorative-elements/ContactHeroLogoShape1";
+import AboutHeroLogoShape1 from "@/components/decorative-elements/AboutHeroLogoShape1";
+import { motion } from "framer-motion";
 
 const AboutHero = () => {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const lineVariants = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <section className="relative w-full px-[2rem] pt-[10rem] pb-[5rem] md:pt-[16.7rem] xl:px-[0rem] xl:pb-[22.8rem]">
@@ -26,58 +68,71 @@ const AboutHero = () => {
         />
 
         {/*Background Element*/}
-        <div className="pointer-events-none absolute top-[5.8px] left-[12px] z-[2] h-[18.4rem] w-[9.1rem] rotate-[25deg] select-none">
-          <Image
-            src={HomeHeroLogoShape1}
-            alt="Logo Shape"
-            width={91}
-            height={184}
-            unoptimized
-          />
+        <div className="pointer-events-none absolute inset-0 z-[2] select-none">
+          <HomeHeroLogoShape1 className="absolute top-[5.8px] left-[12px] z-[2] h-[8rem] w-[4rem] rotate-[25deg] md:h-[18.4rem] md:w-[9.1rem]" />
         </div>
 
-        <div className="pointer-events-none absolute top-[15rem] left-[90rem] z-[2] h-[22.5rem] w-[11.2rem] rotate-[35deg] select-none">
-          <Image
-            src={AboutHeroLogoShape1}
-            alt="Logo Shape"
-            width={112}
-            height={225}
-            unoptimized
-          />
+        <div className="pointer-events-none absolute inset-0 z-[2] select-none">
+          <AboutHeroLogoShape1 className="pointer-events-none absolute top-[15rem] left-[25rem] h-[8rem] w-[4rem] rotate-[35deg] opacity-50 select-none md:left-[90rem] md:h-[22.5rem] md:w-[11.2rem]" />
         </div>
 
         <div className="pointer-events-none absolute inset-0 z-[2] overflow-hidden select-none">
-          <Image
-            src={AboutHeroLogoShape2}
-            alt="Logo Shape"
-            width={179}
-            height={166}
-            className="absolute right-[0] bottom-[25rem] rotate-[35deg]"
-            unoptimized
-          />
+          <ContactHeroLogoShape1 className="absolute right-[2rem] bottom-[2rem] h-[8rem] w-[4rem] rotate-[35deg] opacity-50 md:right-[-5rem] md:bottom-[25rem] md:h-[16.6rem] md:w-[17.9rem]" />
         </div>
 
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center justify-center gap-[15rem] xl:flex-row">
-            <div className="flex flex-col items-center justify-center text-center xl:items-start xl:text-left">
-              <SectionLabel text="Who We Are" textColor="#FF37B3" />
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              className="flex flex-col items-center justify-center text-center xl:items-start xl:text-left"
+            >
+              <motion.div variants={itemVariants}>
+                <SectionLabel text="Who We Are" textColor="#FF37B3" />
+              </motion.div>
 
               <h1 className="mt-[1rem] mb-[2rem] max-w-[43.6rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
-                A digital agency that{" "}
-                <span className="bg-gradient-yellow-pink bg-clip-text text-transparent">
-                  gives a damn.
+                <span className="block overflow-hidden">
+                  <motion.span
+                    variants={lineVariants}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{ delay: 0.6 }}
+                    className="block"
+                  >
+                    A digital agency that
+                  </motion.span>
+                </span>
+
+                <span className="block overflow-hidden">
+                  <motion.span
+                    variants={lineVariants}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{ delay: 1 }}
+                    className="bg-gradient-yellow-pink block bg-clip-text text-transparent"
+                  >
+                    gives a damn.
+                  </motion.span>
                 </span>
               </h1>
 
-              <div className="max-w-[54rem]">
+              <motion.div variants={itemVariants} className="max-w-[54rem]">
                 <SectionDescription
                   text="We founded CreativePixels because we were tired of agencies over-promising and under-delivering. We're here to change that with honest work and real results."
                   textColor="#ffffff"
                 />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <div className="relative hidden h-[48.7rem] w-[46.4rem] items-center justify-center xl:flex">
+            <motion.div
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.5 }}
+              className="relative hidden h-[48.7rem] w-[46.4rem] items-center justify-center xl:flex"
+            >
               <div className="absolute top-[6.6rem] left-[-3.2rem] h-[24.6rem] w-[23.2rem] rounded-[20rem] bg-[#FFE400] blur-[20rem]" />
 
               <Image
@@ -87,11 +142,19 @@ const AboutHero = () => {
                 alt="Card Image"
                 unoptimized
               />
-            </div>
+            </motion.div>
           </div>
 
-          <div className="mt-[5rem] flex flex-wrap justify-center gap-[2.4rem] xl:mt-[9rem] xl:mb-[-36rem]">
-            <div className="about-hero-card flex flex-col items-center justify-center text-center">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="mt-[5rem] flex flex-wrap justify-center gap-[2.4rem] xl:mt-[9rem] xl:mb-[-36rem]"
+          >
+            <motion.div
+              variants={itemVariants}
+              className="about-hero-card flex flex-col items-center justify-center text-center"
+            >
               <i>
                 <Image
                   src={SparkStarIcon}
@@ -109,9 +172,12 @@ const AboutHero = () => {
               <span className="text-[1.8rem] font-bold tracking-normal text-white">
                 Years Experience
               </span>
-            </div>
+            </motion.div>
 
-            <div className="about-hero-card flex flex-col items-center justify-center text-center">
+            <motion.div
+              variants={itemVariants}
+              className="about-hero-card flex flex-col items-center justify-center text-center"
+            >
               <i>
                 <Image
                   src={RocketIcon2}
@@ -129,9 +195,12 @@ const AboutHero = () => {
               <span className="text-[1.8rem] font-bold tracking-normal text-white">
                 Projects Launched
               </span>
-            </div>
+            </motion.div>
 
-            <div className="about-hero-card flex flex-col items-center justify-center text-center">
+            <motion.div
+              variants={itemVariants}
+              className="about-hero-card flex flex-col items-center justify-center text-center"
+            >
               <i>
                 <Image
                   src={RetentionIcon}
@@ -149,9 +218,12 @@ const AboutHero = () => {
               <span className="text-[1.8rem] font-bold tracking-normal text-white">
                 Client Retention
               </span>
-            </div>
+            </motion.div>
 
-            <div className="about-hero-card flex flex-col items-center justify-center text-center">
+            <motion.div
+              variants={itemVariants}
+              className="about-hero-card flex flex-col items-center justify-center text-center"
+            >
               <i>
                 <Image
                   src={NetworkingIcon}
@@ -169,8 +241,8 @@ const AboutHero = () => {
               <span className="text-[1.8rem] font-bold tracking-normal text-white">
                 Team Members
               </span>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </>

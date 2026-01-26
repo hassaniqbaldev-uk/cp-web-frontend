@@ -1,9 +1,6 @@
 "use client";
 import Image from "next/image";
 import HeroBg from "@/assets/images/backgrounds/home-hero-bg.webp";
-import ContactHeroLogoShape1 from "@/assets/svgs/contact-hero-logo-shape-1.svg";
-import HomeHeroLogoShape1 from "@/assets/svgs/home-hero-logo-shape-1.svg";
-import HomeHeroLogoShape2 from "@/assets/svgs/home-hero-logo-shape-2.svg";
 import SectionLabel from "@/components/ui/SectionLabel";
 import HeadphoneIcon from "@/assets/icons/ui/headphone-icon.svg";
 import EmailIcon from "@/assets/icons/ui/email-icon.svg";
@@ -14,8 +11,52 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { motion } from "framer-motion";
+import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
+import HomeHeroLogoShape2 from "@/components/decorative-elements/HomeHeroLogoShape2";
+import ContactHeroLogoShape1 from "@/components/decorative-elements/ContactHeroLogoShape1";
 
 const ContactHero = () => {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const lineVariants = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <section className="relative w-full overflow-hidden px-[2rem] pt-[10rem] pb-[5rem] md:pt-[15.7rem] xl:px-[0rem] xl:pb-[8.3rem]">
@@ -29,154 +70,186 @@ const ContactHero = () => {
         />
 
         {/*Background Element*/}
-        <div className="absolute top-[5.8px] left-[12px] z-[2] h-[18.4rem] w-[9.1rem] rotate-[25deg]">
-          <Image
-            src={HomeHeroLogoShape1}
-            alt="Logo Shape"
-            width={91}
-            height={184}
-          />
+        <div className="pointer-events-none absolute inset-0 z-[2] select-none">
+          <HomeHeroLogoShape1 className="absolute top-[70px] left-[-10px] h-[8rem] w-[4rem] rotate-[25deg] md:top-[5.8px] md:h-[18.4rem] md:w-[9.1rem]" />
         </div>
 
-        <div className="absolute top-[12rem] right-[2rem] z-[2] h-[18.4rem] w-[9.1rem] rotate-[33deg] md:right-[8rem]">
-          <Image
-            src={HomeHeroLogoShape2}
-            alt="Logo Shape"
-            width={91}
-            height={184}
-          />
+        <div className="pointer-events-none absolute inset-0 z-[2] select-none">
+          <HomeHeroLogoShape2 className="absolute top-[12rem] right-[2rem] h-[8rem] w-[4rem] rotate-[33deg] opacity-50 md:right-[8rem] md:h-[18.4rem] md:w-[9.1rem]" />
         </div>
 
-        <div className="absolute bottom-[8rem] left-[-6rem] z-[2] h-[13.2rem] w-[14.2rem] rotate-[33deg]">
-          <Image
-            src={ContactHeroLogoShape1}
-            alt="Logo Shape"
-            width={142}
-            height={132}
-          />
+        <div className="pointer-events-none absolute inset-0 z-[2] select-none">
+          <ContactHeroLogoShape1 className="absolute bottom-[8rem] left-[-6rem] h-[10rem] md:h-[13.2rem] w-[10rem] md:w-[14.2rem] rotate-[33deg] opacity-50" />
         </div>
 
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center gap-[4rem]">
-            <div className="flex flex-col items-center text-center">
-              <SectionLabel text="Contact" textColor="#FF37B3" />
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              className="flex flex-col items-center text-center"
+            >
+              <motion.div variants={itemVariants}>
+                <SectionLabel text="Contact" textColor="#FF37B3" />
+              </motion.div>
 
               <h1 className="mt-[1.4rem] mb-[2rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
-                Let&apos;s build something
-                <span className="bg-gradient-pink-white block bg-clip-text text-transparent">
-                  extraordinary.
+                <span className="block overflow-hidden">
+                  <motion.span
+                    variants={lineVariants}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{ delay: 0.6 }}
+                    className="block"
+                  >
+                    Let&apos;s build something
+                  </motion.span>
+                </span>
+
+                <span className="block overflow-hidden">
+                  <motion.span
+                    variants={lineVariants}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{ delay: 1 }}
+                    className="bg-gradient-pink-white block bg-clip-text text-transparent"
+                  >
+                    extraordinary.
+                  </motion.span>
                 </span>
               </h1>
 
-              <div className="max-w-[62.8rem]">
+              <motion.div variants={itemVariants} className="max-w-[62.8rem]">
                 <SectionDescription
                   text="Ready to start? Choose how you'd like to connect."
                   textColor="#FFFFFF"
                 />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <div className="hidden grid-cols-3 gap-[3.4rem] xl:grid">
-              <div className="contact-hero-card">
-                <div className="absolute inset-0 z-[10] flex flex-col items-center justify-center text-center">
-                  <i
-                    style={{
-                      boxShadow: "5px 5px 44px 0px #3078FFCC",
-                    }}
-                    className="inline-flex size-[6.5rem] min-w-max items-center justify-center rounded-[1.5rem] bg-[#3078FF]"
-                  >
-                    <Image
-                      src={TimelineIcon}
-                      width={34}
-                      height={34}
-                      alt="Icon"
-                    />
-                  </i>
-
-                  <h4 className="mt-[2rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white">
-                    Book Strategy Call
-                  </h4>
-
-                  <p className="mt-[1rem] mb-[2rem] text-[1.6rem] font-semibold tracking-normal text-white">
-                    Fastest way to get answers.{" "}
-                  </p>
-
-                  <div className="w-full px-[3rem]">
-                    <button className="flex h-[5.6rem] w-full items-center justify-center rounded-[6rem] border border-white/20 px-[3rem] py-[8px] text-[1.8rem] font-medium tracking-normal text-white transition-all duration-300 hover:border-[#3078FF] hover:bg-[#3078FF]">
-                      15-min chat with Hassan
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="contact-hero-card">
-                <div className="absolute inset-0 z-[10] flex flex-col items-center justify-center text-center">
-                  <i
-                    style={{
-                      boxShadow: "5px 5px 44px 0px #ED910CCC",
-                    }}
-                    className="inline-flex size-[6.5rem] min-w-max items-center justify-center rounded-[1.5rem] bg-[#ED910C]"
-                  >
-                    <Image src={EmailIcon} width={34} height={34} alt="Icon" />
-                  </i>
-
-                  <h4 className="mt-[2rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white">
-                    Have a Brief?
-                  </h4>
-
-                  <p className="mt-[1rem] mb-[2rem] text-[1.6rem] font-semibold tracking-normal text-white">
-                    Email your brief and we will get back to you.
-                  </p>
-
-                  <div className="w-full px-[3rem]">
-                    <Link
-                      href="mailto:hello@cp.agency"
-                      className="flex h-[5.6rem] w-full items-center justify-center rounded-[6rem] border border-white/20 px-[3rem] py-[8px] text-[1.8rem] font-medium tracking-normal text-white transition-all duration-300 hover:border-[#ED910C] hover:bg-[#ED910C]"
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              className="hidden grid-cols-3 gap-[3.4rem] xl:grid"
+            >
+              <motion.div variants={itemVariants}>
+                <div className="contact-hero-card">
+                  <div className="absolute inset-0 z-[10] flex flex-col items-center justify-center text-center">
+                    <i
+                      style={{
+                        boxShadow: "5px 5px 44px 0px #3078FFCC",
+                      }}
+                      className="inline-flex size-[6.5rem] min-w-max items-center justify-center rounded-[1.5rem] bg-[#3078FF]"
                     >
-                      hello@cp.agency
-                    </Link>
+                      <Image
+                        src={TimelineIcon}
+                        width={34}
+                        height={34}
+                        alt="Icon"
+                      />
+                    </i>
+
+                    <h4 className="mt-[2rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white">
+                      Book Strategy Call
+                    </h4>
+
+                    <p className="mt-[1rem] mb-[2rem] text-[1.6rem] font-semibold tracking-normal text-white">
+                      Fastest way to get answers.{" "}
+                    </p>
+
+                    <div className="w-full px-[3rem]">
+                      <button className="flex h-[5.6rem] w-full items-center justify-center rounded-[6rem] border border-white/20 px-[3rem] py-[8px] text-[1.8rem] font-medium tracking-normal text-white transition-all duration-300 hover:border-[#3078FF] hover:bg-[#3078FF]">
+                        15-min chat with Hassan
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="contact-hero-card">
-                <div className="absolute inset-0 z-[10] flex flex-col items-center justify-center text-center">
-                  <i
-                    style={{
-                      boxShadow: "5px 5px 44px 0px #FF37B3CC",
-                    }}
-                    className="inline-flex size-[6.5rem] min-w-max items-center justify-center rounded-[1.5rem] bg-[#FF37B3]"
-                  >
-                    <Image
-                      src={HeadphoneIcon}
-                      width={34}
-                      height={34}
-                      alt="Icon"
-                    />
-                  </i>
-
-                  <h4 className="mt-[2rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white">
-                    Direct Call
-                  </h4>
-
-                  <p className="mt-[1rem] mb-[2rem] text-[1.6rem] font-semibold tracking-normal text-white">
-                    Prefer to call?
-                  </p>
-
-                  <div className="w-full px-[3rem]">
-                    <Link
-                      href="tel:01618202667"
-                      className="flex h-[5.6rem] w-full items-center justify-center rounded-[6rem] border border-white/20 px-[3rem] py-[8px] text-[1.8rem] font-medium tracking-normal text-white transition-all duration-300 hover:border-[#FF37B3] hover:bg-[#FF37B3]"
+              <motion.div variants={itemVariants}>
+                <div className="contact-hero-card">
+                  <div className="absolute inset-0 z-[10] flex flex-col items-center justify-center text-center">
+                    <i
+                      style={{
+                        boxShadow: "5px 5px 44px 0px #ED910CCC",
+                      }}
+                      className="inline-flex size-[6.5rem] min-w-max items-center justify-center rounded-[1.5rem] bg-[#ED910C]"
                     >
-                      0161 820 2667
-                    </Link>
+                      <Image
+                        src={EmailIcon}
+                        width={34}
+                        height={34}
+                        alt="Icon"
+                      />
+                    </i>
+
+                    <h4 className="mt-[2rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white">
+                      Have a Brief?
+                    </h4>
+
+                    <p className="mt-[1rem] mb-[2rem] text-[1.6rem] font-semibold tracking-normal text-white">
+                      Email your brief and we will get back to you.
+                    </p>
+
+                    <div className="w-full px-[3rem]">
+                      <Link
+                        href="mailto:hello@cp.agency"
+                        className="flex h-[5.6rem] w-full items-center justify-center rounded-[6rem] border border-white/20 px-[3rem] py-[8px] text-[1.8rem] font-medium tracking-normal text-white transition-all duration-300 hover:border-[#ED910C] hover:bg-[#ED910C]"
+                      >
+                        hello@cp.agency
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+
+              <motion.div variants={itemVariants}>
+                <div className="contact-hero-card">
+                  <div className="absolute inset-0 z-[10] flex flex-col items-center justify-center text-center">
+                    <i
+                      style={{
+                        boxShadow: "5px 5px 44px 0px #FF37B3CC",
+                      }}
+                      className="inline-flex size-[6.5rem] min-w-max items-center justify-center rounded-[1.5rem] bg-[#FF37B3]"
+                    >
+                      <Image
+                        src={HeadphoneIcon}
+                        width={34}
+                        height={34}
+                        alt="Icon"
+                      />
+                    </i>
+
+                    <h4 className="mt-[2rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white">
+                      Direct Call
+                    </h4>
+
+                    <p className="mt-[1rem] mb-[2rem] text-[1.6rem] font-semibold tracking-normal text-white">
+                      Prefer to call?
+                    </p>
+
+                    <div className="w-full px-[3rem]">
+                      <Link
+                        href="tel:01618202667"
+                        className="flex h-[5.6rem] w-full items-center justify-center rounded-[6rem] border border-white/20 px-[3rem] py-[8px] text-[1.8rem] font-medium tracking-normal text-white transition-all duration-300 hover:border-[#FF37B3] hover:bg-[#FF37B3]"
+                      >
+                        0161 820 2667
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
 
             {/* Responsive */}
-            <div className="block w-full xl:hidden">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 1.2 }}
+              className="block w-full xl:hidden"
+            >
               <Swiper
                 pagination={{ clickable: true }}
                 modules={[Pagination, Autoplay]}
@@ -316,7 +389,7 @@ const ContactHero = () => {
                   </div>
                 </SwiperSlide>
               </Swiper>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

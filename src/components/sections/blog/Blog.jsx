@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { motion } from "framer-motion";
 
 export const CardData = [
   {
@@ -45,25 +46,66 @@ export const CardData = [
 ];
 
 const Blog = () => {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <section className="bg-[#F0F6FF] px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <div className="container">
-          <div className="hidden grid-cols-2 gap-[3.3rem] xl:grid">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="hidden grid-cols-2 gap-[3.3rem] xl:grid"
+          >
             {CardData.map((item, idx) => (
-              <BlogCard
-                key={idx}
-                category={item.category}
-                img={item.img}
-                title={item.title}
-                excerpt={item.excerpt}
-                link={item.link}
-              />
+              <motion.div key={idx} variants={itemVariants}>
+                <BlogCard
+                  category={item.category}
+                  img={item.img}
+                  title={item.title}
+                  excerpt={item.excerpt}
+                  link={item.link}
+                />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Responsive */}
-          <div className="block w-full xl:hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            className="block w-full xl:hidden"
+          >
             <Swiper
               pagination={{ clickable: true }}
               modules={[Pagination, Autoplay]}
@@ -101,7 +143,7 @@ const Blog = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>

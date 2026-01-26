@@ -13,6 +13,7 @@ import Link from "next/link";
 import Image from "next/image";
 import TiltArrowIcon from "@/components/icons/TiltArrowIcon";
 import { urlFor } from "@/sanity/image";
+import { motion } from "framer-motion";
 
 const FeaturedCaseStudies = ({
   caseStudies,
@@ -23,12 +24,43 @@ const FeaturedCaseStudies = ({
 }) => {
   const hasActiveFilters = Boolean(activeService || activeIndustry);
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <div className="container">
           <div className="flex items-start gap-[2rem] xl:gap-[3.3rem]">
-            <div className="sticky top-[12rem] left-0 hidden w-[28rem] flex-col gap-[2rem] lg:flex">
+            <motion.div
+              variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="sticky top-[12rem] left-0 hidden w-[28rem] flex-col gap-[2rem] lg:flex"
+            >
               {/* Sticky Filter Tab */}
               <div className="rounded-[2rem] border border-[#625c70]/50 bg-white py-[3.5rem] backdrop-blur-[10px]">
                 <Accordion type="single" defaultValue="item-1" collapsible>
@@ -179,65 +211,72 @@ const FeaturedCaseStudies = ({
                 textColor="#FFFFFF"
                 bGcolor="#FF37B3"
               />
-            </div>
+            </motion.div>
 
-            <div className="flex flex-1 flex-col gap-[3rem] xl:gap-[4.3rem]">
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="flex flex-1 flex-col gap-[3rem] xl:gap-[4.3rem]"
+            >
               <div className="flex flex-col items-start gap-[8px] text-left">
-                <div>
+                <motion.div variants={itemVariants}>
                   <SectionTitle text="Featured Case Studies" />
-                </div>
+                </motion.div>
 
-                <div>
+                <motion.div variants={itemVariants}>
                   <SectionDescription text="Deep dives into complex challenges, strategic solutions, and measurable impact." />
-                </div>
+                </motion.div>
               </div>
 
               <div className="grid grid-cols-1 gap-x-[3rem] gap-y-[3rem] md:grid-cols-2 md:gap-y-[6rem]">
                 {caseStudies.map((caseStudy) => (
-                  <Link
-                    style={{
-                      boxShadow: "7.69px 6.59px 40.64px 0px #0000000F",
-                    }}
-                    key={caseStudy._id}
-                    href={`/case-studies/${caseStudy.slug}`}
-                    className="flex w-full flex-col gap-[2.7rem] px-[1.5rem] pt-[1.5rem] pb-[3rem] rounded-[3rem] bg-white"
-                  >
-                    <div className="flex h-[25rem] w-full overflow-hidden rounded-[1.7rem] xl:h-[28.9rem]">
-                      <Image
-                        src={urlFor(caseStudy.thumbnailImage)
-                          ?.width(429)
-                          .height(289)
-                          .fit("crop")
-                          .url()}
-                        alt={caseStudy.title || "Case Study Thumbnail Image"}
-                        width={429}
-                        height={289}
-                        className="w-full object-cover object-center"
-                        unoptimized
-                      />
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <div className="flex flex-col items-start text-left">
-                        <h4 className="text-[2.5rem] leading-[3.6rem] font-bold tracking-[-0.02em] text-[#312749]">
-                          {caseStudy.title}
-                        </h4>
-
-                        <span className="text-[1.4rem] leading-[1.9rem] font-semibold text-[#625C70] xl:text-[1.6rem] xl:leading-[2.6rem]">
-                          {caseStudy.excerpt}
-                        </span>
+                  <motion.div variants={itemVariants} key={caseStudy._id}>
+                    <Link
+                      style={{
+                        boxShadow: "7.69px 6.59px 40.64px 0px #0000000F",
+                      }}
+                      href={`/case-studies/${caseStudy.slug}`}
+                      className="flex w-full flex-col gap-[2.7rem] rounded-[3rem] bg-white px-[1.5rem] pt-[1.5rem] pb-[3rem]"
+                    >
+                      <div className="flex h-[25rem] w-full overflow-hidden rounded-[1.7rem] xl:h-[28.9rem]">
+                        <Image
+                          src={urlFor(caseStudy.thumbnailImage)
+                            ?.width(429)
+                            .height(289)
+                            .fit("crop")
+                            .url()}
+                          alt={caseStudy.title || "Case Study Thumbnail Image"}
+                          width={429}
+                          height={289}
+                          className="w-full object-cover object-center"
+                          unoptimized
+                        />
                       </div>
 
-                      <i
-                        className="inline-flex size-[4.6rem] min-w-[4.6rem] items-center justify-center rounded-full xl:size-[6rem] xl:min-w-[6rem]"
-                        style={{
-                          background: caseStudy.iconBg,
-                        }}
-                      >
-                        <TiltArrowIcon color={caseStudy.iconColor} />
-                      </i>
-                    </div>
-                  </Link>
+                      <div className="flex items-center justify-between">
+                        <div className="flex flex-col items-start text-left">
+                          <h4 className="text-[2.5rem] leading-[3.6rem] font-bold tracking-[-0.02em] text-[#312749]">
+                            {caseStudy.title}
+                          </h4>
+
+                          <span className="text-[1.4rem] leading-[1.9rem] font-semibold text-[#625C70] xl:text-[1.6rem] xl:leading-[2.6rem]">
+                            {caseStudy.excerpt}
+                          </span>
+                        </div>
+
+                        <i
+                          className="inline-flex size-[4.6rem] min-w-[4.6rem] items-center justify-center rounded-full xl:size-[6rem] xl:min-w-[6rem]"
+                          style={{
+                            background: caseStudy.iconBg,
+                          }}
+                        >
+                          <TiltArrowIcon color={caseStudy.iconColor} />
+                        </i>
+                      </div>
+                    </Link>
+                  </motion.div>
                 ))}
 
                 {caseStudies.length === 0 && (
@@ -246,7 +285,7 @@ const FeaturedCaseStudies = ({
                   </p>
                 )}
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
