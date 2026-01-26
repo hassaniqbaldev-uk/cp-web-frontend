@@ -1,6 +1,8 @@
+"use client";
 import CheckMarkIcon3 from "@/components/icons/CheckMarkIcon3";
 import SectionDescription from "@/components/ui/SectionDescription";
 import SectionTitle from "@/components/ui/SectionTitle";
+import { motion } from "framer-motion";
 
 export const growthData = {
   heading: "Expand your services, take on more clients.",
@@ -55,25 +57,60 @@ export const growthData = {
 const Growth = () => {
   const { heading, description, features, stats, comparison } = growthData;
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <div className="container">
           <div className="flex flex-col items-center justify-center gap-[5.7rem] xl:flex-row">
-            <div className="flex w-full flex-col items-center gap-[3rem] text-center md:w-[61rem] xl:items-start xl:text-left">
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="flex w-full flex-col items-center gap-[3rem] text-center md:w-[61rem] xl:items-start xl:text-left"
+            >
               <div className="flex flex-col gap-[1rem]">
-                <div>
+                <motion.div variants={itemVariants}>
                   <SectionTitle text={heading} textColor="#312749" />
-                </div>
+                </motion.div>
 
-                <div>
+                <motion.div variants={itemVariants}>
                   <SectionDescription text={description} textColor="#625C70" />
-                </div>
+                </motion.div>
               </div>
 
               <div className="flex flex-col gap-[2rem] text-left">
                 {features.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-[1.7rem]">
+                  <motion.div
+                    variants={itemVariants}
+                    key={idx}
+                    className="flex items-start gap-[1.7rem]"
+                  >
                     <i className="inline-flex size-[24px] min-w-[24px] items-center justify-center rounded-[6px] bg-[#ee8d00]/10">
                       <CheckMarkIcon3 fillColor="#EE8D00" />
                     </i>
@@ -87,12 +124,16 @@ const Growth = () => {
                         {item.description}
                       </span>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
-            <div
+            <motion.div
+              variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
               style={{
                 boxShadow: "0px 12px 40px 0px #00000014",
               }}
@@ -131,7 +172,7 @@ const Growth = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

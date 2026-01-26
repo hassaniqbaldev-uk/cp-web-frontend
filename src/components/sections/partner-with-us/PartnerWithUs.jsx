@@ -1,3 +1,4 @@
+"use client";
 import SectionDescription from "@/components/ui/SectionDescription";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -8,8 +9,34 @@ import XIcon from "@/assets/icons/ui/x-icon.svg";
 import CpIcon from "@/assets/icons/ui/cp-icon.svg";
 import Image from "next/image";
 import CheckMarkIcon3 from "@/components/icons/CheckMarkIcon3";
+import { motion } from "framer-motion";
 
 const PartnerWithUs = () => {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <section className="relative overflow-hidden px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
@@ -24,25 +51,40 @@ const PartnerWithUs = () => {
         />
 
         <div className="relative z-[10] container">
-          <div className="flex flex-col items-center justify-center text-center">
-            <div>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="flex flex-col items-center justify-center text-center"
+          >
+            <motion.div variants={itemVariants}>
               <SectionLabel text="partner with us" textColor="#3078FF" />
-            </div>
+            </motion.div>
 
-            <div className="mt-[5px] mb-[14px]">
+            <motion.div variants={itemVariants} className="mt-[5px] mb-[14px]">
               <SectionTitle text="Why partner with us?" textColor="#312749" />
-            </div>
+            </motion.div>
 
-            <div>
+            <motion.div variants={itemVariants}>
               <SectionDescription
                 text="Compare the difference between hiring in-house vs partnering with CreativePixels."
                 textColor="#625C70"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="mt-[5rem] grid w-full grid-cols-1 gap-[3.3rem] lg:grid-cols-2">
-            <div className="flex w-full flex-col items-start rounded-[3rem] border border-[#FF37B3] bg-white p-[2rem] text-left md:p-[4rem]">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="mt-[5rem] grid w-full grid-cols-1 gap-[3.3rem] lg:grid-cols-2"
+          >
+            <motion.div
+              variants={itemVariants}
+              className="flex w-full flex-col items-start rounded-[3rem] border border-[#FF37B3] bg-white p-[2rem] text-left md:p-[4rem]"
+            >
               <div className="relative size-[6.3rem]">
                 <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
                   <i>
@@ -92,9 +134,12 @@ const PartnerWithUs = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
-            <div className="relative w-full overflow-hidden rounded-[3rem] p-[2rem] text-left md:p-[4rem]">
+            <motion.div
+              variants={itemVariants}
+              className="relative w-full overflow-hidden rounded-[3rem] p-[2rem] text-left md:p-[4rem]"
+            >
               {/*Background Image*/}
               <Image
                 src={PartnerWithUsCardImg}
@@ -147,8 +192,8 @@ const PartnerWithUs = () => {
                   ))}
                 </ul>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </>

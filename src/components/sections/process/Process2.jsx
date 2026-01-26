@@ -1,6 +1,4 @@
 "use client";
-import Image from "next/image";
-import CheckMarkIcon from "@/components/icons/CheckMarkIcon";
 import { PROCESS_2_CARD } from "@/contants";
 import Process2Timeline from "@/components/ui/Process2Timeline";
 import { useRef } from "react";

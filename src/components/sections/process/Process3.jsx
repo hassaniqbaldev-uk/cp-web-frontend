@@ -8,35 +8,74 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { motion } from "framer-motion";
 
 const Process3 = () => {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <div className="container">
-          <div className="flex flex-col items-center justify-center text-center">
-            <div>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="flex flex-col items-center justify-center text-center"
+          >
+            <motion.div variants={itemVariants}>
               <SectionLabel text="Our Process" textColor="#EE8D00" />
-            </div>
+            </motion.div>
 
-            <div className="mt-[5px] mb-[14px]">
+            <motion.div variants={itemVariants} className="mt-[5px] mb-[14px]">
               <SectionTitle
                 text="How we work with agencies"
                 textColor="#312749"
               />
-            </div>
+            </motion.div>
 
-            <div>
+            <motion.div variants={itemVariants}>
               <SectionDescription
                 text="We adapt to your workflow, not the other way around."
                 textColor="#625C70"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="mt-[7rem] hidden grid-cols-5 xl:grid">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="mt-[7rem] hidden grid-cols-5 xl:grid"
+          >
             {PROCESS_3_CARD.map((item, idx) => (
-              <div
+              <motion.div
+                variants={itemVariants}
                 key={item.step}
                 className="flex flex-col items-center gap-[3.8rem]"
               >
@@ -79,12 +118,18 @@ const Process3 = () => {
                     {item.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Responsive */}
-          <div className="mt-[5rem] block w-full xl:hidden">
+          <motion.div
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="mt-[5rem] block w-full xl:hidden"
+          >
             <Swiper
               pagination={{ clickable: true }}
               modules={[Pagination, Autoplay]}
@@ -156,7 +201,7 @@ const Process3 = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>
