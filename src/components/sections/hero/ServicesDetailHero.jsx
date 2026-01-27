@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
 import HomeHeroLogoShape2 from "@/components/decorative-elements/HomeHeroLogoShape2";
 import ContactHeroLogoShape1 from "@/components/decorative-elements/ContactHeroLogoShape1";
+import { useEffect } from "react";
 
 const ServicesDetailHero = ({ service }) => {
   const containerVariants = {
@@ -51,6 +52,21 @@ const ServicesDetailHero = ({ service }) => {
     },
   };
 
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "15min" });
+      cal("ui", {
+        theme: "dark",
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#292929" },
+          dark: { "cal-brand": "#FF37B3" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+
   return (
     <>
       <section className="relative w-full overflow-hidden px-[2rem] pt-[15rem] pb-[5rem] md:pt-[20rem] md:pb-[10rem] xl:px-[0rem]">
@@ -71,7 +87,7 @@ const ServicesDetailHero = ({ service }) => {
         </div>
 
         <div className="pointer-events-none absolute inset-0 z-[2] select-none">
-          <HomeHeroLogoShape2 className="absolute bottom-[10rem] left-[4rem] md:left-[10rem] h-[8rem] w-[4rem] rotate-[35deg] opacity-50 md:h-[17rem] md:w-[8.5rem]" />
+          <HomeHeroLogoShape2 className="absolute bottom-[10rem] left-[4rem] h-[8rem] w-[4rem] rotate-[35deg] opacity-50 md:left-[10rem] md:h-[17rem] md:w-[8.5rem]" />
         </div>
 
         <div className="pointer-events-none absolute inset-0 z-[2] select-none">
@@ -125,12 +141,14 @@ const ServicesDetailHero = ({ service }) => {
                   href={service.caseStudiesLink}
                 />
 
-                <Link
-                  href=""
+                <button
+                  data-cal-namespace="15min"
+                  data-cal-link="hassan-iqbal-mznzu9/15min"
+                  data-cal-config='{"layout":"month_view","theme":"dark"}'
                   className="inline-flex h-[4rem] items-center justify-center rounded-[60px] border-2 border-[#312749]/40 px-[30px] py-[8px] text-center text-[1.4rem] font-semibold tracking-normal text-[#312749] md:h-[5rem] md:text-[1.8rem]"
                 >
                   Book a Call
-                </Link>
+                </button>
               </motion.div>
             </motion.div>
 

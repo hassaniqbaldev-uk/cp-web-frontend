@@ -1,11 +1,27 @@
 "use client";
 import SectionTitle from "@/components/ui/SectionTitle";
 import SectionDescription from "@/components/ui/SectionDescription";
-import PrimaryButton from "@/components/ui/PrimaryButton";
 import Cta2BgStroke from "@/components/decorative-elements/Cta2BgStroke";
 import { motion } from "framer-motion";
+import SecondaryButton from "@/components/ui/SecondaryButton";
+import { useEffect } from "react";
 
 const Cta2 = () => {
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "15min" });
+      cal("ui", {
+        theme: "dark",
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#292929" },
+          dark: { "cal-brand": "#FF37B3" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+
   return (
     <>
       <motion.div
@@ -40,11 +56,13 @@ const Cta2 = () => {
           </div>
 
           <div className="relative flex w-full justify-center xl:w-[36rem] xl:justify-end">
-            <PrimaryButton
-              href=""
+            <SecondaryButton
               text="Get Free Consultation"
               bGcolor="#312749"
               textColor="#FFFFFF"
+              data-cal-namespace="15min"
+              data-cal-link="hassan-iqbal-mznzu9/15min"
+              data-cal-config='{"layout":"month_view","theme":"dark"}'
             />
           </div>
         </div>

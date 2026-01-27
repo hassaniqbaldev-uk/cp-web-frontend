@@ -99,14 +99,22 @@ const Estimate = () => {
                 variants={itemVariants}
                 className="mb-[3rem] text-[1.8rem] leading-[3rem] font-normal tracking-normal text-[#625C70] md:mb-[5rem] md:text-[2.2rem] md:leading-[3.6rem]"
               >
-                <span className="font-bold text-[#FF37B3]">In 2012,</span> two
-                designers met in a coffee shop in the Northern Quarter. They
-                shared a frustration: websites were getting prettier, but they
-                weren&apos;t getting smarter. <br /> <br /> They decided to
-                build an agency that married world-class aesthetics with
-                hard-nosed business strategy. Twelve years later, CreativePixels
-                has helped over 200 businesses across the UK, US, and Europe
-                transform their digital presence.
+                <span className="font-bold text-[#FF37B3]">CreativePixels</span>{" "}
+                is a UK digital agency focused on web design, WordPress
+                development, and performance-driven websites. We help businesses
+                turn their online presence into a practical growth tool by
+                combining clear strategy, thoughtful design, and solid technical
+                delivery. From brochure sites to complex builds, our work is
+                built to be fast, search-friendly, and easy for teams to manage.{" "}
+                <br /> <br />
+                Over the years, we’ve partnered with startups, growing
+                companies, and established organisations that need more than
+                just a good-looking website. They want reliability, long-term
+                support, and measurable improvement. Alongside design and
+                development, we strengthen SEO foundations, improve user
+                experience, and provide ongoing website support to help
+                businesses generate leads, increase conversions, and grow with
+                confidence.
               </motion.p>
 
               <motion.div variants={itemVariants}>
