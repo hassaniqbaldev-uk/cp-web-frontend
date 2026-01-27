@@ -48,7 +48,7 @@ const Work = ({ caseStudies }) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="flex flex-col items-center justify-between gap-[3rem] xl:flex-row xl:items-end"
+            className="flex flex-col items-center justify-between gap-[3rem] xl:flex-row "
           >
             <div className="flex w-[30rem] flex-col items-center text-center md:w-[58.5rem] xl:items-start xl:text-left">
               <motion.div variants={itemVariants}>

@@ -1,3 +1,4 @@
+"use client";
 import FooterBg from "@/assets/images/backgrounds/footer-bg.webp";
 import PhoneIcon from "@/assets/icons/ui/phone-icon.svg";
 import EmailIcon from "@/assets/icons/ui/email-icon.svg";
@@ -28,8 +29,26 @@ import {
 import FooterBgStroke from "../decorative-elements/FooterBgStroke";
 import ChevronDownIcon from "../icons/ChevronDownIcon";
 import Marquee from "react-fast-marquee";
+import { useEffect } from "react";
+import { getCalApi } from "@calcom/embed-react";
+import SecondaryButton from "../ui/SecondaryButton";
 
 const Footer = () => {
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "15min" });
+      cal("ui", {
+        theme: "dark",
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#292929" },
+          dark: { "cal-brand": "#FF37B3" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+
   return (
     <>
       <footer
@@ -50,7 +69,7 @@ const Footer = () => {
         </div>
 
         <div className="relative z-[10] container">
-          <div className="flex flex-col items-center gap-[13.6rem] xl:gap-[21.9rem]">
+          <div className="flex flex-col items-center gap-[13.6rem] xl:gap-[15rem]">
             <div className="flex flex-col items-center gap-[3rem] text-center md:gap-[4rem]">
               <h3 className="max-w-[89.6rem] text-[3rem] leading-[4rem] font-bold tracking-[-0.02em] text-white md:text-[3.4rem] md:leading-[4.8rem]">
                 Book a free{" "}
@@ -58,11 +77,13 @@ const Footer = () => {
                 sell, just a chance to see if working together makes sense.
               </h3>
 
-              <PrimaryButton
+              <SecondaryButton
                 text="Get Free Consultation"
                 textColor="#312749"
                 bGcolor="#FFFFFF"
-                href="/contact"
+                data-cal-namespace="15min"
+                data-cal-link="hassan-iqbal-mznzu9/15min"
+                data-cal-config='{"layout":"month_view","theme":"dark"}'
               />
             </div>
 
@@ -128,8 +149,10 @@ const Footer = () => {
                   </div>
                 </Link>
 
-                <Link
-                  href="/contact"
+                <button
+                  data-cal-namespace="15min"
+                  data-cal-link="hassan-iqbal-mznzu9/15min"
+                  data-cal-config='{"layout":"month_view","theme":"dark"}'
                   className="flex h-[9rem] w-full items-center justify-start gap-[1.5rem] rounded-[1.6rem] border border-white/20 bg-white/10 px-[2rem] backdrop-blur-[10px] md:h-[14rem] md:w-[33.4rem] md:justify-center md:gap-[2.4rem] md:px-[0rem]"
                 >
                   <i
@@ -156,7 +179,7 @@ const Footer = () => {
                       Book a Call
                     </h4>
                   </div>
-                </Link>
+                </button>
               </div>
 
               <div className="my-[5rem] hidden grid-cols-4 xl:grid">

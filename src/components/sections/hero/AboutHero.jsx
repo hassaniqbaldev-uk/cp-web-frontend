@@ -12,6 +12,7 @@ import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoSha
 import ContactHeroLogoShape1 from "@/components/decorative-elements/ContactHeroLogoShape1";
 import AboutHeroLogoShape1 from "@/components/decorative-elements/AboutHeroLogoShape1";
 import { motion } from "framer-motion";
+import StatsCounter from "@/components/ui/StatsCounter";
 
 const AboutHero = () => {
   const containerVariants = {
@@ -165,9 +166,7 @@ const AboutHero = () => {
                 />
               </i>
 
-              <h4 className="mt-[2.5rem] text-[7rem] leading-[8rem] font-bold tracking-[-0.03em] text-white">
-                12+
-              </h4>
+              <StatsCounter value={12} suffix="+" />
 
               <span className="text-[1.8rem] font-bold tracking-normal text-white">
                 Years Experience
@@ -188,9 +187,7 @@ const AboutHero = () => {
                 />
               </i>
 
-              <h4 className="mt-[2.5rem] text-[7rem] leading-[8rem] font-bold tracking-[-0.03em] text-white">
-                200+
-              </h4>
+              <StatsCounter value={200} suffix="+" />
 
               <span className="text-[1.8rem] font-bold tracking-normal text-white">
                 Projects Launched
@@ -211,9 +208,7 @@ const AboutHero = () => {
                 />
               </i>
 
-              <h4 className="mt-[2.5rem] text-[7rem] leading-[8rem] font-bold tracking-[-0.03em] text-white">
-                94%
-              </h4>
+              <StatsCounter value={94} suffix="%" />
 
               <span className="text-[1.8rem] font-bold tracking-normal text-white">
                 Client Retention
@@ -234,9 +229,7 @@ const AboutHero = () => {
                 />
               </i>
 
-              <h4 className="mt-[2.5rem] text-[7rem] leading-[8rem] font-bold tracking-[-0.03em] text-white">
-                15+
-              </h4>
+              <StatsCounter value={15} suffix="+" />
 
               <span className="text-[1.8rem] font-bold tracking-normal text-white">
                 Team Members

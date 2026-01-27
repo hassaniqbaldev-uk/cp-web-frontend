@@ -11,6 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { motion } from "framer-motion";
 
 export const steps = [
   {
@@ -72,36 +73,77 @@ const Methodology = ({ service }) => {
   const getThemeColor = (index) =>
     themeColorList[index % themeColorList.length];
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <div className="container">
-          <div className="flex flex-col items-center justify-center text-center">
-            <div>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="flex flex-col items-center justify-center text-center"
+          >
+            <motion.div variants={itemVariants}>
               <SectionLabel text="Our Methodology" textColor="#3078FF" />
-            </div>
+            </motion.div>
 
-            <div className="mt-[.5rem] mb-[1.4rem]">
+            <motion.div
+              variants={itemVariants}
+              className="mt-[.5rem] mb-[1.4rem]"
+            >
               <SectionTitle text="How we deliver results" textColor="#312749" />
-            </div>
+            </motion.div>
 
-            <div>
+            <motion.div variants={itemVariants}>
               <SectionDescription
                 text="A proven process that minimizes risk and maximizes ROI."
                 textColor="#625C70"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="mt-[5rem] hidden flex-col gap-[3.5rem] xl:flex">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="mt-[5rem] hidden flex-col gap-[3.5rem] xl:flex"
+          >
             {service.card.map((step, idx) => {
               const theme = getThemeColor(idx);
 
               return (
-                <div
+                <motion.div
                   key={idx}
                   className="flex items-center justify-between rounded-[2rem] border px-[5rem] py-[3.4rem]"
                   style={{ borderColor: theme.color }}
+                  variants={itemVariants}
                 >
                   <h3
                     style={{
@@ -137,13 +179,22 @@ const Methodology = ({ service }) => {
                       />
                     </div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
 
           {/* Responsive */}
-          <div className="mt-[5rem] block w-full xl:hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            className="mt-[5rem] block w-full xl:hidden"
+          >
             <Swiper
               pagination={{ clickable: true }}
               modules={[Pagination, Autoplay]}
@@ -217,7 +268,7 @@ const Methodology = ({ service }) => {
                 );
               })}
             </Swiper>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>

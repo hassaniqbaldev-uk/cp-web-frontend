@@ -16,6 +16,7 @@ import NavUiIcon from "@/assets/icons/ui/nav-ui-icon.svg";
 import PaperIcon from "@/assets/icons/ui/paper-icon.svg";
 import ShapeIcon from "@/assets/icons/ui/shape-icon.svg";
 import CheckMarkIcon from "@/components/icons/CheckMarkIcon";
+import { motion } from "framer-motion";
 
 export const expertiseData = [
   {
@@ -113,6 +114,31 @@ const Expertise3 = ({ service }) => {
   const getThemeColor = (index) =>
     themeColorList[index % themeColorList.length];
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <section className="relative overflow-hidden bg-[#F7FAFF] px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
@@ -128,90 +154,113 @@ const Expertise3 = ({ service }) => {
         </div>
 
         <div className="relative z-[10] container">
-          <div className="flex flex-col items-center justify-center gap-[5px] text-center">
-            <div>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="flex flex-col items-center justify-center gap-[5px] text-center"
+          >
+            <motion.div variants={itemVariants}>
               <SectionLabel text="Specialized Expertise" textColor="#EE8D00" />
-            </div>
+            </motion.div>
 
-            <div>
+            <motion.div variants={itemVariants}>
               <SectionTitle text="What we build" textColor="#312749" />
-            </div>
+            </motion.div>
 
-            <div className="max-w-[74rem]">
+            <motion.div variants={itemVariants} className="max-w-[74rem]">
               <SectionDescription
                 text="Deep expertise across the entire ecosystem. We don't just 'install themes' — we engineer solutions."
                 textColor="#625C70"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="mt-[5rem] hidden w-full grid-cols-3 gap-[3rem] xl:grid">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="mt-[5rem] hidden w-full grid-cols-3 gap-[3rem] xl:grid"
+          >
             {service.card.map((item, idx) => {
               const theme = getThemeColor(idx);
 
               return (
-                <div
-                  onMouseEnter={() => setHovered(idx)}
-                  onMouseLeave={() => setHovered(null)}
-                  key={idx}
-                  style={{
-                    borderColor: theme.color,
-                    boxShadow: hovered === idx ? theme.shadow : "",
-                  }}
-                  className="flex w-full flex-col rounded-[3rem] border bg-white px-[3rem] pt-[3.1rem] pb-[2.8rem] transition-all duration-300"
-                >
-                  {/* Icon */}
-                  <div className="relative size-[6.3rem]">
-                    <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
-                      <Image
-                        src={item.icon.asset.url}
-                        alt="Icon"
-                        width={35}
-                        height={35}
-                        unoptimized
+                <motion.div variants={itemVariants} key={idx}>
+                  <div
+                    onMouseEnter={() => setHovered(idx)}
+                    onMouseLeave={() => setHovered(null)}
+                    style={{
+                      borderColor: theme.color,
+                      boxShadow: hovered === idx ? theme.shadow : "",
+                    }}
+                    className="flex w-full h-full flex-col rounded-[3rem] border bg-white px-[3rem] pt-[3.1rem] pb-[2.8rem] transition-all duration-300"
+                  >
+                    {/* Icon */}
+                    <div className="relative size-[6.3rem]">
+                      <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
+                        <Image
+                          src={item.icon.asset.url}
+                          alt="Icon"
+                          width={35}
+                          height={35}
+                          unoptimized
+                        />
+                      </div>
+
+                      <div
+                        className="absolute right-0 bottom-0 z-[0] size-[5.8rem] rounded-[1.3rem]"
+                        style={{ backgroundColor: theme.color }}
                       />
                     </div>
 
-                    <div
-                      className="absolute right-0 bottom-0 z-[0] size-[5.8rem] rounded-[1.3rem]"
-                      style={{ backgroundColor: theme.color }}
-                    />
+                    <h3 className="mt-[3rem] mb-[1rem] text-[2.6rem] font-semibold text-[#312749]">
+                      {item.title}
+                    </h3>
+
+                    <p className="text-[1.6rem] text-[#625C70]">
+                      {item.description}
+                    </p>
+
+                    {Array.isArray(item.listItem) &&
+                      item.listItem.length > 0 && (
+                        <>
+                          <hr className="my-[2rem] w-full border-t border-[#E4E3E8]" />
+
+                          <ul className="flex flex-col items-start">
+                            {item.listItem.map((list, idx) => (
+                              <li
+                                key={idx}
+                                className="inline-flex items-center gap-[1.3rem] text-[1.6rem] leading-[2.8rem] tracking-normal text-[#625C70]"
+                              >
+                                <i>
+                                  <CheckMarkIcon color={theme.color} />
+                                </i>
+                                <span>{list.label}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </>
+                      )}
                   </div>
-
-                  <h3 className="mt-[3rem] mb-[1rem] text-[2.6rem] font-semibold text-[#312749]">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-[1.6rem] text-[#625C70]">
-                    {item.description}
-                  </p>
-
-                  {Array.isArray(item.listItem) && item.listItem.length > 0 && (
-                    <>
-                      <hr className="my-[2rem] w-full border-t border-[#E4E3E8]" />
-
-                      <ul className="flex flex-col items-start">
-                        {item.listItem.map((list, idx) => (
-                          <li
-                            key={idx}
-                            className="inline-flex items-center gap-[1.3rem] text-[1.6rem] leading-[2.8rem] tracking-normal text-[#625C70]"
-                          >
-                            <i>
-                              <CheckMarkIcon color={theme.color} />
-                            </i>
-                            <span>{list.label}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </>
-                  )}
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
 
           {/* Responsive */}
-          <div className="mt-[5rem] block w-full xl:hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            className="mt-[5rem] block w-full xl:hidden"
+          >
             <Swiper
               pagination={{ clickable: true }}
               modules={[Pagination, Autoplay]}
@@ -299,7 +348,7 @@ const Expertise3 = ({ service }) => {
                 );
               })}
             </Swiper>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>

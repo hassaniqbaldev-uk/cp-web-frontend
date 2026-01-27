@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { getCalApi } from "@calcom/embed-react";
 import Image from "next/image";
 import HassanAvatar from "@/assets/icons/ui/hassan-avatar.png";
+import { motion } from "framer-motion";
 
 const GradientButton = ({ text = "Book with Hassan" }) => {
   useEffect(() => {
@@ -28,7 +29,7 @@ const GradientButton = ({ text = "Book with Hassan" }) => {
         data-cal-config='{"layout":"month_view","theme":"dark"}'
         className="gradient-button inline-flex cursor-pointer items-center justify-center"
       >
-        <span className="text-span">{text}</span>
+        <div className="text-span">{text}</div>
 
         <svg
           width="16"

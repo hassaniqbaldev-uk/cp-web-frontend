@@ -1,12 +1,23 @@
+"use client";
 import SectionTitle from "@/components/ui/SectionTitle";
 import SectionDescription from "@/components/ui/SectionDescription";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import Cta2BgStroke from "@/components/decorative-elements/Cta2BgStroke";
+import { motion } from "framer-motion";
 
 const Cta2 = () => {
   return (
     <>
-      <div className="relative container rounded-[3rem] border border-[#d7d7d7] bg-[#EC9122] px-[2rem] py-[5.5rem] md:px-[6rem]">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{
+          duration: 1,
+          ease: "easeOut",
+        }}
+        className="relative container rounded-[3rem] border border-[#d7d7d7] bg-[#EC9122] px-[2rem] py-[5.5rem] md:px-[6rem]"
+      >
         <div className="pointer-events-none absolute top-[-3rem] right-[-2rem] z-[2] select-none xl:right-[6rem]">
           <Cta2BgStroke />
         </div>
@@ -37,7 +48,7 @@ const Cta2 = () => {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

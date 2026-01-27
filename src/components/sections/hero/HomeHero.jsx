@@ -15,6 +15,8 @@ import { CLIENT_LOGO } from "@/contants";
 import SectionDescription from "@/components/ui/SectionDescription";
 import { motion, useReducedMotion } from "framer-motion";
 import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
+import { useEffect } from "react";
+import { getCalApi } from "@calcom/embed-react";
 
 const HomeHero = () => {
   const containerVariants = {
@@ -57,6 +59,21 @@ const HomeHero = () => {
     },
   };
 
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "15min" });
+      cal("ui", {
+        theme: "dark",
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#292929" },
+          dark: { "cal-brand": "#FF37B3" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+
   const shouldReduceMotion = useReducedMotion();
   return (
     <>
@@ -88,7 +105,12 @@ const HomeHero = () => {
                 variants={itemVariants}
                 className="flex flex-col-reverse items-center gap-[1.2rem] xl:flex-row"
               >
-                <div className="inline-flex h-[3.2rem] items-center justify-center gap-[5px] rounded-[20rem] border border-white/20 bg-[#DBD5DD1A] px-[1rem] py-[1rem] md:h-[4rem] md:gap-[1rem] md:px-[2rem] md:py-[.8rem]">
+                <button
+                  data-cal-namespace="15min"
+                  data-cal-link="hassan-iqbal-mznzu9/15min"
+                  data-cal-config='{"layout":"month_view","theme":"dark"}'
+                  className="inline-flex h-[3.2rem] items-center justify-center gap-[5px] rounded-[20rem] border border-white/20 bg-[#DBD5DD1A] px-[1rem] py-[1rem] md:h-[4rem] md:gap-[1rem] md:px-[2rem] md:py-[.8rem]"
+                >
                   <div className="relative size-[1.1rem] md:size-[1.8rem]">
                     <div className="absolute top-1/2 left-1/2 size-[1.1rem] -translate-1/2 animate-ping rounded-full bg-[#FF37B3]/20 md:size-[1.8rem]" />
                     <div className="absolute top-1/2 left-1/2 size-[6px] -translate-1/2 rounded-full bg-[#FF37B3] md:size-[10px]" />
@@ -97,9 +119,9 @@ const HomeHero = () => {
                   <span className="text-[1.1rem] leading-[2.4rem] font-medium text-white md:text-[1.6rem]">
                     Book your FREE 2026 strategy call today
                   </span>
-                </div>
+                </button>
 
-                <div className="inline-flex h-[3.2rem] items-center justify-center gap-[5px] rounded-[20rem] border border-white/20 bg-[#DBD5DD1A] px-[1.3rem] py-[1rem] md:h-[4rem] md:gap-[1rem] md:px-[2rem] md:py-[.8rem]">
+                {/* <div className="inline-flex h-[3.2rem] items-center justify-center gap-[5px] rounded-[20rem] border border-white/20 bg-[#DBD5DD1A] px-[1.3rem] py-[1rem] md:h-[4rem] md:gap-[1rem] md:px-[2rem] md:py-[.8rem]">
                   <i>
                     <Image
                       src={CRatingIcon}
@@ -114,7 +136,7 @@ const HomeHero = () => {
                   <span className="text-[1.1rem] leading-[2.4rem] font-medium text-white md:text-[1.6rem]">
                     5.0 Ratings
                   </span>
-                </div>
+                </div> */}
               </motion.div>
 
               <h1 className="mt-[1.5rem] mb-[1rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">

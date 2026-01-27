@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionDescription from "@/components/ui/SectionDescription";
+import { motion } from "framer-motion";
 
 export const themeColors = {
   primary: {
@@ -48,6 +49,31 @@ const PartnerWithUs2 = ({ service }) => {
   const getThemeColor = (index) =>
     themeColorList[index % themeColorList.length];
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <section className="relative px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
@@ -63,55 +89,69 @@ const PartnerWithUs2 = ({ service }) => {
 
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center justify-center gap-[5rem]">
-            <div className="flex flex-col items-center justify-center gap-[5px] text-center">
-              <div>
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="flex flex-col items-center justify-center gap-[5px] text-center"
+            >
+              <motion.div variants={itemVariants}>
                 <SectionLabel text="partner with us" textColor="#FF37B3" />
-              </div>
+              </motion.div>
 
-              <div>
+              <motion.div variants={itemVariants}>
                 <SectionTitle
                   text="Stop losing money to..."
                   textColor="#FFFFFF"
                 />
-              </div>
+              </motion.div>
 
-              <div>
+              <motion.div variants={itemVariants}>
                 <SectionDescription
                   text="We identify and fix the bottlenecks that are choking your growth."
                   textColor="#FFFFFF"
                 />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <div className="hidden w-full grid-cols-3 gap-[3rem] xl:grid">
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="hidden w-full grid-cols-3 gap-[3rem] xl:grid"
+            >
               {service.card.map((item, idx) => {
                 const theme = getThemeColor(idx);
 
                 return (
-                  <div key={idx} className="partner-with-us-2-card">
-                    <div className="absolute inset-0 z-[10] flex flex-col items-start justify-start p-[3rem] text-left">
-                      <div
-                        style={{
-                          boxShadow: theme.shadow,
-                          background: theme.color,
-                        }}
-                        className="inline-flex size-[4.8rem] min-w-max items-center justify-center rounded-[1rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white"
-                      >
-                        {idx + 1}
+                  <motion.div key={idx} variants={itemVariants}>
+                    <div className="partner-with-us-2-card">
+                      <div className="absolute inset-0 z-[10] flex flex-col items-start justify-start p-[3rem] text-left">
+                        <div
+                          style={{
+                            boxShadow: theme.shadow,
+                            background: theme.color,
+                          }}
+                          className="inline-flex size-[4.8rem] min-w-max items-center justify-center rounded-[1rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white"
+                        >
+                          {idx + 1}
+                        </div>
+
+                        <h4 className="mt-[2rem] text-[2.6rem] leading-[3rem] font-semibold tracking-[-0.02em] text-white">
+                          {item.title}
+                        </h4>
+
+                        <p className="mt-[1rem] mb-[3rem] text-[1.6rem] leading-[2.4rem] font-normal tracking-normal text-white">
+                          {item.description}
+                        </p>
                       </div>
-
-                      <h4 className="mt-[2rem] text-[2.6rem] leading-[3rem] font-semibold tracking-[-0.02em] text-white">
-                        {item.title}
-                      </h4>
-
-                      <p className="mt-[1rem] mb-[3rem] text-[1.6rem] leading-[2.4rem] font-normal tracking-normal text-white">
-                        {item.description}
-                      </p>
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })}
-            </div>
+            </motion.div>
 
             {/* Responsive */}
             <div className="block w-full xl:hidden">

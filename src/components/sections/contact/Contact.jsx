@@ -6,11 +6,14 @@ import ClockIcon from "@/assets/icons/ui/clock-icon.svg";
 import CheckmarkIcon2 from "@/assets/icons/ui/checkmark-icon-2.svg";
 import RefreshIcon from "@/assets/icons/ui/refresh-icon.svg";
 import SendIcon2 from "@/assets/icons/ui/send-icon-2.svg";
-import ContactJoinBox from "@/assets/svgs/contact-join-box.svg";
 import ContactAssistantImg from "@/assets/images/cards/contact-assistant-img.png";
 import Image from "next/image";
 import ContactForm from "@/components/ui/ContactForm";
 import { motion } from "framer-motion";
+import TestimonialAvatar1 from "@/assets/icons/ui/testimonial-avatar-1.svg";
+import TestimonialAvatar2 from "@/assets/icons/ui/testimonial-avatar-2.svg";
+import TestimonialAvatar3 from "@/assets/icons/ui/testimonial-avatar-3.svg";
+import TestimonialAvatar4 from "@/assets/icons/ui/testimonial-avatar-4.svg";
 
 const Contact = () => {
   const containerVariants = {
@@ -58,7 +61,7 @@ const Contact = () => {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <SectionDescription text="Stop guessing. Let's build a data-driven roadmap to scale your digital presence with a custom strategy." />
+              <SectionDescription text="Stop guessing. Let's build a roadmap to scale your digital presence with a custom strategy." />
             </motion.div>
 
             <motion.div
@@ -77,7 +80,7 @@ const Contact = () => {
 
               <ul className="grid grid-cols-1 gap-x-[5rem] gap-y-[.6rem] md:grid-cols-2 md:gap-y-[1.2rem]">
                 {[
-                  "Custom Roadmap",
+                  "Review current position",
                   "Competitor Intel",
                   "Competitor Intel",
                   "Growth Opportunities",
@@ -100,16 +103,82 @@ const Contact = () => {
               </ul>
             </motion.div>
 
-            <motion.div
-              variants={itemVariants}
-              className="flex overflow-hidden"
-            >
-              <Image
-                src={ContactJoinBox}
-                width={282}
-                height={44}
-                alt="Image Box"
-              />
+            <motion.div variants={itemVariants} className="flex items-center gap-[2rem]">
+              <div className="flex items-center">
+                <div
+                  style={{
+                    boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+                  }}
+                  className="relative z-[1] size-[4.4rem] overflow-hidden rounded-full border-2 border-white"
+                >
+                  <Image
+                    src={TestimonialAvatar1}
+                    width={44}
+                    height={44}
+                    alt="Image"
+                    className="size-full object-cover object-top"
+                    unoptimized
+                  />
+                </div>
+
+                <div
+                  style={{
+                    boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+                  }}
+                  className="relative z-[2] size-[4.4rem] mx-[-1rem] overflow-hidden rounded-full border-2 border-white"
+                >
+                  <Image
+                    src={TestimonialAvatar2}
+                    width={44}
+                    height={44}
+                    alt="Image"
+                    className="size-full object-cover object-top"
+                    unoptimized
+                  />
+                </div>
+
+                <div
+                  style={{
+                    boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+                  }}
+                  className="relative z-[3] size-[4.4rem] overflow-hidden rounded-full border-2 border-white"
+                >
+                  <Image
+                    src={TestimonialAvatar3}
+                    width={44}
+                    height={44}
+                    alt="Image"
+                    className="size-full object-cover object-top"
+                    unoptimized
+                  />
+                </div>
+
+                <div
+                  style={{
+                    boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+                  }}
+                  className="relative z-[4] size-[4.4rem] mx-[-1rem] overflow-hidden rounded-full border-2 border-white"
+                >
+                  <Image
+                    src={TestimonialAvatar4}
+                    width={44}
+                    height={44}
+                    alt="Image"
+                    className="size-full object-cover object-top"
+                    unoptimized
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h5 className="mb-[-.6rem] text-[1.4rem] font-semibold tracking-normal">
+                  Join 150+ companies
+                </h5>
+
+                <span className="text-[1.2rem] font-normal tracking-normal">
+                  scaling with Pixel
+                </span>
+              </div>
             </motion.div>
           </motion.div>
 

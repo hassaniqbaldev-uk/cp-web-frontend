@@ -122,8 +122,8 @@ const Process = () => {
                   </div>
                 </div>
 
-                <div className="process-card flex flex-col gap-[3.5rem]">
-                  <div className="flex justify-end px-[1.4rem] pt-[1.6rem]">
+                <div className="process-card flex flex-col justify-center gap-[3.5rem]">
+                  {/* <div className="flex justify-end px-[1.4rem] pt-[1.6rem]">
                     <div className="flex items-center gap-[4px]">
                       {[0, 1, 2].map((_, i) => (
                         <div
@@ -133,11 +133,11 @@ const Process = () => {
                         />
                       ))}
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className="flex flex-col items-start px-[2.8rem] text-left">
-                    <span className="text-[1.6rem] leading-[2.4rem] font-medium text-white uppercase">
-                      STEP {item.step}
+                    <span className="text-[1.6rem] leading-[2.4rem] font-medium text-white capitalize">
+                      Step {item.step}
                     </span>
 
                     <h5
@@ -198,7 +198,7 @@ const Process = () => {
                     key={item.step}
                     className="flex flex-col items-center gap-[3.8rem]"
                   >
-                    <div className="process-card flex flex-col gap-[3.5rem]">
+                    <div className="process-card flex flex-col justify-center gap-[3.5rem]">
                       <div
                         style={{
                           boxShadow: item.boxShadow,
@@ -209,7 +209,7 @@ const Process = () => {
                         0{item.step}
                       </div>
 
-                      <div className="flex justify-end px-[1.4rem] pt-[1.6rem]">
+                      {/* <div className="flex justify-end px-[1.4rem] pt-[1.6rem]">
                         <div className="flex items-center gap-[4px]">
                           {[0, 1, 2].map((_, i) => (
                             <div
@@ -219,7 +219,7 @@ const Process = () => {
                             />
                           ))}
                         </div>
-                      </div>
+                      </div> */}
 
                       <div className="flex flex-col items-start px-[2.8rem] text-left">
                         <span className="text-[1.6rem] leading-[2.4rem] font-medium text-white uppercase">

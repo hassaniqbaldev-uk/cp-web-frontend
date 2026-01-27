@@ -112,7 +112,7 @@ const ContactForm = () => {
                 type="email"
                 name="email"
                 className="h-full w-full bg-[transparent] p-[1.5rem] outline-0"
-                placeholder="What do you want to fix?"
+                placeholder="Enter you email"
                 value={formData.email}
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
