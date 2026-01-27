@@ -29,7 +29,9 @@ const GradientButton = ({ text = "Book with Hassan" }) => {
         data-cal-config='{"layout":"month_view","theme":"dark"}'
         className="gradient-button inline-flex cursor-pointer items-center justify-center"
       >
-        <div className="text-span">{text}</div>
+        <div className="text-span">
+          <span className="relative z-[10]">{text}</span>
+        </div>
 
         <svg
           width="16"

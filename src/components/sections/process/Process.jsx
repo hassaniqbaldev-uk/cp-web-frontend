@@ -136,9 +136,9 @@ const Process = () => {
                   </div> */}
 
                   <div className="flex flex-col items-start px-[2.8rem] text-left">
-                    <span className="text-[1.6rem] leading-[2.4rem] font-medium text-white capitalize">
+                    {/* <span className="text-[1.6rem] leading-[2.4rem] font-medium text-white capitalize">
                       Step {item.step}
-                    </span>
+                    </span> */}
 
                     <h5
                       style={{ color: item.color }}
@@ -222,9 +222,9 @@ const Process = () => {
                       </div> */}
 
                       <div className="flex flex-col items-start px-[2.8rem] text-left">
-                        <span className="text-[1.6rem] leading-[2.4rem] font-medium text-white uppercase">
+                        {/* <span className="text-[1.6rem] leading-[2.4rem] font-medium text-white uppercase">
                           STEP {item.step}
-                        </span>
+                        </span> */}
 
                         <h5
                           style={{ color: item.color }}

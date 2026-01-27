@@ -6,6 +6,7 @@ import SendIcon from "@/assets/icons/ui/send-icon.svg";
 import BusinessIcon from "@/assets/icons/ui/business-icon.svg";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Counter from "@/components/ui/Counter";
 
 const Established = () => {
   const containerVariants = {
@@ -87,7 +88,7 @@ const Established = () => {
             >
               <div className="absolute top-0 left-0 inline-flex size-[13.6rem] flex-col items-center justify-center gap-[.7rem] rounded-full bg-[#0073F8] text-center md:size-[26.8rem] md:gap-[1.4rem]">
                 <span className="text-[3.4rem] leading-[3rem] font-semibold tracking-[-0.02em] text-white md:text-[6.8rem] md:leading-[6rem]">
-                  £5M+
+                  <Counter value={5} prefix="£" suffix="M+" />
                 </span>
 
                 <span className="text-[.8rem] leading-[1rem] font-bold tracking-normal text-white md:text-[1.6rem] md:leading-[2rem]">
@@ -112,7 +113,7 @@ const Established = () => {
 
                   <div className="flex flex-col items-start">
                     <span className="text-[3.4rem] leading-[3rem] font-semibold tracking-[-0.02em] text-white md:text-[6.8rem] md:leading-[6rem]">
-                      200+
+                      <Counter value={200} suffix="+" />
                     </span>
 
                     <span className="text-[.8rem] leading-[1rem] font-bold tracking-normal text-white md:text-[1.6rem] md:leading-[2rem]">
@@ -139,7 +140,7 @@ const Established = () => {
 
                   <div className="flex flex-col items-start">
                     <span className="text-[3.4rem] leading-[3rem] font-semibold tracking-[-0.02em] text-white md:text-[6.8rem] md:leading-[6rem]">
-                      12+
+                      <Counter value={12} suffix="+" />
                     </span>
 
                     <span className="text-[.8rem] leading-[1rem] font-bold tracking-normal text-white md:text-[1.6rem] md:leading-[2rem]">
@@ -151,7 +152,7 @@ const Established = () => {
 
               <div className="absolute right-0 bottom-0 inline-flex size-[13.6rem] flex-col items-center justify-center gap-[.7rem] rounded-full bg-[#618402] text-center md:size-[26.8rem] md:gap-[1.4rem]">
                 <span className="text-[3.4rem] leading-[3rem] font-semibold tracking-[-0.02em] text-white md:text-[6.8rem] md:leading-[6rem]">
-                  100%
+                  <Counter value={100} suffix="%" />
                 </span>
 
                 <span className="text-[.8rem] leading-[1rem] font-bold tracking-normal text-white md:text-[1.6rem] md:leading-[2rem]">

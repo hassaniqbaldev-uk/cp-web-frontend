@@ -17,6 +17,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
 import { useEffect } from "react";
 import { getCalApi } from "@calcom/embed-react";
+import Counter from "@/components/ui/Counter";
 
 const HomeHero = () => {
   const containerVariants = {
@@ -291,7 +292,8 @@ const HomeHero = () => {
                   <hr className="mt-[.7rem] mb-[.3rem] w-full border-t border-white md:mt-[1.6rem] md:mb-[.8rem]" />
 
                   <div className="inline-flex items-center text-[2.3rem] leading-[2.9rem] font-bold tracking-[-0.02em] text-white md:text-[4.8rem] md:leading-[6rem]">
-                    256 <span className="text-[#FFD900]">+</span>
+                    <Counter value={256} />{" "}
+                    <span className="text-[#FFD900]">+</span>
                   </div>
 
                   <span className="text-[.5rem] font-medium text-white md:text-[1.2rem]">

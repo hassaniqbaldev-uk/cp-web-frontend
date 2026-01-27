@@ -12,6 +12,7 @@ const AboutDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
   return (
     <>
       <button
+        onMouseEnter={onToggle}
         onClick={onToggle}
         className={`inline-flex items-start justify-center gap-[.6rem] ${className}`}
       >

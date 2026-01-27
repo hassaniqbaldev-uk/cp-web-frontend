@@ -14,6 +14,7 @@ const SolutionsDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
   return (
     <>
       <button
+        onMouseEnter={onToggle}
         onClick={onToggle}
         className={`inline-flex items-start justify-center gap-[.6rem] ${className}`}
       >
@@ -98,7 +99,7 @@ const SolutionsDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
               </ul>
             </div>
 
-            <div className="flex w-full flex-col gap-[2.4rem] border-r border-[#818181]/30 pr-[3.8rem]">
+            <div className="flex w-full flex-col gap-[2.4rem]">
               <div className="flex flex-col items-start gap-[2rem] text-left">
                 <i
                   style={{
