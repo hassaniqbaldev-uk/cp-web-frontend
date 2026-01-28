@@ -6,8 +6,9 @@ import { motion } from "framer-motion";
 import SecondaryButton from "@/components/ui/SecondaryButton";
 import { useEffect } from "react";
 import { getCalApi } from "@calcom/embed-react";
+import PrimaryButton from "@/components/ui/PrimaryButton";
 
-const Cta2 = () => {
+const Cta3 = () => {
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: "15min" });
@@ -42,28 +43,23 @@ const Cta2 = () => {
         <div className="relative z-[10] flex h-full w-full flex-col items-end justify-between gap-[2rem] xl:flex-row">
           <div className="flex w-full flex-col items-center text-center xl:w-[70rem] xl:items-start xl:text-left">
             <div className="mb-[1.5rem] max-w-[50rem]">
-              <SectionTitle
-                text="Facing these challenges right now?"
-                textColor="#ffffff"
-              />
+              <SectionTitle text="Download All Documents" textColor="#ffffff" />
             </div>
 
             <div className="max-w-[59rem]">
               <SectionDescription
-                text="You don't have to tackle them alone. Let's discuss your specific situation."
+                text="Need offline access? Download our complete legal pack as a PDF bundle for your records or legal review."
                 textColor="#ffffff"
               />
             </div>
           </div>
 
           <div className="relative flex w-full justify-center xl:w-[36rem] xl:justify-end">
-            <SecondaryButton
-              text="Get Free Consultation"
+            <PrimaryButton
+              text="Download Legal Pack (PDF)"
               bGcolor="#312749"
               textColor="#FFFFFF"
-              data-cal-namespace="15min"
-              data-cal-link="hassan-iqbal-mznzu9/15min"
-              data-cal-config='{"layout":"month_view","theme":"dark"}'
+              href=""
             />
           </div>
         </div>
@@ -71,4 +67,4 @@ const Cta2 = () => {
     </>
   );
 };
-export default Cta2;
+export default Cta3;

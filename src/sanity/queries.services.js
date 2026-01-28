@@ -93,5 +93,13 @@ export const SERVICES_DETAIL_QUERY = `
        },
       }
     },
+
+        faqs[] {
+      question,
+      answer
+      }
   }
+
+  
+
 `;

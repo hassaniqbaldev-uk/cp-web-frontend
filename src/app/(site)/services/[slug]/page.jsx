@@ -39,7 +39,7 @@ const ServicesDetailPage = async (props) => {
       <section className="bg-[#ed910c]/13 px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <Testimonials />
       </section>
-      <Questions />
+      <Questions service={service.faqs} />
     </>
   );
 };

@@ -4,12 +4,12 @@ import HeroBg from "@/assets/images/backgrounds/audit-hero-bg.webp";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionDescription from "@/components/ui/SectionDescription";
 import PrimaryButton from "@/components/ui/PrimaryButton";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
 import HomeHeroLogoShape2 from "@/components/decorative-elements/HomeHeroLogoShape2";
 import ContactHeroLogoShape1 from "@/components/decorative-elements/ContactHeroLogoShape1";
 import { useEffect } from "react";
+import { getCalApi } from "@calcom/embed-react";
 
 const ServicesDetailHero = ({ service }) => {
   const containerVariants = {

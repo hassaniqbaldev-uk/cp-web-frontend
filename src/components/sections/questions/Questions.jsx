@@ -50,7 +50,7 @@ export const questionsData = [
   },
 ];
 
-const Questions = () => {
+const Questions = ({ service }) => {
   const containerVariants = {
     hidden: {},
     visible: {
@@ -120,7 +120,7 @@ const Questions = () => {
               className="flex-1"
             >
               <Accordion type="single" collapsible>
-                {questionsData.map((item, idx) => (
+                {service.map((item, idx) => (
                   <motion.div variants={itemVariants} key={idx}>
                     <AccordionItem
                       value={`item-${idx}`}

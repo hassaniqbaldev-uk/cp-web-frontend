@@ -85,11 +85,12 @@ const Header = () => {
     "/case-studies",
     "/services",
     "/solutions",
+    "/legal",
   ];
 
-  const isHeaderSecondary =
-    headerSecondaryPaths.includes(pathname) ||
-    pathname.startsWith("/services/");
+  const isHeaderSecondary = headerSecondaryPaths.some(
+    (path) => pathname === path || pathname.startsWith(`${path}/`),
+  );
 
   return (
     <>
