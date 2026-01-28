@@ -6,7 +6,7 @@ import Methodology from "@/components/sections/methodology/Methodology";
 import Options from "@/components/sections/options/Options";
 import PartnerWithUs2 from "@/components/sections/partner-with-us/PartnerWithUs2";
 import ProjectShowcase from "@/components/sections/project-showcase/ProjectShowcase";
-import Questions from "@/components/sections/questions/Questions";
+import DynamicQuestions from "@/components/sections/questions/DynamicQuestions";
 import Testimonials from "@/components/sections/testimonials/Testimonials";
 import { SERVICES_DETAIL_QUERY } from "@/sanity/queries.services";
 import { client } from "@/sanity/sanity.services";
@@ -39,7 +39,7 @@ const ServicesDetailPage = async (props) => {
       <section className="bg-[#ed910c]/13 px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <Testimonials />
       </section>
-      <Questions service={service.faqs} />
+      <DynamicQuestions service={service.faqs} />
     </>
   );
 };

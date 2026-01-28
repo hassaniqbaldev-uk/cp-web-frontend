@@ -11,46 +11,7 @@ import {
 } from "@/components/ui/accordion";
 import { motion } from "framer-motion";
 
-export const questionsData = [
-  {
-    question: "Are you okay with signing NDAs?",
-    answer:
-      "Yes. We are happy to sign NDAs and ensure complete confidentiality for all client projects.",
-  },
-  {
-    question: "What is your typical working process?",
-    answer:
-      "Absolutely. All work is delivered under your brand name and email domain with no external attribution.",
-  },
-  {
-    question: "Do you only work with WordPress?",
-    answer:
-      "We collaborate via Slack, email, or your preferred project management tool for seamless communication.",
-  },
-  {
-    question:
-      "Can you work directly with our clients using our own email addresses?",
-    answer:
-      "Turnaround times vary by scope, but we typically deliver 2x faster than in-house teams.",
-  },
-  {
-    question: "Can you help with agency growth strategy?",
-    answer:
-      "Yes. You can scale capacity instantly based on client demand without long-term commitments.",
-  },
-  {
-    question: "Do you work with agencies outside the UK?",
-    answer:
-      "Yes. We offer long-term maintenance and support to ensure your projects remain up to date.",
-  },
-  {
-    question: "How quickly can you start on a new project?",
-    answer:
-      "Yes. We offer long-term maintenance and support to ensure your projects remain up to date.",
-  },
-];
-
-const Questions = () => {
+const DynamicQuestions = ({ service }) => {
   const containerVariants = {
     hidden: {},
     visible: {
@@ -120,7 +81,7 @@ const Questions = () => {
               className="flex-1"
             >
               <Accordion type="single" collapsible>
-                {questionsData.map((item, idx) => (
+                {service.map((item, idx) => (
                   <motion.div variants={itemVariants} key={idx}>
                     <AccordionItem
                       value={`item-${idx}`}
@@ -149,4 +110,4 @@ const Questions = () => {
   );
 };
 
-export default Questions;
+export default DynamicQuestions;
