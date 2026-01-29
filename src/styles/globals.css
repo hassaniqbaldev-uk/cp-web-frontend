@@ -65,6 +65,10 @@
 }
 
 @layer components {
+  .cursor-card {
+    cursor: none;
+  }
+
   .container {
     max-width: 120rem !important;
     width: 100%;
@@ -467,7 +471,7 @@
 
   /* Goal Card */
   .goal-card {
-    height: 27.4rem;
+    height: 31rem;
     width: 100%;
     border-radius: 3rem;
     background: #ffffff26;

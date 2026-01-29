@@ -31,7 +31,11 @@ const ServicesDetailPage = async (props) => {
       {/* <ProjectShowcase service={service.projectShowcase} /> */}
       <PartnerWithUs2 service={service.partnerWithUs2} />
       <div className="overflow-hidden px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
-        <Cta2 />
+        <Cta2
+          title="Facing these challenges right now?"
+          description="You don't have to tackle them alone. Let's discuss your specific situation."
+          buttonText="Get Free Consultation"
+        />
       </div>
       <Expertise3 service={service.expertise3} />
       <Methodology service={service.methodology} />

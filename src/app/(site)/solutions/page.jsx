@@ -9,13 +9,21 @@ import SolutionsHero from "@/components/sections/hero/SolutionsHero";
 import Industry from "@/components/sections/industry/Industry";
 import Support from "@/components/sections/support/Support";
 import Testimonials from "@/components/sections/testimonials/Testimonials";
+import { SOLUTIONS_QUERY } from "@/sanity/queries.solutions";
+import { client } from "@/sanity/sanity.solutions";
 
-const SolutionsPage = () => {
+export const revalidate = 30; // Next.js ISR
+
+const SolutionsPage = async () => {
+  const solutions = await client.fetch(SOLUTIONS_QUERY);
+
+  const industrySolutions = solutions.filter((s) => s.category === "industry");
+  const goalSolutions = solutions.filter((s) => s.category === "goal");
   return (
     <>
       <SolutionsHero />
-      <Industry />
-      <Goal />
+      <Industry solutions={industrySolutions} />
+      <Goal solutions={goalSolutions} />
       <section className="overflow-hidden px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <Cta />
       </section>

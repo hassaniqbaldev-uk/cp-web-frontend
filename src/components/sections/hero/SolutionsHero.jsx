@@ -1,15 +1,56 @@
+"use client";
 import Image from "next/image";
 import HeroBg from "@/assets/images/backgrounds/audit-hero-bg.webp";
-import AboutHeroLogoShape1 from "@/assets/svgs/about-hero-logo-shape-1.svg";
-import AboutHeroLogoShape2 from "@/assets/svgs/about-hero-logo-shape-2.svg";
-import HomeHeroLogoShape1 from "@/assets/svgs/home-hero-logo-shape-1.svg";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionDescription from "@/components/ui/SectionDescription";
-import CheckMarkIcon2 from "@/components/icons/CheckMarkIcon2";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
+import HomeHeroLogoShape2 from "@/components/decorative-elements/HomeHeroLogoShape2";
+import ContactHeroLogoShape1 from "@/components/decorative-elements/ContactHeroLogoShape1";
 
 const SolutionsHero = () => {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const lineVariants = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <section className="relative w-full overflow-hidden px-[2rem] pt-[19rem] pb-[13rem] xl:px-[0rem]">
@@ -24,53 +65,57 @@ const SolutionsHero = () => {
         />
 
         {/*Background Element*/}
-        <div className="absolute top-[2rem] left-[2rem] z-[2] h-[17rem] w-[8.4rem] rotate-[33deg] opacity-60">
-          <Image
-            src={HomeHeroLogoShape1}
-            alt="Logo Shape"
-            width={84}
-            height={170}
-            unoptimized
-          />
+        <div className="pointer-events-none absolute inset-0 z-[2] select-none">
+          <HomeHeroLogoShape1 className="absolute top-[2rem] left-[2rem] h-[8rem] w-[4rem] rotate-[33deg] opacity-50 md:h-[17rem] md:w-[8.4rem]" />
         </div>
 
-        <div className="pointer-events-none absolute bottom-[10rem] left-[10rem] z-[2] h-[17rem] w-[8.5rem] rotate-[35deg] select-none">
-          <Image
-            src={AboutHeroLogoShape1}
-            alt="Logo Shape"
-            width={85}
-            height={170}
-            unoptimized
-          />
+        <div className="pointer-events-none absolute inset-0 z-[2] select-none">
+          <HomeHeroLogoShape2 className="absolute bottom-[10rem] left-[4rem] h-[8rem] w-[4rem] rotate-[35deg] opacity-50 md:left-[10rem] md:h-[17rem] md:w-[8.5rem]" />
         </div>
 
-        <div className="pointer-events-none absolute inset-0 z-[2] overflow-hidden select-none">
-          <Image
-            src={AboutHeroLogoShape2}
-            alt="Logo Shape"
-            width={133}
-            height={124}
-            className="absolute top-[15rem] right-[5rem] rotate-[35deg]"
-            unoptimized
-          />
+        <div className="pointer-events-none absolute inset-0 z-[2] select-none">
+          <ContactHeroLogoShape1 className="absolute top-[15rem] right-[5rem] h-[8rem] w-[4rem] rotate-[35deg] opacity-50 md:h-[12.4rem] md:w-[13.3rem]" />
         </div>
 
         <div className="relative z-[10] container">
-          <div className="flex flex-col items-center text-center">
-            <SectionLabel text="Tailored Expertise" textColor="#FF37B3" />
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-col items-center text-center"
+          >
+            <motion.div variants={itemVariants}>
+              <SectionLabel text="Tailored Expertise" textColor="#FF37B3" />
+            </motion.div>
 
             <h1 className="mt-[1.5rem] mb-[2.5rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8rem]">
-              Solutions <br /> tailored to your Reality.
+              <span className="block overflow-hidden">
+                <motion.span
+                  variants={lineVariants}
+                  initial="hidden"
+                  animate="visible"
+                  transition={{ delay: 0.6 }}
+                  className="block"
+                >
+                  Solutions <br /> tailored to your Reality.
+                </motion.span>
+              </span>
             </h1>
 
-            <div className="mb-[4rem] max-w-[74rem]">
+            <motion.div
+              variants={itemVariants}
+              className="mb-[4rem] max-w-[74rem]"
+            >
               <SectionDescription
                 text="One size fits no one. We adapt our high-performance strategies to your specific industry challenges and growth goals."
                 textColor="#625C70"
               />
-            </div>
+            </motion.div>
 
-            <div className="flex flex-wrap items-center justify-center gap-[1.8rem]">
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-wrap items-center justify-center gap-[1.8rem]"
+            >
               <PrimaryButton
                 text="See Case Studies"
                 textColor="#FFFFFF"
@@ -84,8 +129,8 @@ const SolutionsHero = () => {
               >
                 Book a Strategy Call
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </>

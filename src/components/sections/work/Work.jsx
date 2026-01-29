@@ -48,7 +48,7 @@ const Work = ({ caseStudies }) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="flex flex-col items-center justify-between gap-[3rem] xl:flex-row "
+            className="flex flex-col items-center justify-between gap-[3rem] xl:flex-row"
           >
             <div className="flex w-[30rem] flex-col items-center text-center md:w-[58.5rem] xl:items-start xl:text-left">
               <motion.div variants={itemVariants}>
@@ -91,7 +91,7 @@ const Work = ({ caseStudies }) => {
                     boxShadow: "11px 11px 65px 0px #00000012",
                   }}
                   href={`/case-studies/${caseStudies[6].slug}`}
-                  className="flex flex-col gap-[3.9rem] rounded-[3rem] bg-white px-[3rem] pt-[2rem] pb-[4rem]"
+                  className="cursor-card flex flex-col gap-[3.9rem] rounded-[3rem] bg-white px-[3rem] pt-[2rem] pb-[4rem]"
                 >
                   <div className="flex h-[49.7rem] w-full overflow-hidden rounded-[2rem]">
                     <Image
@@ -156,7 +156,7 @@ const Work = ({ caseStudies }) => {
                     boxShadow: "11px 11px 65px 0px #00000012",
                   }}
                   href={`/case-studies/${caseStudies[5].slug}`}
-                  className="flex w-full flex-col gap-[2rem] rounded-[3rem] bg-white px-[2rem] pt-[1.5rem] pb-[3rem]"
+                  className="cursor-card flex w-full flex-col gap-[2rem] rounded-[3rem] bg-white px-[2rem] pt-[1.5rem] pb-[3rem]"
                 >
                   <div className="flex h-[22.7rem] w-full overflow-hidden rounded-[1.5rem]">
                     <Image
@@ -202,7 +202,7 @@ const Work = ({ caseStudies }) => {
                     boxShadow: "11px 11px 65px 0px #00000012",
                   }}
                   href={`/case-studies/${caseStudies[4].slug}`}
-                  className="flex w-full flex-col gap-[2rem] rounded-[3rem] bg-white px-[2rem] pt-[1.5rem] pb-[3rem]"
+                  className="cursor-card flex w-full flex-col gap-[2rem] rounded-[3rem] bg-white px-[2rem] pt-[1.5rem] pb-[3rem]"
                 >
                   <div className="flex h-[22.7rem] w-full overflow-hidden rounded-[1.5rem]">
                     <Image

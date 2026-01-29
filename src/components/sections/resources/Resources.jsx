@@ -46,7 +46,7 @@ export const clientResourcesData = [
     iconHeight: 30,
     title: "Project Agreement",
     description: "Standard terms for website design and development projects.",
-    link: "",
+    link: "/legal/project-agreement",
   },
   {
     icon: MegaphoneIcon,
@@ -54,7 +54,7 @@ export const clientResourcesData = [
     iconHeight: 30,
     title: "Retainer Agreement",
     description: "Terms for ongoing monthly marketing and support retainers.",
-    link: "",
+    link: "/legal/retainer-agreement",
   },
   {
     icon: BoostIcon,
@@ -62,7 +62,7 @@ export const clientResourcesData = [
     iconHeight: 30,
     title: "NDA Template",
     description: "Mutual non-disclosure agreement for confidential projects.",
-    link: "",
+    link: "/legal/nda-template",
   },
   {
     icon: EmailIcon2,
@@ -70,7 +70,7 @@ export const clientResourcesData = [
     iconHeight: 30,
     title: "Payment Terms",
     description: "Invoicing, payment schedules, and refund policies.",
-    link: "",
+    link: "/legal/payment-terms",
   },
   {
     icon: DataAnalysticsIcon,
@@ -78,7 +78,7 @@ export const clientResourcesData = [
     iconHeight: 30,
     title: "Intellectual Property",
     description: "Ownership, licensing, and usage rights for deliverables.",
-    link: "",
+    link: "/legal/intellectual-property",
   },
   {
     icon: DataAnalysticsIcon,
@@ -86,7 +86,7 @@ export const clientResourcesData = [
     iconHeight: 30,
     title: "Complaints Procedure",
     description: "How to raise concerns and our resolution process.",
-    link: "",
+    link: "/legal/complaints-procedure",
   },
 ];
 
@@ -194,7 +194,7 @@ const Resources = () => {
                         </p>
 
                         <Link
-                          href={`/`}
+                          href={item.link}
                           className="inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold text-white"
                         >
                           Explore Strategy
@@ -273,7 +273,7 @@ const Resources = () => {
                           </p>
 
                           <Link
-                            href={`/`}
+                            href={item.link}
                             className="inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold text-white"
                           >
                             Explore Strategy

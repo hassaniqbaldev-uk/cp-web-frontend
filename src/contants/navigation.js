@@ -80,7 +80,7 @@ export const SUPPORT_SERVICE_NAV = [
 ];
 
 export const SECTOR_SOLUTION_NAV = [
-  { label: "For SMEs", excerpt: "", href: "/" },
+  { label: "For SMEs", excerpt: "", href: "/solutions/sme-founders" },
   { label: "For Ecommerce", excerpt: "", href: "/about" },
   {
     label: "For Interiors",

@@ -48,7 +48,7 @@ export const ourPoliciesData = [
     title: "Terms of Service",
     description:
       "Our terms and conditions for using CreativePixels services and website.",
-    link: "",
+    link: "/legal/terms",
   },
   {
     icon: UxIcon,
@@ -56,7 +56,7 @@ export const ourPoliciesData = [
     iconHeight: 30,
     title: "Privacy Policy",
     description: "How we collect, use, and protect your personal information.",
-    link: "",
+    link: "/legal/privacy-policy",
   },
   {
     icon: WordpressIcon,
@@ -64,7 +64,7 @@ export const ourPoliciesData = [
     iconHeight: 30,
     title: "Cookie Policy",
     description: "Information about cookies and tracking technologies we use.",
-    link: "",
+    link: "/legal/cookie-policy",
   },
   {
     icon: ShopifyIcon,
@@ -73,7 +73,7 @@ export const ourPoliciesData = [
     title: "Acceptable Use Policy",
     description:
       "Guidelines for appropriate use of our services and platforms.",
-    link: "",
+    link: "/legal/acceptable-use-policy",
   },
   {
     icon: DeveloperIcon,
@@ -81,7 +81,7 @@ export const ourPoliciesData = [
     iconHeight: 30,
     title: "GDPR Compliance",
     description: "Your rights under the General Data Protection Regulation.",
-    link: "",
+    link: "/legal/gdpr",
   },
 ];
 
@@ -201,7 +201,7 @@ const Policies = () => {
                       </p>
 
                       <Link
-                        href={`/`}
+                        href={item.link}
                         className="inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold"
                         style={{ color: theme.color }}
                       >
@@ -288,7 +288,7 @@ const Policies = () => {
                         </p>
 
                         <Link
-                          href={`/`}
+                          href={item.link}
                           className="inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold"
                           style={{ color: theme.color }}
                         >
