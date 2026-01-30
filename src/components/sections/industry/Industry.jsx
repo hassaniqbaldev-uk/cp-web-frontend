@@ -170,7 +170,7 @@ const Industry = ({ solutions = [] }) => {
                         borderColor: theme.color,
                         boxShadow: hovered === idx ? theme.shadow : "",
                       }}
-                      className="flex h-full w-full flex-col rounded-[3rem] border px-[3rem] pt-[3.1rem] pb-[2.8rem] transition-all duration-300"
+                      className="flex h-full w-full flex-col justify-between rounded-[3rem] border px-[3rem] pt-[3.1rem] pb-[2.8rem] transition-all duration-300"
                     >
                       {/* Icon */}
                       <div className="relative size-[6.3rem]">
@@ -190,22 +190,24 @@ const Industry = ({ solutions = [] }) => {
                         />
                       </div>
 
-                      <h3 className="mt-[3rem] text-[2.6rem] font-semibold text-[#312749]">
-                        {item.title}
-                      </h3>
+                      <div>
+                        <h3 className="mt-[3rem] text-[2.6rem] font-semibold text-[#312749]">
+                          {item.title}
+                        </h3>
 
-                      <p className="mt-[1rem] mb-[3.5rem] text-[1.6rem] text-[#625C70]">
-                        {item.excerpt}
-                      </p>
+                        <p className="mt-[1rem] mb-[3.5rem] text-[1.6rem] text-[#625C70]">
+                          {item.excerpt}
+                        </p>
 
-                      <Link
-                        href={`/solutions/${item.slug.current}`}
-                        className="inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold"
-                        style={{ color: theme.color }}
-                      >
-                        View Solution
-                        <RightArrowIcon color={theme.color} />
-                      </Link>
+                        <Link
+                          href={`/solutions/${item.slug.current}`}
+                          className="inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold"
+                          style={{ color: theme.color }}
+                        >
+                          View Solution
+                          <RightArrowIcon color={theme.color} />
+                        </Link>
+                      </div>
                     </div>
                   </motion.div>
                 );
