@@ -9,6 +9,7 @@ import { GOAL_SOLUTION_NAV, SECTOR_SOLUTION_NAV } from "@/contants";
 import Link from "next/link";
 import TimelineIcon from "../icons/TimelineIcon";
 import RightArrowIcon from "../icons/RightArrowIcon";
+import PrimaryButton from "./PrimaryButton";
 
 const SolutionsDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
   return (
@@ -85,9 +86,9 @@ const SolutionsDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
                           {item.label}
                         </h5>
 
-                        <span className="text-[1.4rem] leading-[2.4rem] font-normal tracking-normal text-[#625C70]">
+                        {/* <span className="text-[1.4rem] leading-[2.4rem] font-normal tracking-normal text-[#625C70]">
                           {item.excerpt}
-                        </span>
+                        </span> */}
                       </div>
 
                       <i className="min-w-max">
@@ -137,9 +138,9 @@ const SolutionsDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
                           {item.label}
                         </h5>
 
-                        <span className="text-[1.4rem] leading-[2.4rem] font-normal tracking-normal text-[#625C70]">
+                        {/* <span className="text-[1.4rem] leading-[2.4rem] font-normal tracking-normal text-[#625C70]">
                           {item.excerpt}
-                        </span>
+                        </span> */}
                       </div>
 
                       <i className="min-w-max">
@@ -152,49 +153,48 @@ const SolutionsDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
             </div>
           </div>
 
-          <div className="relative flex w-[60.2rem] flex-col items-start overflow-hidden rounded-[3rem] bg-[#F5F5F5]">
-            <div className="pointer-events-none absolute inset-0 z-[1] select-none">
-              <Image
-                src={SolutionsDropdownImg}
-                width={602}
-                height={568}
-                alt="Background Image"
-                className="size-full object-cover object-bottom"
-                unoptimized
-              />
-            </div>
-
-            <div className="relative z-[2] flex h-full flex-col items-start justify-end pr-[6.2rem] pb-[4.3rem] pl-[4.3rem]">
-              <div className="flex items-center gap-[1.6rem]">
-                <span className="inline-flex h-[2.8rem] items-center justify-center rounded-[2rem] bg-[#ff37b3] px-[1.2rem] text-center text-[1.4rem] leading-[2.4rem] font-bold tracking-normal text-[#ffffff] uppercase">
-                  STRATEGY
-                </span>
-
-                <div className="inline-flex items-center gap-[6px]">
-                  <i>
-                    <TimelineIcon color="#ffffff" />
-                  </i>
-                  <span className="text-[1.4rem] font-bold tracking-normal text-[#ffffff]">
-                    5 MIN READ
-                  </span>
-                </div>
-              </div>
-
-              <h4 className="mt-[1.6rem] mb-[2rem] text-[3.4rem] leading-[4.8rem] font-bold tracking-[-0.02em] text-[#ffffff]">
-                Why &apos;Template&apos; is a Dirty Word in Enterprise Web
-                Design
+          <div className="flex w-[34.8rem] flex-col gap-[1.5rem]">
+            <div className="relative flex flex-col items-start rounded-[2rem] bg-[#F5F5F5] px-[2.6rem] py-[2rem]">
+              <h4 className="text-[3rem] leading-[3.2rem] font-bold tracking-[-0.02em] text-[#312749]">
+                Your Growth Starts
               </h4>
 
-              <Link
-                onClick={() => setIsOpen(false)}
-                href=""
-                className="inline-flex items-center gap-[.8rem] text-[1.6rem] leading-[1.4rem] font-semibold tracking-normal text-[#FF37B3]"
-              >
-                <span>Read Article</span>{" "}
-                <i>
-                  <RightArrowIcon color="#FF37B3" />
-                </i>
-              </Link>
+              <p className="mt-[.7rem] mb-[1.8rem] text-[1.5rem] leading-[2.5rem] font-normal tracking-normal text-[#625C70]">
+                Services Designed to Scale Your Business
+              </p>
+
+              <div onClick={() => setIsOpen(false)}>
+                <PrimaryButton
+                  text="View All Solutions"
+                  textColor="#FFFFFF"
+                  bGcolor="#FF37B3"
+                  href="/solutions"
+                />
+              </div>
+            </div>
+
+            <div className="relative flex flex-col items-start rounded-[2rem] bg-[#F5F5F5] px-[2.6rem] py-[2rem]">
+              <span className="inline-flex h-[2.8rem] items-center justify-center rounded-[2rem] bg-[#ff37b3]/20 px-[1.2rem] text-center text-[1.4rem] leading-[2.4rem] font-bold tracking-normal text-[#FF37B3] uppercase">
+                Special offer
+              </span>
+
+              <h4 className="mt-[1.9rem] mb-[1.1rem] text-[3rem] leading-[3.2rem] font-bold tracking-[-0.02em] text-[#312749]">
+                Free Website Audit
+              </h4>
+
+              <p className="mb-[2.8rem] text-[1.6rem] leading-[2.5rem] font-normal tracking-normal text-[#625C70]">
+                Discover hidden opportunities to increase your traffic and
+                conversions.
+              </p>
+
+              <div onClick={() => setIsOpen(false)}>
+                <PrimaryButton
+                  text="Get My Audit"
+                  textColor="#FFFFFF"
+                  bGcolor="#FF37B3"
+                  href="/audit"
+                />
+              </div>
             </div>
           </div>
         </div>

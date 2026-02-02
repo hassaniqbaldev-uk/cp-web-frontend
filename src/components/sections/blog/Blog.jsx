@@ -45,7 +45,7 @@ export const CardData = [
   },
 ];
 
-const Blog = () => {
+const Blog = ({ blogs }) => {
   const containerVariants = {
     hidden: {},
     visible: {
@@ -82,14 +82,16 @@ const Blog = () => {
             viewport={{ once: true, amount: 0.3 }}
             className="hidden grid-cols-2 gap-[3.3rem] xl:grid"
           >
-            {CardData.map((item, idx) => (
+            {blogs.map((item, idx) => (
               <motion.div key={idx} variants={itemVariants}>
                 <BlogCard
+                  readTime={item.readTime}
+                  publishedDate={item.publishedAt}
                   category={item.category}
-                  img={item.img}
+                  img={item.coverImage.asset.url}
                   title={item.title}
                   excerpt={item.excerpt}
-                  link={item.link}
+                  link={`/blog/${item.slug.current}`}
                 />
               </motion.div>
             ))}

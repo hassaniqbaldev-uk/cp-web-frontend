@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import HeroBg from "@/assets/images/backgrounds/home-hero-bg.webp";
+import HeroBg from "@/assets/images/backgrounds/contact-hero-bg.webp";
 import AboutHeroCardImg from "@/assets/images/cards/about-hero-card-img.webp";
 import SparkStarIcon from "@/assets/icons/ui/spark-star-icon.svg";
 import RocketIcon2 from "@/assets/icons/ui/rocket-icon-2.svg";

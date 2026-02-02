@@ -4,7 +4,15 @@ import TimelineIcon from "../icons/TimelineIcon";
 import RightArrowIcon from "@/components/icons/RightArrowIcon";
 import Link from "next/link";
 
-const BlogCard = ({ category, img, title, excerpt, link = "" }) => {
+const BlogCard = ({
+  category,
+  img,
+  readTime,
+  publishedDate,
+  title,
+  excerpt,
+  link = "",
+}) => {
   return (
     <>
       <div className="relative h-full w-full overflow-hidden rounded-[2.4rem] bg-white">
@@ -30,7 +38,7 @@ const BlogCard = ({ category, img, title, excerpt, link = "" }) => {
                 <Image src={CalenderIcon} width={12} height={14} alt="Icon" />
               </i>
               <span className="text-[1.1rem] leading-[2.4rem] font-bold tracking-normal text-[#625C70] xl:text-[1.4rem]">
-                NOV 28, 2024
+                {new Date(publishedDate).toLocaleDateString()}
               </span>
             </div>
 
@@ -39,7 +47,7 @@ const BlogCard = ({ category, img, title, excerpt, link = "" }) => {
                 <TimelineIcon color="#FF37B3" />
               </i>
               <span className="text-[1.1rem] leading-[2.4rem] font-bold tracking-normal text-[#625C70] xl:text-[1.4rem]">
-                8 MIN READ
+                {readTime} MIN READ
               </span>
             </div>
           </div>

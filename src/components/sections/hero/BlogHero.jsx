@@ -11,7 +11,7 @@ import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoSha
 import HomeHeroLogoShape2 from "@/components/decorative-elements/HomeHeroLogoShape2";
 import { motion } from "framer-motion";
 
-const BlogHero = () => {
+const BlogHero = ({ hero }) => {
   const containerVariants = {
     hidden: {},
     visible: {
@@ -57,14 +57,14 @@ const BlogHero = () => {
       <section className="relative w-full overflow-hidden px-[2rem] pt-[10rem] pb-[5rem] md:pt-[19.2rem] xl:px-[0rem] xl:pb-[10rem]">
         {/*Background Element*/}
         <div className="pointer-events-none absolute inset-0 z-[2] select-none">
-          <HomeHeroLogoShape1 className="absolute top-[5.8px] left-[12px] h-[8rem] w-[4rem] md:h-[18.4rem] md:w-[9.1rem] rotate-[25deg] opacity-40" />
+          <HomeHeroLogoShape1 className="absolute top-[5.8px] left-[12px] h-[8rem] w-[4rem] rotate-[25deg] opacity-40 md:h-[18.4rem] md:w-[9.1rem]" />
         </div>
 
         <div className="pointer-events-none absolute inset-0 z-[2] select-none">
-          <HomeHeroLogoShape2 className="absolute top-[27rem] right-[4rem] md:right-[8rem] h-[8rem] w-[4rem] md:h-[18.4rem] md:w-[9.1rem] rotate-[33deg] opacity-60" />
+          <HomeHeroLogoShape2 className="absolute top-[27rem] right-[4rem] h-[8rem] w-[4rem] rotate-[33deg] opacity-60 md:right-[8rem] md:h-[18.4rem] md:w-[9.1rem]" />
         </div>
 
-        <div className="container relative z-[10]">
+        <div className="relative z-[10] container">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -122,8 +122,8 @@ const BlogHero = () => {
             >
               {/*Background Image*/}
               <Image
-                src={BlogHeroBg}
-                alt="Background Image"
+                src={hero.coverImage.asset.url}
+                alt={hero.title}
                 fill
                 priority
                 className="pointer-events-none absolute inset-0 z-[1] object-cover select-none"
@@ -133,7 +133,7 @@ const BlogHero = () => {
               <div className="absolute inset-0 z-[2] flex flex-col items-center justify-center p-[2rem] text-center md:p-[5rem] xl:items-start xl:text-left">
                 <div className="flex items-center gap-[1.2rem]">
                   <span className="inline-flex h-[2.8rem] items-center justify-center rounded-[20rem] bg-[#FF37B3] px-[1.2rem] text-center text-[1.1rem] leading-[2.4rem] font-bold tracking-normal text-white md:text-[1.4rem]">
-                    STRATEGY
+                    {hero.category}
                   </span>
 
                   <div className="inline-flex items-center justify-center gap-[6px] text-center">
@@ -142,26 +142,21 @@ const BlogHero = () => {
                     </i>
 
                     <span className="text-[1.1rem] leading-[2.4rem] font-bold tracking-normal text-white md:text-[1.4rem]">
-                      5 MIN READ
+                      {hero.readTime} MIN READ
                     </span>
                   </div>
                 </div>
 
                 <div className="mt-[2rem] max-w-[55.7rem] md:mt-[4rem]">
-                  <SectionTitle
-                    text="Why 'Template' is a Dirty Word in Enterprise Web Design"
-                    textColor="#FFFFFF"
-                  />
+                  <SectionTitle text={hero.title} textColor="#FFFFFF" />
                 </div>
 
                 <p className="mt-[2rem] mb-[4rem] max-w-[50.8rem] text-[1.6rem] leading-[2.2rem] font-medium tracking-normal text-white md:mb-[6rem] md:text-[1.8rem] md:leading-[2.8rem]">
-                  Templates are fast, but they don&apos;t scale. Here&apos;s why
-                  custom builds are the only viable path for growth-focused
-                  brands.
+                  {hero.excerpt}
                 </p>
 
                 <Link
-                  href=""
+                  href={`/blog/${hero.slug.current}`}
                   style={{
                     color: "#FF37B3",
                   }}

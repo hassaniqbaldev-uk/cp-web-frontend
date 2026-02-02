@@ -89,9 +89,9 @@ const ServicesDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
                           {item.label}
                         </h5>
 
-                        <span className="text-[1.4rem] leading-[2.4rem] font-normal tracking-normal text-[#625C70]">
+                        {/* <span className="text-[1.4rem] leading-[2.4rem] font-normal tracking-normal text-[#625C70]">
                           {item.excerpt}
-                        </span>
+                        </span> */}
                       </div>
 
                       <i className="min-w-max">
@@ -141,9 +141,9 @@ const ServicesDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
                           {item.label}
                         </h5>
 
-                        <span className="text-[1.4rem] leading-[2.4rem] font-normal tracking-normal text-[#625C70]">
+                        {/* <span className="text-[1.4rem] leading-[2.4rem] font-normal tracking-normal text-[#625C70]">
                           {item.excerpt}
-                        </span>
+                        </span> */}
                       </div>
 
                       <i className="min-w-max">
@@ -193,9 +193,9 @@ const ServicesDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
                           {item.label}
                         </h5>
 
-                        <span className="text-[1.4rem] leading-[2.4rem] font-normal tracking-normal text-[#625C70]">
+                        {/* <span className="text-[1.4rem] leading-[2.4rem] font-normal tracking-normal text-[#625C70]">
                           {item.excerpt}
-                        </span>
+                        </span> */}
                       </div>
 
                       <i className="min-w-max">
@@ -208,45 +208,48 @@ const ServicesDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
             </div>
           </div>
 
-          <div className="relative flex w-[34.8rem] flex-col items-start rounded-[2rem] bg-[#F5F5F5] px-[3.2rem] pt-[3.2rem] pb-[4rem]">
-            <div className="pointer-events-none absolute bottom-[10rem] left-1/2 h-[19.3rem] w-[34.8rem] -translate-x-1/2 select-none">
-              <Image src={Stroke} width={348} height={193} alt="Stroke" />
+          <div className="flex w-[34.8rem] flex-col gap-[1.5rem]">
+            <div className="relative flex flex-col items-start rounded-[2rem] bg-[#F5F5F5] px-[2.6rem] py-[2rem]">
+              <h4 className="text-[3rem] leading-[3.2rem] font-bold tracking-[-0.02em] text-[#312749]">
+                Your Growth Starts
+              </h4>
+
+              <p className="mt-[.7rem] mb-[1.8rem] text-[1.5rem] leading-[2.5rem] font-normal tracking-normal text-[#625C70]">
+                Services Designed to Scale Your Business
+              </p>
+
+              <div onClick={() => setIsOpen(false)}>
+                <PrimaryButton
+                  text="View All Services"
+                  textColor="#FFFFFF"
+                  bGcolor="#FF37B3"
+                  href="/services"
+                />
+              </div>
             </div>
 
-            <span className="inline-flex h-[2.8rem] items-center justify-center rounded-[2rem] bg-[#ff37b3]/20 px-[1.2rem] text-center text-[1.4rem] leading-[2.4rem] font-bold tracking-normal text-[#FF37B3] uppercase">
-              Special offer
-            </span>
+            <div className="relative flex flex-col items-start rounded-[2rem] bg-[#F5F5F5] px-[2.6rem] py-[2rem]">
+              <span className="inline-flex h-[2.8rem] items-center justify-center rounded-[2rem] bg-[#ff37b3]/20 px-[1.2rem] text-center text-[1.4rem] leading-[2.4rem] font-bold tracking-normal text-[#FF37B3] uppercase">
+                Special offer
+              </span>
 
-            <h4 className="mt-[1.9rem] mb-[1.1rem] text-[3rem] leading-[3.2rem] font-bold tracking-[-0.02em] text-[#312749]">
-              Free Website Audit
-            </h4>
+              <h4 className="mt-[1.9rem] mb-[1.1rem] text-[3rem] leading-[3.2rem] font-bold tracking-[-0.02em] text-[#312749]">
+                Free Website Audit
+              </h4>
 
-            <p className="text-[1.6rem] leading-[2.5rem] font-normal tracking-normal text-[#625C70]">
-              Discover hidden opportunities to increase your traffic and
-              conversions.
-            </p>
+              <p className="mb-[2.8rem] text-[1.6rem] leading-[2.5rem] font-normal tracking-normal text-[#625C70]">
+                Discover hidden opportunities to increase your traffic and
+                conversions.
+              </p>
 
-            <ul className="mt-[2.8rem] mb-[9.1rem] flex flex-col gap-[1.4rem]">
-              {["SEO Analysis", "Speed check", "UX Review"].map((item, idx) => (
-                <li key={idx} className="flex items-center gap-[1rem]">
-                  <div className="inline-flex size-[1.6rem] items-center justify-center rounded-full bg-[#44B276]/20">
-                    <div className="size-[1rem] rounded-full bg-[#44B276]" />
-                  </div>
-
-                  <span className="text-[1.6rem] leading-[2rem] font-bold tracking-normal text-[#263238]">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <div>
-              <PrimaryButton
-                text="Get My Audit"
-                textColor="#FFFFFF"
-                bGcolor="#FF37B3"
-                href="/audit"
-              />
+              <div onClick={() => setIsOpen(false)}>
+                <PrimaryButton
+                  text="Get My Audit"
+                  textColor="#FFFFFF"
+                  bGcolor="#FF37B3"
+                  href="/audit"
+                />
+              </div>
             </div>
           </div>
         </div>

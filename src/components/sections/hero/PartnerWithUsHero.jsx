@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import HeroBg from "@/assets/images/backgrounds/home-hero-bg.webp";
+import HeroBg from "@/assets/images/backgrounds/contact-hero-bg.webp";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionDescription from "@/components/ui/SectionDescription";
 import PrimaryButton from "@/components/ui/PrimaryButton";

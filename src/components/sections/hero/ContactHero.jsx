@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import HeroBg from "@/assets/images/backgrounds/home-hero-bg.webp";
+import HeroBg from "@/assets/images/backgrounds/contact-hero-bg.webp";
 import SectionLabel from "@/components/ui/SectionLabel";
 import HeadphoneIcon from "@/assets/icons/ui/headphone-icon.svg";
 import EmailIcon from "@/assets/icons/ui/email-icon.svg";
@@ -79,7 +79,7 @@ const ContactHero = () => {
         </div>
 
         <div className="pointer-events-none absolute inset-0 z-[2] select-none">
-          <ContactHeroLogoShape1 className="absolute bottom-[8rem] left-[-6rem] h-[10rem] md:h-[13.2rem] w-[10rem] md:w-[14.2rem] rotate-[33deg] opacity-50" />
+          <ContactHeroLogoShape1 className="absolute bottom-[8rem] left-[-6rem] h-[10rem] w-[10rem] rotate-[33deg] opacity-50 md:h-[13.2rem] md:w-[14.2rem]" />
         </div>
 
         <div className="relative z-[10] container">
