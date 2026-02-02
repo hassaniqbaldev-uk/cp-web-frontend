@@ -12,8 +12,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { urlFor } from "@/sanity/image";
 import { motion } from "framer-motion";
+import useMousePosition from "@/utils/useMousePosition";
+import { useState } from "react";
 
 const Work = ({ caseStudies }) => {
+  const [isHovered, setIsHovered] = useState(false);
   const containerVariants = {
     hidden: {},
     visible: {
@@ -39,8 +42,29 @@ const Work = ({ caseStudies }) => {
     },
   };
 
+  const mouse = useMousePosition();
+
   return (
     <>
+      {mouse && (
+        <motion.div
+          className="pointer-events-none fixed top-0 left-0 z-[100] hidden h-[7rem] w-[7rem] items-center justify-center rounded-full bg-[#FF37B3] text-white opacity-0 xl:flex"
+          animate={{
+            x: mouse.x - 35,
+            y: mouse.y - 35,
+            scale: isHovered ? 1 : 0,
+            opacity: isHovered ? 1 : 0,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 500,
+            damping: 35,
+          }}
+        >
+          <span className="text-[1.6rem] font-medium">View</span>
+        </motion.div>
+      )}
+
       <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <div className="container">
           <motion.div
@@ -87,11 +111,17 @@ const Work = ({ caseStudies }) => {
             <div className="w-[79.1rem]">
               <motion.div variants={itemVariants}>
                 <Link
+                  onMouseEnter={() => {
+                    setIsHovered(true);
+                  }}
+                  onMouseLeave={() => {
+                    setIsHovered(false);
+                  }}
                   style={{
                     boxShadow: "11px 11px 65px 0px #00000012",
                   }}
                   href={`/case-studies/${caseStudies[6].slug}`}
-                  className="cursor-card flex flex-col gap-[3.9rem] rounded-[3rem] bg-white px-[3rem] pt-[2rem] pb-[4rem]"
+                  className="flex flex-col gap-[3.9rem] rounded-[3rem] bg-white px-[3rem] pt-[2rem] pb-[4rem]"
                 >
                   <div className="flex h-[49.7rem] w-full overflow-hidden rounded-[2rem]">
                     <Image
@@ -152,11 +182,17 @@ const Work = ({ caseStudies }) => {
             <div className="flex w-[40rem] flex-col gap-[2rem]">
               <motion.div variants={itemVariants}>
                 <Link
+                  onMouseEnter={() => {
+                    setIsHovered(true);
+                  }}
+                  onMouseLeave={() => {
+                    setIsHovered(false);
+                  }}
                   style={{
                     boxShadow: "11px 11px 65px 0px #00000012",
                   }}
                   href={`/case-studies/${caseStudies[5].slug}`}
-                  className="cursor-card flex w-full flex-col gap-[2rem] rounded-[3rem] bg-white px-[2rem] pt-[1.5rem] pb-[3rem]"
+                  className="flex w-full flex-col gap-[2rem] rounded-[3rem] bg-white px-[2rem] pt-[1.5rem] pb-[3rem]"
                 >
                   <div className="flex h-[22.7rem] w-full overflow-hidden rounded-[1.5rem]">
                     <Image
@@ -198,11 +234,17 @@ const Work = ({ caseStudies }) => {
 
               <motion.div variants={itemVariants}>
                 <Link
+                  onMouseEnter={() => {
+                    setIsHovered(true);
+                  }}
+                  onMouseLeave={() => {
+                    setIsHovered(false);
+                  }}
                   style={{
                     boxShadow: "11px 11px 65px 0px #00000012",
                   }}
                   href={`/case-studies/${caseStudies[4].slug}`}
-                  className="cursor-card flex w-full flex-col gap-[2rem] rounded-[3rem] bg-white px-[2rem] pt-[1.5rem] pb-[3rem]"
+                  className="flex w-full flex-col gap-[2rem] rounded-[3rem] bg-white px-[2rem] pt-[1.5rem] pb-[3rem]"
                 >
                   <div className="flex h-[22.7rem] w-full overflow-hidden rounded-[1.5rem]">
                     <Image
