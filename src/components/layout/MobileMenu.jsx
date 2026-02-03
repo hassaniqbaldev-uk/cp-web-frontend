@@ -33,6 +33,7 @@ import {
 import PrimaryButton from "../ui/PrimaryButton";
 import { useMenuStore } from "@/store/mobileMenuStore";
 import { useEffect } from "react";
+import { getCalApi } from "@calcom/embed-react";
 
 const MobileMenu = () => {
   const { isOpen, closeMenu } = useMenuStore();
@@ -49,6 +50,21 @@ const MobileMenu = () => {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "15min" });
+      cal("ui", {
+        theme: "dark",
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#292929" },
+          dark: { "cal-brand": "#FF37B3" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+
   return (
     <>
       <div
@@ -57,7 +73,7 @@ const MobileMenu = () => {
       />
 
       <div
-        className={`no-scrollbar fixed top-0 z-[600] h-screen w-[95%] md:w-[50%] overflow-y-auto rounded-tr-[2.5rem] rounded-br-[2.5rem] bg-white py-[2.2rem] pr-[1.2rem] pb-[10rem] pl-[2.4rem] transition-all duration-200 ${isOpen ? "left-0" : "-left-full"}`}
+        className={`no-scrollbar fixed top-0 z-[600] h-screen w-[95%] overflow-y-auto rounded-tr-[2.5rem] rounded-br-[2.5rem] bg-white py-[2.2rem] pr-[1.2rem] pb-[10rem] pl-[2.4rem] transition-all duration-200 md:w-[50%] ${isOpen ? "left-0" : "-left-full"}`}
       >
         {/* Header */}
         <div className="flex items-center justify-between gap-[2rem]">
@@ -400,7 +416,7 @@ const MobileMenu = () => {
             <li className="w-full border-b border-[#818181]/30 pb-[1.2rem]">
               <Link
                 onClick={closeMenu}
-                href=""
+                href="/case-studies"
                 className="inline-flex items-start justify-start text-left text-[2.2rem] leading-[2.4rem] font-extrabold tracking-normal text-[#312749]"
               >
                 Work
@@ -410,14 +426,14 @@ const MobileMenu = () => {
             <li className="w-full border-b border-[#818181]/30 pb-[1.2rem]">
               <Link
                 onClick={closeMenu}
-                href=""
+                href="/blog"
                 className="inline-flex items-start justify-start text-left text-[2.2rem] leading-[2.4rem] font-extrabold tracking-normal text-[#312749]"
               >
                 Insights
               </Link>
             </li>
 
-            <li className="w-full border-b border-[#818181]/30 pb-[1.2rem]">
+            {/* <li className="w-full border-b border-[#818181]/30 pb-[1.2rem]">
               <Link
                 onClick={closeMenu}
                 href=""
@@ -425,7 +441,7 @@ const MobileMenu = () => {
               >
                 Pricing
               </Link>
-            </li>
+            </li> */}
 
             <li className="w-full">
               <Accordion type="single" collapsible>
@@ -515,7 +531,8 @@ const MobileMenu = () => {
           <ul className="flex flex-col gap-[1.8rem]">
             <li>
               <Link
-                href=""
+                onClick={closeMenu}
+                href="tel:01618202667"
                 className="flex items-center justify-start gap-[1.5rem]"
               >
                 <i
@@ -541,7 +558,8 @@ const MobileMenu = () => {
 
             <li>
               <Link
-                href=""
+                onClick={closeMenu}
+                href="mailto:hello@cp.agency"
                 className="flex items-center justify-start gap-[1.5rem]"
               >
                 <i
@@ -566,8 +584,11 @@ const MobileMenu = () => {
             </li>
 
             <li>
-              <Link
-                href=""
+              <button
+                onClick={closeMenu}
+                data-cal-namespace="15min"
+                data-cal-link="hassan-iqbal-mznzu9/15min"
+                data-cal-config='{"layout":"month_view","theme":"dark"}'
                 className="flex items-center justify-start gap-[1.5rem]"
               >
                 <i
@@ -594,7 +615,7 @@ const MobileMenu = () => {
                     Book a Call
                   </h4>
                 </div>
-              </Link>
+              </button>
             </li>
           </ul>
 
@@ -603,7 +624,8 @@ const MobileMenu = () => {
           <ul className="flex items-center gap-[8px]">
             <li>
               <Link
-                href=""
+                onClick={closeMenu}
+                href="https://www.facebook.com/CPAgencyUK"
                 className="inline-flex size-[3.9rem] items-center justify-center rounded-full bg-[#312749]/15"
               >
                 <Image
@@ -618,7 +640,8 @@ const MobileMenu = () => {
 
             <li>
               <Link
-                href=""
+                onClick={closeMenu}
+                href="https://www.instagram.com/cpagencyuk/"
                 className="inline-flex size-[3.9rem] items-center justify-center rounded-full bg-[#312749]/15"
               >
                 <Image
@@ -633,7 +656,8 @@ const MobileMenu = () => {
 
             <li>
               <Link
-                href=""
+                onClick={closeMenu}
+                href="https://www.linkedin.com/company/creativepixels/"
                 className="inline-flex size-[3.9rem] items-center justify-center rounded-full bg-[#312749]/15"
               >
                 <Image

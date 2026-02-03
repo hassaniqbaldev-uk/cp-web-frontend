@@ -16,8 +16,10 @@ import {
   CLIENT_LOGO,
   DESIGN_SERVICE_NAV,
   FOOTER_CARD,
+  GOAL_SOLUTION_NAV,
   GROWTH_SERVICE_NAV,
   MAIN_NAV,
+  SECTOR_SOLUTION_NAV,
   SUPPORT_SERVICE_NAV,
 } from "@/contants";
 import {
@@ -299,7 +301,16 @@ const Footer = () => {
                     <ul>
                       <li>
                         <Link
-                          href="/privacy-policy"
+                          href="/legal"
+                          className="text-[1.8rem] leading-[4rem] font-medium tracking-normal text-white"
+                        >
+                          Legal Hub
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link
+                          href="/legal/privacy-policy"
                           className="text-[1.8rem] leading-[4rem] font-medium tracking-normal text-white"
                         >
                           Privacy Policy
@@ -308,7 +319,7 @@ const Footer = () => {
 
                       <li>
                         <Link
-                          href="/cookies-policy"
+                          href="/legal/cookie-policy"
                           className="text-[1.8rem] leading-[4rem] font-medium tracking-normal text-white"
                         >
                           Cookies Policy
@@ -322,25 +333,61 @@ const Footer = () => {
                       Solution
                     </h5>
 
-                    <ul>
-                      <li>
-                        <Link
-                          href="/services"
-                          className="text-[1.8rem] leading-[4rem] font-medium tracking-normal text-white"
+                    <div>
+                      <Accordion type="single" collapsible>
+                        <AccordionItem
+                          value="item-1"
+                          className="flex flex-col gap-[6px]"
                         >
-                          By Sector
-                        </Link>
-                      </li>
+                          <AccordionTrigger className="group flex items-center justify-start gap-[1rem] text-[1.8rem] leading-[4rem] tracking-normal text-white">
+                            <span>By Sector</span>{" "}
+                            <i className="origin-center stroke-white transition-all duration-200 group-data-[state=open]:rotate-180">
+                              <ChevronDownIcon />
+                            </i>
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <ul className="flex flex-col gap-[1rem]">
+                              {SECTOR_SOLUTION_NAV.map((item, idx) => (
+                                <li key={idx}>
+                                  <Link
+                                    href={item.href}
+                                    className="text-[1.6rem] font-light tracking-normal text-white"
+                                  >
+                                    {item.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </AccordionContent>
+                        </AccordionItem>
 
-                      <li>
-                        <Link
-                          href="/services"
-                          className="text-[1.8rem] leading-[4rem] font-medium tracking-normal text-white"
+                        <AccordionItem
+                          value="item-2"
+                          className="flex flex-col gap-[6px]"
                         >
-                          By Goals
-                        </Link>
-                      </li>
-                    </ul>
+                          <AccordionTrigger className="group flex items-center justify-start gap-[1rem] text-[1.8rem] leading-[4rem] tracking-normal text-white">
+                            <span>By Goal</span>{" "}
+                            <i className="origin-center stroke-white transition-all duration-200 group-data-[state=open]:rotate-180">
+                              <ChevronDownIcon />
+                            </i>
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <ul className="flex flex-col gap-[1rem]">
+                              {GOAL_SOLUTION_NAV.map((item, idx) => (
+                                <li key={idx}>
+                                  <Link
+                                    href={item.href}
+                                    className="text-[1.6rem] font-light tracking-normal text-white"
+                                  >
+                                    {item.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </AccordionContent>
+                        </AccordionItem>
+                      </Accordion>
+                    </div>
                   </div>
                 </div>
 
@@ -424,7 +471,7 @@ const Footer = () => {
                     </AccordionTrigger>
                     <AccordionContent>
                       <ul className="flex flex-col gap-[1rem]">
-                        {DESIGN_SERVICE_NAV.map((item, idx) => (
+                        {MAIN_NAV.map((item, idx) => (
                           <li key={idx}>
                             <Link
                               href={item.href}
@@ -450,7 +497,27 @@ const Footer = () => {
                     </AccordionTrigger>
                     <AccordionContent>
                       <ul className="flex flex-col gap-[1rem]">
+                        {DESIGN_SERVICE_NAV.map((item, idx) => (
+                          <li key={idx}>
+                            <Link
+                              href={item.href}
+                              className="text-[1.6rem] font-light tracking-normal text-white"
+                            >
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
                         {GROWTH_SERVICE_NAV.map((item, idx) => (
+                          <li key={idx}>
+                            <Link
+                              href={item.href}
+                              className="text-[1.6rem] font-light tracking-normal text-white"
+                            >
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                        {SUPPORT_SERVICE_NAV.map((item, idx) => (
                           <li key={idx}>
                             <Link
                               href={item.href}
@@ -469,14 +536,24 @@ const Footer = () => {
                     className="flex flex-col gap-[6px] border-b border-white/40 pb-[1rem]"
                   >
                     <AccordionTrigger className="group flex w-full items-center justify-between gap-[1rem] text-[1.8rem] leading-[4rem] tracking-normal text-white">
-                      <span>Legal</span>{" "}
+                      <span>Solution</span>{" "}
                       <i className="origin-center stroke-white transition-all duration-200 group-data-[state=open]:rotate-180">
                         <ChevronDownIcon />
                       </i>
                     </AccordionTrigger>
                     <AccordionContent>
                       <ul className="flex flex-col gap-[1rem]">
-                        {SUPPORT_SERVICE_NAV.map((item, idx) => (
+                        {SECTOR_SOLUTION_NAV.map((item, idx) => (
+                          <li key={idx}>
+                            <Link
+                              href={item.href}
+                              className="text-[1.6rem] font-light tracking-normal text-white"
+                            >
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                        {GOAL_SOLUTION_NAV.map((item, idx) => (
                           <li key={idx}>
                             <Link
                               href={item.href}
@@ -495,49 +572,39 @@ const Footer = () => {
                     className="flex flex-col gap-[6px] border-b border-white/40 pb-[1rem]"
                   >
                     <AccordionTrigger className="group flex w-full items-center justify-between gap-[1rem] text-[1.8rem] leading-[4rem] tracking-normal text-white">
-                      <span>Solution</span>{" "}
+                      <span>Legal</span>{" "}
                       <i className="origin-center stroke-white transition-all duration-200 group-data-[state=open]:rotate-180">
                         <ChevronDownIcon />
                       </i>
                     </AccordionTrigger>
                     <AccordionContent>
                       <ul className="flex flex-col gap-[1rem]">
-                        {SUPPORT_SERVICE_NAV.map((item, idx) => (
-                          <li key={idx}>
-                            <Link
-                              href={item.href}
-                              className="text-[1.6rem] font-light tracking-normal text-white"
-                            >
-                              {item.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </AccordionContent>
-                  </AccordionItem>
+                        <li>
+                          <Link
+                            href="/legal"
+                            className="text-[1.6rem] font-light tracking-normal text-white"
+                          >
+                            Legal Hub
+                          </Link>
+                        </li>
 
-                  <AccordionItem
-                    value="item-5"
-                    className="flex flex-col gap-[6px] border-b border-white/40 pb-[1rem]"
-                  >
-                    <AccordionTrigger className="group flex w-full items-center justify-between gap-[1rem] text-[1.8rem] leading-[4rem] tracking-normal text-white">
-                      <span>Ready to start</span>{" "}
-                      <i className="origin-center stroke-white transition-all duration-200 group-data-[state=open]:rotate-180">
-                        <ChevronDownIcon />
-                      </i>
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <ul className="flex flex-col gap-[1rem]">
-                        {SUPPORT_SERVICE_NAV.map((item, idx) => (
-                          <li key={idx}>
-                            <Link
-                              href={item.href}
-                              className="text-[1.6rem] font-light tracking-normal text-white"
-                            >
-                              {item.label}
-                            </Link>
-                          </li>
-                        ))}
+                        <li>
+                          <Link
+                            href="/legal/privacy-policy"
+                            className="text-[1.6rem] font-light tracking-normal text-white"
+                          >
+                            Privacy Policy
+                          </Link>
+                        </li>
+
+                        <li>
+                          <Link
+                            href="/legal/cookie-policy"
+                            className="text-[1.6rem] font-light tracking-normal text-white"
+                          >
+                            Cookies Policy
+                          </Link>
+                        </li>
                       </ul>
                     </AccordionContent>
                   </AccordionItem>

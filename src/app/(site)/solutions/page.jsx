@@ -6,7 +6,7 @@ import Goal from "@/components/sections/goal/Goal";
 import Growth2 from "@/components/sections/growth/Growth2";
 import ServicesHero from "@/components/sections/hero/ServicesHero";
 import SolutionsHero from "@/components/sections/hero/SolutionsHero";
-import Industry from "@/components/sections/industry/Industry";
+import Sector from "@/components/sections/sector/Sector";
 import Support from "@/components/sections/support/Support";
 import Testimonials from "@/components/sections/testimonials/Testimonials";
 import { SOLUTIONS_QUERY } from "@/sanity/queries.solutions";
@@ -22,7 +22,7 @@ const SolutionsPage = async () => {
   return (
     <>
       <SolutionsHero />
-      <Industry solutions={industrySolutions} />
+      <Sector solutions={industrySolutions} />
       <Goal solutions={goalSolutions} />
       <section className="overflow-hidden px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <Cta />

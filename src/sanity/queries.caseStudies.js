@@ -109,3 +109,10 @@ export const industriesQuery = `
   "slug": slug.current
 }
 `;
+
+export const CASE_STUDY_SITEMAP_QUERY = `
+*[_type == "caseStudies" && defined(slug.current)]{
+  "slug": slug.current,
+  _updatedAt
+}
+`;

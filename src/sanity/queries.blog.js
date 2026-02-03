@@ -52,3 +52,10 @@ export const BLOG_DETAIL_QUERY = `
   }
   }
 `;
+
+export const BLOG_SITEMAP_QUERY = `
+*[_type == "blog" && defined(slug.current)]{
+  "slug": slug.current,
+  _updatedAt
+}
+`;

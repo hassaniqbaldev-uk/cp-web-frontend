@@ -99,7 +99,11 @@ export const SOLUTIONS_DETAIL_QUERY = `
       answer
       }
   }
+`;
 
-  
-
+export const SOLUTIONS_SITEMAP_QUERY = `
+*[_type == "solutions" && defined(slug.current)]{
+  "slug": slug.current,
+  _updatedAt
+}
 `;

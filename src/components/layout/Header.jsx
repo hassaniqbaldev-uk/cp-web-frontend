@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import PrimaryButton from "../ui/PrimaryButton";
 import Logo from "../decorative-elements/Logo";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -11,6 +10,8 @@ import ServicesDropdown from "../ui/ServicesDropdown";
 import SolutionsDropdown from "../ui/SolutionsDropdown";
 import AboutDropdown from "../ui/AboutDropdown";
 import { motion } from "framer-motion";
+import SecondaryButton from "../ui/SecondaryButton";
+import { getCalApi } from "@calcom/embed-react";
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -92,6 +93,21 @@ const Header = () => {
     (path) => pathname === path || pathname.startsWith(`${path}/`),
   );
 
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "15min" });
+      cal("ui", {
+        theme: "dark",
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#292929" },
+          dark: { "cal-brand": "#FF37B3" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+
   return (
     <>
       <motion.header
@@ -154,9 +170,9 @@ const Header = () => {
                 Insights
               </Link>
 
-              <Link href="" className="nav-link" onClick={closeAllDropdowns}>
+              {/* <Link href="" className="nav-link" onClick={closeAllDropdowns}>
                 Pricing
-              </Link>
+              </Link> */}
 
               <AboutDropdown
                 className="nav-link"
@@ -185,11 +201,13 @@ const Header = () => {
             </div>
 
             <div className="hidden xl:block" onClick={closeAllDropdowns}>
-              <PrimaryButton
+              <SecondaryButton
                 text="Book with Hassan"
                 textColor="#FFFFFF"
                 bGcolor="#FF37B3"
-                href=""
+                data-cal-namespace="15min"
+                data-cal-link="hassan-iqbal-mznzu9/15min"
+                data-cal-config='{"layout":"month_view","theme":"dark"}'
               />
             </div>
           </div>

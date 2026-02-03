@@ -84,7 +84,7 @@ export const designBuildData = [
 
 export const themeColorList = Object.values(themeColors);
 
-const Industry = ({ solutions = [] }) => {
+const Sector = ({ solutions = [] }) => {
   const [hovered, setHovered] = useState(null);
 
   const getThemeColor = (index) =>
@@ -143,7 +143,7 @@ const Industry = ({ solutions = [] }) => {
                 className="hidden w-full border-t border-[#625c70]/20 md:block"
               />
               <motion.div variants={itemVariants} className="min-w-max">
-                <SectionTitle text="By Industry" textColor="#312749" />
+                <SectionTitle text="By Sector" textColor="#312749" />
               </motion.div>
               <motion.hr
                 variants={itemVariants}
@@ -310,4 +310,4 @@ const Industry = ({ solutions = [] }) => {
   );
 };
 
-export default Industry;
+export default Sector;

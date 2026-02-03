@@ -80,53 +80,53 @@ export const SUPPORT_SERVICE_NAV = [
 ];
 
 export const SECTOR_SOLUTION_NAV = [
-  { label: "For SMEs", excerpt: "", href: "/solutions/sme-founders" },
-  { label: "For Ecommerce", excerpt: "", href: "/about" },
+  { label: "B2B Services", excerpt: "", href: "/solutions/b2b-services" },
+  { label: "Driving Schools", excerpt: "", href: "/solutions/driving-schools" },
   {
-    label: "For Interiors",
+    label: "Ecommerce Brands",
     excerpt: "Soft Furnishing & bespoke",
-    href: "/services",
+    href: "/solutions/ecommerce-brands",
   },
-  { label: "For Resturant", excerpt: "", href: "/case-studies" },
   {
-    label: "For Pharmacies",
-    excerpt: "NHIS integrations & Bookings",
-    href: "/contact",
+    label: "Education & Charity",
+    excerpt: "",
+    href: "/solutions/education-and-charity",
   },
-  { label: "For Fashion", excerpt: "", href: "/contact" },
-  { label: "For SaaS", excerpt: "", href: "/contact" },
-  { label: "For driving schools", excerpt: "", href: "/contact" },
+  {
+    label: "Interiors & Furnishings",
+    excerpt: "NHIS integrations & Bookings",
+    href: "/solutions/interiors-and-furnishings",
+  },
+  { label: "Pharmacies", excerpt: "", href: "/solutions/pharmacies" },
+  { label: "Restaurants", excerpt: "", href: "/solutions/restaurants" },
+  { label: "SME Founders", excerpt: "", href: "/solutions/sme-founders" },
+  { label: "SaaS Companies", excerpt: "", href: "/solutions/saas-companies" },
 ];
 
 export const GOAL_SOLUTION_NAV = [
   {
-    label: "Increase Leads",
+    label: "Automate Operations",
     excerpt: "Get more qualified enquiries",
-    href: "/",
+    href: "/solutions/automate-operations",
   },
   {
-    label: "Rebuild Website",
+    label: "Increase Leads",
     excerpt: "Modernize your digital presence",
-    href: "/about",
-  },
-  {
-    label: "Scale Marketing",
-    excerpt: "Expand your reach & ROI",
-    href: "/services",
+    href: "/solutions/increase-leads",
   },
   {
     label: "Launch New Product",
+    excerpt: "Expand your reach & ROI",
+    href: "/solutions/launch-new-product",
+  },
+  {
+    label: "Replatform / Rebuild",
     excerpt: "Go-to-market strategy",
-    href: "/case-studies",
+    href: "/solutions/replatform-rebuild",
   },
   {
-    label: "Automate operations",
+    label: "Scale Marketing",
     excerpt: "AI & workflow efficiency",
-    href: "/contact",
-  },
-  {
-    label: "Migrate platform",
-    excerpt: "Move safely to shopify/Wordpress",
-    href: "/contact",
+    href: "/solutions/scale-marketing",
   },
 ];
