@@ -1,14 +1,11 @@
+import { BLOG_SITEMAP_QUERY } from "@/sanity/queries.blog";
+import { CASE_STUDY_SITEMAP_QUERY } from "@/sanity/queries.caseStudies";
+import { SERVICES_SITEMAP_QUERY } from "@/sanity/queries.services";
+import { SOLUTIONS_SITEMAP_QUERY } from "@/sanity/queries.solutions";
 import { blogClient } from "@/sanity/sanity.blog";
 import { caseStudiesClient } from "@/sanity/sanity.caseStudies";
 import { servicesClient } from "@/sanity/sanity.services";
 import { solutionsClient } from "@/sanity/sanity.solutions";
-
-import {
-  BLOG_SITEMAP_QUERY,
-  CASE_STUDY_SITEMAP_QUERY,
-  SERVICES_SITEMAP_QUERY,
-  SOLUTIONS_SITEMAP_QUERY,
-} from "@/sanity/queries/sitemap";
 
 const SITE_URL = "https://cp-web-frontend.vercel.app/";
 
