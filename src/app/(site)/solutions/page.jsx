@@ -10,12 +10,12 @@ import Sector from "@/components/sections/sector/Sector";
 import Support from "@/components/sections/support/Support";
 import Testimonials from "@/components/sections/testimonials/Testimonials";
 import { SOLUTIONS_QUERY } from "@/sanity/queries.solutions";
-import { client } from "@/sanity/sanity.solutions";
+import { solutionsClient } from "@/sanity/sanity.solutions";
 
 export const revalidate = 30; // Next.js ISR
 
 const SolutionsPage = async () => {
-  const solutions = await client.fetch(SOLUTIONS_QUERY);
+  const solutions = await solutionsClient.fetch(SOLUTIONS_QUERY);
 
   const industrySolutions = solutions.filter((s) => s.category === "industry");
   const goalSolutions = solutions.filter((s) => s.category === "goal");

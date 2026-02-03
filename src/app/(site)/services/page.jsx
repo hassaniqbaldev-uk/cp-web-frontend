@@ -7,12 +7,12 @@ import ServicesHero from "@/components/sections/hero/ServicesHero";
 import Support from "@/components/sections/support/Support";
 import Testimonials from "@/components/sections/testimonials/Testimonials";
 import { SERVICES_QUERY } from "@/sanity/queries.services";
-import { client } from "@/sanity/sanity.services";
+import { servicesClient } from "@/sanity/sanity.services";
 
 export const revalidate = 30; // Next.js ISR
 
 const ServicesPage = async () => {
-  const services = await client.fetch(SERVICES_QUERY);
+  const services = await servicesClient.fetch(SERVICES_QUERY);
 
   const designBuildServices = services.filter(
     (s) => s.category === "design-development",

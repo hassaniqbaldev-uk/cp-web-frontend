@@ -6,7 +6,7 @@ import PartnerWithUs2 from "@/components/sections/partner-with-us/PartnerWithUs2
 import DynamicQuestions from "@/components/sections/questions/DynamicQuestions";
 import Testimonials from "@/components/sections/testimonials/Testimonials";
 import { SOLUTIONS_DETAIL_QUERY } from "@/sanity/queries.solutions";
-import { client } from "@/sanity/sanity.solutions";
+import { solutionsClient } from "@/sanity/sanity.solutions";
 
 const options = { next: { revalidate: 30 } };
 
@@ -14,7 +14,7 @@ const SolutionsDetailPage = async (props) => {
   const params = await props.params;
   const slug = params.slug;
 
-  const solution = await client.fetch(
+  const solution = await solutionsClient.fetch(
     SOLUTIONS_DETAIL_QUERY,
     { slug },
     options,

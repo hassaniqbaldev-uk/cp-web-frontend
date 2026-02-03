@@ -9,7 +9,7 @@ import ProjectShowcase from "@/components/sections/project-showcase/ProjectShowc
 import DynamicQuestions from "@/components/sections/questions/DynamicQuestions";
 import Testimonials from "@/components/sections/testimonials/Testimonials";
 import { SERVICES_DETAIL_QUERY } from "@/sanity/queries.services";
-import { client } from "@/sanity/sanity.services";
+import { servicesClient } from "@/sanity/sanity.services";
 
 const options = { next: { revalidate: 30 } };
 
@@ -17,7 +17,11 @@ const ServicesDetailPage = async (props) => {
   const params = await props.params;
   const slug = params.slug;
 
-  const service = await client.fetch(SERVICES_DETAIL_QUERY, { slug }, options);
+  const service = await servicesClient.fetch(
+    SERVICES_DETAIL_QUERY,
+    { slug },
+    options,
+  );
 
   if (!service) {
     notFound();

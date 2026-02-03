@@ -8,13 +8,13 @@ import Cta from "@/components/sections/cta/Cta";
 import Testimonials from "@/components/sections/testimonials/Testimonials";
 import Contact from "@/components/sections/contact/Contact";
 import { caseStudiesListingQuery } from "@/sanity/queries.caseStudies";
-import { client } from "@/sanity/sanity.caseStudies";
+import { caseStudiesClient } from "@/sanity/sanity.caseStudies";
 
 const options = { next: { revalidate: 30 } };
 
 const HomePage = async () => {
   const [caseStudies] = await Promise.all([
-    client.fetch(caseStudiesListingQuery, options),
+    caseStudiesClient.fetch(caseStudiesListingQuery, options),
   ]);
 
   return (

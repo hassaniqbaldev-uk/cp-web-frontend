@@ -1,7 +1,7 @@
 import { createImageUrlBuilder } from "@sanity/image-url";
-import { client } from "./sanity.services";
+import { servicesClient } from "./sanity.services";
 
-const { projectId, dataset } = client.config();
+const { projectId, dataset } = servicesClient.config();
 
 const builder =
   projectId && dataset ? createImageUrlBuilder({ projectId, dataset }) : null;

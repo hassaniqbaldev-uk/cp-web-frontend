@@ -7,7 +7,7 @@ import {
   industriesQuery,
   servicesQuery,
 } from "@/sanity/queries.caseStudies";
-import { client } from "@/sanity/sanity.caseStudies";
+import { caseStudiesClient } from "@/sanity/sanity.caseStudies";
 
 const options = { next: { revalidate: 30 } };
 
@@ -19,9 +19,13 @@ const CaseStudiesPage = async (props) => {
   const industry = searchParams?.industry ?? null;
 
   const [caseStudies, services, industries] = await Promise.all([
-    client.fetch(caseStudiesFilteredQuery, { service, industry }, options),
-    client.fetch(servicesQuery, {}, options),
-    client.fetch(industriesQuery, {}, options),
+    caseStudiesClient.fetch(
+      caseStudiesFilteredQuery,
+      { service, industry },
+      options,
+    ),
+    caseStudiesClient.fetch(servicesQuery, {}, options),
+    caseStudiesClient.fetch(industriesQuery, {}, options),
   ]);
 
   return (

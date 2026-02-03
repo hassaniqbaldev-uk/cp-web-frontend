@@ -5,7 +5,7 @@ import OurApproach from "@/components/sections/our-approach/OurApproach";
 import TheChallenge from "@/components/sections/the-challenge/TheChallenge";
 import TheSolution from "@/components/sections/the-solution/TheSolution";
 import { caseStudiesDetailQuery } from "@/sanity/queries.caseStudies";
-import { client } from "@/sanity/sanity.caseStudies";
+import { caseStudiesClient } from "@/sanity/sanity.caseStudies";
 import { notFound } from "next/navigation";
 import React from "react";
 
@@ -15,7 +15,7 @@ const CaseStudiesDetailPage = async (props) => {
   const params = await props.params;
   const slug = params.slug;
 
-  const caseStudy = await client.fetch(
+  const caseStudy = await caseStudiesClient.fetch(
     caseStudiesDetailQuery,
     { slug },
     options,
