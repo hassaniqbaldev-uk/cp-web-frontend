@@ -5,7 +5,7 @@ export const MAIN_NAV = [
   { label: "Case Studies", href: "/case-studies" },
   { label: "Contact", href: "/contact" },
   { label: "Blog", href: "/blog" },
-  { label: "Sitemap", href: "/sitemap" },
+  { label: "Sitemap", href: "/sitemap.xml" },
 ];
 
 export const COMPANY_ABOUT_NAV = [
