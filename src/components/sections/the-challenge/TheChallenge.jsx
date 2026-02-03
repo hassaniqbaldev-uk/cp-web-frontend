@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import CheckMarkIcon from "@/components/icons/CheckMarkIcon";
-import { urlFor } from "@/sanity/image";
+import { urlFor } from "@/sanity/caseStudies.image";
 import { motion } from "framer-motion";
 
 const TheChallenge = ({ caseStudy }) => {

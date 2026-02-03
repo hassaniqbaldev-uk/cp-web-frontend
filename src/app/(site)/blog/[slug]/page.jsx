@@ -3,15 +3,29 @@ import BlogMeta from "@/components/sections/blog/BlogMeta";
 import BlogShare from "@/components/sections/blog/BlogShare";
 import RelatedBlogs from "@/components/sections/blog/RelatedBlogs";
 import BlogDetailHero from "@/components/sections/hero/BlogDetailHero";
+import { BLOG_DETAIL_QUERY, BLOG_LIST_QUERY } from "@/sanity/queries.blog";
+import { client } from "@/sanity/sanity.blog";
 
-const BlogDetailPage = () => {
+const options = { next: { revalidate: 30 } };
+
+const BlogDetailPage = async (props) => {
+  const params = await props.params;
+  const slug = params.slug;
+
+  const post = await client.fetch(BLOG_DETAIL_QUERY, { slug }, options);
+  const blogs = await client.fetch(BLOG_LIST_QUERY);
+
+  if (!post) {
+    notFound();
+  }
+
   return (
     <>
-      <BlogDetailHero />
-      <BlogMeta />
-      <BlogContent />
-      <BlogShare />
-      <RelatedBlogs />
+      <BlogDetailHero post={post} />
+      <BlogMeta post={post} />
+      <BlogContent post={post.content} />
+      <BlogShare post={post} />
+      <RelatedBlogs blogs={blogs} />
     </>
   );
 };

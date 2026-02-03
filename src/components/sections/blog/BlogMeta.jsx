@@ -6,22 +6,31 @@ import FacebookIcon from "@/assets/icons/social/facebook-dark-icon.svg";
 import InstagramIcon from "@/assets/icons/social/instagram-dark-icon.svg";
 import LinkedinIcon from "@/assets/icons/social/linkedin-dark-icon.svg";
 
-const BlogMeta = () => {
+const BlogMeta = ({ post }) => {
   return (
     <>
       <section className="px-[2rem] pt-[5rem] xl:px-[0rem] xl:pt-[28.6rem]">
         <div className="container flex flex-col items-start justify-between gap-[4rem] border-b border-[#E6E6E6] pb-[5rem] md:items-center xl:flex-row xl:pb-[5.6rem]">
           <div className="flex flex-wrap items-center gap-[2.4rem]">
             <div className="flex items-center gap-[1.6rem]">
-              <div className="size-[5rem] overflow-hidden rounded-full bg-amber-800 md:size-[6.2rem]"></div>
+              <div className="size-[5rem] overflow-hidden rounded-full md:size-[6.2rem]">
+                <Image
+                  src={post.author.image.asset.url}
+                  width={50}
+                  height={50}
+                  alt="Avatar Image"
+                  className="size-full object-cover"
+                  unoptimized
+                />
+              </div>
 
               <div className="flex flex-col items-start gap-[.6rem] text-left">
                 <h5 className="text-[2rem] leading-[2rem] font-semibold tracking-[-0.02em] text-[#312749] md:text-[2.4rem] md:leading-[2.4rem]">
-                  Adam Smith
+                  {post.author.name}
                 </h5>
 
                 <span className="text-[1.6rem] leading-[1.6rem] font-normal tracking-normal text-[#625C70]">
-                  Co-Founder
+                  {post.author.role}
                 </span>
               </div>
             </div>
@@ -39,7 +48,7 @@ const BlogMeta = () => {
                 </h5>
 
                 <span className="text-[1.6rem] leading-[1.6rem] font-normal tracking-normal text-[#625C70]">
-                  Nov 28, 2024
+                  {new Date(post.publishedAt).toLocaleDateString()}
                 </span>
               </div>
             </div>
@@ -57,7 +66,7 @@ const BlogMeta = () => {
                 </h5>
 
                 <span className="text-[1.6rem] leading-[1.6rem] font-normal tracking-normal text-[#625C70]">
-                  8 Min Read
+                  {post.readTime} Min Read
                 </span>
               </div>
             </div>

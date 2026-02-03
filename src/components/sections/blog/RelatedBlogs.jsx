@@ -22,7 +22,7 @@ export const CardData = [
   },
 ];
 
-const RelatedBlogs = () => {
+const RelatedBlogs = ({ blogs }) => {
   return (
     <>
       <section className="bg-[#F0F6FF] px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
@@ -32,14 +32,16 @@ const RelatedBlogs = () => {
           </div>
 
           <div className="mt-[5rem] grid grid-cols-1 gap-[3.3rem] md:grid-cols-2">
-            {CardData.map((item, idx) => (
+            {blogs.slice(0, 2).map((item, idx) => (
               <div key={idx}>
                 <BlogCard
+                  readTime={item.readTime}
+                  publishedDate={item.publishedAt}
                   category={item.category}
-                  img={item.img}
+                  img={item.coverImage.asset.url}
                   title={item.title}
                   excerpt={item.excerpt}
-                  link={item.link}
+                  link={`/blog/${item.slug.current}`}
                 />
               </div>
             ))}

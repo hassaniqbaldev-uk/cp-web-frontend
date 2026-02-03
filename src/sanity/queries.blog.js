@@ -1,4 +1,4 @@
-export const blogHeroQuery = `
+export const BLOG_HERO_QUERY = `
 *[_type == "blog" && featured == true][0]{
   title,
   excerpt,
@@ -13,7 +13,7 @@ export const blogHeroQuery = `
 }
 `;
 
-export const blogListQuery = `
+export const BLOG_LIST_QUERY = `
 *[_type == "blog"] | order(publishedAt desc) {
   title,
   excerpt,
@@ -27,4 +27,28 @@ export const blogListQuery = `
       }
     }
 }
+`;
+
+export const BLOG_DETAIL_QUERY = `
+  *[_type == "blog" && slug.current == $slug][0] {
+    title,
+    publishedAt,
+    readTime,
+    tags,
+    coverImage {
+      asset->{
+        url
+        }
+      },
+    content,
+    author->{
+    name,
+    role,
+    image {
+     asset->{
+        url
+     }
+    },
+  }
+  }
 `;

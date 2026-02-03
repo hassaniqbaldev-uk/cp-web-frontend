@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { urlFor } from "@/sanity/image";
+import { urlFor } from "@/sanity/caseStudies.image";
 import { motion } from "framer-motion";
 import useMousePosition from "@/utils/useMousePosition";
 import { useState } from "react";

@@ -2,7 +2,7 @@
 import CheckMarkIcon from "@/components/icons/CheckMarkIcon";
 import SectionDescription from "@/components/ui/SectionDescription";
 import Image from "next/image";
-import { urlFor } from "@/sanity/image";
+import { urlFor } from "@/sanity/caseStudies.image";
 import { motion } from "framer-motion";
 
 const OurApproach = ({ caseStudy }) => {

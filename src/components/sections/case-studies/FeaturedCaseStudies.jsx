@@ -12,7 +12,7 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import Link from "next/link";
 import Image from "next/image";
 import TiltArrowIcon from "@/components/icons/TiltArrowIcon";
-import { urlFor } from "@/sanity/image";
+import { urlFor } from "@/sanity/caseStudies.image";
 import { motion } from "framer-motion";
 
 const FeaturedCaseStudies = ({

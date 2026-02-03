@@ -2,7 +2,7 @@
 import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import PrimaryButton from "@/components/ui/PrimaryButton";
-import { urlFor } from "@/sanity/image";
+import { urlFor } from "@/sanity/caseStudies.image";
 import { motion } from "framer-motion";
 
 const CaseStudiesDetailHero = ({ caseStudy }) => {
