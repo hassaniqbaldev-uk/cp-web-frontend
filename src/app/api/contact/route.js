@@ -1,5 +1,7 @@
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
+import { getContactEmailTemplate } from "@/emails/contact-template";
+import { getCustomerEmailTemplate } from "@/emails/customer-template";
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -37,44 +39,41 @@ export async function POST(request) {
     );
   }
 
+  const sanitized = {
+    name: escapeHtml(name),
+    email: escapeHtml(email),
+    service: escapeHtml(service),
+    message: escapeHtml(message),
+  };
+
   try {
+    // Internal notification to you
     await transporter.sendMail({
       from: `"Contact Form" <${process.env.SMTP_USER}>`,
       to: process.env.RECIPIENT_EMAIL,
       replyTo: email,
-      subject: `[Contact] ${escapeHtml(service)} – ${escapeHtml(name)}`,
+      subject: `[Contact] ${sanitized.service} – ${sanitized.name}`,
       text: `Name: ${name}\nEmail: ${email}\nService: ${service}\n\nMessage:\n${message}`,
-      html: `
-        <table style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border-collapse: collapse;">
-          <tr>
-            <td style="background: #FF37B3; padding: 24px;">
-              <h2 style="margin: 0; color: #fff; font-size: 20px;">New Contact Form Submission</h2>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 24px; border: 1px solid #e5e7eb;">
-              <table style="width: 100%; border-collapse: collapse;">
-                <tr style="border-bottom: 1px solid #e5e7eb;">
-                  <td style="padding: 10px 0; font-weight: bold; color: #312749; width: 100px;">Name</td>
-                  <td style="padding: 10px 0; color: #625C70;">${escapeHtml(name)}</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #e5e7eb;">
-                  <td style="padding: 10px 0; font-weight: bold; color: #312749;">Email</td>
-                  <td style="padding: 10px 0; color: #625C70;">${escapeHtml(email)}</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #e5e7eb;">
-                  <td style="padding: 10px 0; font-weight: bold; color: #312749;">Service</td>
-                  <td style="padding: 10px 0; color: #625C70;">${escapeHtml(service)}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 0; font-weight: bold; color: #312749; vertical-align: top;">Message</td>
-                  <td style="padding: 10px 0; color: #625C70; white-space: pre-wrap;">${escapeHtml(message)}</td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table>
-      `,
+      html: getContactEmailTemplate(
+        sanitized.name,
+        sanitized.email,
+        sanitized.service,
+        sanitized.message
+      ),
+    });
+
+    // Confirmation reply to the customer
+    await transporter.sendMail({
+      from: `"CreativePixels Agency" <${process.env.SMTP_USER}>`,
+      to: email,
+      subject: `Thanks for reaching out – ${sanitized.service}`,
+      text: `Hi ${name},\n\nThank you for contacting CreativePixels Agency. We've received your request for ${service} and our team will get back to you shortly.\n\nBest regards,\nCreativePixels Team`,
+      html: getCustomerEmailTemplate(
+        sanitized.name,
+        sanitized.email,
+        sanitized.service,
+        sanitized.message
+      ),
     });
 
     return NextResponse.json({ success: true });
