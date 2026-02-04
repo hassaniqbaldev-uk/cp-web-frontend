@@ -16,7 +16,7 @@ const ContactForm = () => {
     service: "",
     message: "",
   });
-  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [status, setStatus] = useState("idle"); // idle | loading | success | erro
   const [errorMsg, setErrorMsg] = useState("");
 
   const validate = () => {
