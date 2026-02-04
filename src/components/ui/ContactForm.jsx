@@ -16,15 +16,80 @@ const ContactForm = () => {
     service: "",
     message: "",
   });
+  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const handleSubmit = (e) => {
+  const validate = () => {
+    if (!formData.name.trim()) return "Please enter your name.";
+    if (!formData.email.trim()) return "Please enter your email.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
+      return "Please enter a valid email.";
+    if (!formData.service) return "Please select a service.";
+    if (!formData.message.trim()) return "Please enter a message.";
+    return null;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(formData); // for now
+    const error = validate();
+    if (error) {
+      setStatus("error");
+      setErrorMsg(error);
+      return;
+    }
 
-    // validate here
-    // send to API later
+    setStatus("loading");
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        setStatus("error");
+        setErrorMsg(data.error || "Something went wrong.");
+        return;
+      }
+
+      setStatus("success");
+      setFormData({ name: "", email: "", service: "", message: "" });
+    } catch {
+      setStatus("error");
+      setErrorMsg("Network error. Please try again.");
+    }
   };
+
+  if (status === "success") {
+    return (
+      <div
+        style={{ boxShadow: "13px 13px 40px 0px #00000014" }}
+        className="flex w-full flex-col items-center justify-center overflow-hidden rounded-[2rem] border-t-8 border-[#FF37B3] bg-white p-[3.8rem] md:w-[59.5rem]"
+      >
+        <div className="flex w-full flex-col gap-[1rem] border-b border-[#D6D6D6] pb-[2.5rem]">
+          <h4 className="text-[2.6rem] leading-[3rem] font-bold tracking-[-0.02em] text-[#312749]">
+            Message sent! 🎉
+          </h4>
+        </div>
+        <div className="mt-[2.5rem] flex w-full flex-col items-center gap-6">
+          <p className="text-center text-[1.6rem] text-[#625C70]">
+            Thank you! We&apos;ll get back to you shortly.
+          </p>
+          <button
+            type="button"
+            onClick={() => setStatus("idle")}
+            className="text-[1.4rem] font-semibold text-[#FF37B3] underline"
+          >
+            Send another message
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -150,12 +215,16 @@ const ContactForm = () => {
         </div>
         {/* Footer */}
         <div className="flex w-full flex-col items-center justify-center gap-[2.3rem]">
+          {status === "error" && (
+            <p className="text-[1.4rem] text-[#F14A58]">{errorMsg}</p>
+          )}
           <button
             type="submit"
-            className="inline-flex w-full cursor-pointer items-center justify-center"
+            disabled={status === "loading"}
+            className="inline-flex w-full cursor-pointer items-center justify-center disabled:opacity-60"
           >
             <span className="inline-flex h-[4rem] w-full items-center justify-center rounded-[7rem] bg-[#FF37B3] px-[3rem] py-[1rem] text-center text-[1.4rem] font-semibold tracking-normal text-white md:h-[5rem] md:text-[1.8rem]">
-              Send enquiry
+              {status === "loading" ? "Sending..." : "Send enquiry"}
             </span>
 
             <svg
