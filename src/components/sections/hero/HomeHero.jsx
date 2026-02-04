@@ -15,14 +15,17 @@ import { CLIENT_LOGO } from "@/contants";
 import SectionDescription from "@/components/ui/SectionDescription";
 import { motion, useReducedMotion } from "framer-motion";
 import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
+import { useLoaderStore } from "@/store/loaderStore";
 import { useEffect, useState } from "react";
 import { getCalApi } from "@calcom/embed-react";
 import Counter from "@/components/ui/Counter";
 import useMousePosition from "@/utils/useMousePosition";
 import Cursor from "@/assets/svgs/you-cursor.svg";
+import { useMenuStore } from "@/store/mobileMenuStore";
 
 const HomeHero = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const loaderDone = useLoaderStore((state) => state.loaderDone);
 
   const containerVariants = {
     hidden: {},
@@ -131,7 +134,7 @@ const HomeHero = () => {
             <motion.div
               variants={containerVariants}
               initial="hidden"
-              animate="visible"
+              animate={loaderDone ? "visible" : "hidden"}
               className="flex w-[27.5rem] flex-col items-center text-center md:w-[63rem] xl:items-start xl:text-left"
             >
               <motion.div
@@ -177,7 +180,7 @@ const HomeHero = () => {
                   <motion.span
                     variants={lineVariants}
                     initial="hidden"
-                    animate="visible"
+                    animate={loaderDone ? "visible" : "hidden"}
                     transition={{ delay: 0.6 }}
                     className="block"
                   >
@@ -189,7 +192,7 @@ const HomeHero = () => {
                   <motion.span
                     variants={lineVariants}
                     initial="hidden"
-                    animate="visible"
+                    animate={loaderDone ? "visible" : "hidden"}
                     transition={{ delay: 0.8 }}
                     className="block"
                   >
@@ -201,7 +204,7 @@ const HomeHero = () => {
                   <motion.span
                     variants={lineVariants}
                     initial="hidden"
-                    animate="visible"
+                    animate={loaderDone ? "visible" : "hidden"}
                     transition={{ delay: 1 }}
                     className="bg-gradient-yellow-orange block bg-clip-text text-transparent"
                   >
@@ -229,7 +232,7 @@ const HomeHero = () => {
             <motion.div
               variants={itemVariants}
               initial="hidden"
-              animate="visible"
+              animate={loaderDone ? "visible" : "hidden"}
               transition={{ delay: 0.5 }}
               className="w-[28.7rem] md:w-[42.4rem]"
             >
@@ -363,14 +366,14 @@ const HomeHero = () => {
 
           <motion.hr
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={loaderDone ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
             className="mt-[3rem] mb-[2.4rem] w-full border-t border-white/15 md:mt-[8rem]"
           />
 
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={loaderDone ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 1.2 }}
             className="w-full"
             style={{

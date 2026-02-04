@@ -9,6 +9,7 @@ import Testimonials from "@/components/sections/testimonials/Testimonials";
 import Contact from "@/components/sections/contact/Contact";
 import { caseStudiesListingQuery } from "@/sanity/queries.caseStudies";
 import { caseStudiesClient } from "@/sanity/sanity.caseStudies";
+import HomePageLoader from "@/components/layout/HomePageLoader";
 
 const options = { next: { revalidate: 30 } };
 
@@ -18,7 +19,7 @@ const HomePage = async () => {
   ]);
 
   return (
-    <>
+    <HomePageLoader>
       <HomeHero />
       <Expertise />
       <Services />
@@ -34,7 +35,7 @@ const HomePage = async () => {
       <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <Contact />
       </section>
-    </>
+    </HomePageLoader>
   );
 };
 export default HomePage;

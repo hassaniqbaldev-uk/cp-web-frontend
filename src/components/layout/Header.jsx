@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import HamburgerIcon from "@/assets/icons/ui/hamburger-icon.svg";
 import { useMenuStore } from "@/store/mobileMenuStore";
+import { useLoaderStore } from "@/store/loaderStore";
 import ServicesDropdown from "../ui/ServicesDropdown";
 import SolutionsDropdown from "../ui/SolutionsDropdown";
 import AboutDropdown from "../ui/AboutDropdown";
@@ -19,6 +20,7 @@ const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const pathname = usePathname();
   const { toggleMenu } = useMenuStore();
+  const loaderDone = useLoaderStore((state) => state.loaderDone);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
@@ -112,7 +114,7 @@ const Header = () => {
     <>
       <motion.header
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={{ opacity: pathname === "/" && !loaderDone ? 0 : 1 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
         viewport={{ once: true }}
         className={`fixed top-0 left-0 z-[500] w-full px-[2rem] pt-[1.3rem] transition-transform duration-300 ease-out md:pt-[2.5rem] xl:px-[0rem] ${isHidden ? "-translate-y-full" : "translate-y-0"} `}

@@ -152,20 +152,19 @@ const ServicesDetailHero = ({ service }) => {
               </motion.div>
             </motion.div>
 
-            <div className="w-full md:w-[63rem]">
+            <div className="w-full md:w-[50rem]">
               <motion.div
                 variants={itemVariants}
                 initial="hidden"
                 animate="visible"
                 transition={{ delay: 0.5 }}
-                className="flex h-[32rem] w-full items-center justify-center rounded-[2rem] bg-white md:h-[45rem]"
+                className="flex items-center justify-center overflow-hidden rounded-[4rem]"
               >
                 <Image
                   src={service.heroImage.asset.url}
-                  width={534}
-                  height={355}
+                  width={1098}
+                  height={960}
                   alt="Card Image"
-                  className="w-[30rem] md:w-[53.4rem]"
                   unoptimized
                 />
               </motion.div>
