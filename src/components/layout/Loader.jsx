@@ -46,7 +46,7 @@ export default function Loader() {
         width="240"
         height="91"
         phase={phase}
-        className="h-[3.6rem] w-[9.7rem] md:h-[9.1rem] md:w-[24rem]"
+        className="h-[4.6rem] w-[12.1rem] md:h-[9.1rem] md:w-[24rem]"
       />
     </motion.div>
   );

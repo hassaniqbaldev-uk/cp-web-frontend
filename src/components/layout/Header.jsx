@@ -119,7 +119,7 @@ const Header = () => {
         viewport={{ once: true }}
         className={`fixed top-0 left-0 z-[500] w-full px-[2rem] pt-[1.3rem] transition-transform duration-300 ease-out md:pt-[2.5rem] xl:px-[0rem] ${isHidden ? "-translate-y-full" : "translate-y-0"} `}
       >
-        <div className="container">
+        <div className="mx-auto max-w-[112rem]">
           <div
             className={`header-container ${
               isHeaderSecondary

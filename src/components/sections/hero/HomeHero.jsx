@@ -354,10 +354,10 @@ const HomeHero = () => {
                   />
 
                   <Link
-                    href=""
+                    href="/case-studies/casa-botanica-panama"
                     className="text-text absolute top-1/2 left-1/2 inline-flex h-[1.2rem] -translate-1/2 cursor-none items-center justify-center rounded-[4rem] bg-[#FFD900] px-[2rem] text-center text-[.6rem] font-bold tracking-normal md:h-[2.5rem] md:px-[4.3rem] md:text-[1.2rem]"
                   >
-                    Login
+                    View
                   </Link>
                 </div>
               </div>
