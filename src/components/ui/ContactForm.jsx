@@ -54,6 +54,7 @@ const ContactForm = () => {
 
               <div className="h-[5.2rem] w-full rounded-[1.6rem] border border-[#E5E7EB] bg-[#F9FAFB]">
                 <input
+                  id="name"
                   type="text"
                   name="name"
                   className="h-full w-full bg-[transparent] p-[1.5rem] outline-0"
@@ -80,7 +81,10 @@ const ContactForm = () => {
                   setFormData({ ...formData, service: value })
                 }
               >
-                <SelectTrigger className="!h-[5.2rem] w-full rounded-[1.6rem] border border-[#E5E7EB] bg-[#F9FAFB] px-[1.5rem] text-[1.6rem] font-normal tracking-normal text-[#625C70]">
+                <SelectTrigger
+                  id="help"
+                  className="!h-[5.2rem] w-full rounded-[1.6rem] border border-[#E5E7EB] bg-[#F9FAFB] px-[1.5rem] text-[1.6rem] font-normal tracking-normal text-[#625C70]"
+                >
                   <SelectValue placeholder="Select..." />
                 </SelectTrigger>
                 <SelectContent align="center">
@@ -109,10 +113,11 @@ const ContactForm = () => {
 
             <div className="h-[5.2rem] w-full rounded-[1.6rem] border border-[#E5E7EB] bg-[#F9FAFB]">
               <input
+                id="email"
                 type="email"
                 name="email"
                 className="h-full w-full bg-[transparent] p-[1.5rem] outline-0"
-                placeholder="Enter you email"
+                placeholder="Enter your email"
                 value={formData.email}
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
@@ -131,7 +136,7 @@ const ContactForm = () => {
 
             <div className="w-full overflow-hidden rounded-[1.6rem] border border-[#E5E7EB] bg-[#F9FAFB]">
               <textarea
-                type="text"
+                id="message"
                 name="message"
                 className="h-[12.8rem] w-full resize-none p-[1.5rem] outline-0"
                 placeholder="Enter your message"

@@ -67,7 +67,12 @@ const Cta = () => {
             <div className="flex items-center justify-center gap-[1rem] md:gap-[2rem] xl:justify-start">
               <GradientButton text="Get Free Consultation" />
 
-              <i className="hidden md:block">
+              <motion.i
+                className="hidden md:block"
+                animate={{ rotate: [0, -10, 0, -10, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 1 }}
+                style={{ transformOrigin: "bottom right" }}
+              >
                 <Image
                   src={WaveHandIcon}
                   alt="Icon"
@@ -75,7 +80,7 @@ const Cta = () => {
                   height={58}
                   unoptimized
                 />
-              </i>
+              </motion.i>
             </div>
           </div>
 

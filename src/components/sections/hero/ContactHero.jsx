@@ -15,6 +15,8 @@ import { motion } from "framer-motion";
 import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
 import HomeHeroLogoShape2 from "@/components/decorative-elements/HomeHeroLogoShape2";
 import ContactHeroLogoShape1 from "@/components/decorative-elements/ContactHeroLogoShape1";
+import { useEffect } from "react";
+import { getCalApi } from "@calcom/embed-react";
 
 const ContactHero = () => {
   const containerVariants = {
@@ -56,6 +58,21 @@ const ContactHero = () => {
       },
     },
   };
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "15min" });
+      cal("ui", {
+        theme: "dark",
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#292929" },
+          dark: { "cal-brand": "#FF37B3" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
 
   return (
     <>
@@ -160,7 +177,12 @@ const ContactHero = () => {
                     </p>
 
                     <div className="w-full px-[3rem]">
-                      <button className="flex h-[5.6rem] w-full items-center justify-center rounded-[6rem] border border-white/20 px-[3rem] py-[8px] text-[1.8rem] font-medium tracking-normal text-white transition-all duration-300 hover:border-[#3078FF] hover:bg-[#3078FF]">
+                      <button
+                        data-cal-namespace="15min"
+                        data-cal-link="hassan-iqbal-mznzu9/15min"
+                        data-cal-config='{"layout":"month_view","theme":"dark"}'
+                        className="flex h-[5.6rem] w-full items-center justify-center rounded-[6rem] border border-white/20 px-[3rem] py-[8px] text-[1.8rem] font-medium tracking-normal text-white transition-all duration-300 hover:border-[#3078FF] hover:bg-[#3078FF]"
+                      >
                         15-min chat with Hassan
                       </button>
                     </div>

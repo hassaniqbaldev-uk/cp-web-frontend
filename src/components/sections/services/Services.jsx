@@ -28,6 +28,16 @@ const Services = () => {
     },
   };
 
+  const cardContainerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.4,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
   const itemVariants = {
     hidden: {
       opacity: 0,
@@ -79,10 +89,10 @@ const Services = () => {
           </motion.div>
 
           <motion.div
-            variants={containerVariants}
+            variants={cardContainerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.4 }}
             className="mt-[5rem] hidden grid-cols-3 gap-[3.3rem] xl:grid"
           >
             {SERVICES_CARD.map((item, idx) => (
