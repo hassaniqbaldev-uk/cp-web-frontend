@@ -22,6 +22,16 @@ const Process = () => {
     },
   };
 
+  const cardContainerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.4,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
   const itemVariants = {
     hidden: {
       opacity: 0,
@@ -94,18 +104,16 @@ const Process = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{
-              duration: 1,
-              ease: "easeOut",
-            }}
+            variants={cardContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 1 }}
             className="mt-[6.5rem] hidden grid-cols-4 xl:grid"
           >
             {PROCESS_CARD.map((item) => (
-              <div
+              <motion.div
                 key={item.step}
+                variants={itemVariants}
                 className="flex flex-col items-center gap-[3.8rem]"
               >
                 <div className="relative flex w-full justify-center">
@@ -152,7 +160,7 @@ const Process = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
 
