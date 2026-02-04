@@ -130,6 +130,7 @@ export const getCustomerEmailTemplate = (
         border-radius: 60px;
         background-color: #ff37b3;
         padding: 10px 20px;
+        margin-top: 10px,
         font-size: 16px;
         font-weight: 600;
         color: white;

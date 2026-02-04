@@ -15,11 +15,15 @@ import { CLIENT_LOGO } from "@/contants";
 import SectionDescription from "@/components/ui/SectionDescription";
 import { motion, useReducedMotion } from "framer-motion";
 import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getCalApi } from "@calcom/embed-react";
 import Counter from "@/components/ui/Counter";
+import useMousePosition from "@/utils/useMousePosition";
+import Cursor from "@/assets/svgs/you-cursor.svg";
 
 const HomeHero = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
   const containerVariants = {
     hidden: {},
     visible: {
@@ -60,6 +64,8 @@ const HomeHero = () => {
     },
   };
 
+  const mouse = useMousePosition();
+
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: "15min" });
@@ -78,6 +84,32 @@ const HomeHero = () => {
   const shouldReduceMotion = useReducedMotion();
   return (
     <>
+      {mouse && (
+        <motion.div
+          className="pointer-events-none fixed top-0 left-0 z-[100] hidden items-center justify-center opacity-0 xl:flex"
+          animate={{
+            x: mouse.x - 27,
+            y: mouse.y - 27,
+            scale: isHovered ? 1 : 0,
+            opacity: isHovered ? 1 : 0,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 500,
+            damping: 35,
+          }}
+        >
+          <Image
+            src={Cursor}
+            width={54}
+            height={34}
+            alt="Cursor"
+            className="size-[5.4rem]"
+            unoptimized
+          />
+        </motion.div>
+      )}
+
       <section className="relative w-full overflow-hidden pt-[10rem] pb-[4rem] md:pt-[20rem]">
         {/*Background Image*/}
         <Image
@@ -201,7 +233,15 @@ const HomeHero = () => {
               transition={{ delay: 0.5 }}
               className="w-[28.7rem] md:w-[42.4rem]"
             >
-              <div className="relative z-[5] flex h-[26.9rem] w-[28.7rem] items-center justify-center md:h-[41.5rem] md:w-[42.4rem]">
+              <div
+                onMouseEnter={() => {
+                  setIsHovered(true);
+                }}
+                onMouseLeave={() => {
+                  setIsHovered(false);
+                }}
+                className="relative z-[5] flex h-[26.9rem] w-[28.7rem] cursor-none items-center justify-center md:h-[41.5rem] md:w-[42.4rem]"
+              >
                 <Image
                   src={HomeHeroCardImg}
                   alt="Card Image"
@@ -312,7 +352,7 @@ const HomeHero = () => {
 
                   <Link
                     href=""
-                    className="text-text absolute top-1/2 left-1/2 inline-flex h-[1.2rem] -translate-1/2 items-center justify-center rounded-[4rem] bg-[#FFD900] px-[2rem] text-center text-[.6rem] font-bold tracking-normal md:h-[2.5rem] md:px-[4.3rem] md:text-[1.2rem]"
+                    className="text-text absolute top-1/2 left-1/2 inline-flex h-[1.2rem] -translate-1/2 cursor-none items-center justify-center rounded-[4rem] bg-[#FFD900] px-[2rem] text-center text-[.6rem] font-bold tracking-normal md:h-[2.5rem] md:px-[4.3rem] md:text-[1.2rem]"
                   >
                     Login
                   </Link>
