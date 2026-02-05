@@ -114,7 +114,10 @@ const Growth2 = ({ services = [] }) => {
 
   return (
     <>
-      <section className="relative px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
+      <section
+        id="growth-2"
+        className="relative px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]"
+      >
         {/*Background Image*/}
         <Image
           src={ProcessBg}

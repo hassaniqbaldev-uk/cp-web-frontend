@@ -61,14 +61,14 @@ const Process2Timeline = ({
 
         {/* IMAGE */}
         <div
-          style={{ background: item.cardImageBg }}
+          // style={{ background: item.cardImageBg }}
           className="flex h-[42rem] w-[52rem] items-center justify-center rounded-[1.6rem]"
         >
           <Image
             src={item.cardImage}
-            width={item.cardImageWidth}
-            height={item.cardImageHeight}
-            alt=""
+            width={1098}
+            height={960}
+            alt="Image"
             unoptimized
           />
         </div>
@@ -166,15 +166,15 @@ const Process2Timeline = ({
           </div>
 
           <div
-            style={{
-              background: item.cardImageBg,
-            }}
+            // style={{
+            //   background: item.cardImageBg,
+            // }}
             className="flex h-[23rem] w-full items-center justify-center rounded-[1.6rem] md:h-[42rem] lg:w-[52rem]"
           >
             <Image
               src={item.cardImage}
-              width={item.cardImageWidth}
-              height={item.cardImageHeight}
+              width={1098}
+              height={960}
               alt="Card Image"
               unoptimized
             />

@@ -8,11 +8,11 @@ import IdeaIcon from "@/assets/icons/ui/idea-icon.svg";
 import DeveloperIcon from "@/assets/icons/ui/developer-icon.svg";
 import DataCloudIcon from "@/assets/icons/ui/data-cloud-icon.svg";
 import OnlineSupportIcon from "@/assets/icons/ui/online-support-icon.svg";
-import Process2CardImg1 from "@/assets/images/cards/process-2-card-img-1.png";
-import Process2CardImg2 from "@/assets/images/cards/process-2-card-img-2.png";
-import Process2CardImg3 from "@/assets/images/cards/process-2-card-img-3.png";
-import Process2CardImg4 from "@/assets/images/cards/process-2-card-img-4.png";
-import Process2CardImg5 from "@/assets/images/cards/process-2-card-img-5.png";
+import Process2CardImg1 from "@/assets/images/cards/process-2-card-img-1.webp";
+import Process2CardImg2 from "@/assets/images/cards/process-2-card-img-2.webp";
+import Process2CardImg3 from "@/assets/images/cards/process-2-card-img-3.webp";
+import Process2CardImg4 from "@/assets/images/cards/process-2-card-img-4.webp";
+import Process2CardImg5 from "@/assets/images/cards/process-2-card-img-5.webp";
 
 export const PROCESS_CARD = [
   {

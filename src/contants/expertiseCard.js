@@ -13,7 +13,7 @@ export const EXPERTISE_CARD = [
     title: "SME Founders",
     description:
       "Grow your business with a website that converts visitors into loyal customers.",
-    link: "/services",
+    link: "/solutions/sme-founders",
     linkText: "Explore Solutions",
     color: "#3078FF",
     boxShadow: "4px 12px 30px 0px #3078FF1C",
@@ -25,7 +25,7 @@ export const EXPERTISE_CARD = [
     title: "Ecommerce Brands",
     description:
       "Scale sales with high-performance online stores built on Shopify or Woo.",
-    link: "/services",
+    link: "/solutions/ecommerce-brands",
     linkText: "Explore Solutions",
     color: "#EE7621",
     boxShadow: "4px 12px 30px 0px #EE76211C",
@@ -37,7 +37,7 @@ export const EXPERTISE_CARD = [
     title: "Non-Profits & Charity",
     description:
       "Connect with your community through accessible, impactful digital experiences.",
-    link: "/services",
+    link: "/solutions/education-and-charity",
     linkText: "Explore Solutions",
     color: "#FF37B3",
     boxShadow: "4px 12px 30px 0px #FF37B31C",
@@ -49,23 +49,23 @@ export const EXPERTISE_CARD = [
     title: "B2B Services",
     description:
       "Generate qualified leads and build trust with a strategic web presence.",
-    link: "/services",
+    link: "/solutions/b2b-services",
     linkText: "Explore Solutions",
     color: "#44B276",
     boxShadow: "4px 12px 30px 0px #44B2761C",
   },
-  {
-    icon: FileIcon,
-    iconWidth: 30,
-    iconHeight: 30,
-    title: "Agencies",
-    description:
-      "White-label development and design fulfillment you can trust.",
-    link: "/services",
-    linkText: "Partner With Us",
-    color: "#BF00B4",
-    boxShadow: "4px 12px 30px 0px #BF00B41C",
-  },
+  // {
+  //   icon: FileIcon,
+  //   iconWidth: 30,
+  //   iconHeight: 30,
+  //   title: "Agencies",
+  //   description:
+  //     "White-label development and design fulfillment you can trust.",
+  //   link: "/services",
+  //   linkText: "Partner With Us",
+  //   color: "#BF00B4",
+  //   boxShadow: "4px 12px 30px 0px #BF00B41C",
+  // },
   {
     icon: RocketIcon,
     iconWidth: 30,
@@ -73,7 +73,7 @@ export const EXPERTISE_CARD = [
     title: "Startups & SaaS",
     description:
       "Modern tech stacks (React, Headless) for rapid growth and scalability.",
-    link: "/services",
+    link: "/solutions/saas-companies",
     linkText: "View Tech Stack",
     color: "#F14A58",
     boxShadow: "4px 12px 30px 0px #F14A581C",

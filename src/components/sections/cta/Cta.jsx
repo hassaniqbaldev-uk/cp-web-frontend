@@ -11,6 +11,8 @@ import PrimaryButton from "@/components/ui/PrimaryButton";
 import { motion } from "framer-motion";
 
 const Cta = () => {
+  const currentMonth = new Date().toLocaleString("default", { month: "long" });
+
   return (
     <>
       <motion.div
@@ -46,7 +48,7 @@ const Cta = () => {
               </div>
 
               <span className="text-[1.2rem] leading-[2.4rem] font-medium text-white md:text-[1.6rem]">
-                Book now for December Slots
+                Book now for {currentMonth} Slots
               </span>
             </div>
 
