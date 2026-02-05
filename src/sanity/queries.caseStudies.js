@@ -95,7 +95,7 @@ export const caseStudiesFilteredQuery = `
 `;
 
 export const servicesQuery = `
-*[_type == "services"] | order(title asc) {
+*[_type == "services" && count(*[_type == "caseStudies" && references(^._id)]) > 0] | order(title asc) {
   _id,
   title,
   "slug": slug.current
@@ -103,7 +103,7 @@ export const servicesQuery = `
 `;
 
 export const industriesQuery = `
-*[_type == "industries"] | order(title asc) {
+*[_type == "industries" && count(*[_type == "caseStudies" && references(^._id)]) > 0] | order(title asc) {
   _id,
   title,
   "slug": slug.current
