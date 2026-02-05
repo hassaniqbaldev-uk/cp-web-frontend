@@ -46,7 +46,7 @@ const AboutDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
         >
           <div className="flex w-full gap-[5.1rem]">
             <div className="flex min-w-[30.8rem] flex-col gap-[2.4rem]">
-              <div className="flex flex-col items-start gap-[2rem] text-left">
+              <div className="flex items-center gap-[2rem] text-left">
                 <i
                   style={{
                     boxShadow: "5px 5px 22px 0px #EE762199",
@@ -62,7 +62,7 @@ const AboutDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
                   />
                 </i>
 
-                <span className="text-left text-[1.8rem] leading-[2.4rem] font-bold tracking-[-0.02em] text-[#263238] uppercase">
+                <span className="text-left text-[1.6rem] leading-[2.4rem] font-bold tracking-[-0.02em] text-[#263238] uppercase">
                   company
                 </span>
               </div>

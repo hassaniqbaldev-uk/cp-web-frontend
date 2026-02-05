@@ -52,7 +52,7 @@ const ServicesDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
         >
           <div className="grid flex-1 grid-cols-3 gap-[3.8rem]">
             <div className="flex w-full flex-col gap-[2.4rem] border-r border-[#818181]/30 pr-[3.8rem]">
-              <div className="flex flex-col items-start gap-[2rem] text-left">
+              <div className="flex items-center gap-[2rem] text-left">
                 <i
                   style={{
                     boxShadow: "5px 5px 22px 0px #ED910C99",
@@ -68,7 +68,7 @@ const ServicesDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
                   />
                 </i>
 
-                <span className="text-left text-[1.8rem] leading-[2.4rem] font-bold tracking-[-0.02em] text-[#263238] uppercase">
+                <span className="text-left text-[1.6rem] leading-[2.4rem] font-bold tracking-[-0.02em] text-[#263238] uppercase">
                   Design & Build
                 </span>
               </div>
@@ -104,7 +104,7 @@ const ServicesDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
             </div>
 
             <div className="flex w-full flex-col gap-[2.4rem] border-r border-[#818181]/30 pr-[3.8rem]">
-              <div className="flex flex-col items-start gap-[2rem] text-left">
+              <div className="flex items-center gap-[2rem] text-left">
                 <i
                   style={{
                     boxShadow: "5px 5px 22px 0px #FF37B399",
@@ -120,7 +120,7 @@ const ServicesDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
                   />
                 </i>
 
-                <span className="text-left text-[1.8rem] leading-[2.4rem] font-bold tracking-[-0.02em] text-[#263238] uppercase">
+                <span className="text-left text-[1.6rem] leading-[2.4rem] font-bold tracking-[-0.02em] text-[#263238] uppercase">
                   GROWTH
                 </span>
               </div>
@@ -156,7 +156,7 @@ const ServicesDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
             </div>
 
             <div className="flex w-full flex-col gap-[2.4rem]">
-              <div className="flex flex-col items-start gap-[2rem] text-left">
+              <div className="flex items-center gap-[2rem] text-left">
                 <i
                   style={{
                     boxShadow: "5px 5px 22px 0px #F14A5899",
@@ -172,7 +172,7 @@ const ServicesDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
                   />
                 </i>
 
-                <span className="text-left text-[1.8rem] leading-[2.4rem] font-bold tracking-[-0.02em] text-[#263238] uppercase">
+                <span className="text-left text-[1.6rem] leading-[2.4rem] font-bold tracking-[-0.02em] text-[#263238] uppercase">
                   SUPPORT
                 </span>
               </div>
