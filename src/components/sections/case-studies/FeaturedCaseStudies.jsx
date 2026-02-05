@@ -81,6 +81,7 @@ const FeaturedCaseStudies = ({
                                 ? `/case-studies?industry=${activeIndustry}`
                                 : "/case-studies"
                             }
+                            scroll={false}
                             className={`relative block w-full px-[4rem] text-left text-[1.6rem] leading-[3.6rem] transition-all duration-200 ${
                               !activeService
                                 ? "font-bold text-[#FF37B3]"
@@ -107,6 +108,7 @@ const FeaturedCaseStudies = ({
                                     ? `&industry=${activeIndustry}`
                                     : ""
                                 }`}
+                                scroll={false}
                                 className={`relative block w-full px-[4rem] text-left text-[1.6rem] leading-[3.6rem] transition-all duration-200 ${
                                   isActive
                                     ? "font-bold text-[#FF37B3]"
@@ -146,6 +148,7 @@ const FeaturedCaseStudies = ({
                                 ? `/case-studies?service=${activeService}`
                                 : "/case-studies"
                             }
+                            scroll={false}
                             className={`relative block w-full px-[4rem] text-left text-[1.6rem] leading-[3.6rem] transition-all duration-200 ${
                               !activeIndustry
                                 ? "font-bold text-[#FF37B3]"
@@ -172,6 +175,7 @@ const FeaturedCaseStudies = ({
                                     ? `&service=${activeService}`
                                     : ""
                                 }`}
+                                scroll={false}
                                 className={`relative block w-full px-[4rem] text-left text-[1.6rem] leading-[3.6rem] transition-all duration-200 ${
                                   isActive
                                     ? "font-bold text-[#FF37B3]"
@@ -197,6 +201,7 @@ const FeaturedCaseStudies = ({
                   <div className="px-[4rem] pt-[2rem]">
                     <Link
                       href="/case-studies"
+                      scroll={false}
                       className="inline-flex h-[5rem] w-full items-center justify-center rounded-[7rem] bg-[#312749] px-[3rem] py-[1rem] text-[1.8rem] font-semibold text-white"
                     >
                       Clear Filters
@@ -230,7 +235,13 @@ const FeaturedCaseStudies = ({
                 </motion.div>
               </div>
 
-              <div className="grid grid-cols-1 gap-x-[3rem] gap-y-[3rem] md:grid-cols-2 md:gap-y-[6rem]">
+              <motion.div
+                key={`${activeService || "all"}-${activeIndustry || "all"}`}
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                className="grid grid-cols-1 gap-x-[3rem] gap-y-[3rem] md:grid-cols-2 md:gap-y-[6rem]"
+              >
                 {caseStudies.map((caseStudy) => (
                   <motion.div variants={itemVariants} key={caseStudy._id}>
                     <Link
@@ -284,7 +295,7 @@ const FeaturedCaseStudies = ({
                     No case studies match your filters.
                   </p>
                 )}
-              </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
