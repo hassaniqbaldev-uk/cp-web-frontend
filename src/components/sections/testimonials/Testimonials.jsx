@@ -4,9 +4,9 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import React from "react";
 import StarIcon from "@/components/icons/StarIcon";
 import TestimonialAvatar1 from "@/assets/icons/ui/testimonial-avatar-1.svg";
-import TestimonialAvatar2 from "@/assets/icons/ui/testimonial-avatar-2.svg";
+import TestimonialAvatar2 from "@/assets/svgs/ayoa-testimonial-avatar.svg";
 import TestimonialAvatar3 from "@/assets/icons/ui/testimonial-avatar-3.svg";
-import TestimonialAvatar4 from "@/assets/icons/ui/testimonial-avatar-4.svg";
+import TestimonialAvatar4 from "@/assets/svgs/game-art-testimonial-avatar.svg";
 import TestimonialCardImg from "@/assets/images/cards/testimonial-card-img.webp";
 import Image from "next/image";
 import PrimaryButton from "@/components/ui/PrimaryButton";
@@ -157,8 +157,8 @@ const Testimonials = () => {
               </ul>
 
               <p className="text-[1.8rem] leading-[2.4rem] font-medium tracking-normal text-[#625C70]">
-                &quot;They delivered under intense time pressure—responsive,
-                creative, and excellent finished artwork within 48 hours.&quot;
+                I would highly recommend Hassan, he was excellent throughout the
+                process of designing and developing our new website.
               </p>
             </div>
 
@@ -175,11 +175,11 @@ const Testimonials = () => {
 
               <div className="flex flex-col items-start text-left">
                 <h6 className="text-[1.8rem] leading-[2.6rem] font-semibold tracking-normal text-[#312749]">
-                  Clare Huddlestone
+                  James Brien
                 </h6>
 
                 <span className="text-[1.6rem] leading-[2.4rem] font-medium tracking-normal text-[#625C70]">
-                  Marketing Director, Herbert Smith
+                  Ayoa
                 </span>
               </div>
             </div>
@@ -242,12 +242,12 @@ const Testimonials = () => {
               </ul>
 
               <p className="text-[1.8rem] leading-[2.4rem] font-medium tracking-normal text-[#625C70]">
-                &quot;The ROI has been incredible. The team really understood
-                our sector and delivered a solution that converts. The ROI has
-                been incredible. The team really understood our sector and
-                delivered a solution that converts. The ROI has been incredible.
-                The team really understood our sector and delivered a solution
-                that converts.&quot;
+                The new webpage Hassan created for Game Art Brain is a
+                game-changer for our brand. He developed a signature style that
+                is both unique and perfectly aligned with our identity,
+                completely revitalizing our online presence. His work is
+                meticulous, handling a huge number of images and complex layouts
+                with an artist&apos;s touch.
               </p>
             </div>
 
@@ -264,11 +264,11 @@ const Testimonials = () => {
 
               <div className="flex flex-col items-start text-left">
                 <h6 className="text-[1.8rem] leading-[2.6rem] font-semibold tracking-normal text-[#312749]">
-                  James Wilson
+                  Ahmed Omar
                 </h6>
 
                 <span className="text-[1.6rem] leading-[2.4rem] font-medium tracking-normal text-[#625C70]">
-                  CEO, TechFlow
+                  GameArtBrain
                 </span>
               </div>
             </div>
@@ -305,52 +305,91 @@ const Testimonials = () => {
             }}
             className="mySwiper"
           >
-            {Array.from({ length: 5 }).map((_, index) => (
-              <SwiperSlide
-                key={index}
-                className="!flex !h-auto !justify-center px-[1rem] pb-[5rem]"
-              >
-                <div className="flex w-full flex-col justify-between gap-[1.5rem] rounded-[2rem] border border-[#E4E3E8] bg-white px-[1.5rem] py-[2.3rem] backdrop-blur-[10px]">
-                  <div className="flex flex-col items-start gap-[1.5rem] text-left">
-                    <ul className="flex items-center gap-[2px]">
-                      {Array.from({ length: 5 }).map((_, index) => (
-                        <li key={index}>
-                          <StarIcon color="#FFBF00" height="14" width="14" />
-                        </li>
-                      ))}
-                    </ul>
+            <SwiperSlide className="!flex !h-auto !justify-center px-[1rem] pb-[5rem]">
+              <div className="flex w-full flex-col justify-between gap-[1.5rem] rounded-[2rem] border border-[#E4E3E8] bg-white px-[1.5rem] py-[2.3rem] backdrop-blur-[10px]">
+                <div className="flex flex-col items-start gap-[1.5rem] text-left">
+                  <ul className="flex items-center gap-[2px]">
+                    {Array.from({ length: 5 }).map((_, index) => (
+                      <li key={index}>
+                        <StarIcon color="#FFBF00" height="14" width="14" />
+                      </li>
+                    ))}
+                  </ul>
 
-                    <p className="text-[1.4rem] leading-[2.1rem] font-medium tracking-normal text-[#625C70]">
-                      &quot;My new site is significantly faster and easier to
-                      navigate. We&apos;ve seen a 30% increase in inquiries
-                      since launch.&quot;
-                    </p>
+                  <p className="text-[1.4rem] leading-[2.1rem] font-medium tracking-normal text-[#625C70]">
+                    I would highly recommend Hassan, he was excellent throughout
+                    the process of designing and developing our new website.
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-[1rem]">
+                  <div className="flex overflow-hidden rounded-full">
+                    <Image
+                      src={TestimonialAvatar2}
+                      alt="Avatar Image"
+                      width={40}
+                      height={40}
+                      unoptimized
+                    />
                   </div>
 
-                  <div className="flex items-center gap-[1rem]">
-                    <div className="flex overflow-hidden rounded-full">
-                      <Image
-                        src={TestimonialAvatar3}
-                        alt="Avatar Image"
-                        width={40}
-                        height={40}
-                        unoptimized
-                      />
-                    </div>
+                  <div className="flex flex-col items-start text-left">
+                    <h6 className="text-[1.2rem] leading-[1.8rem] font-semibold tracking-normal text-[#312749]">
+                      James Brien
+                    </h6>
 
-                    <div className="flex flex-col items-start text-left">
-                      <h6 className="text-[1.2rem] leading-[1.8rem] font-semibold tracking-normal text-[#312749]">
-                        Simon Hobbs
-                      </h6>
-
-                      <span className="text-[1.1rem] leading-[1.7rem] font-medium tracking-normal text-[#625C70]">
-                        Owner, Precise Print
-                      </span>
-                    </div>
+                    <span className="text-[1.1rem] leading-[1.7rem] font-medium tracking-normal text-[#625C70]">
+                      Ayoa
+                    </span>
                   </div>
                 </div>
-              </SwiperSlide>
-            ))}
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide className="!flex !h-auto !justify-center px-[1rem] pb-[5rem]">
+              <div className="flex w-full flex-col justify-between gap-[1.5rem] rounded-[2rem] border border-[#E4E3E8] bg-white px-[1.5rem] py-[2.3rem] backdrop-blur-[10px]">
+                <div className="flex flex-col items-start gap-[1.5rem] text-left">
+                  <ul className="flex items-center gap-[2px]">
+                    {Array.from({ length: 5 }).map((_, index) => (
+                      <li key={index}>
+                        <StarIcon color="#FFBF00" height="14" width="14" />
+                      </li>
+                    ))}
+                  </ul>
+
+                  <p className="text-[1.4rem] leading-[2.1rem] font-medium tracking-normal text-[#625C70]">
+                    The new webpage Hassan created for Game Art Brain is a
+                    game-changer for our brand. He developed a signature style
+                    that is both unique and perfectly aligned with our identity,
+                    completely revitalizing our online presence. His work is
+                    meticulous, handling a huge number of images and complex
+                    layouts with an artist&apos;s touch.
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-[1rem]">
+                  <div className="flex overflow-hidden rounded-full">
+                    <Image
+                      src={TestimonialAvatar4}
+                      alt="Avatar Image"
+                      width={40}
+                      height={40}
+                      unoptimized
+                    />
+                  </div>
+
+                  <div className="flex flex-col items-start text-left">
+                    <h6 className="text-[1.2rem] leading-[1.8rem] font-semibold tracking-normal text-[#312749]">
+                      Ahmed Omar
+                    </h6>
+
+                    <span className="text-[1.1rem] leading-[1.7rem] font-medium tracking-normal text-[#625C70]">
+                      GameArtBrain
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
           </Swiper>
         </motion.div>
 

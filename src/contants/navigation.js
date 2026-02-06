@@ -98,9 +98,7 @@ export const SECTOR_SOLUTION_NAV = [
     href: "/solutions/interiors-and-furnishings",
   },
   { label: "Pharmacies", excerpt: "", href: "/solutions/pharmacies" },
-  { label: "Restaurants", excerpt: "", href: "/solutions/restaurants" },
-  { label: "SME Founders", excerpt: "", href: "/solutions/sme-founders" },
-  { label: "SaaS Companies", excerpt: "", href: "/solutions/saas-companies" },
+  { label: "View all industries", excerpt: "", href: "/solutions/#sector" },
 ];
 
 export const GOAL_SOLUTION_NAV = [

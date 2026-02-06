@@ -2,7 +2,7 @@ import SuitcaseIcon from "@/assets/icons/ui/suitcase-icon.svg";
 import StoreIcon from "@/assets/icons/ui/store-icon.svg";
 import HeartIcon from "@/assets/icons/ui/heart-icon.svg";
 import ShakeHandIcon from "@/assets/icons/ui/shake-hand-icon.svg";
-import FileIcon from "@/assets/icons/ui/file-icon.svg";
+import EatingIcon from "@/assets/icons/ui/eating-icon.svg";
 import RocketIcon from "@/assets/icons/ui/rocket-icon.svg";
 
 export const EXPERTISE_CARD = [
@@ -54,18 +54,18 @@ export const EXPERTISE_CARD = [
     color: "#44B276",
     boxShadow: "4px 12px 30px 0px #44B2761C",
   },
-  // {
-  //   icon: FileIcon,
-  //   iconWidth: 30,
-  //   iconHeight: 30,
-  //   title: "Agencies",
-  //   description:
-  //     "White-label development and design fulfillment you can trust.",
-  //   link: "/services",
-  //   linkText: "Partner With Us",
-  //   color: "#BF00B4",
-  //   boxShadow: "4px 12px 30px 0px #BF00B41C",
-  // },
+  {
+    icon: EatingIcon,
+    iconWidth: 30,
+    iconHeight: 30,
+    title: "Restaurants",
+    description:
+      "Commission-free ordering systems and table booking integrations that you own.",
+    link: "/solutions/restaurants",
+    linkText: "Explore Solutions",
+    color: "#BF00B4",
+    boxShadow: "4px 12px 30px 0px #BF00B41C",
+  },
   {
     icon: RocketIcon,
     iconWidth: 30,
@@ -74,7 +74,7 @@ export const EXPERTISE_CARD = [
     description:
       "Modern tech stacks (React, Headless) for rapid growth and scalability.",
     link: "/solutions/saas-companies",
-    linkText: "View Tech Stack",
+    linkText: "Explore Solutions",
     color: "#F14A58",
     boxShadow: "4px 12px 30px 0px #F14A581C",
   },

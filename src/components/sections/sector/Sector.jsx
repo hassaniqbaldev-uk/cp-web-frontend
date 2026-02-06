@@ -117,7 +117,10 @@ const Sector = ({ solutions = [] }) => {
 
   return (
     <>
-      <section className="relative px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
+      <section
+        id="sector"
+        className="relative px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]"
+      >
         {/* Background Elements */}
         <div className="pointer-events-none absolute inset-0 z-[2] overflow-hidden select-none">
           <Image

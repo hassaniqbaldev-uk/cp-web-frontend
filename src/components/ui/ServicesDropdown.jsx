@@ -209,7 +209,7 @@ const ServicesDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
           </div>
 
           <div className="flex w-[34.8rem] flex-col gap-[1.5rem]">
-            <div className="relative flex h-full flex-col items-start rounded-[2rem] bg-[#F5F5F5] px-[2.6rem] py-[2rem]">
+            {/* <div className="relative flex h-full flex-col items-start rounded-[2rem] bg-[#F5F5F5] px-[2.6rem] py-[2rem]">
               <h4 className="text-[3rem] leading-[3.2rem] font-bold tracking-[-0.02em] text-[#312749]">
                 Your Growth Starts
               </h4>
@@ -226,9 +226,9 @@ const ServicesDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
                   href="/services"
                 />
               </div>
-            </div>
+            </div> */}
 
-            <div className="relative flex h-full flex-col items-start rounded-[2rem] bg-[#F5F5F5] px-[2.6rem] py-[2rem]">
+            <div className="relative flex flex-col items-start rounded-[2rem] bg-[#F5F5F5] px-[2.6rem] py-[2rem]">
               <span className="inline-flex h-[2.8rem] items-center justify-center rounded-[2rem] bg-[#ff37b3]/20 px-[1.2rem] text-center text-[1.4rem] leading-[2.4rem] font-bold tracking-normal text-[#FF37B3] uppercase">
                 Special offer
               </span>

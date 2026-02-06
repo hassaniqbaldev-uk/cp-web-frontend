@@ -335,7 +335,7 @@ const HomeHero = () => {
                   <hr className="mt-[.7rem] mb-[.3rem] w-full border-t border-white md:mt-[1.6rem] md:mb-[.8rem]" />
 
                   <div className="inline-flex items-center text-[2.3rem] leading-[2.9rem] font-bold tracking-[-0.02em] text-white md:text-[4.8rem] md:leading-[6rem]">
-                    <Counter value={256} />{" "}
+                    <Counter value={200} />{" "}
                     <span className="text-[#FFD900]">+</span>
                   </div>
 
