@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${onest.className} antialiased`}>
-        {/* Google Tag Manager (noscript) */}
+        {/* Google Tag Manager (noscript) - COMMENTED OUT
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-B8FV6K69"
@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        {/* End Google Tag Manager (noscript) */}
+        End Google Tag Manager (noscript) */}
 
         {children}
 
@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
 
-        {/* Google Tag Manager */}
+        {/* Google Tag Manager - COMMENTED OUT
         <Script
           id="gtm-script"
           strategy="afterInteractive"
@@ -62,7 +62,7 @@ export default function RootLayout({ children }) {
             })(window,document,'script','dataLayer','GTM-B8FV6K69');`,
           }}
         />
-        {/* End Google Tag Manager */}
+        End Google Tag Manager */}
 
         <Script
           src="https://cdn.feedbucket.app/assets/feedbucket.js"
