@@ -9,7 +9,7 @@ export async function POST(req) {
     const { name, email, service, message, token } = body;
 
     // 1️⃣ Validate basic fields
-    if (!name || !email || !message || !token) {
+    if (!name || !email || !service || !message || !token) {
       return NextResponse.json(
         { success: false, error: "Missing required fields or token" },
         { status: 400 },

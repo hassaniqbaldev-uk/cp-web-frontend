@@ -27,15 +27,29 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!formData.service) {
+      setStatus("❌ Please select a service.");
+      return;
+    }
+
     setLoading(true);
     setStatus("");
 
     try {
       // ✅ Step 1: Request reCAPTCHA token from Google
-      const token = await grecaptcha.execute(
-        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
-        { action: "submit" },
-      );
+      const token = await new Promise((resolve, reject) => {
+        if (!window.grecaptcha) {
+          return reject(new Error("reCAPTCHA not loaded yet. Please try again."));
+        }
+        window.grecaptcha.ready(() => {
+          window.grecaptcha
+            .execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, {
+              action: "submit",
+            })
+            .then(resolve)
+            .catch(reject);
+        });
+      });
 
       // ✅ Step 2: Send form data + token to backend API
       const res = await fetch("/api/contact", {
