@@ -93,7 +93,7 @@ const AuditHero = () => {
 
               <motion.div variants={itemVariants} className="max-w-[58.5rem]">
                 <SectionDescription
-                  text="Stop guessing why you aren't growing. We'll manually analyze your site's UX, SEO, and Performance and send you a custom video report."
+                  text="Stop guessing why you aren't growing. We'll manually analyse your site's UX, SEO, and Performance and send you a custom video report."
                   textColor="#625C70"
                 />
               </motion.div>

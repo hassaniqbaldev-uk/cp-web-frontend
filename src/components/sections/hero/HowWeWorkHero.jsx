@@ -116,7 +116,7 @@ const HowWeWorkHero = () => {
 
               <motion.div variants={itemVariants} className="max-w-[54rem]">
                 <SectionDescription
-                  text="Great products aren't born by accident. They are the result of a rigorous, proven process that minimizes risk and maximizes ROI."
+                  text="Great products aren't born by accident. They are the result of a rigorous, proven process that minimises risk and maximises ROI."
                   textColor="#ffffff"
                 />
               </motion.div>

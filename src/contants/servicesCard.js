@@ -48,7 +48,7 @@ export const SERVICES_CARD = [
       "Your website is never 'done.' We provide ongoing SEO, CRO, maintenance, and strategic growth.",
     listItem: [
       "SEO & Content Strategy",
-      "Conversion Optimization",
+      "Conversion Optimisation",
       "Maintenance & Support",
       "Analytics & Reporting",
     ],

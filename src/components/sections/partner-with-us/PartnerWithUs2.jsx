@@ -185,7 +185,7 @@ const PartnerWithUs2 = ({ service }) => {
                       className="!flex !h-auto !items-center !justify-center px-[1rem] pt-[.5rem] pb-[10rem]"
                     >
                       <div className="partner-with-us-2-card">
-                        <div className="absolute inset-0 z-[10] flex flex-col items-start justify-start p-[3rem] text-left">
+                        <div className="absolute inset-0 z-[10] flex flex-col items-start justify-center p-[3rem] text-left">
                           <div
                             style={{
                               boxShadow: theme.shadow,

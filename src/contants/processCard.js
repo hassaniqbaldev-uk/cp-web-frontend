@@ -43,7 +43,7 @@ export const PROCESS_CARD = [
     step: "4",
     title: "Launch & Grow",
     description:
-      "We deploy your site and provide ongoing support, SEO, and optimization to ensure growth.",
+      "We deploy your site and provide ongoing support, SEO, and optimisation to ensure growth.",
     color: "#7EE972",
     boxShadow: "5px 5px 44px 0px #44B276CC",
   },
@@ -55,7 +55,7 @@ export const PROCESS_2_CARD = [
     title: "Discovery & Strategy",
     subTitle: "We don't guess. We research.",
     description:
-      "Before we design a single pixel, we dive deep into your business. We analyze your competitors, interview your stakeholders, & map out a digital strategy that aligns with your revenue goals.",
+      "Before we design a single pixel, we dive deep into your business. We analyse your competitors, interview your stakeholders, & map out a digital strategy that aligns with your revenue goals.",
     list: [
       "Competitor Analysis",
       "Sitemap & Architecture",
@@ -104,7 +104,7 @@ export const PROCESS_2_CARD = [
       "Frontend Build",
       "Animations",
       "CMS Integration",
-      "Performance Optimization",
+      "Performance Optimisation",
     ],
     cardImage: Process2CardImg3,
     cardImageWidth: 391,
@@ -140,7 +140,7 @@ export const PROCESS_2_CARD = [
   },
   {
     step: "5",
-    title: "Growth & Optimization",
+    title: "Growth & Optimisation",
     subTitle: "Launch is just day one.",
     description:
       "We monitor your site's performance post-launch. We use real user data to make iterative improvements, improving your conversion rate and SEO rankings month over month.",

@@ -12,20 +12,20 @@ export const getCustomerEmailTemplate = (
       "Design & Branding": {
         image:
           "https://creativepixels.agency/images/email-template-assets/design-branding-card-img.png",
-        link: "https://creativepixels.agency/case-studies",
-        alt: "Design & Branding Case Study",
+        link: "https://creativepixels.agency/services",
+        alt: "Design & Branding",
       },
       "Website Development": {
         image:
           "https://creativepixels.agency/images/email-template-assets/website-development-card-img.png",
-        link: "https://creativepixels.agency/case-studies",
-        alt: "Website Development Case Study",
+        link: "https://creativepixels.agency/services",
+        alt: "Website Development",
       },
       "Maintenance & Growth": {
         image:
           "https://creativepixels.agency/images/email-template-assets/maintenance-growth-card-img.png",
-        link: "https://creativepixels.agency/case-studies",
-        alt: "Maintenance & Growth Case Study",
+        link: "https://creativepixels.agency/services",
+        alt: "Maintenance & Growth",
       },
     };
 
@@ -34,7 +34,7 @@ export const getCustomerEmailTemplate = (
       cards[serviceType] || {
         image:
           "https://creativepixels.agency/images/email-template-assets/default-card.png",
-        link: "https://creativepixels.agency/case-studies",
+        link: "https://creativepixels.agency/services",
         alt: "CreativePixels Case Studies",
       }
     );
@@ -453,8 +453,8 @@ export const getCustomerEmailTemplate = (
             >Privacy Policy</a
           >
           <div></div>
-          <a href="https://creativepixels.agency/cookies-policy"
-            >Cookies Policy</a
+          <a href="https://creativepixels.agency/cookie-policy"
+            >Cookie Policy</a
           >
         </div>
       </div>

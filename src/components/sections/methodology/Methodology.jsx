@@ -122,7 +122,7 @@ const Methodology = ({ service }) => {
 
             <motion.div variants={itemVariants}>
               <SectionDescription
-                text="A proven process that minimizes risk and maximizes ROI."
+                text="A proven process that minimises risk and maximises ROI."
                 textColor="#625C70"
               />
             </motion.div>

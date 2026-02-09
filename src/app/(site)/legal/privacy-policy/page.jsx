@@ -99,7 +99,7 @@ const PrivacyPolicyPage = () => {
             <ul className="mt-[1.5rem] list-disc pl-[2rem]">
               <li>Provide, operate, and maintain our services</li>
               <li>Improve, personalize, and expand our services</li>
-              <li>Understand and analyze how you use our website</li>
+              <li>Understand and analyse how you use our website</li>
               <li>
                 Communicate with you about projects, updates, and marketing
               </li>

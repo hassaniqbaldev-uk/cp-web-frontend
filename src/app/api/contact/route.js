@@ -54,7 +54,7 @@ export async function POST(req) {
     // 4️⃣ Send email to your team
     await transporter.sendMail({
       from: process.env.SMTP_FROM,
-      to: "hassan@cp.agency, afzal@cp.agency, ahsan@cp.agency, taha.b@cp.agency",
+      to: "hassan@cp.agency, afzal@cp.agency, ahsan@cp.agency",
       subject: `New Contact Request from ${name}`,
       html: getContactEmailTemplate(name, email, service, message),
     });

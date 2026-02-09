@@ -40,7 +40,7 @@ export const CardData = [
     img: BlogCardImg4,
     title: "Scaling React Applications: Lessons from 1M+ Users",
     excerpt:
-      "Technical deep dive into state management, code splitting, and performance optimization for large-scale web apps.",
+      "Technical deep dive into state management, code splitting, and performance optimisation for large-scale web apps.",
     link: "",
   },
 ];

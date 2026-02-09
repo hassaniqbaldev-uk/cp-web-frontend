@@ -87,7 +87,7 @@ const Process = () => {
             <div className="flex w-[30rem] flex-col items-center gap-[3.2rem] text-center md:w-[58.5rem] xl:items-start xl:text-left">
               <motion.div variants={itemVariants}>
                 <SectionDescription
-                  text="We've refined our delivery process over 10 years to minimize risk and maximize speed to market."
+                  text="We've refined our delivery process over 10 years to minimise risk and maximise speed to market."
                   textColor="#ffffff"
                 />
               </motion.div>

@@ -109,7 +109,7 @@ export const GOAL_SOLUTION_NAV = [
   },
   {
     label: "Increase Leads",
-    excerpt: "Modernize your digital presence",
+    excerpt: "Modernise your digital presence",
     href: "/solutions/increase-leads",
   },
   {
