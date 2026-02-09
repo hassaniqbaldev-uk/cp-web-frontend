@@ -98,7 +98,10 @@ const AuditHero = () => {
                 />
               </motion.div>
 
-              <motion.div variants={itemVariants} className="my-[3.7rem] flex w-full flex-col items-start gap-[1.2rem] rounded-[2rem] border border-[#3078FF] bg-white px-[3rem] py-[2.7rem] text-left md:gap-[2.5rem] md:py-[3.5rem]">
+              <motion.div
+                variants={itemVariants}
+                className="my-[3.7rem] flex w-full flex-col items-start gap-[1.2rem] rounded-[2rem] border border-[#3078FF] bg-white px-[3rem] py-[2.7rem] text-left md:gap-[2.5rem] md:py-[3.5rem]"
+              >
                 <div className="flex items-center gap-[.8rem] md:gap-[1.2rem]">
                   <i>
                     <Image
@@ -111,7 +114,7 @@ const AuditHero = () => {
                   </i>
 
                   <h4 className="text-[1.8rem] font-bold tracking-[-0.02em] text-[#312749] md:text-[2.2rem]">
-                    What you get (Usually £500):
+                    What you get
                   </h4>
                 </div>
 
@@ -142,7 +145,10 @@ const AuditHero = () => {
                 </ul>
               </motion.div>
 
-              <motion.div variants={itemVariants} className="flex items-center gap-[1.6rem] text-left">
+              <motion.div
+                variants={itemVariants}
+                className="flex items-center gap-[1.6rem] text-left"
+              >
                 <i>
                   <Image
                     src={ShieldCheckIcon}
@@ -176,7 +182,7 @@ const AuditHero = () => {
                   </h4>
 
                   <p className="text-[1.6rem] font-normal tracking-normal text-[#625C70]">
-                    Join 150+ companies we&apos;ve helped this year.
+                    Join 150+ companies we&apos;ve helped.
                   </p>
                 </div>
                 {/* Main */}
@@ -238,7 +244,7 @@ const AuditHero = () => {
                         htmlFor="revenue-range"
                         className="text-[1.6rem] leading-[3rem] font-bold tracking-[-0.02em] text-[#312749]"
                       >
-                        Revenue Range
+                        I need help with
                       </label>
 
                       <Select>
@@ -311,14 +317,14 @@ const AuditHero = () => {
                     </i>
                   </button>
 
-                  <div>
+                  {/* <div>
                     <Image
                       src={AuditContactBox}
                       width={228}
                       height={24}
                       alt="Audit Box"
                     />
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </motion.div>

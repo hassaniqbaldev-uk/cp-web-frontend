@@ -129,27 +129,6 @@ const LegalHero = () => {
                 textColor="#625C70"
               />
             </motion.div>
-
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-wrap items-center justify-center gap-[1.8rem]"
-            >
-              <PrimaryButton
-                text="See Case Studies"
-                textColor="#FFFFFF"
-                bGcolor="#312749"
-                href=""
-              />
-
-              <button
-                data-cal-namespace="15min"
-                data-cal-link="hassan-iqbal-mznzu9/15min"
-                data-cal-config='{"layout":"month_view","theme":"dark"}'
-                className="inline-flex h-[4rem] items-center justify-center rounded-[60px] border-2 border-[#312749]/40 px-[30px] py-[8px] text-center text-[1.4rem] font-semibold tracking-normal text-[#312749] md:h-[5rem] md:text-[1.8rem]"
-              >
-                Book a Strategy Call
-              </button>
-            </motion.div>
           </motion.div>
         </div>
       </section>

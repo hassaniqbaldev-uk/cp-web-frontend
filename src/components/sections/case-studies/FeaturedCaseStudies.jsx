@@ -211,7 +211,7 @@ const FeaturedCaseStudies = ({
               </div>
 
               <PrimaryButton
-                href=""
+                href="/audit"
                 text="Get My Free Audit"
                 textColor="#FFFFFF"
                 bGcolor="#FF37B3"

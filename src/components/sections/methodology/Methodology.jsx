@@ -235,9 +235,8 @@ const Methodology = ({ service }) => {
                           WebkitBackgroundClip: "text",
                           backgroundClip: "text",
                           WebkitTextFillColor: "transparent",
-                          display: "inline-block",
                         }}
-                        className="block text-[13rem] leading-[13rem] font-bold tracking-[-0.03em] xl:text-[16rem] xl:leading-[16rem]"
+                        className="hidden text-[13rem] leading-[13rem] font-bold tracking-[-0.03em] md:inline-block xl:text-[16rem] xl:leading-[16rem]"
                       >
                         0{idx + 1}
                       </h3>

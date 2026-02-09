@@ -174,7 +174,7 @@ const Footer = () => {
 
                   <div className="flex flex-col items-start text-left">
                     <span className="text-[1.2rem] font-medium tracking-normal text-white md:text-[1.8rem]">
-                      Meet Me
+                      Let&apos;s talk
                     </span>
 
                     <h4 className="text-[2rem] font-bold tracking-[-0.02em] text-white md:text-[3.2rem]">
@@ -215,7 +215,7 @@ const Footer = () => {
                         value="item-1"
                         className="flex flex-col gap-[6px]"
                       >
-                        <AccordionTrigger className="group flex items-center justify-start gap-[1rem] text-[1.8rem] leading-[4rem] tracking-normal text-white">
+                        <AccordionTrigger className="group flex items-center justify-start gap-[1rem] text-[1.8rem] leading-[4rem] font-medium tracking-normal text-white">
                           <span>Design and Build</span>{" "}
                           <i className="origin-center stroke-white transition-all duration-200 group-data-[state=open]:rotate-180">
                             <ChevronDownIcon />
@@ -241,7 +241,7 @@ const Footer = () => {
                         value="item-2"
                         className="flex flex-col gap-[6px]"
                       >
-                        <AccordionTrigger className="group flex items-center justify-start gap-[1rem] text-[1.8rem] leading-[4rem] tracking-normal text-white">
+                        <AccordionTrigger className="group flex items-center justify-start gap-[1rem] text-[1.8rem] leading-[4rem] font-medium tracking-normal text-white">
                           <span>Growth</span>{" "}
                           <i className="origin-center stroke-white transition-all duration-200 group-data-[state=open]:rotate-180">
                             <ChevronDownIcon />
@@ -267,7 +267,7 @@ const Footer = () => {
                         value="item-3"
                         className="flex flex-col gap-[6px]"
                       >
-                        <AccordionTrigger className="group flex items-center justify-start gap-[1rem] text-[1.8rem] leading-[4rem] tracking-normal text-white">
+                        <AccordionTrigger className="group flex items-center justify-start gap-[1rem] text-[1.8rem] leading-[4rem] font-medium tracking-normal text-white">
                           <span>Support</span>{" "}
                           <i className="origin-center stroke-white transition-all duration-200 group-data-[state=open]:rotate-180">
                             <ChevronDownIcon />
@@ -289,6 +289,15 @@ const Footer = () => {
                         </AccordionContent>
                       </AccordionItem>
                     </Accordion>
+
+                    <div>
+                      <Link
+                        href=""
+                        className="text-[1.8rem] leading-[4rem] font-medium tracking-normal text-white"
+                      >
+                        White-label / Agencies
+                      </Link>
+                    </div>
                   </div>
                 </div>
 
@@ -339,7 +348,7 @@ const Footer = () => {
                           value="item-1"
                           className="flex flex-col gap-[6px]"
                         >
-                          <AccordionTrigger className="group flex items-center justify-start gap-[1rem] text-[1.8rem] leading-[4rem] tracking-normal text-white">
+                          <AccordionTrigger className="group flex items-center justify-start gap-[1rem] text-[1.8rem] leading-[4rem] font-medium tracking-normal text-white">
                             <span>By Sector</span>{" "}
                             <i className="origin-center stroke-white transition-all duration-200 group-data-[state=open]:rotate-180">
                               <ChevronDownIcon />
@@ -365,7 +374,7 @@ const Footer = () => {
                           value="item-2"
                           className="flex flex-col gap-[6px]"
                         >
-                          <AccordionTrigger className="group flex items-center justify-start gap-[1rem] text-[1.8rem] leading-[4rem] tracking-normal text-white">
+                          <AccordionTrigger className="group flex items-center justify-start gap-[1rem] text-[1.8rem] leading-[4rem] font-medium tracking-normal text-white">
                             <span>By Goal</span>{" "}
                             <i className="origin-center stroke-white transition-all duration-200 group-data-[state=open]:rotate-180">
                               <ChevronDownIcon />
@@ -527,6 +536,14 @@ const Footer = () => {
                             </Link>
                           </li>
                         ))}
+                        <li>
+                          <Link
+                            href=""
+                            className="text-[1.6rem] font-light tracking-normal text-white"
+                          >
+                            White-label / Agencies
+                          </Link>
+                        </li>
                       </ul>
                     </AccordionContent>
                   </AccordionItem>

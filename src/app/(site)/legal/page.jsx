@@ -8,12 +8,12 @@ const LegalPage = () => {
   return (
     <>
       <LegalHero />
-      <Policies />
       <Resources />
-      <section className="overflow-hidden px-[2rem] pt-[5rem] xl:px-[0rem] xl:pt-[10rem]">
+      <Policies />
+      {/* <section className="overflow-hidden px-[2rem] pt-[5rem] xl:px-[0rem] xl:pt-[10rem]">
         <Cta3 />
       </section>
-      <Reference />
+      <Reference /> */}
     </>
   );
 };

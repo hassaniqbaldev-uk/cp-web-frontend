@@ -103,7 +103,7 @@ const Contact = () => {
               </ul>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="flex items-center gap-[2rem]">
+            {/* <motion.div variants={itemVariants} className="flex items-center gap-[2rem]">
               <div className="flex items-center">
                 <div
                   style={{
@@ -179,7 +179,7 @@ const Contact = () => {
                   scaling with Pixel
                 </span>
               </div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
           <div

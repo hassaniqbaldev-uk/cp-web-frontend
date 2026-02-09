@@ -59,7 +59,7 @@ const Expertise = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.8 }}
             className="flex flex-col items-center text-center"
           >
             <motion.div variants={itemVariants}>

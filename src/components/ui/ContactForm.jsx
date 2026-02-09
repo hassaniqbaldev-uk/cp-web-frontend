@@ -103,7 +103,7 @@ const ContactForm = () => {
         {/* Header */}
         <div className="flex w-full flex-col gap-[1rem] border-b border-[#D6D6D6] pb-[2.5rem]">
           <h4 className="text-[2.6rem] leading-[3rem] font-bold tracking-[-0.02em] text-[#312749]">
-            Hello, how can we help? 👋
+            Hello, how can we help?
           </h4>
         </div>
         {/* Main */}
@@ -137,7 +137,7 @@ const ContactForm = () => {
                 htmlFor="help"
                 className="text-[1.6rem] leading-[3rem] font-bold tracking-[-0.02em] text-[#312749]"
               >
-                I need a help with <span className="text-[#F14A58]">*</span>
+                I need help with <span className="text-[#F14A58]">*</span>
               </label>
 
               <Select
