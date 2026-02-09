@@ -120,7 +120,7 @@ const PartnerWithUs2 = ({ service }) => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="hidden w-full grid-cols-3 gap-[3rem] xl:grid"
+              className="hidden w-full grid-cols-3 gap-[3rem]"
             >
               {service.card.map((item, idx) => {
                 const theme = getThemeColor(idx);
@@ -154,7 +154,7 @@ const PartnerWithUs2 = ({ service }) => {
             </motion.div>
 
             {/* Responsive */}
-            <div className="block w-full xl:hidden">
+            <div className="block w-full">
               <Swiper
                 pagination={{ clickable: true }}
                 modules={[Pagination, Autoplay]}
