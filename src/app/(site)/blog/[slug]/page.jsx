@@ -24,7 +24,7 @@ const BlogDetailPage = async (props) => {
       <BlogDetailHero post={post} />
       <BlogMeta post={post} />
       <BlogContent post={post.content} />
-      <BlogShare post={post} />
+      {/* <BlogShare post={post} /> */}
       <RelatedBlogs blogs={blogs} />
     </>
   );

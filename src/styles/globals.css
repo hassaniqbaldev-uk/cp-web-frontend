@@ -103,6 +103,25 @@
       font-weight: 500;
     }
 
+    & a.nav-link {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 2px;
+        background-color: currentColor;
+        transition: width 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+
     & .nav-btn {
       height: 4rem;
       margin-right: 3.5rem;
@@ -191,6 +210,26 @@
         height: 3.2rem;
         font-size: 1.2rem;
       }
+    }
+  }
+
+  /* Footer Nav Links */
+  .footer-nav a {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background-color: currentColor;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
     }
   }
 

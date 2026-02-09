@@ -10,6 +10,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/cookies-policy",
+        destination: "/cookie-policy",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

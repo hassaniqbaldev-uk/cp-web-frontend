@@ -184,7 +184,7 @@ const Footer = () => {
                 </button>
               </div>
 
-              <div className="my-[5rem] hidden grid-cols-4 xl:grid">
+              <div className="footer-nav my-[5rem] hidden grid-cols-4 xl:grid">
                 <div className="flex flex-col gap-[2rem]">
                   <h5 className="text-[2.2rem] leading-[3.2rem] font-extrabold tracking-normal text-white">
                     Quick Links
@@ -462,7 +462,7 @@ const Footer = () => {
               </div>
 
               {/* Responsive */}
-              <div className="my-[3.6rem] block w-full xl:hidden">
+              <div className="footer-nav my-[3.6rem] block w-full xl:hidden">
                 <Accordion
                   type="single"
                   className="flex flex-col gap-[1rem]"

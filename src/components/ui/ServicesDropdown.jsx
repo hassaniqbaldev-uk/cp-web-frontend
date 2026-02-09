@@ -40,7 +40,7 @@ const ServicesDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
             height: "2.3rem",
             width: "2.6rem",
           }}
-          className="absolute top-[1.8rem] left-[29rem]"
+          className="absolute top-[1.8rem] left-[32rem]"
         />
 
         <div

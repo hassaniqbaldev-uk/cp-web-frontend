@@ -120,17 +120,17 @@ const Work = ({ caseStudies }) => {
                   style={{
                     boxShadow: "11px 11px 65px 0px #00000012",
                   }}
-                  href={`/case-studies/${caseStudies[6].slug}`}
+                  href={`/case-studies/${caseStudies[2].slug}`}
                   className="flex flex-col gap-[3.9rem] rounded-[3rem] bg-white px-[3rem] pt-[2rem] pb-[4rem]"
                 >
                   <div className="flex h-[49.7rem] w-full overflow-hidden rounded-[2rem]">
                     <Image
-                      src={urlFor(caseStudies[6].thumbnailImage)
+                      src={urlFor(caseStudies[2].thumbnailImage)
                         ?.width(737)
                         .height(497)
                         .fit("crop")
                         .url()}
-                      alt={caseStudies[6].title || "Case Study Thumbnail Image"}
+                      alt={caseStudies[2].title || "Case Study Thumbnail Image"}
                       width={737}
                       height={497}
                       className="size-full"
@@ -157,21 +157,21 @@ const Work = ({ caseStudies }) => {
                     <div className="flex h-full items-center justify-between">
                       <div className="flex flex-col items-start text-left">
                         <h4 className="text-[3.4rem] leading-[4.8rem] font-bold tracking-[-0.02em] text-[#312749]">
-                          {caseStudies[6].title}
+                          {caseStudies[2].title}
                         </h4>
 
                         <span className="text-[1.6rem] leading-[2.6rem] font-semibold text-[#625C70]">
-                          {caseStudies[6].excerpt}
+                          {caseStudies[2].excerpt}
                         </span>
                       </div>
 
                       <i
                         style={{
-                          background: caseStudies[6].iconBg,
+                          background: caseStudies[2].iconBg,
                         }}
                         className="inline-flex size-[6rem] items-center justify-center rounded-full"
                       >
-                        <TiltArrowIcon color={caseStudies[6].iconColor} />
+                        <TiltArrowIcon color={caseStudies[2].iconColor} />
                       </i>
                     </div>
                   </div>
