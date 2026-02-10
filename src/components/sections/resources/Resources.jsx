@@ -93,15 +93,6 @@ export const clientResourcesData = [
     icon: DataAnalysticsIcon,
     iconWidth: 30,
     iconHeight: 30,
-    title: "Client Resources",
-    description:
-      "These documents apply when working with CreativePixels as a client, agency, or partner.",
-    link: "/legal/client-resources",
-  },
-  {
-    icon: DataAnalysticsIcon,
-    iconWidth: 30,
-    iconHeight: 30,
     title: "Support & Maintenance Schedule",
     description:
       "What’s included in ongoing support and maintenance, how requests are handled, response times, and what falls outside standard support.",
@@ -168,7 +159,7 @@ const Resources = () => {
 
               <motion.div variants={itemVariants} className="min-w-max">
                 <SectionDescription
-                  text="Agreements and terms for working together"
+                  text="These documents apply when working with CreativePixels as a client, agency, or partner."
                   textColor="#FFFFFF"
                 />
               </motion.div>

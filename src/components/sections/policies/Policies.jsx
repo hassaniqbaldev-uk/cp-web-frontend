@@ -84,16 +84,7 @@ export const ourPoliciesData = [
     title: "GDPR & DPA Agreement",
     description:
       "Sets out how personal data is processed when we act on behalf of clients, including GDPR responsibilities, security measures, and approved subprocessors.",
-    link: "/legal/gdpr",
-  },
-  {
-    icon: WordpressIcon,
-    iconWidth: 30,
-    iconHeight: 30,
-    title: "Website Policies",
-    description:
-      "These policies explain how we operate, how we protect data, and how our website should be used.",
-    link: "/legal/website-policies",
+    link: "/legal/gdpr-dpa",
   },
   {
     icon: WordpressIcon,
@@ -168,7 +159,7 @@ const Policies = () => {
 
               <motion.div variants={itemVariants} className="min-w-max">
                 <SectionDescription
-                  text="How we operate and protect your data"
+                  text="These policies explain how we operate, how we protect data, and how our website should be used."
                   textColor="#625C70"
                 />
               </motion.div>

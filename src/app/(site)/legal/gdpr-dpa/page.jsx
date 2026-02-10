@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import GraphicDesignIcon from "@/assets/icons/ui/graphic-design-icon.svg";
 
-const GdprCompliancePage = () => {
+const GdprDpaPage = () => {
   return (
     <div className="px-[2rem] pt-[20rem] pb-[10rem] xl:px-[0rem]">
       <div className="container">
@@ -211,4 +211,4 @@ const GdprCompliancePage = () => {
   );
 };
 
-export default GdprCompliancePage;
+export default GdprDpaPage;
