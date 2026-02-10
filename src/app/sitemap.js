@@ -77,7 +77,7 @@ export default async function sitemap() {
       lastModified: new Date(),
     },
     {
-      url: `${SITE_URL}legal/cookie-policy`,
+      url: `${SITE_URL}legal/cookies-policy`,
       lastModified: new Date(),
     },
     {

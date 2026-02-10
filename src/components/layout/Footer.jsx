@@ -328,7 +328,7 @@ const Footer = () => {
 
                       <li>
                         <Link
-                          href="/legal/cookie-policy"
+                          href="/legal/cookies-policy"
                           className="text-[1.8rem] leading-[4rem] font-medium tracking-normal text-white"
                         >
                           Cookies Policy
@@ -616,7 +616,7 @@ const Footer = () => {
 
                         <li>
                           <Link
-                            href="/legal/cookie-policy"
+                            href="/legal/cookies-policy"
                             className="text-[1.6rem] font-light tracking-normal text-white"
                           >
                             Cookies Policy

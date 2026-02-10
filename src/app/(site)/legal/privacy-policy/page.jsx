@@ -41,206 +41,345 @@ const PrivacyPolicyPage = () => {
             </h4>
 
             <span className="text-[1.6rem] leading-[2.4rem] text-[#312749]">
-              Last updated: January 2026
+              CreativePixels (CP Agency Ltd) — Last updated: 09/02/2026
             </span>
           </div>
         </div>
 
         {/* Content */}
         <div className="mt-[5rem] max-w-[90rem] space-y-[4rem] text-[1.6rem] leading-[2.8rem] text-[#312749]">
-          <p>
-            CreativePixels Ltd. (&quot;we&quot;, &quot;our&quot;, or
-            &quot;us&quot;) is committed to protecting your privacy. This
-            Privacy Policy explains how we collect, use, disclose, and safeguard
-            your information when you visit our website or use our services.
-          </p>
-
-          <p>
-            We are registered in England and Wales and comply with the UK
-            General Data Protection Regulation (UK GDPR) and the Data Protection
-            Act 2018.
-          </p>
-
-          {/* 2. Information We Collect */}
+          {/* Intro */}
           <div>
-            <h5 className="text-[2.2rem] font-bold">
-              2. Information We Collect
-            </h5>
-
-            <p className="mt-[1.5rem] font-semibold">Personal Information</p>
-            <ul className="mt-[1rem] list-disc pl-[2rem]">
-              <li>Name and contact details (email address, phone number)</li>
-              <li>Business information (company name, job title)</li>
-              <li>Communication preferences</li>
-              <li>
-                Payment information (processed securely via third-party
-                providers)
-              </li>
-              <li>Any other information you choose to provide</li>
-            </ul>
-
-            <p className="mt-[2rem] font-semibold">
-              Automatically Collected Information
+            <p>
+              This Privacy Policy explains how CP Agency Ltd (&quot;CP&quot;,
+              &quot;we&quot;, &quot;us&quot;, &quot;our&quot;) collects, uses,
+              and protects personal data when you visit
+              https://creativepixels.agency or otherwise interact with us.
             </p>
-            <ul className="mt-[1rem] list-disc pl-[2rem]">
-              <li>IP address and location data</li>
-              <li>Browser type and version</li>
-              <li>Device information</li>
-              <li>Pages visited and time spent</li>
-              <li>Referring website</li>
-            </ul>
-          </div>
 
-          {/* 3. How We Use Your Information */}
-          <div>
-            <h5 className="text-[2.2rem] font-bold">
-              3. How We Use Your Information
-            </h5>
-            <ul className="mt-[1.5rem] list-disc pl-[2rem]">
-              <li>Provide, operate, and maintain our services</li>
-              <li>Improve, personalize, and expand our services</li>
-              <li>Understand and analyse how you use our website</li>
-              <li>
-                Communicate with you about projects, updates, and marketing
-              </li>
-              <li>Process transactions and send related information</li>
-              <li>Send promotional communications (with your consent)</li>
-              <li>Prevent fraud and ensure security</li>
-            </ul>
-          </div>
-
-          {/* 4. Legal Basis */}
-          <div>
-            <h5 className="text-[2.2rem] font-bold">
-              4. Legal Basis for Processing
-            </h5>
-            <ul className="mt-[1.5rem] list-disc pl-[2rem]">
-              <li>
-                <strong>Contract:</strong> Processing necessary to fulfil our
-                contractual obligations
-              </li>
-              <li>
-                <strong>Consent:</strong> Where you have given clear consent
-              </li>
-              <li>
-                <strong>Legitimate Interests:</strong> Necessary for business
-                operations
-              </li>
-              <li>
-                <strong>Legal Obligation:</strong> Compliance with the law
-              </li>
-            </ul>
-          </div>
-
-          {/* 5. Data Sharing */}
-          <div>
-            <h5 className="text-[2.2rem] font-bold">
-              5. Data Sharing and Disclosure
-            </h5>
-            <ul className="mt-[1.5rem] list-disc pl-[2rem]">
-              <li>Service providers (hosting, analytics, payments)</li>
-              <li>Professional advisers (lawyers, accountants)</li>
-              <li>Regulatory authorities when required by law</li>
-            </ul>
             <p className="mt-[1.5rem]">
-              We do not sell, rent, or trade your personal information to third
-              parties for marketing purposes.
+              CP Agency Ltd is incorporated in England and Wales and trades as
+              CreativePixels, Hassan Iqbal, Creative Hosting, Monthly Design,
+              and other associated trading names.
+            </p>
+
+            <p className="mt-[1.5rem]">
+              We are committed to handling personal data responsibly,
+              transparently, and in accordance with UK data protection law.
             </p>
           </div>
 
-          {/* 6. Data Retention */}
+          {/* 1 */}
           <div>
-            <h5 className="text-[2.2rem] font-bold">6. Data Retention</h5>
-            <p className="mt-[1.5rem]">
-              Client project data is typically retained for 6 years after
-              project completion to comply with legal and tax obligations.
-            </p>
-          </div>
+            <h5 className="text-[2.2rem] font-bold">1. Who We Are</h5>
 
-          {/* 7. Rights */}
-          <div>
-            <h5 className="text-[2.2rem] font-bold">7. Your Rights</h5>
-            <ul className="mt-[1.5rem] list-disc pl-[2rem]">
-              <li>Access</li>
-              <li>Rectification</li>
-              <li>Erasure (“right to be forgotten”)</li>
-              <li>Restrict Processing</li>
-              <li>Data Portability</li>
-              <li>Object</li>
-              <li>Withdraw Consent</li>
-            </ul>
-            <p className="mt-[1.5rem]">
-              Contact us at{" "}
+            <p className="mt-[1.5rem] font-semibold">Data Controller</p>
+            <p>CP Agency Ltd</p>
+            <p>Bartle House, Oxford Court</p>
+            <p>Manchester, M2 3WQ</p>
+            <p>United Kingdom</p>
+            <p>
+              Email:{" "}
               <a
-                href="mailto:privacy@creativepixels.co.uk"
-                className="font-semibold underline hover:text-[#0073F8]"
+                href="mailto:legal@cp.agency"
+                className="underline hover:text-[#0073F8]"
               >
-                privacy@creativepixels.co.uk
+                legal@cp.agency
               </a>
             </p>
-          </div>
 
-          {/* 8–12 */}
-          <div>
-            <h5 className="text-[2.2rem] font-bold">8. Cookies</h5>
             <p className="mt-[1.5rem]">
-              Our website uses cookies to enhance your experience. Please see
-              our Cookie Policy for details.
+              For the purposes of the UK General Data Protection Regulation (UK
+              GDPR) and the Data Protection Act 2018, CP Agency Ltd is the Data
+              Controller of personal data collected through this website.
             </p>
           </div>
 
+          {/* 2 */}
           <div>
             <h5 className="text-[2.2rem] font-bold">
-              9. International Transfers
+              2. Scope of This Policy
+            </h5>
+            <p className="mt-[1.5rem]">This Privacy Policy applies to:</p>
+            <ul className="mt-[1rem] list-disc pl-[2rem]">
+              <li>Visitors to creativepixels.agency</li>
+              <li>
+                Individuals who contact us via the website, email, or chat
+              </li>
+              <li>Prospective clients, partners, and agencies</li>
+              <li>
+                Marketing and advertising interactions relating to our website
+              </li>
+            </ul>
+            <p className="mt-[1.5rem]">
+              Personal data processed on behalf of clients as part of service
+              delivery is governed by our Data Processing Agreement (DPA), not
+              this Privacy Policy.
+            </p>
+          </div>
+
+          {/* 3 */}
+          <div>
+            <h5 className="text-[2.2rem] font-bold">
+              3. Personal Data We Collect
             </h5>
             <p className="mt-[1.5rem]">
-              Data is primarily processed within the UK and EEA with appropriate
-              safeguards in place.
+              We may collect and process the following categories of personal
+              data:
             </p>
-          </div>
-
-          <div>
-            <h5 className="text-[2.2rem] font-bold">10. Security</h5>
+            <ul className="mt-[1rem] list-disc pl-[2rem]">
+              <li>Name</li>
+              <li>Email address</li>
+              <li>Telephone number</li>
+              <li>Company name and job title</li>
+              <li>Enquiry details and messages</li>
+              <li>Communications with us (email, chat, calls)</li>
+              <li>
+                Website usage data (IP address, browser type, pages visited)
+              </li>
+              <li>Marketing and advertising interaction data</li>
+              <li>
+                Client or partner information where a business relationship
+                exists
+              </li>
+            </ul>
             <p className="mt-[1.5rem]">
-              We implement appropriate technical and organisational measures to
-              protect your personal data.
+              We do not intentionally collect special category data.
             </p>
           </div>
 
-          <div>
-            <h5 className="text-[2.2rem] font-bold">11. Children’s Privacy</h5>
-            <p className="mt-[1.5rem]">
-              Our services are not directed to individuals under 18.
-            </p>
-          </div>
-
+          {/* 4 */}
           <div>
             <h5 className="text-[2.2rem] font-bold">
-              12. Changes to This Policy
+              4. How We Collect Personal Data
+            </h5>
+            <p className="mt-[1.5rem]">
+              We collect personal data when you:
+            </p>
+            <ul className="mt-[1rem] list-disc pl-[2rem]">
+              <li>Submit an enquiry form on our website</li>
+              <li>Use live chat or messaging tools</li>
+              <li>Contact us by email or phone</li>
+              <li>Book a call or meeting</li>
+              <li>Interact with our advertising or marketing</li>
+              <li>Visit and browse our website</li>
+            </ul>
+          </div>
+
+          {/* 5 */}
+          <div>
+            <h5 className="text-[2.2rem] font-bold">
+              5. How We Use Personal Data
+            </h5>
+            <p className="mt-[1.5rem]">We use personal data to:</p>
+            <ul className="mt-[1rem] list-disc pl-[2rem]">
+              <li>Respond to enquiries and communications</li>
+              <li>Provide information about our services</li>
+              <li>Manage and develop business relationships</li>
+              <li>Operate and improve our website</li>
+              <li>Analyse website usage and performance</li>
+              <li>Measure and optimise marketing activity</li>
+              <li>Comply with legal and regulatory obligations</li>
+            </ul>
+            <p className="mt-[1.5rem]">We do not sell personal data.</p>
+          </div>
+
+          {/* 6 */}
+          <div>
+            <h5 className="text-[2.2rem] font-bold">
+              6. Lawful Bases for Processing
+            </h5>
+            <p className="mt-[1.5rem]">
+              We process personal data under one or more of the following lawful
+              bases:
+            </p>
+            <ul className="mt-[1rem] list-disc pl-[2rem]">
+              <li>
+                <strong>Contract</strong> – where processing is necessary to
+                respond to enquiries or deliver services
+              </li>
+              <li>
+                <strong>Legitimate interests</strong> – to operate, improve, and
+                promote our business
+              </li>
+              <li>
+                <strong>Consent</strong> – where explicitly provided (for
+                example, marketing cookies)
+              </li>
+              <li>
+                <strong>Legal obligation</strong> – where required by law
+              </li>
+            </ul>
+          </div>
+
+          {/* 7 */}
+          <div>
+            <h5 className="text-[2.2rem] font-bold">
+              7. Marketing Communications
+            </h5>
+            <p className="mt-[1.5rem]">
+              We may send marketing communications where:
+            </p>
+            <ul className="mt-[1rem] list-disc pl-[2rem]">
+              <li>You have opted in, or</li>
+              <li>
+                We have a legitimate business relationship and a lawful basis to
+                do so
+              </li>
+            </ul>
+            <p className="mt-[1.5rem]">
+              You can opt out of marketing communications at any time by
+              contacting us at{" "}
+              <a
+                href="mailto:legal@cp.agency"
+                className="underline hover:text-[#0073F8]"
+              >
+                legal@cp.agency
+              </a>{" "}
+              or using any unsubscribe mechanism provided.
+            </p>
+          </div>
+
+          {/* 8 */}
+          <div>
+            <h5 className="text-[2.2rem] font-bold">
+              8. Cookies and Tracking Technologies
+            </h5>
+            <p className="mt-[1.5rem]">
+              Our website uses cookies and similar technologies to operate
+              effectively and understand how visitors use the site.
+            </p>
+            <p className="mt-[1.5rem]">
+              These may include tools such as:
+            </p>
+            <ul className="mt-[1rem] list-disc pl-[2rem]">
+              <li>Google Analytics</li>
+              <li>Google Tag Manager</li>
+              <li>Microsoft Clarity</li>
+              <li>Google Ads</li>
+              <li>Meta Ads (Facebook and Instagram)</li>
+              <li>Crisp live chat</li>
+            </ul>
+            <p className="mt-[1.5rem]">
+              Full details are provided in our{" "}
+              <Link
+                href="/legal/cookies-policy"
+                className="font-semibold underline hover:text-[#0073F8]"
+              >
+                Cookie Policy
+              </Link>
+              , which should be read alongside this Privacy Policy.
+            </p>
+          </div>
+
+          {/* 9 */}
+          <div>
+            <h5 className="text-[2.2rem] font-bold">
+              9. Data Sharing and Third Parties
+            </h5>
+            <p className="mt-[1.5rem]">
+              We may share personal data with trusted third parties where
+              necessary, including:
+            </p>
+            <ul className="mt-[1rem] list-disc pl-[2rem]">
+              <li>Website hosting and cloud infrastructure providers</li>
+              <li>Analytics, advertising, and tracking platforms</li>
+              <li>Communication and live chat providers</li>
+              <li>Internal group companies and delivery teams</li>
+              <li>Professional advisers and service providers</li>
+            </ul>
+            <p className="mt-[1.5rem]">
+              All third parties are required to process personal data securely
+              and in accordance with applicable law.
+            </p>
+          </div>
+
+          {/* 10 */}
+          <div>
+            <h5 className="text-[2.2rem] font-bold">
+              10. International Data Transfers
+            </h5>
+            <p className="mt-[1.5rem]">
+              Some personal data may be processed outside the UK or European
+              Economic Area.
+            </p>
+            <p className="mt-[1.5rem]">
+              Where this occurs, we ensure appropriate safeguards are in place
+              in line with UK GDPR requirements, including contractual
+              protections and security measures.
+            </p>
+          </div>
+
+          {/* 11 */}
+          <div>
+            <h5 className="text-[2.2rem] font-bold">11. Data Security</h5>
+            <p className="mt-[1.5rem]">
+              We take reasonable technical and organisational measures to protect
+              personal data, including:
+            </p>
+            <ul className="mt-[1rem] list-disc pl-[2rem]">
+              <li>Secure hosting environments</li>
+              <li>Access controls and authentication</li>
+              <li>Encryption where appropriate</li>
+              <li>Restricted internal access</li>
+              <li>Confidentiality obligations for staff and contractors</li>
+            </ul>
+            <p className="mt-[1.5rem]">
+              No method of transmission or storage is completely secure, and we
+              cannot guarantee absolute security.
+            </p>
+          </div>
+
+          {/* 12 */}
+          <div>
+            <h5 className="text-[2.2rem] font-bold">12. Data Retention</h5>
+            <p className="mt-[1.5rem]">
+              We retain personal data only for as long as necessary for the
+              purposes for which it was collected, including to meet legal,
+              accounting, or reporting obligations.
+            </p>
+          </div>
+
+          {/* 13 */}
+          <div>
+            <h5 className="text-[2.2rem] font-bold">13. Your Rights</h5>
+            <p className="mt-[1.5rem]">
+              Under UK data protection law, you have the right to:
+            </p>
+            <ul className="mt-[1rem] list-disc pl-[2rem]">
+              <li>Access your personal data</li>
+              <li>Request correction or deletion</li>
+              <li>Object to processing</li>
+              <li>Request restriction of processing</li>
+              <li>Withdraw consent at any time</li>
+              <li>
+                Lodge a complaint with the UK Information Commissioner&apos;s
+                Office (ICO)
+              </li>
+            </ul>
+            <p className="mt-[1.5rem]">
+              To exercise your rights, please contact{" "}
+              <a
+                href="mailto:legal@cp.agency"
+                className="underline hover:text-[#0073F8]"
+              >
+                legal@cp.agency
+              </a>
+              .
+            </p>
+          </div>
+
+          {/* 14 */}
+          <div>
+            <h5 className="text-[2.2rem] font-bold">
+              14. Changes to This Policy
             </h5>
             <p className="mt-[1.5rem]">
               We may update this Privacy Policy from time to time.
             </p>
-          </div>
-
-          {/* 13. Contact */}
-          <div>
-            <h5 className="text-[2.2rem] font-bold">13. Contact Us</h5>
-            <p className="mt-[1.5rem] font-semibold">Data Protection Officer</p>
-            <p>CreativePixels Ltd.</p>
-            <p>
-              Email:{" "}
-              <a
-                href="mailto:privacy@creativepixels.co.uk"
-                className="underline hover:text-[#0073F8]"
-              >
-                privacy@creativepixels.co.uk
-              </a>
-            </p>
-            <p>Address: Manchester, United Kingdom</p>
             <p className="mt-[1.5rem]">
-              You may lodge a complaint with the Information Commissioner&apos;s
-              Office (ICO).
+              The latest version will always be published on
+              creativepixels.agency.
             </p>
           </div>
         </div>

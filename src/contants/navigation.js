@@ -88,7 +88,7 @@ export const SECTOR_SOLUTION_NAV = [
     href: "/solutions/ecommerce-brands",
   },
   {
-    label: "Education & Charity",
+    label: "Charities & Foundation",
     excerpt: "",
     href: "/solutions/charities-and-foundation",
   },

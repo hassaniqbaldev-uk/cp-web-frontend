@@ -61,7 +61,8 @@ export const clientResourcesData = [
     iconWidth: 30,
     iconHeight: 30,
     title: "NDA Template",
-    description: "Mutual non-disclosure agreement for confidential projects.",
+    description:
+      "A mutual non-disclosure agreement used where confidential information is shared, including agency, white-label, and sensitive projects.",
     link: "/legal/nda-template",
   },
   {
@@ -87,6 +88,24 @@ export const clientResourcesData = [
     title: "Complaints Procedure",
     description: "How to raise concerns and our resolution process.",
     link: "/legal/complaints-procedure",
+  },
+  {
+    icon: DataAnalysticsIcon,
+    iconWidth: 30,
+    iconHeight: 30,
+    title: "Client Resources",
+    description:
+      "These documents apply when working with CreativePixels as a client, agency, or partner.",
+    link: "/legal/client-resources",
+  },
+  {
+    icon: DataAnalysticsIcon,
+    iconWidth: 30,
+    iconHeight: 30,
+    title: "Support & Maintenance Schedule",
+    description:
+      "What’s included in ongoing support and maintenance, how requests are handled, response times, and what falls outside standard support.",
+    link: "/legal/support-maintenance-schedule",
   },
 ];
 
@@ -168,34 +187,36 @@ const Resources = () => {
                 return (
                   <motion.div key={idx} variants={itemVariants}>
                     <div className="client-resources-card">
-                      <div className="absolute inset-0 z-[10] flex flex-col items-start justify-center px-[3rem] text-left">
-                        <i
-                          style={{
-                            boxShadow: theme.shadow,
-                            background: theme.color,
-                          }}
-                          className="inline-flex size-[5.8rem] min-w-max items-center justify-center rounded-[1.5rem]"
-                        >
-                          <Image
-                            src={item.icon}
-                            alt={item.title}
-                            width={30}
-                            height={30}
-                            unoptimized
-                          />
-                        </i>
+                      <div className="flex h-full flex-col items-start justify-between p-[3rem] text-left">
+                        <div className="flex flex-col items-start">
+                          <i
+                            style={{
+                              boxShadow: theme.shadow,
+                              background: theme.color,
+                            }}
+                            className="inline-flex size-[5.8rem] min-h-[5.8rem] min-w-max items-center justify-center rounded-[1.5rem]"
+                          >
+                            <Image
+                              src={item.icon}
+                              alt={item.title}
+                              width={30}
+                              height={30}
+                              unoptimized
+                            />
+                          </i>
 
-                        <h4 className="mt-[2rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white">
-                          {item.title}
-                        </h4>
+                          <h4 className="mt-[2rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white">
+                            {item.title}
+                          </h4>
 
-                        <p className="mt-[1rem] mb-[3rem] text-[1.6rem] leading-[2.4rem] font-normal tracking-normal text-white">
-                          {item.description}
-                        </p>
+                          <p className="mt-[1rem] mb-[3rem] text-[1.6rem] leading-[2.4rem] font-normal tracking-normal text-white">
+                            {item.description}
+                          </p>
+                        </div>
 
                         <Link
                           href={item.link}
-                          className="inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold text-white"
+                          className="relative z-[10] inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold text-white"
                         >
                           Explore Strategy
                           <RightArrowIcon color="#ffffff" />
@@ -248,33 +269,35 @@ const Resources = () => {
                       className="!flex !h-auto !items-center !justify-center px-[1rem] pb-[10rem]"
                     >
                       <div className="client-resources-card">
-                        <div className="absolute inset-0 z-[10] flex flex-col items-start justify-center px-[3rem] text-left">
-                          <i
-                            style={{
-                              background: theme.color,
-                            }}
-                            className="inline-flex size-[5.8rem] min-w-max items-center justify-center rounded-[1.5rem]"
-                          >
-                            <Image
-                              src={item.icon}
-                              alt={item.title}
-                              width={30}
-                              height={30}
-                              unoptimized
-                            />
-                          </i>
+                        <div className="flex h-full flex-col items-start justify-between p-[3rem] text-left">
+                          <div className="flex flex-col items-start">
+                            <i
+                              style={{
+                                background: theme.color,
+                              }}
+                              className="inline-flex size-[5.8rem] min-w-max items-center justify-center rounded-[1.5rem]"
+                            >
+                              <Image
+                                src={item.icon}
+                                alt={item.title}
+                                width={30}
+                                height={30}
+                                unoptimized
+                              />
+                            </i>
 
-                          <h4 className="mt-[2rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white">
-                            {item.title}
-                          </h4>
+                            <h4 className="mt-[2rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white">
+                              {item.title}
+                            </h4>
 
-                          <p className="mt-[1rem] mb-[3rem] text-[1.6rem] leading-[2.4rem] font-normal tracking-normal text-white">
-                            {item.description}
-                          </p>
+                            <p className="mt-[1rem] mb-[3rem] text-[1.6rem] leading-[2.4rem] font-normal tracking-normal text-white">
+                              {item.description}
+                            </p>
+                          </div>
 
                           <Link
                             href={item.link}
-                            className="inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold text-white"
+                            className="relative z-[10] inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold text-white"
                           >
                             Explore Strategy
                             <RightArrowIcon color="#ffffff" />
