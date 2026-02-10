@@ -72,7 +72,7 @@ const ClientOverview = ({ caseStudy }) => {
                       className="inline-flex items-center gap-[5px] text-[1.8rem] leading-[3rem] font-medium tracking-normal text-[#625C70] md:text-[2.2rem] md:leading-[3.7rem]"
                     >
                       {item.title}
-                      {idx < caseStudy.services.length - 1 && " / "}
+                      {idx < caseStudy.industries.length - 1 && " / "}
                     </li>
                   ))}
                 </ul>

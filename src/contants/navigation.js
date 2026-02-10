@@ -90,7 +90,7 @@ export const SECTOR_SOLUTION_NAV = [
   {
     label: "Education & Charity",
     excerpt: "",
-    href: "/solutions/education-and-charity",
+    href: "/solutions/charities-and-foundation",
   },
   {
     label: "Interiors & Furnishings",

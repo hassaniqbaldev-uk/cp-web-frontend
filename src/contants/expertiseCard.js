@@ -37,7 +37,7 @@ export const EXPERTISE_CARD = [
     title: "Non-Profits & Charity",
     description:
       "Connect with your community through accessible, impactful digital experiences.",
-    link: "/solutions/education-and-charity",
+    link: "/solutions/charities-and-foundation",
     linkText: "Explore Solutions",
     color: "#FF37B3",
     boxShadow: "4px 12px 30px 0px #FF37B31C",
