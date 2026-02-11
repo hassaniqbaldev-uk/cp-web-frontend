@@ -50,7 +50,7 @@ export const questionsData = [
   },
 ];
 
-const Questions = () => {
+const Questions = ({ data = questionsData }) => {
   const containerVariants = {
     hidden: {},
     visible: {
@@ -107,7 +107,7 @@ const Questions = () => {
                   text="Have More Questions?"
                   textColor="#FFFFFF"
                   bGcolor="#FF37B3"
-                  href=""
+                  href="/contact"
                 />
               </motion.div>
             </motion.div>
@@ -120,7 +120,7 @@ const Questions = () => {
               className="flex-1"
             >
               <Accordion type="single" collapsible>
-                {questionsData.map((item, idx) => (
+                {data.map((item, idx) => (
                   <motion.div variants={itemVariants} key={idx}>
                     <AccordionItem
                       value={`item-${idx}`}

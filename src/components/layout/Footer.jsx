@@ -292,7 +292,7 @@ const Footer = () => {
 
                     <div>
                       <Link
-                        href=""
+                        href="/agencies"
                         className="text-[1.8rem] leading-[4rem] font-medium tracking-normal text-white"
                       >
                         White-label / Agencies

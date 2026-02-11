@@ -1,0 +1,115 @@
+"use client";
+import Image from "next/image";
+import ClientReviewBg from "@/assets/images/backgrounds/client-review-bg.webp";
+import SectionTitle from "@/components/ui/SectionTitle";
+import CloseEye from "@/components/decorative-elements/close-eye";
+import Quote from "@/assets/svgs/quote.svg";
+import { motion } from "framer-motion";
+
+const ClientReview = () => {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  return (
+    <>
+      <section className="w-full overflow-hidden px-[2rem] pb-[5rem] xl:px-[0rem] xl:pb-[10rem]">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="relative container overflow-hidden rounded-[2rem] px-[2rem] py-[4rem] md:px-[3rem]"
+        >
+          {/*Background Image*/}
+          <Image
+            src={ClientReviewBg}
+            alt="Background Image"
+            fill
+            priority
+            className="pointer-events-none absolute inset-0 z-[1] object-cover select-none"
+            unoptimized
+          />
+
+          <motion.div
+            variants={itemVariants}
+            className="relative z-[10] mb-[3rem] flex items-center justify-between gap-[3rem]"
+          >
+            <SectionTitle text="Client Review" textColor="#ffffff" />
+          </motion.div>
+
+          <motion.div
+            variants={itemVariants}
+            className="relative z-[10] flex w-full flex-col justify-between gap-[4rem] overflow-hidden rounded-[1.5rem] bg-white p-[2rem] md:p-[3rem] xl:flex-row"
+          >
+            <div className="xl:w-[70rem]">
+              <div className="flex flex-col items-start gap-[2.8rem] md:flex-row">
+                <div className="relative top-[.6rem] inline-flex min-w-max items-center justify-center">
+                  <Image src={Quote} width={27} height={24} alt="Icon" />
+                </div>
+
+                <p className="text-[1.8rem] leading-[2.4rem] font-medium tracking-normal text-[#263238] md:text-[2.2rem] md:leading-[3.3rem]">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus semper ex et tortor rhoncus cursus. Maecenas
+                  facilisis ex non erat vulputate porttitor. Curabitur eget odio
+                  lacinia, luctus neque non, commodo ipsum. Vivamus faucibus eu
+                  urna sit amet vulputate. Nullam sodales semper iaculis. Nullam
+                  sodales semper iaculis...
+                </p>
+
+                <div className="relative hidden h-[18.2rem] min-w-[.1rem] bg-[#D9D9D9] md:block">
+                  <div className="absolute top-1/2 right-0 h-[7.5rem] w-[.2rem] -translate-y-1/2 bg-[#FF37B3]" />
+                </div>
+              </div>
+
+              <div className="mt-[4rem] mb-[2rem] h-[.1rem] w-full bg-[#D9D9D9]" />
+
+              <div className="flex items-center gap-[1rem]">
+                <div className="flex size-[5.6rem] min-w-[5.6rem] items-center justify-center overflow-hidden rounded-full bg-black">
+                  <CloseEye className="w-[3rem]" />
+                </div>
+
+                <div className="flex flex-col items-start text-left">
+                  <h6 className="text-[1.4rem] leading-[2.4rem] font-semibold tracking-normal text-[#312749] md:text-[1.8rem] md:leading-[2.6rem]">
+                    Debra
+                  </h6>
+
+                  <span className="text-[1.2rem] leading-[2rem] font-medium tracking-normal text-[#625C70] md:text-[1.6rem] md:leading-[2.4rem]">
+                    Founder of Casa Botanica
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex h-[25rem] w-full items-center justify-center overflow-hidden rounded-[1.5rem] bg-black md:h-[50rem] xl:h-[34rem] xl:w-[34rem]">
+              <CloseEye className="w-[14rem] md:w-[18rem]" />
+            </div>
+          </motion.div>
+        </motion.div>
+      </section>
+    </>
+  );
+};
+
+export default ClientReview;

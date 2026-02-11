@@ -9,7 +9,6 @@ import TestimonialAvatar3 from "@/assets/icons/ui/testimonial-avatar-3.svg";
 import TestimonialAvatar4 from "@/assets/svgs/game-art-testimonial-avatar.svg";
 import TestimonialCardImg from "@/assets/images/cards/testimonial-card-img.webp";
 import Image from "next/image";
-import PrimaryButton from "@/components/ui/PrimaryButton";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
