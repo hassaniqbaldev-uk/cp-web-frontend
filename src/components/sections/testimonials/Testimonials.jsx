@@ -406,7 +406,7 @@ const Testimonials = () => {
           <PrimaryButton
             text="See More Reviews & Results"
             textColor="#FFFFFF"
-            href=""
+            href="/testimonials"
             bGcolor="#312749"
           />
         </motion.div>
