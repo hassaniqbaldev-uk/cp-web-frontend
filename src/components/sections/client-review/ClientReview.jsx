@@ -70,12 +70,12 @@ const ClientReview = () => {
                 </div>
 
                 <p className="text-[1.8rem] leading-[2.4rem] font-medium tracking-normal text-[#263238] md:text-[2.2rem] md:leading-[3.3rem]">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus semper ex et tortor rhoncus cursus. Maecenas
-                  facilisis ex non erat vulputate porttitor. Curabitur eget odio
-                  lacinia, luctus neque non, commodo ipsum. Vivamus faucibus eu
-                  urna sit amet vulputate. Nullam sodales semper iaculis. Nullam
-                  sodales semper iaculis...
+                  &quot;From beginning to end, it was an incredible experience.
+                  Working with the entire team was enjoyable due to their
+                  creativity and expertise. <br /> <br />
+                  They completely understood our goals as a studio with a very
+                  ambitious and distinctive website, from concept to design. We
+                  are quite happy with the outcome.”
                 </p>
 
                 <div className="relative hidden h-[18.2rem] min-w-[.1rem] bg-[#D9D9D9] md:block">
@@ -92,11 +92,11 @@ const ClientReview = () => {
 
                 <div className="flex flex-col items-start text-left">
                   <h6 className="text-[1.4rem] leading-[2.4rem] font-semibold tracking-normal text-[#312749] md:text-[1.8rem] md:leading-[2.6rem]">
-                    Debra
+                    Agency Owner, Managing Director
                   </h6>
 
                   <span className="text-[1.2rem] leading-[2rem] font-medium tracking-normal text-[#625C70] md:text-[1.6rem] md:leading-[2.4rem]">
-                    Founder of Casa Botanica
+                    Award Winning Agency based in Cheshire
                   </span>
                 </div>
               </div>
