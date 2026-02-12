@@ -30,9 +30,9 @@ const StickyCta = () => {
 
   return (
     <>
-      <div className="fixed bottom-[0rem] xl:bottom-[1.5rem] left-0 z-[100] w-full">
+      <div className="fixed bottom-[0rem] left-0 z-[100] w-full xl:bottom-[1.5rem]">
         <div
-          className={`mx-auto max-w-[120rem] overflow-hidden rounded-[0rem] xl:rounded-[20rem] px-[3rem] py-[1rem] transition-transform duration-300 ease-out ${isHidden ? "translate-y-[120%]" : "translate-y-0"}`}
+          className={`mx-auto max-w-[120rem] overflow-hidden rounded-[0rem] px-[3rem] py-[1rem] transition-transform duration-300 ease-out xl:rounded-[20rem] ${isHidden ? "translate-y-[120%]" : "translate-y-0"}`}
         >
           {/*Background Image*/}
           <Image
@@ -62,7 +62,7 @@ const StickyCta = () => {
                   />
                 </i>
 
-                <h4 className="text-center text-[1.4rem] leading-[2rem] font-bold tracking-[-0.02em] text-white md:text-[2.4rem] md:leading-[4rem] md:text-left xl:text-[3rem] xl:leading-[4.4rem]">
+                <h4 className="text-center text-[1.4rem] leading-[2rem] font-bold tracking-[-0.02em] text-white md:text-left md:text-[2.4rem] md:leading-[4rem] xl:text-[3rem] xl:leading-[4.4rem]">
                   Let’s design, build, and grow your next big project.
                 </h4>
               </div>
@@ -72,7 +72,7 @@ const StickyCta = () => {
                   text="Book a Call"
                   textColor="#FFFFFF"
                   bGcolor="#FF37B3"
-                  href=""
+                  href="/call"
                 />
               </div>
             </div>

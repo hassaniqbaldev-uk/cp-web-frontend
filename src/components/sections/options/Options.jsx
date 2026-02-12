@@ -176,7 +176,7 @@ const Options = ({ service }) => {
                   </div>
 
                   <PrimaryButton
-                    href=""
+                    href="/contact"
                     text="Request Proposal"
                     bGcolor="#ffffff"
                     textColor={theme.color}
@@ -255,7 +255,7 @@ const Options = ({ service }) => {
                       </div>
 
                       <PrimaryButton
-                        href=""
+                        href="/contact"
                         text="Request Proposal"
                         bGcolor="#ffffff"
                         textColor={theme.color}

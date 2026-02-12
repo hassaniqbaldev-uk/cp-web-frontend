@@ -322,12 +322,14 @@ const ContactHero = () => {
                       </div>
 
                       <div className="w-full">
-                        <Link
-                          href=""
+                        <button
+                          data-cal-namespace="15min"
+                          data-cal-link="hassan-iqbal-mznzu9/15min"
+                          data-cal-config='{"layout":"month_view","theme":"dark"}'
                           className="flex h-[5.6rem] w-full items-center justify-center rounded-[6rem] border border-white/20 px-[1rem] py-[8px] text-[1.8rem] font-medium tracking-normal text-white transition-all duration-300 hover:border-[#3078FF] hover:bg-[#3078FF]"
                         >
                           15-min chat with Hassan
-                        </Link>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -362,7 +364,7 @@ const ContactHero = () => {
 
                       <div className="w-full">
                         <Link
-                          href=""
+                          href="mailto:hello@cp.agency"
                           className="flex h-[5.6rem] w-full items-center justify-center rounded-[6rem] border border-white/20 px-[1rem] py-[8px] text-[1.8rem] font-medium tracking-normal text-white transition-all duration-300 hover:border-[#ED910C] hover:bg-[#ED910C]"
                         >
                           hello@cp.agency
@@ -401,7 +403,7 @@ const ContactHero = () => {
 
                       <div className="w-full">
                         <Link
-                          href=""
+                          href="tel:01618202667"
                           className="flex h-[5.6rem] w-full items-center justify-center rounded-[6rem] border border-white/20 px-[1rem] py-[8px] text-[1.8rem] font-medium tracking-normal text-white transition-all duration-300 hover:border-[#FF37B3] hover:bg-[#FF37B3]"
                         >
                           0161 820 2667

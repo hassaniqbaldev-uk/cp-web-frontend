@@ -538,7 +538,7 @@ const Footer = () => {
                         ))}
                         <li>
                           <Link
-                            href=""
+                            href="/agencies"
                             className="text-[1.6rem] font-light tracking-normal text-white"
                           >
                             White-label / Agencies

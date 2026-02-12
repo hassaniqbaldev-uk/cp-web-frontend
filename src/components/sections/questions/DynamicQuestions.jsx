@@ -68,7 +68,7 @@ const DynamicQuestions = ({ service }) => {
                   text="Have More Questions?"
                   textColor="#FFFFFF"
                   bGcolor="#FF37B3"
-                  href=""
+                  href="/contact"
                 />
               </motion.div>
             </motion.div>

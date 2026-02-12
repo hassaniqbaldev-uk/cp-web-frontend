@@ -10,6 +10,8 @@ import Link from "next/link";
 import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
 import HomeHeroLogoShape2 from "@/components/decorative-elements/HomeHeroLogoShape2";
 import ContactHeroLogoShape1 from "@/components/decorative-elements/ContactHeroLogoShape1";
+import { useEffect } from "react";
+import { getCalApi } from "@calcom/embed-react";
 
 const ServicesHero = () => {
   const containerVariants = {
@@ -52,6 +54,21 @@ const ServicesHero = () => {
     },
   };
 
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "15min" });
+      cal("ui", {
+        theme: "dark",
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#292929" },
+          dark: { "cal-brand": "#FF37B3" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+
   return (
     <>
       <section className="relative w-full overflow-hidden px-[2rem] pt-[19rem] pb-[13rem] xl:px-[0rem]">
@@ -71,11 +88,11 @@ const ServicesHero = () => {
         </div>
 
         <div className="pointer-events-none absolute inset-0 z-[2] select-none">
-          <HomeHeroLogoShape2 className="absolute bottom-[10rem] left-[4rem] md:left-[10rem] h-[8rem] w-[4rem] rotate-[35deg] opacity-50 md:h-[17rem] md:w-[8.5rem]" />
+          <HomeHeroLogoShape2 className="absolute bottom-[10rem] left-[4rem] h-[8rem] w-[4rem] rotate-[35deg] opacity-50 md:left-[10rem] md:h-[17rem] md:w-[8.5rem]" />
         </div>
 
         <div className="pointer-events-none absolute inset-0 z-[2] select-none">
-          <ContactHeroLogoShape1 className="absolute top-[15rem] right-[5rem] h-[8rem] opacity-50 w-[4rem] rotate-[35deg] md:h-[12.4rem] md:w-[13.3rem]" />
+          <ContactHeroLogoShape1 className="absolute top-[15rem] right-[5rem] h-[8rem] w-[4rem] rotate-[35deg] opacity-50 md:h-[12.4rem] md:w-[13.3rem]" />
         </div>
 
         <div className="relative z-[10] container">
@@ -131,15 +148,17 @@ const ServicesHero = () => {
                 text="See Case Studies"
                 textColor="#FFFFFF"
                 bGcolor="#312749"
-                href=""
+                href="/case-studies"
               />
 
-              <Link
-                href=""
+              <button
+                data-cal-namespace="15min"
+                data-cal-link="hassan-iqbal-mznzu9/15min"
+                data-cal-config='{"layout":"month_view","theme":"dark"}'
                 className="inline-flex h-[4rem] items-center justify-center rounded-[60px] border-2 border-[#312749]/40 px-[30px] py-[8px] text-center text-[1.4rem] font-semibold tracking-normal text-[#312749] md:h-[5rem] md:text-[1.8rem]"
               >
                 Book a Strategy Call
-              </Link>
+              </button>
             </motion.div>
           </motion.div>
         </div>

@@ -130,7 +130,7 @@ const PartnerWithUsHero = () => {
                 text="How It Works"
                 textColor="#312749"
                 bGcolor="#FFFFFF"
-                href=""
+                href="/how-we-work"
               />
             </motion.div>
           </motion.div>

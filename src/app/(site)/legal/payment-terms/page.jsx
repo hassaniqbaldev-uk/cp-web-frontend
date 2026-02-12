@@ -213,7 +213,10 @@ const PaymentTermsPage = () => {
               payment options.
             </p>
             <p className="mt-[1rem] font-semibold">
-              Contact us → <Link href="">accounts@creativepixels.co.uk</Link>
+              Contact us →{" "}
+              <Link href="mailto:accounts@creativepixels.co.uk">
+                accounts@creativepixels.co.uk
+              </Link>
             </p>
           </section>
         </div>

@@ -86,7 +86,7 @@ const TheSolution = ({ caseStudy }) => {
 
               <motion.div variants={itemVariants}>
                 <PrimaryButton
-                  href=""
+                  href="/call"
                   text="Book a Call"
                   textColor="#05020B"
                   bGcolor={caseStudy.primaryColor}
