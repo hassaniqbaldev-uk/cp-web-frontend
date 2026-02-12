@@ -162,7 +162,7 @@ const Expertise3 = ({ service }) => {
             className="flex flex-col items-center justify-center gap-[5px] text-center"
           >
             <motion.div variants={itemVariants}>
-              <SectionLabel text="Specialized Expertise" textColor="#EE8D00" />
+              <SectionLabel text="Specialised Expertise" textColor="#EE8D00" />
             </motion.div>
 
             <motion.div variants={itemVariants}>
@@ -196,7 +196,7 @@ const Expertise3 = ({ service }) => {
                       borderColor: theme.color,
                       boxShadow: hovered === idx ? theme.shadow : "",
                     }}
-                    className="flex w-full h-full flex-col rounded-[3rem] border bg-white px-[3rem] pt-[3.1rem] pb-[2.8rem] transition-all duration-300"
+                    className="flex h-full w-full flex-col rounded-[3rem] border bg-white px-[3rem] pt-[3.1rem] pb-[2.8rem] transition-all duration-300"
                   >
                     {/* Icon */}
                     <div className="relative size-[6.3rem]">
