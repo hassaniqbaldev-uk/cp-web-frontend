@@ -3,7 +3,6 @@ import RightArrowIcon from "@/components/icons/RightArrowIcon";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Image from "next/image";
 import Link from "next/link";
-import GraphicDesignIcon from "@/assets/icons/ui/graphic-design-icon.svg";
 import UxIcon from "@/assets/icons/ui/ux-icon.svg";
 import WordpressIcon from "@/assets/icons/ui/wordpress-icon.svg";
 import ShopifyIcon from "@/assets/icons/ui/shopify-icon.svg";
@@ -41,15 +40,6 @@ export const themeColors = {
 };
 
 export const ourPoliciesData = [
-  {
-    icon: GraphicDesignIcon,
-    iconWidth: 30,
-    iconHeight: 30,
-    title: "Terms of Service",
-    description:
-      "The core agreement covering how we work with clients, including services, payments, intellectual property, hosting, third-party tools, and responsibilities.",
-    link: "/legal/terms",
-  },
   {
     icon: UxIcon,
     iconWidth: 30,

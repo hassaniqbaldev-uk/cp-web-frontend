@@ -429,7 +429,7 @@ const MobileMenu = () => {
                 href="/blog"
                 className="inline-flex items-start justify-start text-left text-[2.2rem] leading-[2.4rem] font-extrabold tracking-normal text-[#312749]"
               >
-                Insights
+                Blog
               </Link>
             </li>
 

@@ -148,7 +148,7 @@ const AgenciesHero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-              className="border-blac relative flex h-[25rem] w-full items-center justify-center rounded-[2rem] border-[2rem] bg-white md:h-[35rem] md:w-[52rem]"
+              className="relative flex h-[25rem] w-full items-center justify-center rounded-[2rem] border-[1.6rem] border-black bg-white md:h-[35rem] md:w-[52rem]"
             >
               <motion.div
                 initial={{ opacity: 0 }}

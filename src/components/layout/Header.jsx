@@ -171,7 +171,7 @@ const Header = () => {
                 className="nav-link"
                 onClick={closeAllDropdowns}
               >
-                Insights
+                Blog
               </Link>
 
               {/* <Link href="" className="nav-link" onClick={closeAllDropdowns}>

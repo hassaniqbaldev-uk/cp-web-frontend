@@ -15,6 +15,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { motion } from "framer-motion";
 import SectionDescription from "@/components/ui/SectionDescription";
+import GraphicDesignIcon from "@/assets/icons/ui/graphic-design-icon.svg";
 
 export const themeColors = {
   primary: {
@@ -65,6 +66,16 @@ export const clientResourcesData = [
       "A mutual non-disclosure agreement used where confidential information is shared, including agency, white-label, and sensitive projects.",
     link: "/legal/nda-template",
   },
+  {
+    icon: GraphicDesignIcon,
+    iconWidth: 30,
+    iconHeight: 30,
+    title: "Terms of Service",
+    description:
+      "The core agreement covering how we work with clients, including services, payments, intellectual property, hosting, third-party tools, and responsibilities.",
+    link: "/legal/terms",
+  },
+
   // {
   //   icon: EmailIcon2,
   //   iconWidth: 30,
@@ -209,7 +220,7 @@ const Resources = () => {
                           href={item.link}
                           className="relative z-[10] inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold text-white"
                         >
-                          Explore Strategy
+                          More Details
                           <RightArrowIcon color="#ffffff" />
                         </Link>
                       </div>
@@ -290,7 +301,7 @@ const Resources = () => {
                             href={item.link}
                             className="relative z-[10] inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold text-white"
                           >
-                            Explore Strategy
+                            More Details
                             <RightArrowIcon color="#ffffff" />
                           </Link>
                         </div>
