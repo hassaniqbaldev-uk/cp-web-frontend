@@ -68,24 +68,24 @@ export const ourPoliciesData = [
       "Information about cookies and similar technologies used on our website, including analytics and marketing tools.",
     link: "/legal/cookies-policy",
   },
-  {
-    icon: ShopifyIcon,
-    iconWidth: 20,
-    iconHeight: 26,
-    title: "Acceptable Use Policy",
-    description:
-      "Guidelines for appropriate use of our services and platforms.",
-    link: "/legal/acceptable-use-policy",
-  },
-  {
-    icon: DeveloperIcon,
-    iconWidth: 30,
-    iconHeight: 30,
-    title: "GDPR & DPA Agreement",
-    description:
-      "Sets out how personal data is processed when we act on behalf of clients, including GDPR responsibilities, security measures, and approved subprocessors.",
-    link: "/legal/gdpr-dpa",
-  },
+  // {
+  //   icon: ShopifyIcon,
+  //   iconWidth: 20,
+  //   iconHeight: 26,
+  //   title: "Acceptable Use Policy",
+  //   description:
+  //     "Guidelines for appropriate use of our services and platforms.",
+  //   link: "/legal/acceptable-use-policy",
+  // },
+  // {
+  //   icon: DeveloperIcon,
+  //   iconWidth: 30,
+  //   iconHeight: 30,
+  //   title: "GDPR & DPA Agreement",
+  //   description:
+  //     "Sets out how personal data is processed when we act on behalf of clients, including GDPR responsibilities, security measures, and approved subprocessors.",
+  //   link: "/legal/gdpr-dpa",
+  // },
   {
     icon: WordpressIcon,
     iconWidth: 30,
