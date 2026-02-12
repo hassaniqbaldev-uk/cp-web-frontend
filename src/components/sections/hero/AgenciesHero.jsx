@@ -1,15 +1,15 @@
 "use client";
 import Image from "next/image";
-import HeroBg from "@/assets/images/backgrounds/contact-hero-bg.webp";
-import HowWeWorkHeroCardImg from "@/assets/images/cards/how-we-work-hero-card-img.webp";
-import SectionLabel from "@/components/ui/SectionLabel";
+import HeroBg from "@/assets/images/backgrounds/audit-hero-bg.webp";
 import SectionDescription from "@/components/ui/SectionDescription";
 import { motion } from "framer-motion";
 import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
 import AboutHeroLogoShape1 from "@/components/decorative-elements/AboutHeroLogoShape1";
 import ContactHeroLogoShape1 from "@/components/decorative-elements/ContactHeroLogoShape1";
-import GradientButton from "@/components/ui/GradientButton";
 import Logo from "@/components/decorative-elements/Logo";
+import SecondaryButton from "@/components/ui/SecondaryButton";
+import { useEffect } from "react";
+import { getCalApi } from "@calcom/embed-react";
 
 const AgenciesHero = () => {
   const containerVariants = {
@@ -52,6 +52,21 @@ const AgenciesHero = () => {
     },
   };
 
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "15min" });
+      cal("ui", {
+        theme: "dark",
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#292929" },
+          dark: { "cal-brand": "#FF37B3" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+
   return (
     <>
       <section className="relative w-full overflow-hidden px-[2rem] pt-[15rem] pb-[10rem] md:pt-[20rem] xl:px-[0rem]">
@@ -86,7 +101,7 @@ const AgenciesHero = () => {
               animate="visible"
               className="flex w-full flex-col items-center justify-center gap-[3rem] text-center md:w-[60rem] xl:items-start xl:text-left"
             >
-              <h1 className="text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[5rem] md:leading-[6rem]">
+              <h1 className="text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[5rem] md:leading-[6rem]">
                 <span className="block overflow-hidden">
                   <motion.span
                     variants={lineVariants}
@@ -115,12 +130,17 @@ const AgenciesHero = () => {
               <motion.div variants={itemVariants}>
                 <SectionDescription
                   text="Since 2014, CreativePixels has supported agencies across the UK, US & Australia with WordPress websites, branding, and ongoing support all delivered under your brand."
-                  textColor="#ffffff"
+                  textColor="#312749"
                 />
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <GradientButton text="Book with Hassan" />
+                <SecondaryButton
+                  data-cal-namespace="15min"
+                  data-cal-link="hassan-iqbal-mznzu9/15min"
+                  data-cal-config='{"layout":"month_view","theme":"dark"}'
+                  text="Book with Hassan"
+                />
               </motion.div>
             </motion.div>
 

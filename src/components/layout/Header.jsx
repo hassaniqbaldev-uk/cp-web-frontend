@@ -90,6 +90,7 @@ const Header = () => {
     "/solutions",
     "/legal",
     "/testimonials",
+    "/agencies",
   ];
 
   const isHeaderSecondary = headerSecondaryPaths.some(
