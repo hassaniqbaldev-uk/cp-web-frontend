@@ -26,7 +26,7 @@ const BlogCard = ({
             width={583}
             height={336}
             alt="Card Image"
-            className="w-full object-cover"
+            className="size-full object-cover"
             unoptimized
           />
         </div>
