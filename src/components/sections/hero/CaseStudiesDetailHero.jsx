@@ -110,8 +110,8 @@ const CaseStudiesDetailHero = ({ caseStudy }) => {
               </span>
             </h1>
 
-            <motion.div variants={itemVariants}>
-              {caseStudy.detailHero?.ctaButton && (
+            {caseStudy.detailHero?.ctaButton && (
+              <motion.div variants={itemVariants}>
                 <PrimaryButton
                   target="_blank"
                   href={caseStudy.detailHero.ctaButton.url}
@@ -119,8 +119,8 @@ const CaseStudiesDetailHero = ({ caseStudy }) => {
                   text={caseStudy.detailHero.ctaButton.label}
                   textColor="#05020B"
                 />
-              )}
-            </motion.div>
+              </motion.div>
+            )}
           </motion.div>
         </div>
       </section>
