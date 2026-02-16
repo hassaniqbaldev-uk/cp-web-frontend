@@ -59,6 +59,9 @@ export const caseStudiesDetailQuery = `
     cardImage,
   },
 
+  // Custom Code Section
+  customCode,
+
   // Filters (for later use or display)
   tools[]->{
     _id,

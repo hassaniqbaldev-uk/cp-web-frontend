@@ -4,6 +4,7 @@ import CaseStudiesDetailHero from "@/components/sections/hero/CaseStudiesDetailH
 import OurApproach from "@/components/sections/our-approach/OurApproach";
 import TheChallenge from "@/components/sections/the-challenge/TheChallenge";
 import TheSolution from "@/components/sections/the-solution/TheSolution";
+import CustomCode from "@/components/sections/custom-code/CustomCode";
 import { caseStudiesDetailQuery } from "@/sanity/queries.caseStudies";
 import { caseStudiesClient } from "@/sanity/sanity.caseStudies";
 import { notFound } from "next/navigation";
@@ -33,6 +34,7 @@ const CaseStudiesDetailPage = async (props) => {
         <TheChallenge caseStudy={caseStudy} />
         <OurApproach caseStudy={caseStudy} />
         <TheSolution caseStudy={caseStudy} />
+        <CustomCode caseStudy={caseStudy} />
         <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
           <Cta />
         </section>

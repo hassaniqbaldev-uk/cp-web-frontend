@@ -163,7 +163,7 @@ const Growth2 = ({ services = [] }) => {
                 return (
                   <motion.div key={idx} variants={itemVariants}>
                     <div className="growth-2-card">
-                      <div className="absolute inset-0 z-[10] flex flex-col items-start justify-center px-[3rem] text-left">
+                      <div className="flex h-full flex-col items-start justify-between p-[3rem] text-left">
                         <i
                           style={{
                             boxShadow: theme.shadow,
@@ -190,7 +190,7 @@ const Growth2 = ({ services = [] }) => {
 
                         <Link
                           href={`/services/${item.slug.current}`}
-                          className="inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold text-white"
+                          className="relative z-[10] inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold text-white"
                         >
                           Explore Service
                           <RightArrowIcon color="#ffffff" />
@@ -243,7 +243,7 @@ const Growth2 = ({ services = [] }) => {
                       className="!flex !h-auto !items-center !justify-center px-[1rem] pb-[10rem]"
                     >
                       <div className="growth-2-card">
-                        <div className="absolute inset-0 z-[10] flex flex-col items-start justify-center px-[3rem] text-left">
+                        <div className="flex h-full flex-col items-start justify-between p-[3rem] text-left">
                           <i
                             style={{
                               background: theme.color,
@@ -269,7 +269,7 @@ const Growth2 = ({ services = [] }) => {
 
                           <Link
                             href={`/services/${item.slug.current}`}
-                            className="inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold text-white"
+                            className="relative z-[10] inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold text-white"
                           >
                             Explore Service
                             <RightArrowIcon color="#ffffff" />
