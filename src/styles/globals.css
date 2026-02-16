@@ -214,7 +214,7 @@
   }
 
   /* Footer Nav Links */
-  .footer-nav a {
+  .footer-nav li > a {
     position: relative;
 
     &::after {

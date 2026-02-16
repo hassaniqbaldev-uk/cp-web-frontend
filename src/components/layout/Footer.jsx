@@ -290,14 +290,16 @@ const Footer = () => {
                       </AccordionItem>
                     </Accordion>
 
-                    <div>
-                      <Link
-                        href="/agencies"
-                        className="text-[1.8rem] leading-[4rem] font-medium tracking-normal text-white"
-                      >
-                        White-label / Agencies
-                      </Link>
-                    </div>
+                    <ul>
+                      <li>
+                        <Link
+                          href="/agencies"
+                          className="text-[1.8rem] leading-[4rem] font-medium tracking-normal text-white"
+                        >
+                          White-label / Agencies
+                        </Link>
+                      </li>
+                    </ul>
                   </div>
                 </div>
 
@@ -415,8 +417,8 @@ const Footer = () => {
                     </p>
                   </div>
 
-                  <ul className="flex items-center gap-[8px]">
-                    <li>
+                  <div className="flex items-center gap-[8px]">
+                    <div>
                       <Link
                         href="https://www.facebook.com/CPAgencyUK"
                         className="inline-flex size-[5.7rem] items-center justify-center rounded-full bg-white/15"
@@ -428,9 +430,9 @@ const Footer = () => {
                           alt="Icon"
                         />
                       </Link>
-                    </li>
+                    </div>
 
-                    <li>
+                    <div>
                       <Link
                         href="https://www.instagram.com/cpagencyuk/"
                         className="inline-flex size-[5.7rem] items-center justify-center rounded-full bg-white/15"
@@ -442,9 +444,9 @@ const Footer = () => {
                           alt="Icon"
                         />
                       </Link>
-                    </li>
+                    </div>
 
-                    <li>
+                    <div>
                       <Link
                         href="https://www.linkedin.com/company/creativepixels/"
                         className="inline-flex size-[5.7rem] items-center justify-center rounded-full bg-white/15"
@@ -456,8 +458,8 @@ const Footer = () => {
                           alt="Icon"
                         />
                       </Link>
-                    </li>
-                  </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
 
