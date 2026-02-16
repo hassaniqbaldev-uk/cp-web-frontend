@@ -353,12 +353,37 @@ const HomeHero = () => {
                     unoptimized
                   />
 
-                  <Link
-                    href="/case-studies/casa-botanica-panama"
-                    className="text-text absolute top-1/2 left-1/2 inline-flex h-[1.2rem] -translate-1/2 cursor-none items-center justify-center rounded-[4rem] bg-[#FFD900] px-[1.5rem] text-center text-[.6rem] font-bold tracking-normal whitespace-nowrap md:h-[2.5rem] md:px-[3rem] md:text-[1.2rem]"
+                  <motion.div
+                    initial="initial"
+                    whileHover="hover"
+                    className="absolute top-1/2 left-1/2 -translate-1/2"
                   >
-                    Our Work
-                  </Link>
+                    <Link
+                      href="/case-studies/casa-botanica-panama"
+                      className="text-text relative inline-flex h-[1.2rem] cursor-none items-center justify-center overflow-hidden rounded-[4rem] bg-[#FFD900] px-[1.5rem] text-center text-[.6rem] font-bold tracking-normal whitespace-nowrap md:h-[2.5rem] md:px-[3rem] md:text-[1.2rem]"
+                    >
+                      <motion.span
+                        variants={{
+                          initial: { y: "0%" },
+                          hover: { y: "-130%" },
+                        }}
+                        transition={{ duration: 0.2, ease: "easeOut" }}
+                        className="block"
+                      >
+                        Our Work
+                      </motion.span>
+                      <motion.span
+                        variants={{
+                          initial: { y: "100%" },
+                          hover: { y: "0%" },
+                        }}
+                        transition={{ duration: 0.2, ease: "easeOut" }}
+                        className="absolute inset-0 flex items-center justify-center"
+                      >
+                        Our Work
+                      </motion.span>
+                    </Link>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>

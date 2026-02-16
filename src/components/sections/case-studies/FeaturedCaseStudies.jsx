@@ -54,13 +54,7 @@ const FeaturedCaseStudies = ({
       <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <div className="container">
           <div className="flex items-start gap-[2rem] xl:gap-[3.3rem]">
-            <motion.div
-              variants={itemVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              className="sticky top-[12rem] left-0 hidden w-[28rem] flex-col gap-[2rem] lg:flex"
-            >
+            <div className="sticky top-[12rem] left-0 hidden w-[28rem] flex-col gap-[2rem] lg:flex">
               {/* Sticky Filter Tab */}
               <div className="rounded-[2rem] border border-[#625c70]/50 bg-white py-[3.5rem] backdrop-blur-[10px]">
                 <Accordion type="single" defaultValue="item-1" collapsible>
@@ -216,23 +210,12 @@ const FeaturedCaseStudies = ({
                 textColor="#FFFFFF"
                 bGcolor="#FF37B3"
               />
-            </motion.div>
+            </div>
 
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              className="flex flex-1 flex-col gap-[3rem] xl:gap-[4.3rem]"
-            >
+            <div className="flex flex-1 flex-col gap-[3rem] xl:gap-[4.3rem]">
               <div className="flex flex-col items-start gap-[8px] text-left">
-                <motion.div variants={itemVariants}>
-                  <SectionTitle text="Featured Case Studies" />
-                </motion.div>
-
-                <motion.div variants={itemVariants}>
-                  <SectionDescription text="Deep dives into complex challenges, strategic solutions, and measurable impact." />
-                </motion.div>
+                <SectionTitle text="Featured Case Studies" />
+                <SectionDescription text="Deep dives into complex challenges, strategic solutions, and measurable impact." />
               </div>
 
               <motion.div
@@ -296,7 +279,7 @@ const FeaturedCaseStudies = ({
                   </p>
                 )}
               </motion.div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

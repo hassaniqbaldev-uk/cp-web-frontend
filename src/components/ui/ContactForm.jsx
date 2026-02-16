@@ -8,6 +8,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 const ContactForm = () => {
   const formRef = useRef();
@@ -188,13 +189,34 @@ const ContactForm = () => {
       </div>
       {/* Footer */}
       <div className="flex w-full flex-col items-center justify-center gap-[2.3rem]">
-        <button
+        <motion.button
           type="submit"
           disabled={loading}
+          initial="initial"
+          whileHover="hover"
           className="inline-flex w-full cursor-pointer items-center justify-center"
         >
-          <span className="inline-flex h-[4rem] w-full items-center justify-center rounded-[7rem] bg-[#FF37B3] px-[3rem] py-[1rem] text-center text-[1.4rem] font-semibold tracking-normal text-white md:h-[5rem] md:text-[1.8rem]">
-            {loading ? "Sending..." : "Submit Request"}
+          <span className="relative inline-flex h-[4rem] w-full items-center justify-center overflow-hidden rounded-[7rem] bg-[#FF37B3] px-[3rem] py-[1rem] text-center text-[1.4rem] font-semibold tracking-normal text-white md:h-[5rem] md:text-[1.8rem]">
+            <motion.span
+              variants={{
+                initial: { y: "0%" },
+                hover: { y: "-130%" },
+              }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="block"
+            >
+              {loading ? "Sending..." : "Submit Request"}
+            </motion.span>
+            <motion.span
+              variants={{
+                initial: { y: "100%" },
+                hover: { y: "0%" },
+              }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              {loading ? "Sending..." : "Submit Request"}
+            </motion.span>
           </span>
 
           <svg
@@ -211,15 +233,39 @@ const ContactForm = () => {
             />
           </svg>
 
-          <i className="inline-flex size-[4rem] min-w-[4rem] items-center justify-center rounded-full bg-[#FF37B3] md:size-[5rem] md:min-w-[5rem]">
-            <RightArrowIcon
-              color="#ffffff"
-              width="18"
-              height="18"
-              className="size-[1.4rem] md:size-[1.8rem]"
-            />
+          <i className="relative inline-flex size-[4rem] min-w-[4rem] items-center justify-center overflow-hidden rounded-full bg-[#FF37B3] md:size-[5rem] md:min-w-[5rem]">
+            <motion.span
+              variants={{
+                initial: { y: "0%" },
+                hover: { y: "-130%" },
+              }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <RightArrowIcon
+                color="#ffffff"
+                width="18"
+                height="18"
+                className="size-[1.4rem] md:size-[1.8rem]"
+              />
+            </motion.span>
+            <motion.span
+              variants={{
+                initial: { y: "100%" },
+                hover: { y: "0%" },
+              }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <RightArrowIcon
+                color="#ffffff"
+                width="18"
+                height="18"
+                className="size-[1.4rem] md:size-[1.8rem]"
+              />
+            </motion.span>
           </i>
-        </button>
+        </motion.button>
       </div>
       {status && <p>{status}</p>}
     </form>

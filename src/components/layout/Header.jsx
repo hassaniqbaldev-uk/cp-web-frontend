@@ -122,7 +122,7 @@ const Header = () => {
         viewport={{ once: true }}
         className={`fixed top-0 left-0 z-[500] w-full px-[2rem] pt-[1.3rem] transition-transform duration-300 ease-out md:pt-[2.5rem] xl:px-[0rem] ${isHidden ? "-translate-y-full" : "translate-y-0"} `}
       >
-        <div className="mx-auto max-w-[106rem]">
+        <div className="mx-auto max-w-[104rem]">
           <div
             className={`header-container ${
               isHeaderSecondary
@@ -188,13 +188,34 @@ const Header = () => {
             </nav>
 
             <div className="flex items-center justify-end gap-[4px]">
-              <Link
-                href="/audit"
-                className="nav-btn"
-                onClick={closeAllDropdowns}
-              >
-                Free Audit
-              </Link>
+              <motion.div initial="initial" whileHover="hover">
+                <Link
+                  href="/audit"
+                  className="nav-btn relative overflow-hidden"
+                  onClick={closeAllDropdowns}
+                >
+                  <motion.span
+                    variants={{
+                      initial: { y: "0%" },
+                      hover: { y: "-130%" },
+                    }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="block"
+                  >
+                    Free Audit
+                  </motion.span>
+                  <motion.span
+                    variants={{
+                      initial: { y: "100%" },
+                      hover: { y: "0%" },
+                    }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="absolute inset-0 flex items-center justify-center"
+                  >
+                    Free Audit
+                  </motion.span>
+                </Link>
+              </motion.div>
 
               {/* Hamburger Button */}
               <button

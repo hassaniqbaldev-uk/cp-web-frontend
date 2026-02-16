@@ -58,7 +58,7 @@ export const EXPERTISE_CARD = [
     icon: EatingIcon,
     iconWidth: 30,
     iconHeight: 30,
-    title: "Restaurants",
+    title: "Agencies",
     description:
       "Commission-free ordering systems and table booking integrations that you own.",
     link: "/solutions/restaurants",

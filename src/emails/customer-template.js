@@ -130,7 +130,7 @@ export const getCustomerEmailTemplate = (
         border-radius: 60px;
         background-color: #ff37b3;
         padding: 10px 20px;
-        margin-top: 10px,
+        margin-top: 10px;
         font-size: 16px;
         font-weight: 600;
         color: white;
@@ -337,7 +337,7 @@ export const getCustomerEmailTemplate = (
       <!--  Banner -->
       <div class="banner">
         <img
-          src="https://creativepixels.agency/images/email-template-assets/email-template-banner.png"
+          src="https://creativepixels.agency/images/email-template-assets/email-template-banner-white.jpg"
           alt="Banner Image"
         />
       </div>
@@ -453,8 +453,8 @@ export const getCustomerEmailTemplate = (
             >Privacy Policy</a
           >
           <div></div>
-          <a href="https://creativepixels.agency/cookie-policy"
-            >Cookie Policy</a
+          <a href="https://creativepixels.agency/cookies-policy"
+            >Cookies Policy</a
           >
         </div>
       </div>

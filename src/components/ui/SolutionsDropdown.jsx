@@ -37,7 +37,7 @@ const SolutionsDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
             height: "2.3rem",
             width: "2.6rem",
           }}
-          className="absolute top-[1.8rem] left-[43.5rem]"
+          className="absolute top-[1.8rem] left-[44.5rem]"
         />
 
         <div

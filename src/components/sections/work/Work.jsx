@@ -169,7 +169,7 @@ const Work = ({ caseStudies }) => {
                         style={{
                           background: caseStudies[2].iconBg,
                         }}
-                        className="inline-flex size-[6rem] items-center justify-center rounded-full"
+                        className="inline-flex size-[6rem] min-w-[6rem] items-center justify-center rounded-full"
                       >
                         <TiltArrowIcon color={caseStudies[2].iconColor} />
                       </i>
@@ -224,7 +224,7 @@ const Work = ({ caseStudies }) => {
                       style={{
                         background: caseStudies[5].iconBg,
                       }}
-                      className="inline-flex size-[6rem] items-center justify-center rounded-full"
+                      className="inline-flex size-[6rem] min-w-[6rem] items-center justify-center rounded-full"
                     >
                       <TiltArrowIcon color={caseStudies[5].iconColor} />
                     </i>
@@ -276,7 +276,7 @@ const Work = ({ caseStudies }) => {
                       style={{
                         background: caseStudies[4].iconBg,
                       }}
-                      className="inline-flex size-[6rem] items-center justify-center rounded-full"
+                      className="inline-flex size-[6rem] min-w-[6rem] items-center justify-center rounded-full"
                     >
                       <TiltArrowIcon color={caseStudies[4].iconColor} />
                     </i>

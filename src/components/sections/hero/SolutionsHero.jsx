@@ -140,14 +140,35 @@ const SolutionsHero = () => {
                 href="/case-studies"
               />
 
-              <button
+              <motion.button
                 data-cal-namespace="15min"
                 data-cal-link="hassan-iqbal-mznzu9/15min"
                 data-cal-config='{"layout":"month_view","theme":"dark"}'
-                className="inline-flex h-[4rem] items-center justify-center rounded-[60px] border-2 border-[#312749]/40 px-[30px] py-[8px] text-center text-[1.4rem] font-semibold tracking-normal text-[#312749] md:h-[5rem] md:text-[1.8rem]"
+                initial="initial"
+                whileHover="hover"
+                className="relative inline-flex h-[4rem] items-center justify-center overflow-hidden rounded-[60px] border-2 border-[#312749]/40 px-[30px] py-[8px] text-center text-[1.4rem] font-semibold tracking-normal text-[#312749] md:h-[5rem] md:text-[1.8rem]"
               >
-                Book a Strategy Call
-              </button>
+                <motion.span
+                  variants={{
+                    initial: { y: "0%" },
+                    hover: { y: "-130%" },
+                  }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="block"
+                >
+                  Book a Strategy Call
+                </motion.span>
+                <motion.span
+                  variants={{
+                    initial: { y: "100%" },
+                    hover: { y: "0%" },
+                  }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="absolute inset-0 flex items-center justify-center"
+                >
+                  Book a Strategy Call
+                </motion.span>
+              </motion.button>
             </motion.div>
           </motion.div>
         </div>
