@@ -337,7 +337,7 @@ export const getCustomerEmailTemplate = (
       <!--  Banner -->
       <div class="banner">
         <img
-          src="https://creativepixels.agency/images/email-template-assets/email-template-banner-white.jpg"
+          src="https://cp-web-frontend.vercel.app/images/email-template-assets/email-template-banner-white.jpg"
           alt="Banner Image"
         />
       </div>
