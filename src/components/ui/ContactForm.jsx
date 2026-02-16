@@ -36,26 +36,10 @@ const ContactForm = () => {
     setStatus("");
 
     try {
-      // ✅ Step 1: Request reCAPTCHA token from Google
-      const token = await new Promise((resolve, reject) => {
-        if (!window.grecaptcha) {
-          return reject(new Error("reCAPTCHA not loaded yet. Please try again."));
-        }
-        window.grecaptcha.ready(() => {
-          window.grecaptcha
-            .execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, {
-              action: "submit",
-            })
-            .then(resolve)
-            .catch(reject);
-        });
-      });
-
-      // ✅ Step 2: Send form data + token to backend API
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, token }),
+        body: JSON.stringify(formData),
       });
 
       // ✅ Step 3: Handle response

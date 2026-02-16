@@ -44,11 +44,7 @@ export default function RootLayout({ children }) {
 
         {children}
 
-        {/* Google Recaptcha */}
-        <Script
-          src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-          strategy="afterInteractive"
-        />
+        {/* Google Recaptcha - disabled for now, will add in future */}
 
         {/* Google Tag Manager - COMMENTED OUT
         <Script
