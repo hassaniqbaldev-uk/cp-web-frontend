@@ -97,35 +97,37 @@ const Expertise = () => {
                     boxShadow: hovered === idx ? item.boxShadow : "",
                     borderColor: item.color,
                   }}
-                  className="flex w-full flex-col items-start justify-center rounded-[3rem] border px-[3rem] pt-[3.1rem] pb-[2.8rem] text-left transition-all duration-300"
+                  className="flex h-full w-full flex-col items-start justify-between justify-center rounded-[3rem] border px-[3rem] pt-[3.1rem] pb-[2.8rem] text-left transition-all duration-300"
                 >
-                  <div className="relative size-[6.3rem]">
-                    <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
-                      <i>
-                        <Image
-                          src={item.icon}
-                          alt="Icon"
-                          width={item.iconWidth}
-                          height={item.iconHeight}
-                          unoptimized
-                        />
-                      </i>
+                  <div>
+                    <div className="relative size-[6.3rem]">
+                      <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
+                        <i>
+                          <Image
+                            src={item.icon}
+                            alt="Icon"
+                            width={item.iconWidth}
+                            height={item.iconHeight}
+                            unoptimized
+                          />
+                        </i>
+                      </div>
+                      <div
+                        style={{
+                          background: item.color,
+                        }}
+                        className="absolute right-0 bottom-0 z-[0] size-[5.8rem] rounded-[1.3rem]"
+                      />
                     </div>
-                    <div
-                      style={{
-                        background: item.color,
-                      }}
-                      className="absolute right-0 bottom-0 z-[0] size-[5.8rem] rounded-[1.3rem]"
-                    />
+
+                    <h3 className="mt-[3rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-[#312749]">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-[1rem] mb-[3.5rem] text-[1.6rem] leading-[2.4rem] font-normal text-[#625C70]">
+                      {item.description}
+                    </p>
                   </div>
-
-                  <h3 className="mt-[3rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-[#312749]">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-[1rem] mb-[3.5rem] text-[1.6rem] leading-[2.4rem] font-normal text-[#625C70]">
-                    {item.description}
-                  </p>
 
                   <Link
                     href={item.link}

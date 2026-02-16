@@ -4,6 +4,7 @@ import HeartIcon from "@/assets/icons/ui/heart-icon.svg";
 import ShakeHandIcon from "@/assets/icons/ui/shake-hand-icon.svg";
 import EatingIcon from "@/assets/icons/ui/eating-icon.svg";
 import RocketIcon from "@/assets/icons/ui/rocket-icon.svg";
+import ImacIcon from "@/assets/icons/ui/imac-icon.svg";
 
 export const EXPERTISE_CARD = [
   {
@@ -55,13 +56,13 @@ export const EXPERTISE_CARD = [
     boxShadow: "4px 12px 30px 0px #44B2761C",
   },
   {
-    icon: EatingIcon,
+    icon: ImacIcon,
     iconWidth: 30,
     iconHeight: 30,
     title: "Agencies",
     description:
-      "Commission-free ordering systems and table booking integrations that you own.",
-    link: "/solutions/restaurants",
+      "White-label web solutions to scale your agency's output without growing your team.",
+    link: "/agencies",
     linkText: "Explore Solutions",
     color: "#BF00B4",
     boxShadow: "4px 12px 30px 0px #BF00B41C",
