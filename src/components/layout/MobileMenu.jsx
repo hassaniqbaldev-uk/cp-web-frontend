@@ -13,7 +13,6 @@ import ChevronDownIcon from "../icons/ChevronDownIcon";
 import DesignIcon from "@/assets/icons/ui/design-icon.svg";
 import GrowthIcon from "@/assets/icons/ui/growth-icon.svg";
 import SupportIcon from "@/assets/icons/ui/support-icon.svg";
-import GroupIcon from "@/assets/icons/ui/group-icon.svg";
 import SuitcaseIcon from "@/assets/icons/ui/suitcase-icon.svg";
 import PhoneIcon from "@/assets/icons/ui/phone-icon.svg";
 import EmailIcon from "@/assets/icons/ui/email-icon.svg";
@@ -457,57 +456,26 @@ const MobileMenu = () => {
                   </AccordionTrigger>
                   <AccordionContent>
                     <ul className="flex flex-col gap-[2rem] pt-[2rem]">
-                      <li>
-                        <Accordion type="single" collapsible>
-                          <AccordionItem value="item-1">
-                            <AccordionTrigger className="group flex w-full items-center justify-between gap-[1rem] overflow-visible pr-[.9rem]">
-                              <div className="flex items-center gap-[1.6rem]">
-                                <i className="inline-flex size-[3.7rem] items-center justify-center rounded-[.9rem] bg-[#EE7621]">
-                                  <Image
-                                    src={GroupIcon}
-                                    width={20}
-                                    height={20}
-                                    alt="Icon"
-                                    unoptimized
-                                  />
-                                </i>
+                      {COMPANY_ABOUT_NAV.map((item, idx) => (
+                        <li
+                          key={idx}
+                          className="w-full border-b border-[#818181]/30 pb-[1.6rem]"
+                        >
+                          <Link
+                            onClick={closeMenu}
+                            href={item.href}
+                            className="flex items-center justify-between gap-[1rem] pr-[1.1rem] pl-[.8rem] text-left text-[1.8rem] leading-[2.4rem] font-semibold tracking-[-0.02em] text-[#625C70]"
+                          >
+                            <span>{item.label}</span>
 
-                                <span className="text-left text-[2rem] leading-[2.4rem] font-semibold tracking-normal text-[#312749]">
-                                  Company
-                                </span>
-                              </div>
-
-                              <i className="origin-center stroke-[#312749] transition-all duration-200 group-data-[state=open]:rotate-180">
-                                <ChevronDownIcon />
-                              </i>
-                            </AccordionTrigger>
-                            <AccordionContent>
-                              <ul className="flex flex-col gap-[1.5rem] pt-[2.5rem]">
-                                {COMPANY_ABOUT_NAV.map((item, idx) => (
-                                  <li
-                                    key={idx}
-                                    className="w-full border-b border-[#818181]/30 pb-[1.6rem]"
-                                  >
-                                    <Link
-                                      onClick={closeMenu}
-                                      href={item.href}
-                                      className="flex items-center justify-between gap-[1rem] pr-[1.1rem] pl-[.8rem] text-left text-[1.8rem] leading-[2.4rem] font-semibold tracking-[-0.02em] text-[#625C70]"
-                                    >
-                                      <span>{item.label}</span>
-
-                                      <TiltArrowIcon
-                                        color="#625C70"
-                                        width="12"
-                                        height="12"
-                                      />
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            </AccordionContent>
-                          </AccordionItem>
-                        </Accordion>
-                      </li>
+                            <TiltArrowIcon
+                              color="#625C70"
+                              width="12"
+                              height="12"
+                            />
+                          </Link>
+                        </li>
+                      ))}
                     </ul>
                   </AccordionContent>
                 </AccordionItem>
