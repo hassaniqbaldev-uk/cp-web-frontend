@@ -44,6 +44,18 @@ const Work = ({ caseStudies }) => {
 
   const mouse = useMousePosition();
 
+  const casaBotanica = caseStudies.find(
+    (item) => item.slug === "casa-botanica-panama"
+  ) || caseStudies[0];
+
+  const ndifoSafari = caseStudies.find(
+    (item) => item.slug === "ndifo-safari"
+  ) || caseStudies[1];
+
+  const smokeyCarter = caseStudies.find(
+    (item) => item.slug === "the-smokey-carter"
+  ) || caseStudies[2];
+
   return (
     <>
       {mouse && (
@@ -120,17 +132,17 @@ const Work = ({ caseStudies }) => {
                   style={{
                     boxShadow: "11px 11px 65px 0px #00000012",
                   }}
-                  href={`/case-studies/${caseStudies[2].slug}`}
+                  href={`/case-studies/${casaBotanica.slug}`}
                   className="flex flex-col gap-[3.9rem] rounded-[3rem] bg-white px-[3rem] pt-[2rem] pb-[4rem]"
                 >
                   <div className="flex h-[49.7rem] w-full overflow-hidden rounded-[2rem]">
                     <Image
-                      src={urlFor(caseStudies[2].thumbnailImage)
+                      src={urlFor(casaBotanica.thumbnailImage)
                         ?.width(737)
                         .height(497)
                         .fit("crop")
                         .url()}
-                      alt={caseStudies[2].title || "Case Study Thumbnail Image"}
+                      alt={casaBotanica.title || "Case Study Thumbnail Image"}
                       width={737}
                       height={497}
                       className="size-full"
@@ -157,21 +169,21 @@ const Work = ({ caseStudies }) => {
                     <div className="flex h-full items-center justify-between">
                       <div className="flex flex-col items-start text-left">
                         <h4 className="text-[3.4rem] leading-[4.8rem] font-bold tracking-[-0.02em] text-[#312749]">
-                          {caseStudies[2].title}
+                          {casaBotanica.title}
                         </h4>
 
                         <span className="text-[1.6rem] leading-[2.6rem] font-semibold text-[#625C70]">
-                          {caseStudies[2].excerpt}
+                          {casaBotanica.excerpt}
                         </span>
                       </div>
 
                       <i
                         style={{
-                          background: caseStudies[2].iconBg,
+                          background: casaBotanica.iconBg,
                         }}
                         className="inline-flex size-[6rem] min-w-[6rem] items-center justify-center rounded-full"
                       >
-                        <TiltArrowIcon color={caseStudies[2].iconColor} />
+                        <TiltArrowIcon color={casaBotanica.iconColor} />
                       </i>
                     </div>
                   </div>
@@ -191,17 +203,17 @@ const Work = ({ caseStudies }) => {
                   style={{
                     boxShadow: "11px 11px 65px 0px #00000012",
                   }}
-                  href={`/case-studies/${caseStudies[5].slug}`}
+                  href={`/case-studies/${ndifoSafari.slug}`}
                   className="flex w-full flex-col gap-[2rem] rounded-[3rem] bg-white px-[2rem] pt-[1.5rem] pb-[3rem]"
                 >
                   <div className="flex h-[22.7rem] w-full overflow-hidden rounded-[1.5rem]">
                     <Image
-                      src={urlFor(caseStudies[5].thumbnailImage)
+                      src={urlFor(ndifoSafari.thumbnailImage)
                         ?.width(365)
                         .height(227)
                         .fit("crop")
                         .url()}
-                      alt={caseStudies[5].title || "Case Study Thumbnail Image"}
+                      alt={ndifoSafari.title || "Case Study Thumbnail Image"}
                       width={365}
                       height={227}
                       className="size-full"
@@ -212,21 +224,21 @@ const Work = ({ caseStudies }) => {
                   <div className="flex items-center justify-between">
                     <div className="flex flex-col items-start text-left">
                       <h4 className="text-[2.6rem] leading-[4rem] font-bold tracking-[-0.02em] text-[#312749]">
-                        {caseStudies[5].title}
+                        {ndifoSafari.title}
                       </h4>
 
                       <span className="text-[1.6rem] leading-[2.6rem] font-semibold text-[#625C70]">
-                        {caseStudies[5].excerpt}
+                        {ndifoSafari.excerpt}
                       </span>
                     </div>
 
                     <i
                       style={{
-                        background: caseStudies[5].iconBg,
+                        background: ndifoSafari.iconBg,
                       }}
                       className="inline-flex size-[6rem] min-w-[6rem] items-center justify-center rounded-full"
                     >
-                      <TiltArrowIcon color={caseStudies[5].iconColor} />
+                      <TiltArrowIcon color={ndifoSafari.iconColor} />
                     </i>
                   </div>
                 </Link>
@@ -243,17 +255,17 @@ const Work = ({ caseStudies }) => {
                   style={{
                     boxShadow: "11px 11px 65px 0px #00000012",
                   }}
-                  href={`/case-studies/${caseStudies[4].slug}`}
+                  href={`/case-studies/${smokeyCarter.slug}`}
                   className="flex w-full flex-col gap-[2rem] rounded-[3rem] bg-white px-[2rem] pt-[1.5rem] pb-[3rem]"
                 >
                   <div className="flex h-[22.7rem] w-full overflow-hidden rounded-[1.5rem]">
                     <Image
-                      src={urlFor(caseStudies[4].thumbnailImage)
+                      src={urlFor(smokeyCarter.thumbnailImage)
                         ?.width(365)
                         .height(227)
                         .fit("crop")
                         .url()}
-                      alt={caseStudies[4].title || "Case Study Thumbnail Image"}
+                      alt={smokeyCarter.title || "Case Study Thumbnail Image"}
                       width={365}
                       height={227}
                       className="size-full"
@@ -264,21 +276,21 @@ const Work = ({ caseStudies }) => {
                   <div className="flex items-center justify-between">
                     <div className="flex flex-col items-start text-left">
                       <h4 className="text-[2.6rem] leading-[4rem] font-bold tracking-[-0.02em] text-[#312749]">
-                        {caseStudies[4].title}
+                        {smokeyCarter.title}
                       </h4>
 
                       <span className="text-[1.6rem] leading-[2.6rem] font-semibold text-[#625C70]">
-                        {caseStudies[4].excerpt}
+                        {smokeyCarter.excerpt}
                       </span>
                     </div>
 
                     <i
                       style={{
-                        background: caseStudies[4].iconBg,
+                        background: smokeyCarter.iconBg,
                       }}
                       className="inline-flex size-[6rem] min-w-[6rem] items-center justify-center rounded-full"
                     >
-                      <TiltArrowIcon color={caseStudies[4].iconColor} />
+                      <TiltArrowIcon color={smokeyCarter.iconColor} />
                     </i>
                   </div>
                 </Link>
