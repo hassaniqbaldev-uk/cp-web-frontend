@@ -3,13 +3,11 @@ import Image from "next/image";
 import ChevronDownIcon from "../icons/ChevronDownIcon";
 import SuitcaseIcon from "@/assets/icons/ui/suitcase-icon.svg";
 import GrowthIcon from "@/assets/icons/ui/growth-icon.svg";
-import SolutionsDropdownImg from "@/assets/images/cards/solutions-dropdown-img.webp";
 import TiltArrowIcon from "../icons/TiltArrowIcon";
 import { GOAL_SOLUTION_NAV, SECTOR_SOLUTION_NAV } from "@/contants";
 import Link from "next/link";
-import TimelineIcon from "../icons/TimelineIcon";
-import RightArrowIcon from "../icons/RightArrowIcon";
 import PrimaryButton from "./PrimaryButton";
+import ServicesDropdownStroke from "@/assets/svgs/services-dropdown-stroke.svg";
 
 const SolutionsDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
   return (
@@ -85,10 +83,6 @@ const SolutionsDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
                         <h5 className="text-[1.8rem] leading-[2rem] font-semibold tracking-[-0.02em] text-[#263238]">
                           {item.label}
                         </h5>
-
-                        {/* <span className="text-[1.4rem] leading-[2.4rem] font-normal tracking-normal text-[#625C70]">
-                          {item.excerpt}
-                        </span> */}
                       </div>
 
                       <i className="min-w-max">
@@ -137,10 +131,6 @@ const SolutionsDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
                         <h5 className="text-[1.8rem] leading-[2rem] font-semibold tracking-[-0.02em] text-[#263238]">
                           {item.label}
                         </h5>
-
-                        {/* <span className="text-[1.4rem] leading-[2.4rem] font-normal tracking-normal text-[#625C70]">
-                          {item.excerpt}
-                        </span> */}
                       </div>
 
                       <i className="min-w-max">
@@ -153,45 +143,38 @@ const SolutionsDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
             </div>
           </div>
 
-          <div className="flex w-[34.8rem] flex-col gap-[1.5rem]">
-            {/* <div className="relative flex h-full flex-col items-start rounded-[2rem] bg-[#F5F5F5] px-[2.6rem] py-[2rem]">
-              <h4 className="text-[3rem] leading-[3.2rem] font-bold tracking-[-0.02em] text-[#312749]">
-                Your Growth Starts
-              </h4>
-
-              <p className="mt-[.7rem] mb-[1.8rem] text-[1.5rem] leading-[2.5rem] font-normal tracking-normal text-[#625C70]">
-                Services Designed to Scale Your Business
-              </p>
-
-              <div onClick={() => setIsOpen(false)}>
-                <PrimaryButton
-                  text="View All Solutions"
-                  textColor="#FFFFFF"
-                  bGcolor="#FF37B3"
-                  href="/solutions"
+          <div className="h-[42rem] w-[34.8rem]">
+            <div className="relative flex h-full flex-col items-start justify-between rounded-[2rem] bg-[#F5F5F5] px-[2.6rem] py-[2rem]">
+              <div className="absolute inset-0 z-[1]">
+                <Image
+                  src={ServicesDropdownStroke}
+                  width={348}
+                  height={220}
+                  alt="Bg Stroke"
+                  className="absolute bottom-[6rem] left-1/2 -translate-x-1/2"
                 />
               </div>
-            </div> */}
 
-            <div className="relative flex flex-col items-start rounded-[2rem] bg-[#F5F5F5] px-[2.6rem] py-[2rem]">
-              <span className="inline-flex h-[2.8rem] items-center justify-center rounded-[2rem] bg-[#ff37b3]/20 px-[1.2rem] text-center text-[1.4rem] leading-[2.4rem] font-bold tracking-normal text-[#FF37B3] uppercase">
-                Special offer
-              </span>
+              <div className="relative z-[10]">
+                <span className="inline-flex h-[2.8rem] items-center justify-center rounded-[2rem] bg-[#ff37b3]/20 px-[1.2rem] text-center text-[1.4rem] leading-[2.4rem] font-bold tracking-normal text-[#FF37B3] uppercase">
+                  Special offer
+                </span>
 
-              <h4 className="mt-[1.9rem] mb-[1.1rem] text-[3rem] leading-[3.2rem] font-bold tracking-[-0.02em] text-[#312749]">
-                Free Website Audit
-              </h4>
+                <h4 className="mt-[1.9rem] mb-[1.1rem] text-[3rem] leading-[3.2rem] font-bold tracking-[-0.02em] text-[#312749]">
+                  Free Website Audit
+                </h4>
 
-              <p className="mb-[2.8rem] text-[1.6rem] leading-[2.5rem] font-normal tracking-normal text-[#625C70]">
-                Discover hidden opportunities to increase your traffic and
-                conversions.
-              </p>
+                <p className="mb-[2.8rem] text-[1.6rem] leading-[2.5rem] font-normal tracking-normal text-[#625C70]">
+                  Discover hidden opportunities to increase your traffic and
+                  conversions.
+                </p>
+              </div>
 
-              <div onClick={() => setIsOpen(false)}>
+              <div className="relative z-[10]" onClick={() => setIsOpen(false)}>
                 <PrimaryButton
                   text="Get My Audit"
-                  textColor="#FFFFFF"
-                  bGcolor="#FF37B3"
+                  textColor="#312749"
+                  bGcolor="#FFD900"
                   href="/audit"
                 />
               </div>

@@ -120,7 +120,7 @@ const PartnerWithUs2 = ({ service }) => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="hidden w-full grid-cols-3 gap-[3rem]"
+              className="hidden w-full grid-cols-3 gap-[3rem] xl:grid"
             >
               {service.card.map((item, idx) => {
                 const theme = getThemeColor(idx);
@@ -128,7 +128,7 @@ const PartnerWithUs2 = ({ service }) => {
                 return (
                   <motion.div key={idx} variants={itemVariants}>
                     <div className="partner-with-us-2-card">
-                      <div className="absolute inset-0 z-[10] flex flex-col items-start justify-start p-[3rem] text-left">
+                      <div className="flex h-full flex-col items-start p-[3rem] text-left">
                         <div
                           style={{
                             boxShadow: theme.shadow,
@@ -154,7 +154,7 @@ const PartnerWithUs2 = ({ service }) => {
             </motion.div>
 
             {/* Responsive */}
-            <div className="block w-full">
+            <div className="block w-full xl:hidden">
               <Swiper
                 pagination={{ clickable: true }}
                 modules={[Pagination, Autoplay]}
@@ -185,7 +185,7 @@ const PartnerWithUs2 = ({ service }) => {
                       className="!flex !h-auto !items-center !justify-center px-[1rem] pt-[.5rem] pb-[10rem]"
                     >
                       <div className="partner-with-us-2-card">
-                        <div className="absolute inset-0 z-[10] flex flex-col items-start justify-center p-[3rem] text-left">
+                        <div className="flex h-full flex-col items-start p-[3rem] text-left">
                           <div
                             style={{
                               boxShadow: theme.shadow,
@@ -200,7 +200,7 @@ const PartnerWithUs2 = ({ service }) => {
                             {item.title}
                           </h4>
 
-                          <p className="mt-[1rem] mb-[2rem] text-[1.4rem] leading-[2.4rem] font-normal tracking-normal text-white">
+                          <p className="mt-[1rem] mb-[2rem] text-[1.6rem] leading-[2.4rem] font-normal tracking-normal text-white">
                             {item.description}
                           </p>
                         </div>

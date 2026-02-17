@@ -144,7 +144,7 @@ const Header = () => {
               />
             </Link>
 
-            <nav className="mr-[2.8rem] ml-[4.8rem] hidden items-center justify-center gap-[3rem] xl:flex">
+            <nav className="mx-[4.8rem] hidden items-center justify-center gap-[3rem] xl:flex">
               <ServicesDropdown
                 className="nav-link"
                 isOpen={isServicesOpen}
@@ -187,7 +187,7 @@ const Header = () => {
               />
             </nav>
 
-            <div className="flex items-center justify-end gap-[4px]">
+            <div className="flex items-center justify-end gap-[4px] xl:gap-[0px]">
               <motion.div initial="initial" whileHover="hover">
                 <Link
                   href="/audit"

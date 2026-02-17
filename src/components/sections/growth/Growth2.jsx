@@ -164,29 +164,31 @@ const Growth2 = ({ services = [] }) => {
                   <motion.div key={idx} variants={itemVariants}>
                     <div className="growth-2-card">
                       <div className="flex h-full flex-col items-start justify-between p-[3rem] text-left">
-                        <i
-                          style={{
-                            boxShadow: theme.shadow,
-                            background: theme.color,
-                          }}
-                          className="inline-flex size-[5.8rem] min-w-max items-center justify-center rounded-[1.5rem]"
-                        >
-                          <Image
-                            src={item.icon.asset.url}
-                            alt={item.title}
-                            width={30}
-                            height={30}
-                            unoptimized
-                          />
-                        </i>
+                        <div>
+                          <i
+                            style={{
+                              boxShadow: theme.shadow,
+                              background: theme.color,
+                            }}
+                            className="inline-flex size-[5.8rem] min-w-max items-center justify-center rounded-[1.5rem]"
+                          >
+                            <Image
+                              src={item.icon.asset.url}
+                              alt={item.title}
+                              width={30}
+                              height={30}
+                              unoptimized
+                            />
+                          </i>
 
-                        <h4 className="mt-[2rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white">
-                          {item.title}
-                        </h4>
+                          <h4 className="mt-[2rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white">
+                            {item.title}
+                          </h4>
 
-                        <p className="mt-[1rem] mb-[3rem] text-[1.6rem] leading-[2.4rem] font-normal tracking-normal text-white">
-                          {item.excerpt}
-                        </p>
+                          <p className="mt-[1rem] mb-[3rem] text-[1.6rem] leading-[2.4rem] font-normal tracking-normal text-white">
+                            {item.excerpt}
+                          </p>
+                        </div>
 
                         <Link
                           href={`/services/${item.slug.current}`}
@@ -240,32 +242,34 @@ const Growth2 = ({ services = [] }) => {
                   return (
                     <SwiperSlide
                       key={idx}
-                      className="!flex !h-auto !items-center !justify-center px-[1rem] pb-[10rem]"
+                      className="!flex !h-auto !items-center !justify-center px-[1rem] pt-[1rem] pb-[10rem]"
                     >
                       <div className="growth-2-card">
                         <div className="flex h-full flex-col items-start justify-between p-[3rem] text-left">
-                          <i
-                            style={{
-                              background: theme.color,
-                            }}
-                            className="inline-flex size-[5.8rem] min-w-max items-center justify-center rounded-[1.5rem]"
-                          >
-                            <Image
-                              src={item.icon.asset.url}
-                              alt={item.title}
-                              width={30}
-                              height={30}
-                              unoptimized
-                            />
-                          </i>
+                          <div>
+                            <i
+                              style={{
+                                background: theme.color,
+                              }}
+                              className="inline-flex size-[5.8rem] min-w-max items-center justify-center rounded-[1.5rem]"
+                            >
+                              <Image
+                                src={item.icon.asset.url}
+                                alt={item.title}
+                                width={30}
+                                height={30}
+                                unoptimized
+                              />
+                            </i>
 
-                          <h4 className="mt-[2rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white">
-                            {item.title}
-                          </h4>
+                            <h4 className="mt-[2rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white">
+                              {item.title}
+                            </h4>
 
-                          <p className="mt-[1rem] mb-[3rem] text-[1.6rem] leading-[2.4rem] font-normal tracking-normal text-white">
-                            {item.excerpt}
-                          </p>
+                            <p className="mt-[1rem] mb-[3rem] text-[1.6rem] leading-[2.4rem] font-normal tracking-normal text-white">
+                              {item.excerpt}
+                            </p>
+                          </div>
 
                           <Link
                             href={`/services/${item.slug.current}`}

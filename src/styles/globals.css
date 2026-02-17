@@ -124,7 +124,7 @@
 
     & .nav-btn {
       height: 4rem;
-      margin-right: 3.5rem;
+      margin-right: 2rem;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -541,7 +541,7 @@
 
   /* Partner With Us 2 Card */
   .partner-with-us-2-card {
-    height: 31.3rem;
+    height: 100%;
     width: 100%;
     border-radius: 1.6rem;
     background: #ffffff26;
