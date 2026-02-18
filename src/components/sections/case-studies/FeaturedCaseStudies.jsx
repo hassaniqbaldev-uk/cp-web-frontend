@@ -244,7 +244,7 @@ const FeaturedCaseStudies = ({
                           alt={caseStudy.title || "Case Study Thumbnail Image"}
                           width={429}
                           height={289}
-                          className="w-full object-cover object-center"
+                          className="w-full object-cover object-left"
                           unoptimized
                         />
                       </div>
