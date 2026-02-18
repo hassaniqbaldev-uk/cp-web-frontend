@@ -8,19 +8,31 @@ import CustomCode from "@/components/sections/custom-code/CustomCode";
 import { caseStudiesDetailQuery } from "@/sanity/queries.caseStudies";
 import { caseStudiesClient } from "@/sanity/sanity.caseStudies";
 import { notFound } from "next/navigation";
-import React from "react";
+import { cache } from "react";
 
 const options = { next: { revalidate: 30 } };
+
+const getCaseStudy = cache(async (slug) => {
+  return caseStudiesClient.fetch(caseStudiesDetailQuery, { slug }, options);
+});
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const caseStudy = await getCaseStudy(slug);
+
+  if (!caseStudy) return {};
+
+  return {
+    title: caseStudy.seo?.metaTitle || caseStudy.title,
+    description: caseStudy.seo?.metaDescription || "",
+  };
+}
 
 const CaseStudiesDetailPage = async (props) => {
   const params = await props.params;
   const slug = params.slug;
 
-  const caseStudy = await caseStudiesClient.fetch(
-    caseStudiesDetailQuery,
-    { slug },
-    options,
-  );
+  const caseStudy = await getCaseStudy(slug);
 
   if (!caseStudy) {
     notFound();

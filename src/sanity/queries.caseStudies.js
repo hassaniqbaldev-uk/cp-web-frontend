@@ -15,6 +15,10 @@ export const caseStudiesDetailQuery = `
 *[_type == "caseStudies" && slug.current == $slug][0]{
   _id,
   title,
+  seo {
+    metaTitle,
+    metaDescription
+  },
   primaryColor,
   secondaryColor,
 
