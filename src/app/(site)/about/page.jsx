@@ -1,6 +1,7 @@
 import Cta from "@/components/sections/cta/Cta";
 import Estimate from "@/components/sections/estimate/Estimate";
 import AboutHero from "@/components/sections/hero/AboutHero";
+import Stats from "@/components/sections/stats/Stats";
 import Testimonials from "@/components/sections/testimonials/Testimonials";
 import Values from "@/components/sections/values/Values";
 
@@ -9,8 +10,9 @@ const AboutPage = () => {
     <>
       <div className="overflow-hidden">
         <AboutHero />
-        <Estimate />
+        <Stats />
       </div>
+      <Estimate />
       <Values />
       <section className="overflow-hidden px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <Cta />
