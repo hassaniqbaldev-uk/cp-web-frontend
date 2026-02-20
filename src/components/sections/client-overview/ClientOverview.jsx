@@ -2,6 +2,9 @@
 import Image from "next/image";
 import { urlFor } from "@/sanity/caseStudies.image";
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
 const ClientOverview = ({ caseStudy }) => {
   const containerVariants = {
@@ -127,19 +130,41 @@ const ClientOverview = ({ caseStudy }) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="mt-[5rem] flex w-full items-center justify-center overflow-hidden rounded-[1rem] md:rounded-[3rem]"
+            className="mt-[5rem] w-full overflow-hidden rounded-[1rem] md:rounded-[3rem]"
           >
-            <Image
-              src={urlFor(caseStudy.clientOverview.cardImage)
-                .width(1200)
-                .height(600)
-                .url()}
-              alt={caseStudy.clientOverview.title}
-              width={1200}
-              height={600}
-              unoptimized
-              className="w-full object-cover"
-            />
+            {caseStudy.clientOverview.cardImage?.length > 1 ? (
+              <Swiper
+                modules={[Autoplay]}
+                loop={true}
+                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                className="w-full"
+              >
+                {caseStudy.clientOverview.cardImage.map((img, idx) => (
+                  <SwiperSlide key={idx}>
+                    <Image
+                      src={urlFor(img).width(1200).height(600).url()}
+                      alt={`${caseStudy.clientOverview.title} slide ${idx + 1}`}
+                      width={1200}
+                      height={600}
+                      unoptimized
+                      className="size-full object-cover object-center"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            ) : (
+              <Image
+                src={urlFor(caseStudy.clientOverview.cardImage?.[0])
+                  .width(1200)
+                  .height(600)
+                  .url()}
+                alt={caseStudy.clientOverview.title}
+                width={1200}
+                height={600}
+                unoptimized
+                className="size-full object-cover object-center"
+              />
+            )}
           </motion.div>
         </div>
       </section>

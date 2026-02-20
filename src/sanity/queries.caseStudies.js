@@ -36,7 +36,13 @@ export const caseStudiesDetailQuery = `
   clientOverview {
     title,
     description,
-    cardImage
+    "cardImage": cardImage[defined(asset._ref)] {
+      _key,
+      _type,
+      asset,
+      hotspot,
+      crop
+    }
   },
 
    // Detail Page The Challenge

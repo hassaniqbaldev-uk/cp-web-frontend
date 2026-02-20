@@ -412,15 +412,17 @@ const HomeHero = () => {
                   key={index}
                   className="mx-[1.3rem] flex items-center justify-center md:mx-[2.7rem]"
                 >
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={logo.width}
-                    height={logo.height}
-                    className={`object-contain opacity-70 grayscale-100 transition-all duration-300 hover:opacity-100 hover:grayscale-0 ${logo.size}`}
-                    priority={index < 3}
-                    unoptimized
-                  />
+                  <Link href={logo.href} target="_blank" rel="noopener noreferrer">
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={logo.width}
+                      height={logo.height}
+                      className={`object-contain opacity-70 grayscale-100 transition-all duration-300 hover:opacity-100 hover:grayscale-0 ${logo.size}`}
+                      priority={index < 3}
+                      unoptimized
+                    />
+                  </Link>
                 </div>
               ))}
             </Marquee>
