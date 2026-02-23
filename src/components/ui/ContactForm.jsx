@@ -267,7 +267,7 @@ const ContactForm = () => {
           </i>
         </motion.button>
       </div>
-      {status && <p>{status}</p>}
+      {status && <p className="mt-[1rem]">{status}</p>}
     </form>
   );
 };
