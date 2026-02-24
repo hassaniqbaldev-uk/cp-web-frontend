@@ -1,6 +1,6 @@
 // CASE STUDIES
 export const caseStudiesListingQuery = `
-*[_type == "caseStudies"] | order(_createdAt desc) {
+*[_type == "caseStudies"] | order(order asc, _createdAt desc) {
   _id,
   title,
   "slug": slug.current,
@@ -96,7 +96,7 @@ export const caseStudiesFilteredQuery = `
   _type == "caseStudies"
   && ($service == null || $service in services[]->slug.current)
   && ($industry == null || $industry in industries[]->slug.current)
-] | order(_createdAt desc) {
+] | order(order asc, _createdAt desc) {
   _id,
   title,
   "slug": slug.current,
