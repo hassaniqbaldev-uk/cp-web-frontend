@@ -232,7 +232,7 @@ const FeaturedCaseStudies = ({
                         boxShadow: "7.69px 6.59px 40.64px 0px #0000000F",
                       }}
                       href={`/case-studies/${caseStudy.slug}`}
-                      className="flex w-full flex-col gap-[2.7rem] rounded-[3rem] bg-white px-[1.5rem] pt-[1.5rem] pb-[3rem]"
+                      className="flex h-full w-full flex-col gap-[2.7rem] rounded-[3rem] bg-white px-[1.5rem] pt-[1.5rem] pb-[3rem]"
                     >
                       <div className="flex h-[25rem] w-full overflow-hidden rounded-[1.7rem] xl:h-[28.9rem]">
                         <Image
