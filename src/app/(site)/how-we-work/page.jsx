@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "How We Work",
+  description:
+    "Discover the CreativePixels process — from discovery to launch. A transparent, collaborative approach to delivering websites and digital projects.",
+};
+
 import Cta from "@/components/sections/cta/Cta";
 import HowWeWorkHero from "@/components/sections/hero/HowWeWorkHero";
 import Process2 from "@/components/sections/process/Process2";

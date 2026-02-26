@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Blog",
+  description:
+    "Insights, tips, and guides from the CreativePixels team on web design, WordPress, branding, and growing your business online.",
+};
+
 import Blog from "@/components/sections/blog/Blog";
 import BlogHero from "@/components/sections/hero/BlogHero";
 import { BLOG_HERO_QUERY, BLOG_LIST_QUERY } from "@/sanity/queries.blog";

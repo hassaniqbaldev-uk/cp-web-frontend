@@ -44,17 +44,16 @@ const Work = ({ caseStudies }) => {
 
   const mouse = useMousePosition();
 
-  const casaBotanica = caseStudies.find(
-    (item) => item.slug === "casa-botanica-panama"
-  ) || caseStudies[0];
+  const casaBotanica =
+    caseStudies.find((item) => item.slug === "casa-botanica-panama") ||
+    caseStudies[0];
 
-  const ndifoSafari = caseStudies.find(
-    (item) => item.slug === "ndifo-safari"
-  ) || caseStudies[1];
+  const ndifoSafari =
+    caseStudies.find((item) => item.slug === "ndifo-safari") || caseStudies[1];
 
-  const smokeyCarter = caseStudies.find(
-    (item) => item.slug === "the-smokey-carter"
-  ) || caseStudies[2];
+  const smokeyCarter =
+    caseStudies.find((item) => item.slug === "the-smokey-carter") ||
+    caseStudies[2];
 
   return (
     <>
@@ -331,7 +330,7 @@ const Work = ({ caseStudies }) => {
               }}
               className="mySwiper"
             >
-              {caseStudies.map((item, idx) => (
+              {[casaBotanica, ndifoSafari, smokeyCarter].map((item, idx) => (
                 <SwiperSlide
                   key={idx}
                   className="!flex !h-auto !justify-center !pt-[2rem] pb-[5rem]"

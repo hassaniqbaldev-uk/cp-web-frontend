@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "CreativePixels | Web Design, WordPress & Branding Agency",
+  description:
+    "CreativePixels is a Manchester-based creative agency delivering WordPress websites, branding, and digital solutions for clients across the UK, US & Australia.",
+};
+
 import HomeHero from "@/components/sections/hero/HomeHero";
 import Expertise from "@/components/sections/expertise/Expertise";
 import Services from "@/components/sections/services/Services";

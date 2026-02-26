@@ -162,13 +162,13 @@ const Resources = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="flex w-full flex-col items-center justify-center"
+              className="flex w-full flex-col items-center justify-center text-center"
             >
-              <motion.div variants={itemVariants} className="min-w-max">
+              <motion.div variants={itemVariants}>
                 <SectionTitle text="Client Resources" textColor="#FFFFFF" />
               </motion.div>
 
-              <motion.div variants={itemVariants} className="min-w-max">
+              <motion.div variants={itemVariants}>
                 <SectionDescription
                   text="These documents apply when working with CreativePixels as a client, agency, or partner."
                   textColor="#FFFFFF"

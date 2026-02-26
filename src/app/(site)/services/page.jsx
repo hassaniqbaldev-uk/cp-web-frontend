@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Services",
+  description:
+    "Explore CreativePixels services — web design, WordPress development, branding, SEO, and ongoing support. Everything you need to grow online.",
+};
+
 import Contact from "@/components/sections/contact/Contact";
 import Cta from "@/components/sections/cta/Cta";
 import DesignBuild from "@/components/sections/design-build/DesignBuild";

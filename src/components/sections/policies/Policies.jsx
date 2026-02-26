@@ -141,13 +141,13 @@ const Policies = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="flex w-full flex-col items-center justify-center gap-[1rem]"
+              className="flex w-full flex-col items-center justify-center gap-[1rem] text-center"
             >
-              <motion.div variants={itemVariants} className="min-w-max">
+              <motion.div variants={itemVariants}>
                 <SectionTitle text="Our Policies" textColor="#312749" />
               </motion.div>
 
-              <motion.div variants={itemVariants} className="min-w-max">
+              <motion.div variants={itemVariants}>
                 <SectionDescription
                   text="These policies explain how we operate, how we protect data, and how our website should be used."
                   textColor="#625C70"

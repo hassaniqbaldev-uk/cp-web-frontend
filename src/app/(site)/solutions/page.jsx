@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Solutions",
+  description:
+    "Find the right solution for your business with CreativePixels. From industry-specific websites to goal-driven digital strategies.",
+};
+
 import Contact from "@/components/sections/contact/Contact";
 import Cta from "@/components/sections/cta/Cta";
 import DesignBuild from "@/components/sections/design-build/DesignBuild";

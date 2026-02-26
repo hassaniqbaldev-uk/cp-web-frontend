@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "White Label for Agencies",
+  description:
+    "CreativePixels offers white label web design and development for agencies. Scale your output without hiring — we work under your brand.",
+};
+
 import ClientReview from "@/components/sections/client-review/ClientReview";
 import Difference from "@/components/sections/difference/Difference";
 import AgenciesHero from "@/components/sections/hero/AgenciesHero";

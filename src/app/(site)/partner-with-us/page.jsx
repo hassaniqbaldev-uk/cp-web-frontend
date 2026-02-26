@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Partner With Us",
+  description:
+    "Partner with CreativePixels and grow your business. We collaborate with agencies, consultants, and brands looking for a reliable creative partner.",
+};
+
 import Cta from "@/components/sections/cta/Cta";
 import Growth from "@/components/sections/growth/Growth";
 import PartnerWithUsHero from "@/components/sections/hero/PartnerWithUsHero";

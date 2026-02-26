@@ -17,7 +17,7 @@ const TermsPage = () => {
           </Link>
 
           <div className="mt-[2rem] flex items-center gap-[3rem]">
-            <div className="relative size-[6.3rem]">
+            <div className="relative size-[6.3rem] min-w-[6.3rem]">
               <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
                 <Image
                   src={GraphicDesignIcon}
@@ -118,13 +118,9 @@ const TermsPage = () => {
 
             {/* 3 */}
             <div className="space-y-[1.5rem]">
-              <h5 className="text-[2.2rem] font-bold">
-                3. Our Relationship
-              </h5>
+              <h5 className="text-[2.2rem] font-bold">3. Our Relationship</h5>
 
-              <p>
-                We provide services as an independent contractor.
-              </p>
+              <p>We provide services as an independent contractor.</p>
               <p>
                 Nothing in these Terms creates a partnership, joint venture,
                 employment relationship, or agency relationship between the
@@ -141,9 +137,7 @@ const TermsPage = () => {
               <p>Services may be delivered by:</p>
               <ul className="list-disc space-y-[1rem] pl-[2rem]">
                 <li>Our employed team</li>
-                <li>
-                  Group companies or subsidiaries wholly owned by us
-                </li>
+                <li>Group companies or subsidiaries wholly owned by us</li>
                 <li>
                   Trusted specialist partners or suppliers where appropriate
                 </li>
@@ -160,9 +154,7 @@ const TermsPage = () => {
                 5. Client Responsibilities
               </h5>
 
-              <p>
-                To allow us to deliver services effectively, you agree to:
-              </p>
+              <p>To allow us to deliver services effectively, you agree to:</p>
               <ul className="list-disc space-y-[1rem] pl-[2rem]">
                 <li>
                   Provide accurate information, materials, and access when
@@ -206,9 +198,7 @@ const TermsPage = () => {
 
             {/* 7 */}
             <div className="space-y-[1.5rem]">
-              <h5 className="text-[2.2rem] font-bold">
-                7. Changes to Scope
-              </h5>
+              <h5 className="text-[2.2rem] font-bold">7. Changes to Scope</h5>
 
               <p>
                 If you request changes or additions to the agreed scope, we will
@@ -222,9 +212,7 @@ const TermsPage = () => {
 
             {/* 8 */}
             <div className="space-y-[1.5rem]">
-              <h5 className="text-[2.2rem] font-bold">
-                8. Fees and Payment
-              </h5>
+              <h5 className="text-[2.2rem] font-bold">8. Fees and Payment</h5>
 
               <p>
                 Fees and payment terms are set out in the applicable Proposal.
@@ -495,17 +483,13 @@ const TermsPage = () => {
 
             {/* 20 */}
             <div className="space-y-[1.5rem]">
-              <h5 className="text-[2.2rem] font-bold">
-                20. Data Protection
-              </h5>
+              <h5 className="text-[2.2rem] font-bold">20. Data Protection</h5>
 
               <p>Where personal data is processed:</p>
               <ul className="list-disc space-y-[1rem] pl-[2rem]">
                 <li>You act as Data Controller</li>
                 <li>We act as Data Processor</li>
-                <li>
-                  Processing is governed by the Data Processing Agreement
-                </li>
+                <li>Processing is governed by the Data Processing Agreement</li>
               </ul>
               <p>
                 Where data is processed outside the UK or EEA, appropriate
@@ -528,9 +512,7 @@ const TermsPage = () => {
 
             {/* 22 */}
             <div className="space-y-[1.5rem]">
-              <h5 className="text-[2.2rem] font-bold">
-                22. Use of AI Tools
-              </h5>
+              <h5 className="text-[2.2rem] font-bold">22. Use of AI Tools</h5>
 
               <p>
                 We may use AI-assisted tools to support parts of the services.
@@ -564,8 +546,8 @@ const TermsPage = () => {
 
               <p>
                 We reserve the right to decline or withdraw from providing
-                services where continuing would be unlawful, unethical, or
-                would place us in breach of another agreement, provided we act
+                services where continuing would be unlawful, unethical, or would
+                place us in breach of another agreement, provided we act
                 reasonably and give notice where practicable.
               </p>
             </div>
@@ -574,9 +556,7 @@ const TermsPage = () => {
             <div className="space-y-[1.5rem]">
               <h5 className="text-[2.2rem] font-bold">25. Termination</h5>
 
-              <p>
-                Termination terms are set out in the applicable Proposal.
-              </p>
+              <p>Termination terms are set out in the applicable Proposal.</p>
 
               <p>On termination:</p>
               <ul className="list-disc space-y-[1rem] pl-[2rem]">
@@ -584,9 +564,7 @@ const TermsPage = () => {
                 <li>
                   Suspension for non-payment does not amount to termination
                 </li>
-                <li>
-                  We will reasonably assist with transition where agreed
-                </li>
+                <li>We will reasonably assist with transition where agreed</li>
               </ul>
             </div>
 
@@ -623,9 +601,7 @@ const TermsPage = () => {
 
             {/* 29 */}
             <div className="space-y-[1.5rem]">
-              <h5 className="text-[2.2rem] font-bold">
-                29. Entire Agreement
-              </h5>
+              <h5 className="text-[2.2rem] font-bold">29. Entire Agreement</h5>
 
               <p>
                 These Terms, together with any Proposals and agreed schedules,

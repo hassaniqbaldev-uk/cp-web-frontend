@@ -130,17 +130,19 @@ const Blog = ({ blogs }) => {
               }}
               className="mySwiper"
             >
-              {CardData.map((item, idx) => (
+              {blogs.map((item, idx) => (
                 <SwiperSlide
                   key={idx}
                   className="!flex !h-auto !items-center !justify-center px-[1rem] pb-[5rem]"
                 >
                   <BlogCard
+                    readTime={item.readTime}
+                    publishedDate={item.publishedAt}
                     category={item.category}
-                    img={item.img}
+                    img={item.coverImage.asset.url}
                     title={item.title}
                     excerpt={item.excerpt}
-                    link={item.link}
+                    link={`/blog/${item.slug.current}`}
                   />
                 </SwiperSlide>
               ))}

@@ -97,33 +97,35 @@ const TheSolution = ({ caseStudy }) => {
         </div>
       </section>
 
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{
-          duration: 1,
-          ease: "easeOut",
-        }}
-        className="mx-auto mt-[3rem] flex max-w-[120rem] flex-col items-start justify-start gap-[3.5rem] rounded-[1.5rem] bg-[#f14a58]/15 px-[3rem] py-[2.5rem] md:mt-[5rem] md:flex-row md:items-center md:px-[4.5rem]"
-      >
-        <div className="relative size-[6.3rem] min-w-[6.3rem]">
-          <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
-            <Image src={AlertLogo} alt="Icon" width={32} height={32} />
+      <div className="px-[2rem] xl:px-[0rem]">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{
+            duration: 1,
+            ease: "easeOut",
+          }}
+          className="mx-auto mt-[3rem] flex max-w-[120rem] flex-col items-start justify-start gap-[3.5rem] rounded-[1.5rem] bg-[#f14a58]/15 px-[3rem] py-[2.5rem] md:mt-[5rem] md:flex-row md:items-center md:px-[4.5rem]"
+        >
+          <div className="relative size-[6.3rem] min-w-[6.3rem]">
+            <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
+              <Image src={AlertLogo} alt="Icon" width={32} height={32} />
+            </div>
+
+            <div
+              className="absolute right-0 bottom-0 z-[0] size-[5.8rem] rounded-[1.3rem]"
+              style={{ backgroundColor: "#F14A58" }}
+            />
           </div>
 
-          <div
-            className="absolute right-0 bottom-0 z-[0] size-[5.8rem] rounded-[1.3rem]"
-            style={{ backgroundColor: "#F14A58" }}
-          />
-        </div>
-
-        <p className="text-[1.8rem] leading-[3rem] font-bold tracking-normal text-[#625C70] md:text-[2.2rem] md:leading-[3.7rem]">
-          All visuals used in these case studies are provided by our clients or
-          their partners. All such images remain the property of their
-          respective owners and may be subject to copyright.
-        </p>
-      </motion.div>
+          <p className="text-[1.8rem] leading-[3rem] font-bold tracking-normal text-[#625C70] md:text-[2.2rem] md:leading-[3.7rem]">
+            All visuals used in these case studies are provided by our clients
+            or their partners. All such images remain the property of their
+            respective owners and may be subject to copyright.
+          </p>
+        </motion.div>
+      </div>
     </>
   );
 };

@@ -11,11 +11,43 @@ const onest = Onest({
 export const metadata = {
   title: {
     default: "CreativePixels | Web Design, WordPress & Branding Agency",
-    template: "%s",
+    template: "%s | CreativePixels",
   },
   description:
     "CreativePixels is a Manchester-based creative agency delivering WordPress websites, branding, and digital solutions for clients across the UK, US & Australia.",
   metadataBase: new URL("https://creativepixels.agency"),
+
+  // ------------------------
+  // OPEN GRAPH
+  // ------------------------
+  openGraph: {
+    title: "CreativePixels | Web Design, WordPress & Branding Agency",
+    description:
+      "CreativePixels is a Manchester-based creative agency delivering WordPress websites, branding, and digital solutions for clients across the UK, US & Australia.",
+    url: "https://creativepixels.agency",
+    siteName: "CreativePixels",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "CreativePixels - Web Design, WordPress & Branding Agency",
+      },
+    ],
+    locale: "en_GB",
+    type: "website",
+  },
+
+  // ------------------------
+  // TWITTER / X
+  // ------------------------
+  twitter: {
+    card: "summary_large_image",
+    title: "CreativePixels | Web Design, WordPress & Branding Agency",
+    description:
+      "CreativePixels is a Manchester-based creative agency delivering WordPress websites, branding, and digital solutions for clients across the UK, US & Australia.",
+    images: ["/images/og-image.jpg"],
+  },
 
   // ------------------------
   // FAVICONS

@@ -18,7 +18,7 @@ const PrivacyPolicyPage = () => {
 
         {/* Header */}
         <div className="mt-[3rem] flex items-center gap-[3rem]">
-          <div className="relative size-[6.3rem]">
+          <div className="relative size-[6.3rem] min-w-[6.3rem]">
             <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
               <Image
                 src={GraphicDesignIcon}
@@ -97,9 +97,7 @@ const PrivacyPolicyPage = () => {
 
           {/* 2 */}
           <div>
-            <h5 className="text-[2.2rem] font-bold">
-              2. Scope of This Policy
-            </h5>
+            <h5 className="text-[2.2rem] font-bold">2. Scope of This Policy</h5>
             <p className="mt-[1.5rem]">This Privacy Policy applies to:</p>
             <ul className="mt-[1rem] list-disc pl-[2rem]">
               <li>Visitors to creativepixels.agency</li>
@@ -153,9 +151,7 @@ const PrivacyPolicyPage = () => {
             <h5 className="text-[2.2rem] font-bold">
               4. How We Collect Personal Data
             </h5>
-            <p className="mt-[1.5rem]">
-              We collect personal data when you:
-            </p>
+            <p className="mt-[1.5rem]">We collect personal data when you:</p>
             <ul className="mt-[1rem] list-disc pl-[2rem]">
               <li>Submit an enquiry form on our website</li>
               <li>Use live chat or messaging tools</li>
@@ -249,9 +245,7 @@ const PrivacyPolicyPage = () => {
               Our website uses cookies and similar technologies to operate
               effectively and understand how visitors use the site.
             </p>
-            <p className="mt-[1.5rem]">
-              These may include tools such as:
-            </p>
+            <p className="mt-[1.5rem]">These may include tools such as:</p>
             <ul className="mt-[1rem] list-disc pl-[2rem]">
               <li>Google Analytics</li>
               <li>Google Tag Manager</li>
@@ -314,8 +308,8 @@ const PrivacyPolicyPage = () => {
           <div>
             <h5 className="text-[2.2rem] font-bold">11. Data Security</h5>
             <p className="mt-[1.5rem]">
-              We take reasonable technical and organisational measures to protect
-              personal data, including:
+              We take reasonable technical and organisational measures to
+              protect personal data, including:
             </p>
             <ul className="mt-[1rem] list-disc pl-[2rem]">
               <li>Secure hosting environments</li>

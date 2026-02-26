@@ -18,7 +18,7 @@ const CookiesPolicyPage = () => {
 
         {/* Header */}
         <div className="mt-[3rem] flex items-center gap-[3rem]">
-          <div className="relative size-[6.3rem]">
+          <div className="relative size-[6.3rem] min-w-[6.3rem]">
             <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
               <Image
                 src={GraphicDesignIcon}
@@ -47,9 +47,7 @@ const CookiesPolicyPage = () => {
         <div className="mt-[5rem] max-w-[90rem] space-y-[4rem] text-[1.6rem] leading-[2.8rem] text-[#312749]">
           {/* Intro */}
           <div>
-            <p className="font-semibold">
-              CreativePixels (CP Agency Ltd)
-            </p>
+            <p className="font-semibold">CreativePixels (CP Agency Ltd)</p>
             <p className="mt-[1rem]">
               This Cookie Policy explains how CP Agency Ltd (&ldquo;CP&rdquo;,
               &ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) uses
@@ -80,9 +78,9 @@ const CookiesPolicyPage = () => {
           <div>
             <h5 className="text-[2.2rem] font-bold">1. What Are Cookies?</h5>
             <p className="mt-[1.5rem]">
-              Cookies are small text files placed on your device when you visit a
-              website. They are widely used to make websites work efficiently and
-              to provide information to website owners.
+              Cookies are small text files placed on your device when you visit
+              a website. They are widely used to make websites work efficiently
+              and to provide information to website owners.
             </p>
             <p className="mt-[1.5rem]">Cookies may be:</p>
             <ul className="mt-[0.8rem] list-disc pl-[2rem]">
@@ -99,9 +97,7 @@ const CookiesPolicyPage = () => {
 
           {/* 2. Why We Use Cookies */}
           <div>
-            <h5 className="text-[2.2rem] font-bold">
-              2. Why We Use Cookies
-            </h5>
+            <h5 className="text-[2.2rem] font-bold">2. Why We Use Cookies</h5>
             <p className="mt-[1.5rem]">We use cookies to:</p>
             <ul className="mt-[0.8rem] list-disc pl-[2rem]">
               <li>Ensure our website functions correctly</li>
@@ -136,9 +132,7 @@ const CookiesPolicyPage = () => {
                 <li>Form submission</li>
                 <li>Basic functionality</li>
               </ul>
-              <p className="mt-[1rem]">
-                These cookies do not require consent.
-              </p>
+              <p className="mt-[1rem]">These cookies do not require consent.</p>
             </div>
 
             {/* Analytics & Performance */}
@@ -166,9 +160,7 @@ const CookiesPolicyPage = () => {
 
             {/* Functional */}
             <div>
-              <p className="text-[1.8rem] font-semibold">
-                Functional Cookies
-              </p>
+              <p className="text-[1.8rem] font-semibold">Functional Cookies</p>
               <p className="mt-[0.8rem]">
                 These cookies enable enhanced functionality and services.
               </p>
@@ -206,15 +198,13 @@ const CookiesPolicyPage = () => {
 
           {/* 4. Google Tag Manager */}
           <div>
-            <h5 className="text-[2.2rem] font-bold">
-              4. Google Tag Manager
-            </h5>
+            <h5 className="text-[2.2rem] font-bold">4. Google Tag Manager</h5>
             <p className="mt-[1.5rem]">
               We use Google Tag Manager to manage website tags and scripts.
             </p>
             <p className="mt-[1rem]">
-              Google Tag Manager itself does not store personal data but may load
-              other tools that do. Any cookies set by tools managed through
+              Google Tag Manager itself does not store personal data but may
+              load other tools that do. Any cookies set by tools managed through
               Google Tag Manager are subject to the categories described in this
               policy.
             </p>
@@ -222,9 +212,7 @@ const CookiesPolicyPage = () => {
 
           {/* 5. Third-Party Cookies */}
           <div>
-            <h5 className="text-[2.2rem] font-bold">
-              5. Third-Party Cookies
-            </h5>
+            <h5 className="text-[2.2rem] font-bold">5. Third-Party Cookies</h5>
             <p className="mt-[1.5rem]">
               Some cookies may be placed by third-party services integrated into
               our website.

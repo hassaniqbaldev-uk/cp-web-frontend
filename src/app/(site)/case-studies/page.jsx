@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Case Studies",
+  description:
+    "Browse CreativePixels case studies. Real projects, real results — see how we've helped businesses across the UK, US, and Australia grow online.",
+};
+
 import FeaturedCaseStudies from "@/components/sections/case-studies/FeaturedCaseStudies";
 import Contact from "@/components/sections/contact/Contact";
 import Cta from "@/components/sections/cta/Cta";
