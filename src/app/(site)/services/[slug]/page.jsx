@@ -10,8 +10,26 @@ import DynamicQuestions from "@/components/sections/questions/DynamicQuestions";
 import Testimonials from "@/components/sections/testimonials/Testimonials";
 import { SERVICES_DETAIL_QUERY } from "@/sanity/queries.services";
 import { servicesClient } from "@/sanity/sanity.services";
+import { notFound } from "next/navigation";
+import { cache } from "react";
 
 const options = { next: { revalidate: 30 } };
+
+const getServices = cache(async (slug) => {
+  return servicesClient.fetch(SERVICES_DETAIL_QUERY, { slug }, options);
+});
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const service = await getServices(slug);
+
+  if (!service) return {};
+
+  return {
+    title: service.seo?.metaTitle || service.detailHero.title,
+    description: service.seo?.metaDescription || "",
+  };
+}
 
 const ServicesDetailPage = async (props) => {
   const params = await props.params;

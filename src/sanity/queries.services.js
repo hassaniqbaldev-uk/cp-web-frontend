@@ -16,6 +16,10 @@ export const SERVICES_QUERY = `
 export const SERVICES_DETAIL_QUERY = `
   *[_type == "services" && slug.current == $slug][0] {
     _id,
+     seo {
+    metaTitle,
+    metaDescription
+    },
     detailHero {
     title,
     description,

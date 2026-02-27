@@ -32,6 +32,10 @@ export const BLOG_LIST_QUERY = `
 export const BLOG_DETAIL_QUERY = `
   *[_type == "blog" && slug.current == $slug][0] {
     title,
+     seo {
+    metaTitle,
+    metaDescription
+    },
     publishedAt,
     readTime,
     tags,

@@ -5,8 +5,26 @@ import RelatedBlogs from "@/components/sections/blog/RelatedBlogs";
 import BlogDetailHero from "@/components/sections/hero/BlogDetailHero";
 import { BLOG_DETAIL_QUERY, BLOG_LIST_QUERY } from "@/sanity/queries.blog";
 import { blogClient } from "@/sanity/sanity.blog";
+import { notFound } from "next/navigation";
+import { cache } from "react";
 
 const options = { next: { revalidate: 30 } };
+
+const getBlog = cache(async (slug) => {
+  return blogClient.fetch(BLOG_DETAIL_QUERY, { slug }, options);
+});
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const blog = await getBlog(slug);
+
+  if (!blog) return {};
+
+  return {
+    title: blog.seo?.metaTitle || blog.title,
+    description: blog.seo?.metaDescription || "",
+  };
+}
 
 const BlogDetailPage = async (props) => {
   const params = await props.params;

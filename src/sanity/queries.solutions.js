@@ -16,6 +16,10 @@ export const SOLUTIONS_QUERY = `
 export const SOLUTIONS_DETAIL_QUERY = `
   *[_type == "solutions" && slug.current == $slug][0] {
     _id,
+    seo {
+    metaTitle,
+    metaDescription
+    },
     detailHero {
     title,
     description,

@@ -7,8 +7,26 @@ import DynamicQuestions from "@/components/sections/questions/DynamicQuestions";
 import Testimonials from "@/components/sections/testimonials/Testimonials";
 import { SOLUTIONS_DETAIL_QUERY } from "@/sanity/queries.solutions";
 import { solutionsClient } from "@/sanity/sanity.solutions";
+import { notFound } from "next/navigation";
+import { cache } from "react";
 
 const options = { next: { revalidate: 30 } };
+
+const getSolutions = cache(async (slug) => {
+  return solutionsClient.fetch(SOLUTIONS_DETAIL_QUERY, { slug }, options);
+});
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const solution = await getSolutions(slug);
+
+  if (!solution) return {};
+
+  return {
+    title: solution.seo?.metaTitle || solution.detailHero.title,
+    description: solution.seo?.metaDescription || "",
+  };
+}
 
 const SolutionsDetailPage = async (props) => {
   const params = await props.params;
