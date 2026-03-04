@@ -102,7 +102,7 @@ const Work = ({ caseStudies }) => {
               </motion.div>
             </div>
 
-            <motion.div variants={itemVariants}>
+            <motion.div variants={itemVariants} className="hidden md:block">
               <PrimaryButton
                 text="View All Projects"
                 textColor="#FFFFFF"
@@ -381,6 +381,15 @@ const Work = ({ caseStudies }) => {
                 </SwiperSlide>
               ))}
             </Swiper>
+
+            <div className="mt-[3rem] flex items-center justify-center md:hidden">
+              <PrimaryButton
+                text="View All Projects"
+                textColor="#FFFFFF"
+                href="/case-studies"
+                bGcolor="#FF37B3"
+              />
+            </div>
           </motion.div>
         </div>
       </section>
