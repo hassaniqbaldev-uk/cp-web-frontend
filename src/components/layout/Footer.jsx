@@ -100,7 +100,7 @@ const Footer = () => {
                       style={{
                         boxShadow: "5px 5px 44px 0px #FF37B3CC",
                       }}
-                      className="absolute inset-0 z-[1] rounded-[.9rem] bg-[#FF37B3] transition-all duration-800 group-hover:scale-[10] md:rounded-[1.5rem]"
+                      className="absolute inset-0 z-[1] rounded-[.9rem] bg-[#FF37B3] transition-all duration-800 group-hover:scale-[12] md:rounded-[1.5rem]"
                     />
 
                     <Image
@@ -132,7 +132,7 @@ const Footer = () => {
                       style={{
                         boxShadow: "5px 5px 44px 0px #3078FFCC",
                       }}
-                      className="absolute inset-0 z-[1] rounded-[.9rem] bg-[#3078FF] transition-all duration-800 group-hover:scale-[10] md:rounded-[1.5rem]"
+                      className="absolute inset-0 z-[1] rounded-[.9rem] bg-[#3078FF] transition-all duration-800 group-hover:scale-[12] md:rounded-[1.5rem]"
                     />
                     <Image
                       src={EmailIcon}
@@ -165,7 +165,7 @@ const Footer = () => {
                       style={{
                         boxShadow: "5px 5px 44px 0px #ED910CCC",
                       }}
-                      className="absolute inset-0 z-[1] rounded-[.9rem] bg-[#ED910C] transition-all duration-800 group-hover:scale-[10] md:rounded-[1.5rem]"
+                      className="absolute inset-0 z-[1] rounded-[.9rem] bg-[#ED910C] transition-all duration-800 group-hover:scale-[12] md:rounded-[1.5rem]"
                     />
                     <Image
                       src={HeadphoneIcon}
