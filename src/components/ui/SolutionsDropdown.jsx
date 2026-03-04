@@ -156,9 +156,9 @@ const SolutionsDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
               </div>
 
               <div className="relative z-[10]">
-                <span className="inline-flex h-[2.8rem] items-center justify-center rounded-[2rem] bg-[#ff37b3]/20 px-[1.2rem] text-center text-[1.4rem] leading-[2.4rem] font-bold tracking-normal text-[#FF37B3] uppercase">
+                {/* <span className="inline-flex h-[2.8rem] items-center justify-center rounded-[2rem] bg-[#ff37b3]/20 px-[1.2rem] text-center text-[1.4rem] leading-[2.4rem] font-bold tracking-normal text-[#FF37B3] uppercase">
                   Special offer
-                </span>
+                </span> */}
 
                 <h4 className="mt-[1.9rem] mb-[1.1rem] text-[3rem] leading-[3.2rem] font-bold tracking-[-0.02em] text-[#312749]">
                   Free Website Audit
