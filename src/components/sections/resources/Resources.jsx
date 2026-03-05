@@ -17,29 +17,6 @@ import { motion } from "framer-motion";
 import SectionDescription from "@/components/ui/SectionDescription";
 import GraphicDesignIcon from "@/assets/icons/ui/graphic-design-icon.svg";
 
-export const themeColors = {
-  primary: {
-    color: "#3078FF",
-    shadow: "5px 5px 44px 0px #3078FFCC",
-  },
-  secondary: {
-    color: "#ED910C",
-    shadow: "5px 5px 44px 0px #ED910CCC",
-  },
-  accent: {
-    color: "#FF37B3",
-    shadow: "5px 5px 44px 0px #FF37B3CC",
-  },
-  success: {
-    color: "#44B276",
-    shadow: "5px 5px 44px 0px #44B276CC",
-  },
-  highlight: {
-    color: "#BF00B4",
-    shadow: "5px 5px 44px 0px #BF00B4CC",
-  },
-};
-
 export const clientResourcesData = [
   // {
   //   icon: MagnifyingGlassIcon3,
@@ -111,12 +88,7 @@ export const clientResourcesData = [
   },
 ];
 
-export const themeColorList = Object.values(themeColors);
-
-const Resources = () => {
-  const getThemeColor = (index) =>
-    themeColorList[index % themeColorList.length];
-
+const Resources = ({ legal = [] }) => {
   const containerVariants = {
     hidden: {},
     visible: {
@@ -183,9 +155,7 @@ const Resources = () => {
               viewport={{ once: true, amount: 0.3 }}
               className="hidden w-full grid-cols-3 gap-[3rem] xl:grid"
             >
-              {clientResourcesData.map((item, idx) => {
-                const theme = getThemeColor(idx);
-
+              {legal.map((item, idx) => {
                 return (
                   <motion.div key={idx} variants={itemVariants}>
                     <div className="client-resources-card">
@@ -193,13 +163,12 @@ const Resources = () => {
                         <div className="flex flex-col items-start">
                           <i
                             style={{
-                              boxShadow: theme.shadow,
-                              background: theme.color,
+                              background: item.color,
                             }}
                             className="inline-flex size-[5.8rem] min-h-[5.8rem] min-w-max items-center justify-center rounded-[1.5rem]"
                           >
                             <Image
-                              src={item.icon}
+                              src={item.icon.asset.url}
                               alt={item.title}
                               width={30}
                               height={30}
@@ -212,12 +181,12 @@ const Resources = () => {
                           </h4>
 
                           <p className="mt-[1rem] mb-[3rem] text-[1.6rem] leading-[2.4rem] font-normal tracking-normal text-white">
-                            {item.description}
+                            {item.excerpt}
                           </p>
                         </div>
 
                         <Link
-                          href={item.link}
+                          href={`/legal/${item.slug.current}`}
                           className="relative z-[10] inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold text-white"
                         >
                           More Details
@@ -263,8 +232,7 @@ const Resources = () => {
                 }}
                 className="mySwiper"
               >
-                {clientResourcesData.map((item, idx) => {
-                  const theme = getThemeColor(idx);
+                {legal.map((item, idx) => {
                   return (
                     <SwiperSlide
                       key={idx}
@@ -275,12 +243,12 @@ const Resources = () => {
                           <div className="flex flex-col items-start">
                             <i
                               style={{
-                                background: theme.color,
+                                background: item.color,
                               }}
                               className="inline-flex size-[5.8rem] min-w-max items-center justify-center rounded-[1.5rem]"
                             >
                               <Image
-                                src={item.icon}
+                                src={item.icon.asset.url}
                                 alt={item.title}
                                 width={30}
                                 height={30}
@@ -293,12 +261,12 @@ const Resources = () => {
                             </h4>
 
                             <p className="mt-[1rem] mb-[3rem] text-[1.6rem] leading-[2.4rem] font-normal tracking-normal text-white">
-                              {item.description}
+                              {item.excerpt}
                             </p>
                           </div>
 
                           <Link
-                            href={item.link}
+                            href={`/legal/${item.slug.current}`}
                             className="relative z-[10] inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold text-white"
                           >
                             More Details

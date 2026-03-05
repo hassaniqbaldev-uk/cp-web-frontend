@@ -5,39 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import UxIcon from "@/assets/icons/ui/ux-icon.svg";
 import WordpressIcon from "@/assets/icons/ui/wordpress-icon.svg";
-import ShopifyIcon from "@/assets/icons/ui/shopify-icon.svg";
-import DeveloperIcon from "@/assets/icons/ui/developer-icon.svg";
 import AboutHeroLogoShape2 from "@/assets/svgs/about-hero-logo-shape-2.svg";
-import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { motion } from "framer-motion";
 import SectionDescription from "@/components/ui/SectionDescription";
-
-export const themeColors = {
-  primary: {
-    color: "#3078FF",
-    shadow: "4px 12px 30px 0px #3078FF1C",
-  },
-  secondary: {
-    color: "#EE7621",
-    shadow: "4px 12px 30px 0px #EE76211C",
-  },
-  accent: {
-    color: "#FF37B3",
-    shadow: "4px 12px 30px 0px #FF37B31C",
-  },
-  success: {
-    color: "#44B276",
-    shadow: "4px 12px 30px 0px #44B2761C",
-  },
-  highlight: {
-    color: "#BF00B4",
-    shadow: "4px 12px 30px 0px #BF00B41C",
-  },
-};
 
 export const ourPoliciesData = [
   {
@@ -87,14 +61,7 @@ export const ourPoliciesData = [
   },
 ];
 
-export const themeColorList = Object.values(themeColors);
-
-const Policies = () => {
-  const [hovered, setHovered] = useState(null);
-
-  const getThemeColor = (index) =>
-    themeColorList[index % themeColorList.length];
-
+const Policies = ({ legal = [] }) => {
   const containerVariants = {
     hidden: {},
     visible: {
@@ -162,17 +129,12 @@ const Policies = () => {
               viewport={{ once: true, amount: 0.3 }}
               className="hidden w-full grid-cols-3 gap-[3rem] xl:grid"
             >
-              {ourPoliciesData.map((item, idx) => {
-                const theme = getThemeColor(idx);
-
+              {legal.map((item, idx) => {
                 return (
                   <motion.div variants={itemVariants} key={idx}>
                     <div
-                      onMouseEnter={() => setHovered(idx)}
-                      onMouseLeave={() => setHovered(null)}
                       style={{
-                        borderColor: theme.color,
-                        boxShadow: hovered === idx ? theme.shadow : "",
+                        borderColor: item.color,
                       }}
                       className="flex h-full w-full flex-col justify-between rounded-[3rem] border px-[3rem] pt-[3.1rem] pb-[2.8rem] transition-all duration-300"
                     >
@@ -181,7 +143,7 @@ const Policies = () => {
                         <div className="relative size-[6.3rem]">
                           <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
                             <Image
-                              src={item.icon}
+                              src={item.icon.asset.url}
                               alt={item.title}
                               width={30}
                               height={30}
@@ -191,7 +153,7 @@ const Policies = () => {
 
                           <div
                             className="absolute right-0 bottom-0 z-[0] size-[5.8rem] rounded-[1.3rem]"
-                            style={{ backgroundColor: theme.color }}
+                            style={{ backgroundColor: item.color }}
                           />
                         </div>
 
@@ -200,17 +162,17 @@ const Policies = () => {
                         </h3>
 
                         <p className="mt-[1rem] mb-[3.5rem] text-[1.6rem] text-[#625C70]">
-                          {item.description}
+                          {item.excerpt}
                         </p>
                       </div>
 
                       <Link
-                        href={item.link}
+                        href={`/legal/${item.slug.current}`}
                         className="inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold"
-                        style={{ color: theme.color }}
+                        style={{ color: item.color }}
                       >
                         More Details
-                        <RightArrowIcon color={theme.color} />
+                        <RightArrowIcon color={item.color} />
                       </Link>
                     </div>
                   </motion.div>
@@ -251,9 +213,7 @@ const Policies = () => {
                 }}
                 className="mySwiper"
               >
-                {ourPoliciesData.map((item, idx) => {
-                  const theme = getThemeColor(idx);
-
+                {legal.map((item, idx) => {
                   return (
                     <SwiperSlide
                       key={idx}
@@ -261,7 +221,7 @@ const Policies = () => {
                     >
                       <div
                         style={{
-                          borderColor: theme.color,
+                          borderColor: item.color,
                         }}
                         className="flex h-full w-full flex-col justify-between rounded-[3rem] border bg-white px-[3rem] pt-[3.1rem] pb-[2.8rem] transition-all duration-300"
                       >
@@ -270,7 +230,7 @@ const Policies = () => {
                           <div className="relative size-[6.3rem]">
                             <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
                               <Image
-                                src={item.icon}
+                                src={item.icon.asset.url}
                                 alt={item.title}
                                 width={30}
                                 height={30}
@@ -280,7 +240,7 @@ const Policies = () => {
 
                             <div
                               className="absolute right-0 bottom-0 z-[0] size-[5.8rem] rounded-[1.3rem]"
-                              style={{ backgroundColor: theme.color }}
+                              style={{ backgroundColor: item.color }}
                             />
                           </div>
 
@@ -289,17 +249,17 @@ const Policies = () => {
                           </h3>
 
                           <p className="mt-[1rem] mb-[3.5rem] text-[1.6rem] text-[#625C70]">
-                            {item.description}
+                            {item.excerpt}
                           </p>
                         </div>
 
                         <Link
-                          href={item.link}
+                          href={`/legal/${item.slug.current}`}
                           className="inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold"
-                          style={{ color: theme.color }}
+                          style={{ color: item.color }}
                         >
                           More Details
-                          <RightArrowIcon color={theme.color} />
+                          <RightArrowIcon color={item.color} />
                         </Link>
                       </div>
                     </SwiperSlide>
