@@ -14,33 +14,10 @@ import { urlFor } from "@/sanity/caseStudies.image";
 import { motion } from "framer-motion";
 import useMousePosition from "@/utils/useMousePosition";
 import { useState } from "react";
+import { MotionEffect } from "@/components/effects/motion-effect";
 
 const Work = ({ caseStudies }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
 
   const mouse = useMousePosition();
 
@@ -78,56 +55,51 @@ const Work = ({ caseStudies }) => {
 
       <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <div className="container">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="flex flex-col items-center justify-between gap-[3rem] xl:flex-row"
-          >
+          <div className="flex flex-col items-center justify-between gap-[3rem] xl:flex-row">
             <div className="flex w-[30rem] flex-col items-center text-center md:w-[58.5rem] xl:items-start xl:text-left">
-              <motion.div variants={itemVariants}>
-                <SectionLabel text="Our Work" textColor="#EE8D00" />
-              </motion.div>
+              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1}>
+                <div>
+                  <SectionLabel text="Our Work" textColor="#EE8D00" />
+                </div>
+              </MotionEffect>
 
-              <motion.div
-                variants={itemVariants}
-                className="mt-[5px] mb-[14px]"
-              >
-                <SectionTitle text="Digital Done Right." />
-              </motion.div>
+              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25}>
+                <div className="mt-[5px] mb-[14px]">
+                  <SectionTitle text="Digital Done Right." />
+                </div>
+              </MotionEffect>
 
-              <motion.div variants={itemVariants}>
-                <SectionDescription text="We've crafted websites and brands that blend design, development, and strategy into measurable success." />
-              </motion.div>
+              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.4}>
+                <div>
+                  <SectionDescription text="We've crafted websites and brands that blend design, development, and strategy into measurable success." />
+                </div>
+              </MotionEffect>
             </div>
 
-            <motion.div variants={itemVariants} className="hidden md:block">
-              <PrimaryButton
-                text="View All Projects"
-                textColor="#FFFFFF"
-                href="/case-studies"
-                bGcolor="#FF37B3"
-              />
-            </motion.div>
-          </motion.div>
+            <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4}>
+              <div className="hidden md:block">
+                <PrimaryButton
+                  text="View All Projects"
+                  textColor="#FFFFFF"
+                  href="/case-studies"
+                  bGcolor="#FF37B3"
+                />
+              </div>
+            </MotionEffect>
+          </div>
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="mt-[7.4rem] hidden w-full gap-[3rem] xl:flex"
-          >
+          <div className="mt-[7.4rem] hidden w-full gap-[3rem] xl:flex">
             <div className="w-[79.1rem]">
-              <motion.div variants={itemVariants}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                inView
+                delay={0.4}
+                transition={{ type: "tween", duration: 0.7, ease: "easeOut" }}
+              >
                 <Link
-                  onMouseEnter={() => {
-                    setIsHovered(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered(false);
-                  }}
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
                   style={{
                     boxShadow: "11px 11px 65px 0px #00000012",
                   }}
@@ -150,19 +122,6 @@ const Work = ({ caseStudies }) => {
                   </div>
 
                   <div className="flex w-full flex-col">
-                    {/* <ul className="flex items-center gap-[1.2rem]">
-                    {["NON-PROFIT", "STRATEGY", "UX DESIGN"].map(
-                      (item, idx) => (
-                        <li
-                          key={idx}
-                          className="inline-flex h-[2.8rem] items-center justify-center rounded-[20rem] bg-[#F2F1F4] px-[12px] text-center text-[1.4rem] leading-[2.4rem] font-bold text-[#312749]"
-                        >
-                          {item}
-                        </li>
-                      ),
-                    )}
-                  </ul> */}
-
                     <hr className="my-[3.2rem] w-full border-t border-black/20" />
 
                     <div className="flex h-full items-center justify-between">
@@ -187,18 +146,20 @@ const Work = ({ caseStudies }) => {
                     </div>
                   </div>
                 </Link>
-              </motion.div>
+              </MotionEffect>
             </div>
 
             <div className="flex w-[40rem] flex-col gap-[2rem]">
-              <motion.div variants={itemVariants}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                inView
+                delay={0.55}
+                transition={{ type: "tween", duration: 0.7, ease: "easeOut" }}
+              >
                 <Link
-                  onMouseEnter={() => {
-                    setIsHovered(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered(false);
-                  }}
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
                   style={{
                     boxShadow: "11px 11px 65px 0px #00000012",
                   }}
@@ -241,16 +202,18 @@ const Work = ({ caseStudies }) => {
                     </i>
                   </div>
                 </Link>
-              </motion.div>
+              </MotionEffect>
 
-              <motion.div variants={itemVariants}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                inView
+                delay={0.7}
+                transition={{ type: "tween", duration: 0.7, ease: "easeOut" }}
+              >
                 <Link
-                  onMouseEnter={() => {
-                    setIsHovered(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered(false);
-                  }}
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
                   style={{
                     boxShadow: "11px 11px 65px 0px #00000012",
                   }}
@@ -293,104 +256,97 @@ const Work = ({ caseStudies }) => {
                     </i>
                   </div>
                 </Link>
-              </motion.div>
+              </MotionEffect>
             </div>
-          </motion.div>
+          </div>
 
           {/* Responsive */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{
-              duration: 1,
-              ease: "easeOut",
-            }}
-            className="mt-[3rem] block w-full xl:hidden"
-          >
-            <Swiper
-              pagination={{ clickable: true }}
-              modules={[Pagination, Autoplay]}
-              loop={true}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              slidesPerView={1}
-              spaceBetween={0}
-              breakpoints={{
-                767: {
-                  slidesPerView: 2,
-                  spaceBetween: 0,
-                },
-                1024: {
-                  slidesPerView: 3,
-                  spaceBetween: 0,
-                },
-              }}
-              className="mySwiper"
-            >
-              {[casaBotanica, ndifoSafari, smokeyCarter].map((item, idx) => (
-                <SwiperSlide
-                  key={idx}
-                  className="!flex !h-auto !justify-center !pt-[2rem] pb-[5rem]"
-                >
-                  <Link
-                    style={{
-                      boxShadow: "11px 11px 65px 0px #00000012",
-                    }}
-                    href={`/case-studies/${item.slug}`}
-                    className="flex h-full w-[27.5rem] flex-col gap-[2.2rem] rounded-[3rem] bg-white px-[1.5rem] pt-[1.5rem] pb-[2rem]"
+          <MotionEffect slide={{ direction: "down" }} fade inView delay={0.6}>
+            <div className="mt-[3rem] block w-full xl:hidden">
+              <Swiper
+                pagination={{ clickable: true }}
+                modules={[Pagination, Autoplay]}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                slidesPerView={1}
+                spaceBetween={0}
+                breakpoints={{
+                  767: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 0,
+                  },
+                }}
+                className="mySwiper"
+              >
+                {[casaBotanica, ndifoSafari, smokeyCarter].map((item, idx) => (
+                  <SwiperSlide
+                    key={idx}
+                    className="!flex !h-auto !justify-center !pt-[2rem] pb-[5rem]"
                   >
-                    <div className="flex h-[18.3rem] w-full overflow-hidden rounded-[1.5rem]">
-                      <Image
-                        src={urlFor(item.thumbnailImage)
-                          ?.width(275)
-                          .height(183)
-                          .fit("crop")
-                          .url()}
-                        alt={item.title || "Case Study Thumbnail Image"}
-                        width={275}
-                        height={183}
-                        className="w-full object-cover object-center"
-                        unoptimized
-                      />
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <div className="flex flex-col items-start gap-[1rem] text-left">
-                        <h4 className="text-[2rem] leading-[2.4rem] font-bold tracking-[-0.02em] text-[#312749]">
-                          {item.title}
-                        </h4>
-
-                        <span className="text-[1.4rem] leading-[1.9rem] font-semibold text-[#625C70]">
-                          {item.excerpt}
-                        </span>
+                    <Link
+                      style={{
+                        boxShadow: "11px 11px 65px 0px #00000012",
+                      }}
+                      href={`/case-studies/${item.slug}`}
+                      className="flex h-full w-[27.5rem] flex-col gap-[2.2rem] rounded-[3rem] bg-white px-[1.5rem] pt-[1.5rem] pb-[2rem]"
+                    >
+                      <div className="flex h-[18.3rem] w-full overflow-hidden rounded-[1.5rem]">
+                        <Image
+                          src={urlFor(item.thumbnailImage)
+                            ?.width(275)
+                            .height(183)
+                            .fit("crop")
+                            .url()}
+                          alt={item.title || "Case Study Thumbnail Image"}
+                          width={275}
+                          height={183}
+                          className="w-full object-cover object-center"
+                          unoptimized
+                        />
                       </div>
 
-                      <i
-                        style={{
-                          backgroundColor: item.iconBg,
-                        }}
-                        className="inline-flex size-[4.6rem] min-w-[4.6rem] items-center justify-center rounded-full"
-                      >
-                        <TiltArrowIcon color={item.iconColor} />
-                      </i>
-                    </div>
-                  </Link>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+                      <div className="flex items-center justify-between">
+                        <div className="flex flex-col items-start gap-[1rem] text-left">
+                          <h4 className="text-[2rem] leading-[2.4rem] font-bold tracking-[-0.02em] text-[#312749]">
+                            {item.title}
+                          </h4>
 
-            <div className="mt-[3rem] flex items-center justify-center md:hidden">
-              <PrimaryButton
-                text="View All Projects"
-                textColor="#FFFFFF"
-                href="/case-studies"
-                bGcolor="#FF37B3"
-              />
+                          <span className="text-[1.4rem] leading-[1.9rem] font-semibold text-[#625C70]">
+                            {item.excerpt}
+                          </span>
+                        </div>
+
+                        <i
+                          style={{
+                            backgroundColor: item.iconBg,
+                          }}
+                          className="inline-flex size-[4.6rem] min-w-[4.6rem] items-center justify-center rounded-full"
+                        >
+                          <TiltArrowIcon color={item.iconColor} />
+                        </i>
+                      </div>
+                    </Link>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+
+              <div className="mt-[3rem] flex items-center justify-center md:hidden">
+                <PrimaryButton
+                  text="View All Projects"
+                  textColor="#FFFFFF"
+                  href="/case-studies"
+                  bGcolor="#FF37B3"
+                />
+              </div>
             </div>
-          </motion.div>
+          </MotionEffect>
         </div>
       </section>
     </>

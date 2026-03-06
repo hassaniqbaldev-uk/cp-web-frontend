@@ -12,46 +12,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { motion } from "framer-motion";
 import ServicesLogoShape from "@/components/decorative-elements/ServicesLogoShape";
+import { MotionEffect } from "@/components/effects/motion-effect";
 
 const Services = () => {
   const [hovered, setHovered] = useState(null);
-
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const cardContainerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.4,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
 
   return (
     <>
@@ -62,41 +27,36 @@ const Services = () => {
         </div>
 
         <div className="relative z-[10] container">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="flex flex-col items-center text-center"
-          >
-            <motion.div variants={itemVariants}>
-              <SectionLabel text="Our Services" textColor="#EE8D00" />
-            </motion.div>
+          <div className="flex flex-col items-center text-center">
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1}>
+              <div>
+                <SectionLabel text="Our Services" textColor="#EE8D00" />
+              </div>
+            </MotionEffect>
 
-            <motion.div
-              variants={itemVariants}
-              className="mt-[5px] mb-[14px] max-w-[25rem] md:max-w-[85rem]"
-            >
-              <SectionTitle text="Everything you need to grow online" />
-            </motion.div>
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25}>
+              <div className="mt-[5px] mb-[14px] max-w-[25rem] md:max-w-[85rem]">
+                <SectionTitle text="Everything you need to grow online" />
+              </div>
+            </MotionEffect>
 
-            <motion.div
-              variants={itemVariants}
-              className="max-w-[25rem] md:max-w-[85rem]"
-            >
-              <SectionDescription text="From strategy to launch to long-term growth—we're with you every step." />
-            </motion.div>
-          </motion.div>
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.4}>
+              <div className="max-w-[25rem] md:max-w-[85rem]">
+                <SectionDescription text="From strategy to launch to long-term growth—we're with you every step." />
+              </div>
+            </MotionEffect>
+          </div>
 
-          <motion.div
-            variants={cardContainerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
-            className="mt-[5rem] hidden grid-cols-3 gap-[3.3rem] xl:grid"
-          >
+          <div className="mt-[5rem] hidden grid-cols-3 gap-[3.3rem] xl:grid">
             {SERVICES_CARD.map((item, idx) => (
-              <motion.div variants={itemVariants} key={idx}>
+              <MotionEffect
+                key={idx}
+                slide={{ direction: "down" }}
+                fade
+                inView
+                delay={0.4 + idx * 0.15}
+                transition={{ type: "tween", duration: 0.7, ease: "easeOut" }}
+              >
                 <div
                   onMouseEnter={() => setHovered(idx)}
                   onMouseLeave={() => setHovered(null)}
@@ -164,116 +124,109 @@ const Services = () => {
                     </Link>
                   </div>
                 </div>
-              </motion.div>
+              </MotionEffect>
             ))}
-          </motion.div>
+          </div>
 
           {/* Responsive */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{
-              duration: 1,
-              ease: "easeOut",
-            }}
-            className="mt-[3rem] block w-full xl:hidden"
-          >
-            <Swiper
-              pagination={{ clickable: true }}
-              modules={[Pagination, Autoplay]}
-              loop={true}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              slidesPerView={1}
-              spaceBetween={0}
-              breakpoints={{
-                767: {
-                  slidesPerView: 2,
-                  spaceBetween: 0,
-                },
-                1024: {
-                  slidesPerView: 3,
-                  spaceBetween: 0,
-                },
-              }}
-              className="mySwiper"
-            >
-              {SERVICES_CARD.map((item, idx) => (
-                <SwiperSlide
-                  key={idx}
-                  className="!flex !h-auto !justify-center px-[1rem] pb-[5rem]"
-                >
-                  <div
-                    style={{
-                      borderColor: item.color,
-                    }}
-                    className="flex h-full w-full flex-col items-start justify-between rounded-[3rem] border bg-white px-[3rem] pt-[3.1rem] pb-[2.8rem] text-left backdrop-blur-[10px] transition-all duration-200"
+          <MotionEffect slide={{ direction: "down" }} fade inView delay={0.6}>
+            <div className="mt-[3rem] block w-full xl:hidden">
+              <Swiper
+                pagination={{ clickable: true }}
+                modules={[Pagination, Autoplay]}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                slidesPerView={1}
+                spaceBetween={0}
+                breakpoints={{
+                  767: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 0,
+                  },
+                }}
+                className="mySwiper"
+              >
+                {SERVICES_CARD.map((item, idx) => (
+                  <SwiperSlide
+                    key={idx}
+                    className="!flex !h-auto !justify-center px-[1rem] pb-[5rem]"
                   >
-                    <div>
-                      <div className="relative size-[6.3rem]">
-                        <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
-                          <i>
-                            <Image
-                              src={item.icon}
-                              alt="Icon"
-                              width={item.iconWidth}
-                              height={item.iconHeight}
-                              unoptimized
-                            />
-                          </i>
+                    <div
+                      style={{
+                        borderColor: item.color,
+                      }}
+                      className="flex h-full w-full flex-col items-start justify-between rounded-[3rem] border bg-white px-[3rem] pt-[3.1rem] pb-[2.8rem] text-left backdrop-blur-[10px] transition-all duration-200"
+                    >
+                      <div>
+                        <div className="relative size-[6.3rem]">
+                          <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
+                            <i>
+                              <Image
+                                src={item.icon}
+                                alt="Icon"
+                                width={item.iconWidth}
+                                height={item.iconHeight}
+                                unoptimized
+                              />
+                            </i>
+                          </div>
+                          <div
+                            style={{
+                              background: item.color,
+                            }}
+                            className="absolute right-0 bottom-0 z-[0] size-[5.8rem] rounded-[1.3rem]"
+                          />
                         </div>
-                        <div
-                          style={{
-                            background: item.color,
-                          }}
-                          className="absolute right-0 bottom-0 z-[0] size-[5.8rem] rounded-[1.3rem]"
-                        />
+
+                        <h3 className="mt-[2.6rem] mb-[1.4rem] text-[2.2rem] font-semibold tracking-[-0.02em] text-[#312749] md:text-[2.6rem]">
+                          {item.title}
+                        </h3>
+
+                        <p className="text-[1.4rem] leading-[2.4rem] font-normal text-[#625C70] md:text-[1.6rem]">
+                          {item.description}
+                        </p>
+
+                        <ul className="mt-[1.4rem] mb-[2.6rem] flex flex-col items-start">
+                          {item.listItem.map((list, idx) => (
+                            <li
+                              key={idx}
+                              className="inline-flex items-center gap-[1.3rem] text-[1.4rem] leading-[2.8rem] tracking-normal text-[#625C70] md:text-[1.6rem]"
+                            >
+                              <i>
+                                <CheckMarkIcon color={item.color} />
+                              </i>
+
+                              <span>{list}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
 
-                      <h3 className="mt-[2.6rem] mb-[1.4rem] text-[2.2rem] font-semibold tracking-[-0.02em] text-[#312749] md:text-[2.6rem]">
-                        {item.title}
-                      </h3>
-
-                      <p className="text-[1.4rem] leading-[2.4rem] font-normal text-[#625C70] md:text-[1.6rem]">
-                        {item.description}
-                      </p>
-
-                      <ul className="mt-[1.4rem] mb-[2.6rem] flex flex-col items-start">
-                        {item.listItem.map((list, idx) => (
-                          <li
-                            key={idx}
-                            className="inline-flex items-center gap-[1.3rem] text-[1.4rem] leading-[2.8rem] tracking-normal text-[#625C70] md:text-[1.6rem]"
-                          >
-                            <i>
-                              <CheckMarkIcon color={item.color} />
-                            </i>
-
-                            <span>{list}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      <Link
+                        href={item.link}
+                        style={{
+                          color: item.color,
+                        }}
+                        className="inline-flex items-center gap-[.8rem] text-[1.4rem] leading-[1.4rem] font-semibold tracking-normal md:text-[1.6rem]"
+                      >
+                        {item.linkText}{" "}
+                        <i>
+                          <RightArrowIcon color={item.color} />
+                        </i>
+                      </Link>
                     </div>
-
-                    <Link
-                      href={item.link}
-                      style={{
-                        color: item.color,
-                      }}
-                      className="inline-flex items-center gap-[.8rem] text-[1.4rem] leading-[1.4rem] font-semibold tracking-normal md:text-[1.6rem]"
-                    >
-                      {item.linkText}{" "}
-                      <i>
-                        <RightArrowIcon color={item.color} />
-                      </i>
-                    </Link>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </motion.div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          </MotionEffect>
         </div>
       </section>
     </>

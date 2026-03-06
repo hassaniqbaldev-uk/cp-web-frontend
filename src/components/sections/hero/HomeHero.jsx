@@ -314,7 +314,7 @@ const HomeHero = () => {
                   "linear-gradient(to right,rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%,rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%)",
               }}
             >
-              <Marquee speed={50} pauseOnHover gradient={false}>
+              <Marquee speed={30} pauseOnHover gradient={false}>
                 {CLIENT_LOGO.map((logo, index) => (
                   <div
                     key={index}

@@ -9,178 +9,80 @@ import SendIcon2 from "@/assets/icons/ui/send-icon-2.svg";
 import ContactAssistantImg from "@/assets/images/cards/contact-assistant-img.png";
 import Image from "next/image";
 import ContactForm from "@/components/ui/ContactForm";
-import { motion } from "framer-motion";
 import TestimonialAvatar1 from "@/assets/icons/ui/testimonial-avatar-1.svg";
 import TestimonialAvatar2 from "@/assets/icons/ui/testimonial-avatar-2.svg";
 import TestimonialAvatar3 from "@/assets/icons/ui/testimonial-avatar-3.svg";
 import TestimonialAvatar4 from "@/assets/icons/ui/testimonial-avatar-4.svg";
+import { MotionEffect } from "@/components/effects/motion-effect";
 
 const Contact = () => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <>
       <div className="container">
         <div className="flex flex-col items-center gap-[4rem] xl:flex-row xl:items-start">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="flex w-[30rem] flex-col items-center text-center md:w-[56.3rem] xl:items-start xl:text-left"
-          >
-            <motion.div variants={itemVariants}>
-              <SectionLabel text="Book a call" textColor="#FF37B3" />
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="mt-[1rem] mb-[2rem]">
-              <SectionTitle text="Unlock your brand's hidden potential." />
-            </motion.div>
-
-            <motion.div variants={itemVariants}>
-              <SectionDescription text="Stop guessing. Let's build a roadmap to scale your digital presence with a custom strategy." />
-            </motion.div>
-
-            <motion.div
-              variants={itemVariants}
-              className="mt-[3.2rem] mb-[2.2rem] flex w-full flex-col items-start gap-[1.2rem] rounded-[2rem] border border-[#3078FF] bg-white px-[3rem] py-[3.5rem] text-left md:mt-[4rem] md:mb-[2rem] md:gap-[2.5rem]"
-            >
-              <div className="flex items-start gap-[1.2rem] md:items-center">
-                <i>
-                  <Image src={ClockIcon} alt="Icon" width={24} height={24} />
-                </i>
-
-                <h4 className="text-[1.8rem] font-bold tracking-[-0.02em] text-[#312749] md:text-[2.2rem]">
-                  Included in your free strategy:
-                </h4>
-              </div>
-
-              <ul className="grid grid-cols-1 gap-x-[5rem] gap-y-[.6rem] md:grid-cols-2 md:gap-y-[1.2rem]">
-                {[
-                  "Review current position",
-                  "Competitor Intel",
-                  "Competitor Intel",
-                  "Growth Opportunities",
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-[1.2rem]">
-                    <i className="inline-flex size-[2.4rem] items-center justify-center rounded-full bg-[#44b276]/20">
-                      <Image
-                        src={CheckmarkIcon2}
-                        alt="Icon"
-                        width={14}
-                        height={14}
-                      />
-                    </i>
-
-                    <span className="text-[1.6rem] font-semibold tracking-normal text-[#625C70]">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* <motion.div variants={itemVariants} className="flex items-center gap-[2rem]">
-              <div className="flex items-center">
-                <div
-                  style={{
-                    boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-                  }}
-                  className="relative z-[1] size-[4.4rem] overflow-hidden rounded-full border-2 border-white"
-                >
-                  <Image
-                    src={TestimonialAvatar1}
-                    width={44}
-                    height={44}
-                    alt="Image"
-                    className="size-full object-cover object-top"
-                    unoptimized
-                  />
-                </div>
-
-                <div
-                  style={{
-                    boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-                  }}
-                  className="relative z-[2] size-[4.4rem] mx-[-1rem] overflow-hidden rounded-full border-2 border-white"
-                >
-                  <Image
-                    src={TestimonialAvatar2}
-                    width={44}
-                    height={44}
-                    alt="Image"
-                    className="size-full object-cover object-top"
-                    unoptimized
-                  />
-                </div>
-
-                <div
-                  style={{
-                    boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-                  }}
-                  className="relative z-[3] size-[4.4rem] overflow-hidden rounded-full border-2 border-white"
-                >
-                  <Image
-                    src={TestimonialAvatar3}
-                    width={44}
-                    height={44}
-                    alt="Image"
-                    className="size-full object-cover object-top"
-                    unoptimized
-                  />
-                </div>
-
-                <div
-                  style={{
-                    boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-                  }}
-                  className="relative z-[4] size-[4.4rem] mx-[-1rem] overflow-hidden rounded-full border-2 border-white"
-                >
-                  <Image
-                    src={TestimonialAvatar4}
-                    width={44}
-                    height={44}
-                    alt="Image"
-                    className="size-full object-cover object-top"
-                    unoptimized
-                  />
-                </div>
-              </div>
-
+          <div className="flex w-[30rem] flex-col items-center text-center md:w-[56.3rem] xl:items-start xl:text-left">
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1}>
               <div>
-                <h5 className="mb-[-.6rem] text-[1.4rem] font-semibold tracking-normal">
-                  Join 150+ companies
-                </h5>
-
-                <span className="text-[1.2rem] font-normal tracking-normal">
-                  scaling with Pixel
-                </span>
+                <SectionLabel text="Book a call" textColor="#FF37B3" />
               </div>
-            </motion.div> */}
-          </motion.div>
+            </MotionEffect>
+
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25}>
+              <div className="mt-[1rem] mb-[2rem]">
+                <SectionTitle text="Unlock your brand's hidden potential." />
+              </div>
+            </MotionEffect>
+
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.4}>
+              <div>
+                <SectionDescription text="Stop guessing. Let's build a roadmap to scale your digital presence with a custom strategy." />
+              </div>
+            </MotionEffect>
+
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              inView
+              delay={0.55}
+              transition={{ type: "tween", duration: 0.7, ease: "easeOut" }}
+            >
+              <div className="mt-[3.2rem] mb-[2.2rem] flex w-full flex-col items-start gap-[1.2rem] rounded-[2rem] border border-[#3078FF] bg-white px-[3rem] py-[3.5rem] text-left md:mt-[4rem] md:mb-[2rem] md:gap-[2.5rem]">
+                <div className="flex items-start gap-[1.2rem] md:items-center">
+                  <i>
+                    <Image src={ClockIcon} alt="Icon" width={24} height={24} />
+                  </i>
+
+                  <h4 className="text-[1.8rem] font-bold tracking-[-0.02em] text-[#312749] md:text-[2.2rem]">
+                    Included in your free strategy:
+                  </h4>
+                </div>
+
+                <ul className="grid grid-cols-1 gap-x-[5rem] gap-y-[.6rem] md:grid-cols-2 md:gap-y-[1.2rem]">
+                  {[
+                    "Review current position",
+                    "Competitor Intel",
+                    "Competitor Intel",
+                    "Growth Opportunities",
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-center gap-[1.2rem]">
+                      <i className="inline-flex size-[2.4rem] items-center justify-center rounded-full bg-[#44b276]/20">
+                        <Image
+                          src={CheckmarkIcon2}
+                          alt="Icon"
+                          width={14}
+                          height={14}
+                        />
+                      </i>
+
+                      <span className="text-[1.6rem] font-semibold tracking-normal text-[#625C70]">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </MotionEffect>
+          </div>
 
           <div
             style={{
@@ -245,14 +147,15 @@ const Contact = () => {
           </div>
 
           {/* New Form */}
-          <motion.div
-            variants={itemVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+          <MotionEffect
+            slide={{ direction: "down" }}
+            fade
+            inView
+            delay={0.4}
+            transition={{ type: "tween", duration: 0.7, ease: "easeOut" }}
           >
             <ContactForm />
-          </motion.div>
+          </MotionEffect>
         </div>
       </div>
     </>
