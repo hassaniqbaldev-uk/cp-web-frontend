@@ -213,7 +213,7 @@ const ServicesDropdown = ({ className, isOpen, setIsOpen, onToggle }) => {
                   Special offer
                 </span> */}
 
-                <h4 className="mt-[1.9rem] mb-[1.1rem] text-[3rem] leading-[3.2rem] font-bold tracking-[-0.02em] text-[#312749]">
+                <h4 className="mb-[1.1rem] text-[3rem] leading-[3.2rem] font-bold tracking-[-0.02em] text-[#312749]">
                   Free Website Audit
                 </h4>
 

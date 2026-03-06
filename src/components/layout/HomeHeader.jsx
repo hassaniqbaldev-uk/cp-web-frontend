@@ -1,8 +1,6 @@
 "use client";
 import Link from "next/link";
-import Logo from "../decorative-elements/Logo";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
 import HamburgerIcon from "@/assets/icons/ui/hamburger-icon.svg";
 import { useMenuStore } from "@/store/mobileMenuStore";
@@ -12,12 +10,12 @@ import AboutDropdown from "../ui/AboutDropdown";
 import { motion } from "framer-motion";
 import SecondaryButton from "../ui/SecondaryButton";
 import { getCalApi } from "@calcom/embed-react";
+import LoaderLogo from "../decorative-elements/LoaderLogo";
 
-const Header = () => {
+const HomeHeader = ({ transition }) => {
   const [isSticky, setIsSticky] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const pathname = usePathname();
   const { toggleMenu } = useMenuStore();
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
@@ -80,22 +78,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  const headerSecondaryPaths = [
-    "/blog",
-    "/audit",
-    "/case-studies",
-    "/services",
-    "/solutions",
-    "/legal",
-    "/testimonials",
-    "/agencies",
-    "/hassan-test",
-  ];
-
-  const isHeaderSecondary = headerSecondaryPaths.some(
-    (path) => pathname === path || pathname.startsWith(`${path}/`),
-  );
-
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: "15min" });
@@ -111,41 +93,53 @@ const Header = () => {
     })();
   }, []);
 
-  const hiddenHeaderPaths = ["/"];
-  const isHeaderHidden = hiddenHeaderPaths.some(
-    (path) => pathname === path || pathname.startsWith(`${path}/`),
-  );
-
-  if (isHeaderHidden) return null;
-
   return (
     <>
-      <motion.header
-        className={`fixed top-0 left-0 z-[500] w-full px-[2rem] pt-[1.3rem] transition-transform duration-300 ease-out md:pt-[2.5rem] xl:px-[0rem] ${isHidden ? "-translate-y-full" : "translate-y-0"} `}
+      <header
+        className={`fixed top-0 left-0 z-[500] w-full px-[2rem] pt-[1.3rem] transition-transform duration-300 ease-out md:pt-[2.5rem] xl:px-[0rem] ${isHidden ? "-translate-y-full" : "translate-y-0"} ${transition ? "" : "h-screen"}`}
       >
-        <div className="mx-auto max-w-[104rem]">
+        <div className="mx-auto h-full max-w-[104rem]">
           <div
-            className={`header-container ${
-              isHeaderSecondary
-                ? "header-secondary"
-                : isSticky
-                  ? "sticky-header"
-                  : "header-primary"
-            }`}
+            className={`header-container relative ${
+              isSticky
+                ? "sticky-header"
+                : "header-primary !bg-transparent !backdrop-blur-[0]"
+            } ${transition ? "!h-[5.1rem] md:!h-[7.6rem]" : "!h-full"}`}
           >
-            <Link
-              href="/"
-              className="inline-flex items-center justify-center"
-              onClick={closeAllDropdowns}
-            >
-              <Logo
-                width="121"
-                height="46"
-                className="logo h-[3.6rem] w-[9.7rem] md:h-[4.6rem] md:w-[12.1rem]"
-              />
-            </Link>
+            <div className="h-[3.6rem] w-[9.7rem] md:h-[4.6rem] md:w-[12.1rem]">
+              {transition ? (
+                <motion.div
+                  layoutId="logo"
+                  className="absolute top-[.8rem] left-[1.2rem] inline-flex items-center justify-center md:top-[1.4rem] md:left-[2.4rem]"
+                >
+                  <LoaderLogo className="logo h-[3.6rem] w-[9.7rem] md:h-[4.6rem] md:w-[12.1rem]" />
+                </motion.div>
+              ) : (
+                <motion.div
+                  layoutId="logo"
+                  className="absolute top-1/2 left-1/2 inline-flex -translate-x-1/2 -translate-y-1/2 items-center justify-center"
+                >
+                  <LoaderLogo className="logo h-[8rem] w-[20rem]" draw />
+                </motion.div>
+              )}
+            </div>
 
-            <nav className="mx-[4.8rem] hidden items-center justify-center gap-[3rem] xl:flex">
+            <motion.nav
+              initial={{
+                opacity: 0,
+              }}
+              animate={
+                transition
+                  ? {
+                      opacity: 1,
+                    }
+                  : {
+                      opacity: 0,
+                    }
+              }
+              transition={{ type: "tween", duration: 0.4, delay: 0.3 }}
+              className="mx-[4.8rem] hidden items-center justify-center gap-[3rem] xl:flex"
+            >
               <ServicesDropdown
                 className="nav-link"
                 isOpen={isServicesOpen}
@@ -186,9 +180,24 @@ const Header = () => {
                 setIsOpen={setIsAboutOpen}
                 onToggle={toggleAbout}
               />
-            </nav>
+            </motion.nav>
 
-            <div className="flex items-center justify-end gap-[4px] xl:gap-[0px]">
+            <motion.div
+              initial={{
+                opacity: 0,
+              }}
+              animate={
+                transition
+                  ? {
+                      opacity: 1,
+                    }
+                  : {
+                      opacity: 0,
+                    }
+              }
+              transition={{ type: "tween", duration: 0.4, delay: 0.3 }}
+              className="flex items-center justify-end gap-[4px] xl:gap-[0px]"
+            >
               <motion.div initial="initial" whileHover="hover">
                 <Link
                   href="/audit"
@@ -225,9 +234,25 @@ const Header = () => {
               >
                 <Image src={HamburgerIcon} width={12} height={9} alt="Icon" />
               </button>
-            </div>
+            </motion.div>
 
-            <div className="hidden xl:block" onClick={closeAllDropdowns}>
+            <motion.div
+              initial={{
+                opacity: 0,
+              }}
+              animate={
+                transition
+                  ? {
+                      opacity: 1,
+                    }
+                  : {
+                      opacity: 0,
+                    }
+              }
+              transition={{ type: "tween", duration: 0.4, delay: 0.3 }}
+              className="hidden xl:block"
+              onClick={closeAllDropdowns}
+            >
               <SecondaryButton
                 text="Book a Call"
                 textColor="#FFFFFF"
@@ -236,11 +261,11 @@ const Header = () => {
                 data-cal-link="hassan-iqbal-mznzu9/15min"
                 data-cal-config='{"layout":"month_view","theme":"dark"}'
               />
-            </div>
+            </motion.div>
           </div>
         </div>
-      </motion.header>
+      </header>
     </>
   );
 };
-export default Header;
+export default HomeHeader;
