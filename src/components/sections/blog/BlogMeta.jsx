@@ -5,12 +5,14 @@ import Link from "next/link";
 import FacebookIcon from "@/assets/icons/social/facebook-dark-icon.svg";
 import InstagramIcon from "@/assets/icons/social/instagram-dark-icon.svg";
 import LinkedinIcon from "@/assets/icons/social/linkedin-dark-icon.svg";
+import { MotionEffect } from "@/components/effects/motion-effect";
 
 const BlogMeta = ({ post }) => {
   return (
     <>
       <section className="px-[2rem] pt-[5rem] xl:px-[0rem] xl:pt-[28.6rem]">
         <div className="container flex flex-col items-start justify-between gap-[4rem] border-b border-[#E6E6E6] pb-[5rem] md:items-center xl:flex-row xl:pb-[5.6rem]">
+          <MotionEffect slide={{ direction: "down" }} fade inView delay={0.1}>
           <div className="flex flex-wrap items-center gap-[2.4rem]">
             <div className="flex items-center gap-[1.6rem]">
               <div className="size-[5rem] overflow-hidden rounded-full md:size-[6.2rem]">
@@ -71,7 +73,9 @@ const BlogMeta = ({ post }) => {
               </div>
             </div>
           </div>
+          </MotionEffect>
 
+          <MotionEffect slide={{ direction: "down" }} fade inView delay={0.25}>
           <ul className="flex items-center gap-[8px]">
             <li>
               <Link
@@ -118,6 +122,7 @@ const BlogMeta = ({ post }) => {
               </Link>
             </li>
           </ul>
+          </MotionEffect>
         </div>
       </section>
     </>

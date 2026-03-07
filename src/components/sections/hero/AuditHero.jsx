@@ -7,37 +7,12 @@ import ShieldCheckIcon from "@/assets/icons/ui/shield-check-icon.svg";
 import HeroBg from "@/assets/images/backgrounds/audit-hero-bg.webp";
 import Image from "next/image";
 
-import { motion } from "framer-motion";
+import { MotionEffect } from "@/components/effects/motion-effect";
 import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
 import ServicesLogoShape from "@/components/decorative-elements/ServicesLogoShape";
 import AuditForm from "@/components/ui/AuditForm";
 
 const AuditHero = () => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <>
       <section className="relative w-full overflow-hidden px-[2rem] pt-[10rem] pb-[5rem] md:pt-[19.2rem] xl:px-[0rem] xl:pb-[10rem]">
@@ -61,109 +36,99 @@ const AuditHero = () => {
 
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center justify-center gap-[4rem] xl:flex-row">
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              className="flex w-full flex-col items-center text-center md:w-[63rem] xl:items-start xl:text-left"
-            >
-              <motion.div variants={itemVariants}>
+            <div className="flex w-full flex-col items-center text-center md:w-[63rem] xl:items-start xl:text-left">
+              <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1}>
                 <SectionLabel
                   text="Only 3 Free Audit Slots Left This Week"
                   textColor="#FF37B3"
                 />
-              </motion.div>
+              </MotionEffect>
 
-              <motion.h1
-                variants={itemVariants}
-                className="mt-[1.3rem] mb-[2rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8.5rem]"
-              >
-                Unlock your website&apos;s{" "}
-                <span className="bg-gradient-orange-yellow bg-clip-text text-transparent">
-                  hidden revenue.
-                </span>
-              </motion.h1>
+              <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.25}>
+                <h1 className="mt-[1.3rem] mb-[2rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8.5rem]">
+                  Unlock your website&apos;s{" "}
+                  <span className="bg-gradient-orange-yellow bg-clip-text text-transparent">
+                    hidden revenue.
+                  </span>
+                </h1>
+              </MotionEffect>
 
-              <motion.div variants={itemVariants} className="max-w-[58.5rem]">
-                <SectionDescription
-                  text="Stop guessing why you aren't growing. We'll manually analyse your site's UX, SEO, and Performance and send you a custom video report."
-                  textColor="#625C70"
-                />
-              </motion.div>
+              <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.4}>
+                <div className="max-w-[58.5rem]">
+                  <SectionDescription
+                    text="Stop guessing why you aren't growing. We'll manually analyse your site's UX, SEO, and Performance and send you a custom video report."
+                    textColor="#625C70"
+                  />
+                </div>
+              </MotionEffect>
 
-              <motion.div
-                variants={itemVariants}
-                className="my-[3.7rem] flex w-full flex-col items-start gap-[1.2rem] rounded-[2rem] border border-[#3078FF] bg-white px-[3rem] py-[2.7rem] text-left md:gap-[2.5rem] md:py-[3.5rem]"
-              >
-                <div className="flex items-center gap-[.8rem] md:gap-[1.2rem]">
+              <MotionEffect slide={{ direction: "down" }} fade delay={0.55}>
+                <div className="my-[3.7rem] flex w-full flex-col items-start gap-[1.2rem] rounded-[2rem] border border-[#3078FF] bg-white px-[3rem] py-[2.7rem] text-left md:gap-[2.5rem] md:py-[3.5rem]">
+                  <div className="flex items-center gap-[.8rem] md:gap-[1.2rem]">
+                    <i>
+                      <Image
+                        src={ClockIcon}
+                        alt="Icon"
+                        width={24}
+                        height={24}
+                        className="size-[1.8rem] md:size-[2.4rem]"
+                      />
+                    </i>
+
+                    <h4 className="text-[1.8rem] font-bold tracking-[-0.02em] text-[#312749] md:text-[2.2rem]">
+                      What you get
+                    </h4>
+                  </div>
+
+                  <ul className="grid grid-cols-1 gap-x-[2.8rem] gap-y-[.6rem] md:grid-cols-2 md:gap-y-[1.2rem]">
+                    {[
+                      "Video walkthrough of issues",
+                      "Detailed Conversion Roadmap",
+                      "SEO Missed Opportunities",
+                      "Site Speed Analysis",
+                      "Competitor Benchmarking",
+                      "3 Quick-Win Fixes",
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-center gap-[1.2rem]">
+                        <i className="inline-flex size-[2.4rem] min-w-[2.4rem] items-center justify-center rounded-full bg-[#44b276]/20">
+                          <Image
+                            src={CheckmarkIcon2}
+                            alt="Icon"
+                            width={14}
+                            height={14}
+                          />
+                        </i>
+
+                        <span className="text-[1.6rem] font-semibold tracking-normal text-[#625C70]">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </MotionEffect>
+
+              <MotionEffect slide={{ direction: "down" }} fade delay={0.7}>
+                <div className="flex items-center gap-[1.6rem] text-left">
                   <i>
                     <Image
-                      src={ClockIcon}
+                      src={ShieldCheckIcon}
                       alt="Icon"
-                      width={24}
-                      height={24}
-                      className="size-[1.8rem] md:size-[2.4rem]"
+                      width={18}
+                      height={21}
                     />
                   </i>
 
-                  <h4 className="text-[1.8rem] font-bold tracking-[-0.02em] text-[#312749] md:text-[2.2rem]">
-                    What you get
-                  </h4>
+                  <span className="text-[1.6rem] leading-[2rem] font-normal tracking-normal text-[#625C70]">
+                    Delivered to your inbox within 48 hours.
+                  </span>
                 </div>
+              </MotionEffect>
+            </div>
 
-                <ul className="grid grid-cols-1 gap-x-[2.8rem] gap-y-[.6rem] md:grid-cols-2 md:gap-y-[1.2rem]">
-                  {[
-                    "Video walkthrough of issues",
-                    "Detailed Conversion Roadmap",
-                    "SEO Missed Opportunities",
-                    "Site Speed Analysis",
-                    "Competitor Benchmarking",
-                    "3 Quick-Win Fixes",
-                  ].map((item, idx) => (
-                    <li key={idx} className="flex items-center gap-[1.2rem]">
-                      <i className="inline-flex size-[2.4rem] min-w-[2.4rem] items-center justify-center rounded-full bg-[#44b276]/20">
-                        <Image
-                          src={CheckmarkIcon2}
-                          alt="Icon"
-                          width={14}
-                          height={14}
-                        />
-                      </i>
-
-                      <span className="text-[1.6rem] font-semibold tracking-normal text-[#625C70]">
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-
-              <motion.div
-                variants={itemVariants}
-                className="flex items-center gap-[1.6rem] text-left"
-              >
-                <i>
-                  <Image
-                    src={ShieldCheckIcon}
-                    alt="Icon"
-                    width={18}
-                    height={21}
-                  />
-                </i>
-
-                <span className="text-[1.6rem] leading-[2rem] font-normal tracking-normal text-[#625C70]">
-                  Delivered to your inbox within 48 hours.
-                </span>
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              variants={itemVariants}
-              initial="hidden"
-              animate="visible"
-            >
+            <MotionEffect slide={{ direction: "down" }} fade delay={0.4}>
               <AuditForm />
-            </motion.div>
+            </MotionEffect>
           </div>
         </div>
       </section>

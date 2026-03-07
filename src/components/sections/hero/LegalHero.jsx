@@ -3,7 +3,7 @@ import Image from "next/image";
 import HeroBg from "@/assets/images/backgrounds/audit-hero-bg.webp";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionDescription from "@/components/ui/SectionDescription";
-import { motion } from "framer-motion";
+import { MotionEffect } from "@/components/effects/motion-effect";
 import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
 import HomeHeroLogoShape2 from "@/components/decorative-elements/HomeHeroLogoShape2";
 import ContactHeroLogoShape1 from "@/components/decorative-elements/ContactHeroLogoShape1";
@@ -11,45 +11,6 @@ import { useEffect } from "react";
 import { getCalApi } from "@calcom/embed-react";
 
 const LegalHero = () => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const lineVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
 
   useEffect(() => {
     (async function () {
@@ -93,40 +54,26 @@ const LegalHero = () => {
         </div>
 
         <div className="relative z-[10] container">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-col items-center text-center"
-          >
-            <motion.div variants={itemVariants}>
-              <SectionLabel text="LEGAL" textColor="#FF37B3" />
-            </motion.div>
+          <div className="flex flex-col items-center text-center">
+            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1}>
+              <div><SectionLabel text="LEGAL" textColor="#FF37B3" /></div>
+            </MotionEffect>
 
-            <h1 className="mt-[1.5rem] max-w-[89rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8rem]">
-              <span className="block overflow-hidden">
-                <motion.span
-                  variants={lineVariants}
-                  initial="hidden"
-                  animate="visible"
-                  transition={{ delay: 0.6 }}
-                  className="block"
-                >
-                  Legal & Compliance Hub
-                </motion.span>
-              </span>
-            </h1>
+            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.25}>
+              <h1 className="mt-[1.5rem] max-w-[89rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8rem]">
+                Legal & Compliance Hub
+              </h1>
+            </MotionEffect>
 
-            <motion.div
-              variants={itemVariants}
-              className="mt-[2rem] mb-[6rem] max-w-[76rem]"
-            >
-              <SectionDescription
-                text="Transparency and trust are at the heart of everything we do. Access all our policies, agreements, and legal resources in one place."
-                textColor="#625C70"
-              />
-            </motion.div>
-          </motion.div>
+            <MotionEffect slide={{ direction: "down" }} fade delay={0.4}>
+              <div className="mt-[2rem] mb-[6rem] max-w-[76rem]">
+                <SectionDescription
+                  text="Transparency and trust are at the heart of everything we do. Access all our policies, agreements, and legal resources in one place."
+                  textColor="#625C70"
+                />
+              </div>
+            </MotionEffect>
+          </div>
         </div>
       </section>
     </>

@@ -14,7 +14,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { motion } from "framer-motion";
+import { MotionEffect } from "@/components/effects/motion-effect";
 
 export const themeColors = {
   primary: {
@@ -90,31 +90,6 @@ const DesignBuild = ({ services = [] }) => {
   const getThemeColor = (index) =>
     themeColorList[index % themeColorList.length];
 
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <>
       <section
@@ -134,38 +109,34 @@ const DesignBuild = ({ services = [] }) => {
 
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center justify-center gap-[5rem]">
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              className="flex w-full items-center justify-center gap-[6rem]"
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              inView
+              delay={0.1}
             >
-              <motion.hr
-                variants={itemVariants}
-                className="hidden w-full border-t border-[#625c70]/20 md:block"
-              />
-              <motion.div variants={itemVariants} className="min-w-max">
-                <SectionTitle text="Design & Build" textColor="#312749" />
-              </motion.div>
-              <motion.hr
-                variants={itemVariants}
-                className="hidden w-full border-t border-[#625c70]/20 md:block"
-              />
-            </motion.div>
+              <div className="flex w-full items-center justify-center gap-[6rem]">
+                <hr className="hidden w-full border-t border-[#625c70]/20 md:block" />
+                <div className="min-w-max">
+                  <SectionTitle text="Design & Build" textColor="#312749" />
+                </div>
+                <hr className="hidden w-full border-t border-[#625c70]/20 md:block" />
+              </div>
+            </MotionEffect>
 
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              className="hidden w-full grid-cols-3 gap-[3rem] xl:grid"
-            >
+            <div className="hidden w-full grid-cols-3 gap-[3rem] xl:grid">
               {services.map((item, idx) => {
                 const theme = getThemeColor(idx);
 
                 return (
-                  <motion.div variants={itemVariants} key={idx}>
+                  <MotionEffect
+                    key={idx}
+                    slide={{ direction: "down" }}
+                    fade
+                    inView
+                    delay={0.4 + idx * 0.15}
+                  >
                     <div
                       onMouseEnter={() => setHovered(idx)}
                       onMouseLeave={() => setHovered(null)}
@@ -212,100 +183,99 @@ const DesignBuild = ({ services = [] }) => {
                         <RightArrowIcon color={theme.color} />
                       </Link>
                     </div>
-                  </motion.div>
+                  </MotionEffect>
                 );
               })}
-            </motion.div>
+            </div>
 
             {/* Responsive */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{
-                duration: 1,
-                ease: "easeOut",
-              }}
-              className="block w-full xl:hidden"
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              inView
+              delay={0.4}
+              className="w-full"
             >
-              <Swiper
-                pagination={{ clickable: true }}
-                modules={[Pagination, Autoplay]}
-                loop={true}
-                autoplay={{
-                  delay: 2500,
-                  disableOnInteraction: false,
-                }}
-                slidesPerView={1}
-                spaceBetween={0}
-                breakpoints={{
-                  767: {
-                    slidesPerView: 2,
-                    spaceBetween: 0,
-                  },
-                  1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 0,
-                  },
-                }}
-                className="mySwiper"
-              >
-                {services.map((item, idx) => {
-                  const theme = getThemeColor(idx);
+              <div className="block w-full xl:hidden">
+                <Swiper
+                  pagination={{ clickable: true }}
+                  modules={[Pagination, Autoplay]}
+                  loop={true}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
+                  slidesPerView={1}
+                  spaceBetween={0}
+                  breakpoints={{
+                    767: {
+                      slidesPerView: 2,
+                      spaceBetween: 0,
+                    },
+                    1024: {
+                      slidesPerView: 3,
+                      spaceBetween: 0,
+                    },
+                  }}
+                  className="mySwiper"
+                >
+                  {services.map((item, idx) => {
+                    const theme = getThemeColor(idx);
 
-                  return (
-                    <SwiperSlide
-                      key={idx}
-                      className="!flex !h-auto !items-center !justify-center px-[1rem] pb-[10rem]"
-                    >
-                      <div
-                        style={{
-                          borderColor: theme.color,
-                        }}
-                        className="flex h-full w-full flex-col justify-between rounded-[3rem] border bg-white px-[3rem] pt-[3.1rem] pb-[2.8rem] transition-all duration-300"
+                    return (
+                      <SwiperSlide
+                        key={idx}
+                        className="!flex !h-auto !items-center !justify-center px-[1rem] pb-[10rem]"
                       >
-                        <div>
-                          {/* Icon */}
-                          <div className="relative size-[6.3rem]">
-                            <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
-                              <Image
-                                src={item.icon.asset.url}
-                                alt={item.title}
-                                width={30}
-                                height={30}
-                                unoptimized
+                        <div
+                          style={{
+                            borderColor: theme.color,
+                          }}
+                          className="flex h-full w-full flex-col justify-between rounded-[3rem] border bg-white px-[3rem] pt-[3.1rem] pb-[2.8rem] transition-all duration-300"
+                        >
+                          <div>
+                            {/* Icon */}
+                            <div className="relative size-[6.3rem]">
+                              <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
+                                <Image
+                                  src={item.icon.asset.url}
+                                  alt={item.title}
+                                  width={30}
+                                  height={30}
+                                  unoptimized
+                                />
+                              </div>
+
+                              <div
+                                className="absolute right-0 bottom-0 z-[0] size-[5.8rem] rounded-[1.3rem]"
+                                style={{ backgroundColor: theme.color }}
                               />
                             </div>
 
-                            <div
-                              className="absolute right-0 bottom-0 z-[0] size-[5.8rem] rounded-[1.3rem]"
-                              style={{ backgroundColor: theme.color }}
-                            />
+                            <h3 className="mt-[3rem] text-[2.6rem] font-semibold text-[#312749]">
+                              {item.title}
+                            </h3>
+
+                            <p className="mt-[1rem] mb-[3.5rem] text-[1.6rem] text-[#625C70]">
+                              {item.excerpt}
+                            </p>
                           </div>
 
-                          <h3 className="mt-[3rem] text-[2.6rem] font-semibold text-[#312749]">
-                            {item.title}
-                          </h3>
-
-                          <p className="mt-[1rem] mb-[3.5rem] text-[1.6rem] text-[#625C70]">
-                            {item.excerpt}
-                          </p>
+                          <Link
+                            href={`/services/${item.slug.current}`}
+                            className="inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold"
+                            style={{ color: theme.color }}
+                          >
+                            Explore Service
+                            <RightArrowIcon color={theme.color} />
+                          </Link>
                         </div>
-
-                        <Link
-                          href={`/services/${item.slug.current}`}
-                          className="inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold"
-                          style={{ color: theme.color }}
-                        >
-                          Explore Service
-                          <RightArrowIcon color={theme.color} />
-                        </Link>
-                      </div>
-                    </SwiperSlide>
-                  );
-                })}
-              </Swiper>
-            </motion.div>
+                      </SwiperSlide>
+                    );
+                  })}
+                </Swiper>
+              </div>
+            </MotionEffect>
           </div>
         </div>
       </section>

@@ -10,48 +10,9 @@ import Logo from "@/components/decorative-elements/Logo";
 import SecondaryButton from "@/components/ui/SecondaryButton";
 import { useEffect } from "react";
 import { getCalApi } from "@calcom/embed-react";
+import { MotionEffect } from "@/components/effects/motion-effect";
 
 const AgenciesHero = () => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const lineVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: "15min" });
@@ -95,100 +56,82 @@ const AgenciesHero = () => {
 
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center justify-between gap-[4rem] xl:flex-row">
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              className="flex w-full flex-col items-center justify-center gap-[3rem] text-center md:w-[60rem] xl:items-start xl:text-left"
-            >
-              <h1 className="text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[5rem] md:leading-[6rem]">
-                <span className="block overflow-hidden">
-                  <motion.span
-                    variants={lineVariants}
-                    initial="hidden"
-                    animate="visible"
-                    transition={{ delay: 0.6 }}
-                    className="block"
-                  >
-                    White Label
-                  </motion.span>
-                </span>
-
-                <span className="block overflow-hidden">
-                  <motion.span
-                    variants={lineVariants}
-                    initial="hidden"
-                    animate="visible"
-                    transition={{ delay: 1 }}
-                    className="bg-gradient-yellow-pink block bg-clip-text text-transparent"
-                  >
+            <div className="flex w-full flex-col items-center justify-center gap-[3rem] text-center md:w-[60rem] xl:items-start xl:text-left">
+              <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1}>
+                <h1 className="text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[5rem] md:leading-[6rem]">
+                  <span className="block">White Label</span>
+                  <span className="bg-gradient-yellow-pink block bg-clip-text text-transparent">
                     Web Design & Branding
-                  </motion.span>
-                </span>
-              </h1>
+                  </span>
+                </h1>
+              </MotionEffect>
 
-              <motion.div variants={itemVariants}>
+              <MotionEffect slide={{ direction: "down" }} fade delay={0.25}>
                 <SectionDescription
                   text="Since 2014, CreativePixels has supported agencies across the UK, US & Australia with WordPress websites, branding, and ongoing support all delivered under your brand."
                   textColor="#312749"
                 />
-              </motion.div>
+              </MotionEffect>
 
-              <motion.div variants={itemVariants}>
+              <MotionEffect slide={{ direction: "down" }} fade delay={0.4}>
                 <SecondaryButton
                   data-cal-namespace="15min"
                   data-cal-link="hassan-iqbal-mznzu9/15min"
                   data-cal-config='{"layout":"month_view","theme":"dark"}'
                   text="Book with Hassan"
                 />
-              </motion.div>
-            </motion.div>
+              </MotionEffect>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-              className="relative flex h-[25rem] w-full items-center justify-center rounded-[2rem] border-[1.6rem] border-black bg-white md:h-[35rem] md:w-[52rem]"
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              delay={0.4}
+              className="h-[25rem] w-full md:h-[35rem] md:w-[52rem]"
             >
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: [0, 1, 1, 0.3] }}
-                transition={{
-                  duration: 2.5,
-                  delay: 1,
-                  times: [0, 0.3, 0.6, 1],
-                  ease: "easeInOut",
-                }}
-              >
+              <div className="relative flex h-[25rem] w-full items-center justify-center rounded-[2rem] border-[1.6rem] border-black bg-white md:h-[35rem] md:w-[52rem]">
                 <motion.div
-                  initial={{ filter: "blur(0px)" }}
-                  animate={{ filter: ["blur(0px)", "blur(0px)", "blur(8px)"] }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: [0, 1, 1, 0.3] }}
                   transition={{
                     duration: 2.5,
                     delay: 1,
-                    times: [0, 0.6, 1],
+                    times: [0, 0.3, 0.6, 1],
                     ease: "easeInOut",
                   }}
                 >
-                  <Logo
-                    className="h-auto w-[20rem] fill-black md:h-[12.5rem] md:w-[34.1rem]"
-                    height="125"
-                    width="341"
-                  />
+                  <motion.div
+                    initial={{ filter: "blur(0px)" }}
+                    animate={{
+                      filter: ["blur(0px)", "blur(0px)", "blur(8px)"],
+                    }}
+                    transition={{
+                      duration: 2.5,
+                      delay: 1,
+                      times: [0, 0.6, 1],
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <Logo
+                      className="h-auto w-[20rem] fill-black md:h-[12.5rem] md:w-[34.1rem]"
+                      height="125"
+                      width="341"
+                    />
+                  </motion.div>
                 </motion.div>
-              </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
-                animate={{ opacity: 1, scale: 1, rotate: -12 }}
-                transition={{ duration: 0.8, delay: 3, ease: "easeOut" }}
-                className="your-logo-here-gradient-border absolute top-1/2 left-1/2 flex size-[14rem] -translate-1/2 rotate-[0deg] items-center justify-center px-[4rem] py-[2.8rem] text-center md:size-[19.8rem]"
-              >
-                <span className="text-[2rem] leading-[3rem] font-extrabold tracking-[-0.02em] text-[#070707] uppercase md:text-[4rem] md:leading-[4.6rem]">
-                  Your Logo Here
-                </span>
-              </motion.div>
-            </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
+                  animate={{ opacity: 1, scale: 1, rotate: -12 }}
+                  transition={{ duration: 0.8, delay: 3, ease: "easeOut" }}
+                  className="your-logo-here-gradient-border absolute top-1/2 left-1/2 flex size-[14rem] -translate-1/2 rotate-[0deg] items-center justify-center px-[4rem] py-[2.8rem] text-center md:size-[19.8rem]"
+                >
+                  <span className="text-[2rem] leading-[3rem] font-extrabold tracking-[-0.02em] text-[#070707] uppercase md:text-[4rem] md:leading-[4.6rem]">
+                    Your Logo Here
+                  </span>
+                </motion.div>
+              </div>
+            </MotionEffect>
           </div>
         </div>
       </section>

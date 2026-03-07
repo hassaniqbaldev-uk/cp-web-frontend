@@ -6,50 +6,10 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
 import ContactHeroLogoShape1 from "@/components/decorative-elements/ContactHeroLogoShape1";
 import AboutHeroLogoShape1 from "@/components/decorative-elements/AboutHeroLogoShape1";
-import { motion } from "framer-motion";
+import { MotionEffect } from "@/components/effects/motion-effect";
 import AboutHeroSlider from "@/components/ui/AboutHeroSlider";
 
 const AboutHero = () => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const lineVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <>
       <section className="relative h-[63rem] w-full px-[2rem] pt-[10rem] md:h-[75rem] md:pt-[18rem] lg:h-[90rem] xl:px-[0rem]">
@@ -78,61 +38,43 @@ const AboutHero = () => {
 
         <div className="relative z-[10] container">
           <div className="flex flex-col">
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              className="flex flex-col items-center justify-center text-center xl:items-start xl:text-left"
-            >
-              <motion.div variants={itemVariants}>
-                <SectionLabel text="Who We Are" textColor="#FF37B3" />
-              </motion.div>
+            <div className="flex flex-col items-center justify-center text-center xl:items-start xl:text-left">
+              <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1}>
+                <div>
+                  <SectionLabel text="Who We Are" textColor="#FF37B3" />
+                </div>
+              </MotionEffect>
 
-              <h1 className="mt-[1rem] max-w-[66rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
-                <span className="block overflow-hidden">
-                  <motion.span
-                    variants={lineVariants}
-                    initial="hidden"
-                    animate="visible"
-                    transition={{ delay: 0.6 }}
-                    className="block"
-                  >
-                    A digital agency that
-                  </motion.span>
-                </span>
-
-                <span className="block overflow-hidden">
-                  <motion.span
-                    variants={lineVariants}
-                    initial="hidden"
-                    animate="visible"
-                    transition={{ delay: 1 }}
-                    className="bg-gradient-yellow-pink block bg-clip-text text-transparent"
-                  >
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                zoom
+                delay={0.25}
+              >
+                <h1 className="mt-[1rem] max-w-[66rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
+                  <span className="block">A digital agency that</span>
+                  <span className="bg-gradient-yellow-pink block bg-clip-text text-transparent">
                     gives a damn.
-                  </motion.span>
-                </span>
-              </h1>
-            </motion.div>
+                  </span>
+                </h1>
+              </MotionEffect>
+            </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 1.2 }}
-            className="relative mt-[6.6rem] h-[30rem] w-full md:h-[45rem] lg:h-[60rem]"
-          >
-            <Image
-              src={HeroCpLogo}
-              width={315}
-              height={331}
-              alt="CP Logo"
-              unoptimized
-              className="absolute top-[-25rem] right-[2rem] z-[10] hidden xl:block"
-            />
+          <MotionEffect slide={{ direction: "down" }} fade delay={0.4}>
+            <div className="relative mt-[6.6rem] h-[30rem] w-full md:h-[45rem] lg:h-[60rem]">
+              <Image
+                src={HeroCpLogo}
+                width={315}
+                height={331}
+                alt="CP Logo"
+                unoptimized
+                className="absolute top-[-25rem] right-[2rem] z-[10] hidden xl:block"
+              />
 
-            <AboutHeroSlider />
-          </motion.div>
+              <AboutHeroSlider />
+            </div>
+          </MotionEffect>
         </div>
       </section>
     </>

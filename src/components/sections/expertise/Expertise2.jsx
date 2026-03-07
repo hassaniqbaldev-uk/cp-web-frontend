@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { motion } from "framer-motion";
+import { MotionEffect } from "@/components/effects/motion-effect";
 
 export const expertiseData = [
   {
@@ -49,31 +49,6 @@ const Expertise2 = () => {
   const getThemeColor = (index) =>
     themeColorList[index % themeColorList.length];
 
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <>
       <section className="relative overflow-hidden bg-[#F0F6FF] px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
@@ -89,44 +64,26 @@ const Expertise2 = () => {
         </div>
 
         <div className="relative z-[10] container">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="flex flex-col items-center justify-center gap-[5px] text-center"
-          >
-            <motion.div variants={itemVariants}>
-              <SectionLabel text="Our Expertise" textColor="#EE8D00" />
-            </motion.div>
+          <div className="flex flex-col items-center justify-center gap-[5px] text-center">
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1}>
+              <div><SectionLabel text="Our Expertise" textColor="#EE8D00" /></div>
+            </MotionEffect>
 
-            <motion.div variants={itemVariants}>
-              <SectionTitle
-                text="What makes us different?"
-                textColor="#312749"
-              />
-            </motion.div>
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25}>
+              <div><SectionTitle text="What makes us different?" textColor="#312749" /></div>
+            </MotionEffect>
 
-            <motion.div variants={itemVariants}>
-              <SectionDescription
-                text="We're not a factory. We're a strategic partner invested in your long-term success."
-                textColor="#625C70"
-              />
-            </motion.div>
-          </motion.div>
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.4}>
+              <div><SectionDescription text="We're not a factory. We're a strategic partner invested in your long-term success." textColor="#625C70" /></div>
+            </MotionEffect>
+          </div>
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="mt-[5rem] hidden w-full grid-cols-3 gap-[3rem] xl:grid"
-          >
+          <div className="mt-[5rem] hidden w-full grid-cols-3 gap-[3rem] xl:grid">
             {expertiseData.map((item, idx) => {
               const theme = getThemeColor(idx);
 
               return (
-                <motion.div variants={itemVariants} key={idx}>
+                <MotionEffect key={idx} slide={{ direction: "down" }} fade inView delay={0.4 + idx * 0.15}>
                   <div
                     style={{
                       background: theme.color,
@@ -151,13 +108,14 @@ const Expertise2 = () => {
                       {item.description}
                     </p>
                   </div>
-                </motion.div>
+                </MotionEffect>
               );
             })}
-          </motion.div>
+          </div>
 
           {/* Responsive */}
-          <div className="mt-[5rem] block w-full xl:hidden">
+          <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4} className="mt-[5rem] w-full">
+          <div className="block w-full xl:hidden">
             <Swiper
               pagination={{ clickable: true }}
               modules={[Pagination, Autoplay]}
@@ -217,6 +175,7 @@ const Expertise2 = () => {
               })}
             </Swiper>
           </div>
+          </MotionEffect>
         </div>
       </section>
     </>

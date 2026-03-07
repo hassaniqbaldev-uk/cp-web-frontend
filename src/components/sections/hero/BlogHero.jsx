@@ -9,49 +9,9 @@ import Link from "next/link";
 import TimelineIcon from "@/components/icons/TimelineIcon";
 import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
 import HomeHeroLogoShape2 from "@/components/decorative-elements/HomeHeroLogoShape2";
-import { motion } from "framer-motion";
+import { MotionEffect } from "@/components/effects/motion-effect";
 
 const BlogHero = ({ hero }) => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const lineVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <>
       <section className="relative w-full overflow-hidden px-[2rem] pt-[10rem] pb-[5rem] md:pt-[19.2rem] xl:px-[0rem] xl:pb-[10rem]">
@@ -65,55 +25,34 @@ const BlogHero = ({ hero }) => {
         </div>
 
         <div className="relative z-[10] container">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-col items-center text-center"
-          >
-            <motion.div variants={itemVariants}>
-              <SectionLabel text="Thinking & Research" textColor="#FF37B3" />
-            </motion.div>
+          <div className="flex flex-col items-center text-center">
+            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1}>
+              <div>
+                <SectionLabel text="Thinking & Research" textColor="#FF37B3" />
+              </div>
+            </MotionEffect>
 
-            <h1 className="mt-[1.4rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8.5rem]">
-              <span className="inline-block overflow-hidden">
-                <motion.span
-                  variants={lineVariants}
-                  initial="hidden"
-                  animate="visible"
-                  transition={{ delay: 0.6 }}
-                  className="block"
-                >
-                  Insights for the
-                </motion.span>
-              </span>{" "}
-              <span className="inline-block overflow-hidden">
-                <motion.span
-                  variants={lineVariants}
-                  initial="hidden"
-                  animate="visible"
-                  transition={{ delay: 0.6 }}
-                  className="bg-gradient-pink-blue block bg-clip-text text-transparent"
-                >
+            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.25}>
+              <h1 className="my-[1.4rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8.5rem]">
+                <span className="block">Insights for the</span>{" "}
+                <span className="bg-gradient-pink-blue bg-clip-text text-transparent">
                   digital age.
-                </motion.span>
-              </span>
-            </h1>
+                </span>
+              </h1>
+            </MotionEffect>
 
-            <motion.div variants={itemVariants}>
-              <SectionDescription
-                text="Deep dives into strategy, design, and technology. No fluff, just
+            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.4}>
+              <div>
+                <SectionDescription
+                  text="Deep dives into strategy, design, and technology. No fluff, just
               actionable advice for digital leaders."
-                textColor="#625C70"
-              />
-            </motion.div>
-          </motion.div>
+                  textColor="#625C70"
+                />
+              </div>
+            </MotionEffect>
+          </div>
 
-          <motion.div
-            variants={itemVariants}
-            initial="hidden"
-            animate="visible"
-          >
+          <MotionEffect slide={{ direction: "down" }} fade delay={0.4}>
             <div
               style={{
                 boxShadow: "0px 12px 40px 0px #00000014",
@@ -169,7 +108,7 @@ const BlogHero = ({ hero }) => {
                 </Link>
               </div>
             </div>
-          </motion.div>
+          </MotionEffect>
         </div>
       </section>
     </>

@@ -13,7 +13,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { motion } from "framer-motion";
+import { MotionEffect } from "@/components/effects/motion-effect";
 import SectionDescription from "@/components/ui/SectionDescription";
 import GraphicDesignIcon from "@/assets/icons/ui/graphic-design-icon.svg";
 
@@ -89,31 +89,6 @@ export const clientResourcesData = [
 ];
 
 const Resources = ({ legal = [] }) => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <>
       <section className="relative px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
@@ -129,35 +104,44 @@ const Resources = ({ legal = [] }) => {
 
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center justify-center gap-[5rem]">
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              className="flex w-full flex-col items-center justify-center text-center"
-            >
-              <motion.div variants={itemVariants}>
-                <SectionTitle text="Client Resources" textColor="#FFFFFF" />
-              </motion.div>
+            <div className="flex w-full flex-col items-center justify-center text-center">
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                zoom
+                inView
+                delay={0.1}
+              >
+                <div>
+                  <SectionTitle text="Client Resources" textColor="#FFFFFF" />
+                </div>
+              </MotionEffect>
 
-              <motion.div variants={itemVariants}>
-                <SectionDescription
-                  text="These documents apply when working with CreativePixels as a client, agency, or partner."
-                  textColor="#FFFFFF"
-                />
-              </motion.div>
-            </motion.div>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                inView
+                delay={0.25}
+              >
+                <div>
+                  <SectionDescription
+                    text="These documents apply when working with CreativePixels as a client, agency, or partner."
+                    textColor="#FFFFFF"
+                  />
+                </div>
+              </MotionEffect>
+            </div>
 
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              className="hidden w-full grid-cols-3 gap-[3rem] xl:grid"
-            >
+            <div className="hidden w-full grid-cols-3 gap-[3rem] xl:grid">
               {legal.map((item, idx) => {
                 return (
-                  <motion.div key={idx} variants={itemVariants}>
+                  <MotionEffect
+                    key={idx}
+                    slide={{ direction: "down" }}
+                    fade
+                    inView
+                    delay={0.4 + idx * 0.15}
+                  >
                     <div className="client-resources-card">
                       <div className="flex h-full flex-col items-start justify-between p-[3rem] text-left">
                         <div className="flex flex-col items-start">
@@ -194,91 +178,90 @@ const Resources = ({ legal = [] }) => {
                         </Link>
                       </div>
                     </div>
-                  </motion.div>
+                  </MotionEffect>
                 );
               })}
-            </motion.div>
+            </div>
 
             {/* Responsive */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{
-                duration: 1,
-                ease: "easeOut",
-              }}
-              className="block w-full xl:hidden"
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              inView
+              delay={0.4}
+              className="w-full"
             >
-              <Swiper
-                pagination={{ clickable: true }}
-                modules={[Pagination, Autoplay]}
-                loop={true}
-                autoplay={{
-                  delay: 2500,
-                  disableOnInteraction: false,
-                }}
-                slidesPerView={1}
-                spaceBetween={0}
-                breakpoints={{
-                  767: {
-                    slidesPerView: 2,
-                    spaceBetween: 0,
-                  },
-                  1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 0,
-                  },
-                }}
-                className="mySwiper"
-              >
-                {legal.map((item, idx) => {
-                  return (
-                    <SwiperSlide
-                      key={idx}
-                      className="!flex !h-auto !items-center !justify-center px-[1rem] pb-[10rem]"
-                    >
-                      <div className="client-resources-card">
-                        <div className="flex h-full flex-col items-start justify-between p-[3rem] text-left">
-                          <div className="flex flex-col items-start">
-                            <i
-                              style={{
-                                background: item.color,
-                              }}
-                              className="inline-flex size-[5.8rem] min-w-max items-center justify-center rounded-[1.5rem]"
+              <div className="block w-full xl:hidden">
+                <Swiper
+                  pagination={{ clickable: true }}
+                  modules={[Pagination, Autoplay]}
+                  loop={true}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
+                  slidesPerView={1}
+                  spaceBetween={0}
+                  breakpoints={{
+                    767: {
+                      slidesPerView: 2,
+                      spaceBetween: 0,
+                    },
+                    1024: {
+                      slidesPerView: 3,
+                      spaceBetween: 0,
+                    },
+                  }}
+                  className="mySwiper"
+                >
+                  {legal.map((item, idx) => {
+                    return (
+                      <SwiperSlide
+                        key={idx}
+                        className="!flex !h-auto !items-center !justify-center px-[1rem] pb-[10rem]"
+                      >
+                        <div className="client-resources-card">
+                          <div className="flex h-full flex-col items-start justify-between p-[3rem] text-left">
+                            <div className="flex flex-col items-start">
+                              <i
+                                style={{
+                                  background: item.color,
+                                }}
+                                className="inline-flex size-[5.8rem] min-w-max items-center justify-center rounded-[1.5rem]"
+                              >
+                                <Image
+                                  src={item.icon.asset.url}
+                                  alt={item.title}
+                                  width={30}
+                                  height={30}
+                                  unoptimized
+                                />
+                              </i>
+
+                              <h4 className="mt-[2rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white">
+                                {item.title}
+                              </h4>
+
+                              <p className="mt-[1rem] mb-[3rem] text-[1.6rem] leading-[2.4rem] font-normal tracking-normal text-white">
+                                {item.excerpt}
+                              </p>
+                            </div>
+
+                            <Link
+                              href={`/legal/${item.slug.current}`}
+                              className="relative z-[10] inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold text-white"
                             >
-                              <Image
-                                src={item.icon.asset.url}
-                                alt={item.title}
-                                width={30}
-                                height={30}
-                                unoptimized
-                              />
-                            </i>
-
-                            <h4 className="mt-[2rem] text-[2.6rem] font-semibold tracking-[-0.02em] text-white">
-                              {item.title}
-                            </h4>
-
-                            <p className="mt-[1rem] mb-[3rem] text-[1.6rem] leading-[2.4rem] font-normal tracking-normal text-white">
-                              {item.excerpt}
-                            </p>
+                              More Details
+                              <RightArrowIcon color="#ffffff" />
+                            </Link>
                           </div>
-
-                          <Link
-                            href={`/legal/${item.slug.current}`}
-                            className="relative z-[10] inline-flex items-center gap-[.8rem] text-[1.6rem] font-semibold text-white"
-                          >
-                            More Details
-                            <RightArrowIcon color="#ffffff" />
-                          </Link>
                         </div>
-                      </div>
-                    </SwiperSlide>
-                  );
-                })}
-              </Swiper>
-            </motion.div>
+                      </SwiperSlide>
+                    );
+                  })}
+                </Swiper>
+              </div>
+            </MotionEffect>
           </div>
         </div>
       </section>

@@ -3,49 +3,9 @@ import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import { urlFor } from "@/sanity/caseStudies.image";
-import { motion } from "framer-motion";
+import { MotionEffect } from "@/components/effects/motion-effect";
 
 const CaseStudiesDetailHero = ({ caseStudy }) => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const lineVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <>
       <section className="relative px-[2rem] pt-[21.4rem] pb-[14.4rem] xl:px-[0rem]">
@@ -83,45 +43,36 @@ const CaseStudiesDetailHero = ({ caseStudy }) => {
         </div>
 
         <div className="relative z-[10] container">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-col items-center justify-center text-center xl:items-start xl:text-left"
-          >
-            <motion.div variants={itemVariants}>
-              <SectionLabel
-                text="case studies"
-                textColor={caseStudy.primaryColor}
-              />
-            </motion.div>
+          <div className="flex flex-col items-center justify-center text-center xl:items-start xl:text-left">
+            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1}>
+              <div>
+                <SectionLabel
+                  text="case studies"
+                  textColor={caseStudy.primaryColor}
+                />
+              </div>
+            </MotionEffect>
 
-            <h1 className="mt-[1rem] mb-[3rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8rem]">
-              <span className="block overflow-hidden">
-                <motion.span
-                  variants={lineVariants}
-                  initial="hidden"
-                  animate="visible"
-                  transition={{ delay: 0.6 }}
-                  className="block"
-                >
-                  {caseStudy.title}
-                </motion.span>
-              </span>
-            </h1>
+            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.25}>
+              <h1 className="mt-[1rem] mb-[3rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8rem]">
+                {caseStudy.title}
+              </h1>
+            </MotionEffect>
 
             {caseStudy.detailHero?.ctaButton && (
-              <motion.div variants={itemVariants}>
-                <PrimaryButton
-                  target="_blank"
-                  href={caseStudy.detailHero.ctaButton.url}
-                  bGcolor={caseStudy.primaryColor}
-                  text={caseStudy.detailHero.ctaButton.label}
-                  textColor="#05020B"
-                />
-              </motion.div>
+              <MotionEffect slide={{ direction: "down" }} fade delay={0.4}>
+                <div>
+                  <PrimaryButton
+                    target="_blank"
+                    href={caseStudy.detailHero.ctaButton.url}
+                    bGcolor={caseStudy.primaryColor}
+                    text={caseStudy.detailHero.ctaButton.label}
+                    textColor="#05020B"
+                  />
+                </div>
+              </MotionEffect>
             )}
-          </motion.div>
+          </div>
         </div>
       </section>
     </>

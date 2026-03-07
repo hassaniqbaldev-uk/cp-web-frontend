@@ -8,77 +8,39 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { motion } from "framer-motion";
+import { MotionEffect } from "@/components/effects/motion-effect";
 
 const Process3 = () => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <>
       <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <div className="container">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="flex flex-col items-center justify-center text-center"
-          >
-            <motion.div variants={itemVariants}>
+          <div className="flex flex-col items-center justify-center text-center">
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1}>
               <SectionLabel text="Our Process" textColor="#EE8D00" />
-            </motion.div>
+            </MotionEffect>
 
-            <motion.div variants={itemVariants} className="mt-[5px] mb-[14px]">
-              <SectionTitle
-                text="How we work with agencies"
-                textColor="#312749"
-              />
-            </motion.div>
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25}>
+              <div className="mt-[5px] mb-[14px]">
+                <SectionTitle
+                  text="How we work with agencies"
+                  textColor="#312749"
+                />
+              </div>
+            </MotionEffect>
 
-            <motion.div variants={itemVariants}>
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.4}>
               <SectionDescription
                 text="We adapt to your workflow, not the other way around."
                 textColor="#625C70"
               />
-            </motion.div>
-          </motion.div>
+            </MotionEffect>
+          </div>
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="mt-[7rem] hidden grid-cols-5 xl:grid"
-          >
+          <div className="mt-[7rem] hidden grid-cols-5 xl:grid">
             {PROCESS_3_CARD.map((item, idx) => (
-              <motion.div
-                variants={itemVariants}
-                key={item.step}
-                className="flex flex-col items-center gap-[3.8rem]"
-              >
+              <MotionEffect key={item.step} slide={{ direction: "down" }} fade inView delay={0.4 + idx * 0.15}>
+                <div className="flex flex-col items-center gap-[3.8rem]">
                 <div className="relative flex w-full justify-center">
                   <hr className="absolute top-1/2 z-[0] w-full -translate-y-1/2 border-t-2 border-[#F1F1F3]" />
 
@@ -118,18 +80,14 @@ const Process3 = () => {
                     {item.description}
                   </p>
                 </div>
-              </motion.div>
+                </div>
+              </MotionEffect>
             ))}
-          </motion.div>
+          </div>
 
           {/* Responsive */}
-          <motion.div
-            variants={itemVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="mt-[5rem] block w-full xl:hidden"
-          >
+          <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4}>
+            <div className="mt-[5rem] block w-full xl:hidden">
             <Swiper
               pagination={{ clickable: true }}
               modules={[Pagination, Autoplay]}
@@ -201,7 +159,8 @@ const Process3 = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </motion.div>
+            </div>
+          </MotionEffect>
         </div>
       </section>
     </>

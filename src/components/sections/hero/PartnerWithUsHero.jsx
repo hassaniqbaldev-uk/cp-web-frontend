@@ -4,52 +4,12 @@ import HeroBg from "@/assets/images/backgrounds/contact-hero-bg.webp";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionDescription from "@/components/ui/SectionDescription";
 import PrimaryButton from "@/components/ui/PrimaryButton";
-import { motion } from "framer-motion";
+import { MotionEffect } from "@/components/effects/motion-effect";
 import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
 import AboutHeroLogoShape1 from "@/components/decorative-elements/AboutHeroLogoShape1";
 import ContactHeroLogoShape1 from "@/components/decorative-elements/ContactHeroLogoShape1";
 
 const PartnerWithUsHero = () => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const lineVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <>
       <section className="relative w-full overflow-hidden pt-[18.3rem] pb-[11.2rem]">
@@ -77,63 +37,43 @@ const PartnerWithUsHero = () => {
         </div>
 
         <div className="relative z-[10] container">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-col items-center justify-center text-center"
-          >
-            <motion.div variants={itemVariants}>
+          <div className="flex flex-col items-center justify-center text-center">
+            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1}>
               <SectionLabel
                 text="White Label Web Design & Branding"
                 textColor="#FF37B3"
               />
-            </motion.div>
+            </MotionEffect>
 
-            <h1 className="mt-[1rem] mb-[2rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
-              <span className="inline-flex overflow-hidden">
-                <motion.span
-                  variants={lineVariants}
-                  initial="hidden"
-                  animate="visible"
-                  transition={{ delay: 0.6 }}
-                  className="block"
-                >
+            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.25}>
+              <h1 className="mt-[1rem] mb-[2rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
+                <span className="inline-flex">
                   An agency, for
-                </motion.span>
-              </span>{" "}
-              <span className="inline-flex overflow-hidden">
-                <motion.span
-                  variants={lineVariants}
-                  initial="hidden"
-                  animate="visible"
-                  transition={{ delay: 1 }}
-                  className="bg-gradient-yellow-pink block bg-clip-text text-transparent"
-                >
+                </span>{" "}
+                <span className="bg-gradient-yellow-pink inline-flex bg-clip-text text-transparent">
                   your agency
-                </motion.span>
-              </span>
-            </h1>
+                </span>
+              </h1>
+            </MotionEffect>
 
-            <motion.div
-              variants={itemVariants}
-              className="mb-[4rem] max-w-[76rem]"
-            >
-              <SectionDescription
-                text="Since 2014, CreativePixels has supported agencies across the UK, US & Australia with WordPress websites, branding, and ongoing support—all delivered under your brand."
-                textColor="#ffffff"
-              />
-            </motion.div>
+            <MotionEffect slide={{ direction: "down" }} fade delay={0.4}>
+              <div className="mb-[4rem] max-w-[76rem]">
+                <SectionDescription
+                  text="Since 2014, CreativePixels has supported agencies across the UK, US & Australia with WordPress websites, branding, and ongoing support—all delivered under your brand."
+                  textColor="#ffffff"
+                />
+              </div>
+            </MotionEffect>
 
-            <motion.div variants={itemVariants}>
+            <MotionEffect slide={{ direction: "down" }} fade delay={0.55}>
               <PrimaryButton
                 text="How It Works"
                 textColor="#312749"
                 bGcolor="#FFFFFF"
                 href="/how-we-work"
               />
-            </motion.div>
-          </motion.div>
+            </MotionEffect>
+          </div>
         </div>
       </section>
     </>

@@ -6,49 +6,9 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import SectionDescription from "@/components/ui/SectionDescription";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import ContactHeroLogoShape1 from "@/components/decorative-elements/ContactHeroLogoShape1";
-import { motion } from "framer-motion";
+import { MotionEffect } from "@/components/effects/motion-effect";
 
 const CareersHero = () => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const lineVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <>
       <section className="relative w-full overflow-hidden px-[2rem] pt-[18.3rem] pb-[11.2rem] xl:px-[0rem]">
@@ -72,60 +32,38 @@ const CareersHero = () => {
         </div>
 
         <div className="relative z-[10] container">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-col items-center justify-center text-center"
-          >
-            <motion.div variants={itemVariants}>
-              <SectionLabel text="Careers" textColor="#FF37B3" />
-            </motion.div>
+          <div className="flex flex-col items-center justify-center text-center">
+            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1}>
+              <div><SectionLabel text="Careers" textColor="#FF37B3" /></div>
+            </MotionEffect>
 
-            <h1 className="mt-[1rem] mb-[2rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
-              <span className="inline-flex overflow-hidden">
-                <motion.span
-                  variants={lineVariants}
-                  initial="hidden"
-                  animate="visible"
-                  transition={{ delay: 0.6 }}
-                  className="block"
-                >
-                  Build the
-                </motion.span>
-              </span>{" "}
-              <span className="inline-flex overflow-hidden">
-                <motion.span
-                  variants={lineVariants}
-                  initial="hidden"
-                  animate="visible"
-                  transition={{ delay: 1 }}
-                  className="bg-gradient-yellow-orange block bg-clip-text text-transparent"
-                >
-                  Extraordinary.
-                </motion.span>
-              </span>
-            </h1>
+            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.25}>
+              <h1 className="mt-[1rem] mb-[2rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
+                <span className="block">Build the</span>{" "}
+                <span className="bg-gradient-yellow-orange bg-clip-text text-transparent">Extraordinary.</span>
+              </h1>
+            </MotionEffect>
 
-            <motion.div
-              variants={itemVariants}
-              className="mb-[4rem] max-w-[68rem]"
-            >
-              <SectionDescription
-                text="We're a team of strategists, designers, and engineers who refuse to settle for 'good enough.' Join us in Manchester or remotely."
-                textColor="#ffffff"
-              />
-            </motion.div>
+            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.4}>
+              <div className="mb-[4rem] max-w-[68rem]">
+                <SectionDescription
+                  text="We're a team of strategists, designers, and engineers who refuse to settle for 'good enough.' Join us in Manchester or remotely."
+                  textColor="#ffffff"
+                />
+              </div>
+            </MotionEffect>
 
-            <motion.div variants={itemVariants}>
-              <PrimaryButton
-                text="View Open Roles"
-                textColor="#312749"
-                bGcolor="#FFFFFF"
-                href=""
-              />
-            </motion.div>
-          </motion.div>
+            <MotionEffect slide={{ direction: "down" }} fade delay={0.55}>
+              <div>
+                <PrimaryButton
+                  text="View Open Roles"
+                  textColor="#312749"
+                  bGcolor="#FFFFFF"
+                  href=""
+                />
+              </div>
+            </MotionEffect>
+          </div>
         </div>
       </section>
     </>

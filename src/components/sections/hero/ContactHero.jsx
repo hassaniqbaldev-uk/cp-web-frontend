@@ -11,7 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { motion } from "framer-motion";
+import { MotionEffect } from "@/components/effects/motion-effect";
 import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
 import HomeHeroLogoShape2 from "@/components/decorative-elements/HomeHeroLogoShape2";
 import ContactHeroLogoShape1 from "@/components/decorative-elements/ContactHeroLogoShape1";
@@ -19,45 +19,6 @@ import { useEffect } from "react";
 import { getCalApi } from "@calcom/embed-react";
 
 const ContactHero = () => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const lineVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
 
   useEffect(() => {
     (async function () {
@@ -101,57 +62,32 @@ const ContactHero = () => {
 
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center gap-[4rem]">
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              className="flex flex-col items-center text-center"
-            >
-              <motion.div variants={itemVariants}>
+            <div className="flex flex-col items-center text-center">
+              <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1}>
                 <SectionLabel text="Contact" textColor="#FF37B3" />
-              </motion.div>
+              </MotionEffect>
 
-              <h1 className="mt-[1.4rem] mb-[2rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
-                <span className="block overflow-hidden">
-                  <motion.span
-                    variants={lineVariants}
-                    initial="hidden"
-                    animate="visible"
-                    transition={{ delay: 0.6 }}
-                    className="block"
-                  >
-                    Let&apos;s build something
-                  </motion.span>
-                </span>
-
-                <span className="block overflow-hidden">
-                  <motion.span
-                    variants={lineVariants}
-                    initial="hidden"
-                    animate="visible"
-                    transition={{ delay: 1 }}
-                    className="bg-gradient-pink-white block bg-clip-text text-transparent"
-                  >
+              <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.25}>
+                <h1 className="mt-[1.4rem] mb-[2rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
+                  <span className="block">Let&apos;s build something</span>
+                  <span className="bg-gradient-pink-white block bg-clip-text text-transparent">
                     extraordinary.
-                  </motion.span>
-                </span>
-              </h1>
+                  </span>
+                </h1>
+              </MotionEffect>
 
-              <motion.div variants={itemVariants} className="max-w-[62.8rem]">
-                <SectionDescription
-                  text="Ready to start? Choose how you'd like to connect."
-                  textColor="#FFFFFF"
-                />
-              </motion.div>
-            </motion.div>
+              <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.4}>
+                <div className="max-w-[62.8rem]">
+                  <SectionDescription
+                    text="Ready to start? Choose how you'd like to connect."
+                    textColor="#FFFFFF"
+                  />
+                </div>
+              </MotionEffect>
+            </div>
 
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              className="hidden grid-cols-3 gap-[3.4rem] xl:grid"
-            >
-              <motion.div variants={itemVariants}>
+            <div className="hidden grid-cols-3 gap-[3.4rem] xl:grid">
+              <MotionEffect slide={{ direction: "down" }} fade delay={0.4}>
                 <div className="contact-hero-card">
                   <div className="absolute inset-0 z-[10] flex flex-col items-center justify-center text-center">
                     <i
@@ -188,9 +124,9 @@ const ContactHero = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </MotionEffect>
 
-              <motion.div variants={itemVariants}>
+              <MotionEffect slide={{ direction: "down" }} fade delay={0.55}>
                 <div className="contact-hero-card">
                   <div className="absolute inset-0 z-[10] flex flex-col items-center justify-center text-center">
                     <i
@@ -225,9 +161,9 @@ const ContactHero = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </MotionEffect>
 
-              <motion.div variants={itemVariants}>
+              <MotionEffect slide={{ direction: "down" }} fade delay={0.7}>
                 <div className="contact-hero-card">
                   <div className="absolute inset-0 z-[10] flex flex-col items-center justify-center text-center">
                     <i
@@ -262,16 +198,12 @@ const ContactHero = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
-            </motion.div>
+              </MotionEffect>
+            </div>
 
             {/* Responsive */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, ease: "easeOut", delay: 1.2 }}
-              className="block w-full xl:hidden"
-            >
+            <MotionEffect slide={{ direction: "down" }} fade delay={0.4}>
+              <div className="block w-full xl:hidden">
               <Swiper
                 pagination={{ clickable: true }}
                 modules={[Pagination, Autoplay]}
@@ -413,7 +345,8 @@ const ContactHero = () => {
                   </div>
                 </SwiperSlide>
               </Swiper>
-            </motion.div>
+              </div>
+            </MotionEffect>
           </div>
         </div>
       </section>

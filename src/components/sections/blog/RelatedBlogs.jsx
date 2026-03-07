@@ -2,6 +2,7 @@ import BlogCard from "@/components/ui/BlogCard";
 import SectionTitle from "@/components/ui/SectionTitle";
 import BlogCardImg1 from "@/assets/images/cards/blog-card-img-1.webp";
 import BlogCardImg2 from "@/assets/images/cards/blog-card-img-2.webp";
+import { MotionEffect } from "@/components/effects/motion-effect";
 
 export const CardData = [
   {
@@ -27,13 +28,15 @@ const RelatedBlogs = ({ blogs }) => {
     <>
       <section className="bg-[#F0F6FF] px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <div className="container">
-          <div className="text-center">
-            <SectionTitle text="Related Blogs/insights" textColor="#312749" />
-          </div>
+          <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1}>
+            <div className="text-center">
+              <SectionTitle text="Related Blogs/insights" textColor="#312749" />
+            </div>
+          </MotionEffect>
 
           <div className="mt-[5rem] grid grid-cols-1 gap-[3.3rem] md:grid-cols-2">
             {blogs.slice(0, 2).map((item, idx) => (
-              <div key={idx}>
+              <MotionEffect key={idx} slide={{ direction: "down" }} fade inView delay={0.4 + idx * 0.15}>
                 <BlogCard
                   readTime={item.readTime}
                   publishedDate={item.publishedAt}
@@ -43,7 +46,7 @@ const RelatedBlogs = ({ blogs }) => {
                   excerpt={item.excerpt}
                   link={`/blog/${item.slug.current}`}
                 />
-              </div>
+              </MotionEffect>
             ))}
           </div>
         </div>

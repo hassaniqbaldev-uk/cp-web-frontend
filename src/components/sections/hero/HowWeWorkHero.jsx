@@ -4,52 +4,12 @@ import HeroBg from "@/assets/images/backgrounds/contact-hero-bg.webp";
 import HowWeWorkHeroCardImg from "@/assets/images/cards/how-we-work-hero-card-img.webp";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionDescription from "@/components/ui/SectionDescription";
-import { motion } from "framer-motion";
+import { MotionEffect } from "@/components/effects/motion-effect";
 import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
 import AboutHeroLogoShape1 from "@/components/decorative-elements/AboutHeroLogoShape1";
 import ContactHeroLogoShape1 from "@/components/decorative-elements/ContactHeroLogoShape1";
 
 const HowWeWorkHero = () => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const lineVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <>
       <section className="relative w-full overflow-hidden px-[2rem] pt-[15rem] pb-[5.3rem] xl:px-[0rem] xl:pt-[10rem]">
@@ -78,65 +38,43 @@ const HowWeWorkHero = () => {
 
         <div className="relative z-[10] container">
           <div className="flex items-center justify-center gap-[15rem]">
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              className="flex flex-col items-center justify-center text-center xl:items-start xl:text-left"
-            >
-              <motion.div variants={itemVariants}>
+            <div className="flex flex-col items-center justify-center text-center xl:items-start xl:text-left">
+              <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1}>
                 <SectionLabel text="Our Process" textColor="#FF37B3" />
-              </motion.div>
+              </MotionEffect>
 
-              <h1 className="mt-[1rem] mb-[2rem] max-w-[63rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
-                <span className="block overflow-hidden">
-                  <motion.span
-                    variants={lineVariants}
-                    initial="hidden"
-                    animate="visible"
-                    transition={{ delay: 0.6 }}
-                    className="block"
-                  >
+              <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.25}>
+                <h1 className="mt-[1rem] mb-[2rem] max-w-[63rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
+                  <span className="block">
                     We bring order to
-                  </motion.span>
-                </span>
-
-                <span className="block overflow-hidden">
-                  <motion.span
-                    variants={lineVariants}
-                    initial="hidden"
-                    animate="visible"
-                    transition={{ delay: 1 }}
-                    className="bg-gradient-yellow-pink block bg-clip-text text-transparent"
-                  >
+                  </span>
+                  <span className="bg-gradient-yellow-pink block bg-clip-text text-transparent">
                     digital chaos.
-                  </motion.span>
-                </span>
-              </h1>
+                  </span>
+                </h1>
+              </MotionEffect>
 
-              <motion.div variants={itemVariants} className="max-w-[54rem]">
-                <SectionDescription
-                  text="Great products aren't born by accident. They are the result of a rigorous, proven process that minimises risk and maximises ROI."
-                  textColor="#ffffff"
+              <MotionEffect slide={{ direction: "down" }} fade delay={0.4}>
+                <div className="max-w-[54rem]">
+                  <SectionDescription
+                    text="Great products aren't born by accident. They are the result of a rigorous, proven process that minimises risk and maximises ROI."
+                    textColor="#ffffff"
+                  />
+                </div>
+              </MotionEffect>
+            </div>
+
+            <MotionEffect slide={{ direction: "down" }} fade delay={0.4}>
+              <div className="relative hidden h-[48.4rem] w-[48.4rem] items-center justify-center xl:flex">
+                <Image
+                  src={HowWeWorkHeroCardImg}
+                  width={484}
+                  height={484}
+                  alt="Card Image"
+                  unoptimized
                 />
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              variants={itemVariants}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.5 }}
-              className="relative hidden h-[48.4rem] w-[48.4rem] items-center justify-center xl:flex"
-            >
-              <Image
-                src={HowWeWorkHeroCardImg}
-                width={484}
-                height={484}
-                alt="Card Image"
-                unoptimized
-              />
-            </motion.div>
+              </div>
+            </MotionEffect>
           </div>
         </div>
       </section>

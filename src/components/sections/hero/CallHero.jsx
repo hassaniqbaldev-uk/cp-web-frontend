@@ -11,7 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { motion } from "framer-motion";
+import { MotionEffect } from "@/components/effects/motion-effect";
 import HomeHeroLogoShape1 from "@/components/decorative-elements/HomeHeroLogoShape1";
 import HomeHeroLogoShape2 from "@/components/decorative-elements/HomeHeroLogoShape2";
 import ContactHeroLogoShape1 from "@/components/decorative-elements/ContactHeroLogoShape1";
@@ -19,45 +19,6 @@ import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
 
 const CallHero = () => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const lineVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
 
   useEffect(() => {
     (async function () {
@@ -102,33 +63,22 @@ const CallHero = () => {
 
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center gap-[4rem]">
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              className="flex flex-col items-center text-center"
-            >
-              <h1 className="mb-[2rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
-                <span className="block overflow-hidden">
-                  <motion.span
-                    variants={lineVariants}
-                    initial="hidden"
-                    animate="visible"
-                    transition={{ delay: 0.6 }}
-                    className="block"
-                  >
-                    Book a call with Hassan
-                  </motion.span>
-                </span>
-              </h1>
+            <div className="flex flex-col items-center text-center">
+              <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1}>
+                <h1 className="mb-[2rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
+                  Book a call with Hassan
+                </h1>
+              </MotionEffect>
 
-              <motion.div variants={itemVariants} className="max-w-[62.8rem]">
-                <SectionDescription
-                  text="Smart websites, standout branding, and ongoing support everything you need to grow."
-                  textColor="#FFFFFF"
-                />
-              </motion.div>
-            </motion.div>
+              <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.25}>
+                <div className="max-w-[62.8rem]">
+                  <SectionDescription
+                    text="Smart websites, standout branding, and ongoing support everything you need to grow."
+                    textColor="#FFFFFF"
+                  />
+                </div>
+              </MotionEffect>
+            </div>
 
             <div className="w-full">
               <Cal

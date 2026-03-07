@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { motion } from "framer-motion";
+import { MotionEffect } from "@/components/effects/motion-effect";
 import DiscoveryIcon from "@/assets/icons/ui/discovery-icon.svg";
 import CollaborativeIcon from "@/assets/icons/ui/collaborative-icon.svg";
 import DesignIcon2 from "@/assets/icons/ui/design-icon-2.svg";
@@ -81,131 +81,85 @@ const Process4 = () => {
   const getThemeColor = (index) =>
     themeColorList[index % themeColorList.length];
 
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <>
       <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <div className="container">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="flex flex-col items-center justify-center text-center"
-          >
-            <motion.div variants={itemVariants}>
+          <div className="flex flex-col items-center justify-center text-center">
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1}>
               <SectionLabel text="Our Working Process" textColor="#3078FF" />
-            </motion.div>
+            </MotionEffect>
 
-            <motion.div
-              variants={itemVariants}
-              className="mt-[.5rem] mb-[1.4rem]"
-            >
-              <SectionTitle
-                text="How We Work With Agencies"
-                textColor="#312749"
-              />
-            </motion.div>
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25}>
+              <div className="mt-[.5rem] mb-[1.4rem]">
+                <SectionTitle
+                  text="How We Work With Agencies"
+                  textColor="#312749"
+                />
+              </div>
+            </MotionEffect>
 
-            <motion.div variants={itemVariants}>
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.4}>
               <SectionDescription
                 text="Every agency works differently with their own systems, tools, and workflows. Some partner with us for white label web design, others for WordPress development, and many for both. Whether you need outsourced production or long-term agency growth support, we adapt to your way of working, not the other way around."
                 textColor="#625C70"
               />
-            </motion.div>
-          </motion.div>
+            </MotionEffect>
+          </div>
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="mt-[5rem] hidden flex-col gap-[3.5rem] xl:flex"
-          >
+          <div className="mt-[5rem] hidden flex-col gap-[3.5rem] xl:flex">
             {steps.map((step, idx) => {
               const theme = getThemeColor(idx);
 
               return (
-                <motion.div
-                  key={idx}
-                  className="flex items-center justify-between rounded-[2rem] border px-[5rem] py-[3.4rem]"
-                  style={{ borderColor: theme.color }}
-                  variants={itemVariants}
-                >
-                  <h3
-                    style={{
-                      backgroundImage: theme.gradient,
-                      WebkitBackgroundClip: "text",
-                      backgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      display: "inline-block",
-                    }}
-                    className="block text-[16rem] leading-[16rem] font-bold tracking-[-0.03em]"
+                <MotionEffect key={idx} slide={{ direction: "down" }} fade inView delay={0.4 + idx * 0.15}>
+                  <div
+                    className="flex items-center justify-between rounded-[2rem] border px-[5rem] py-[3.4rem]"
+                    style={{ borderColor: theme.color }}
                   >
-                    0{idx + 1}
-                  </h3>
+                    <h3
+                      style={{
+                        backgroundImage: theme.gradient,
+                        WebkitBackgroundClip: "text",
+                        backgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        display: "inline-block",
+                      }}
+                      className="block text-[16rem] leading-[16rem] font-bold tracking-[-0.03em]"
+                    >
+                      0{idx + 1}
+                    </h3>
 
-                  <div className="flex items-center gap-[8rem] text-left">
-                    <div className="flex max-w-[60rem] flex-col gap-[1rem]">
-                      <h4 className="text-[3.4rem] leading-[4.8rem] font-bold tracking-[-0.02em] text-[#312749]">
-                        {step.title}
-                      </h4>
+                    <div className="flex items-center gap-[8rem] text-left">
+                      <div className="flex max-w-[60rem] flex-col gap-[1rem]">
+                        <h4 className="text-[3.4rem] leading-[4.8rem] font-bold tracking-[-0.02em] text-[#312749]">
+                          {step.title}
+                        </h4>
 
-                      <p className="text-[2.2rem] leading-[2.8rem] tracking-normal text-[#625C70]">
-                        {step.description}
-                      </p>
-                    </div>
+                        <p className="text-[2.2rem] leading-[2.8rem] tracking-normal text-[#625C70]">
+                          {step.description}
+                        </p>
+                      </div>
 
-                    <div className="h-[14rem] min-w-[13rem]">
-                      <Image
-                        src={step.icon}
-                        width={130}
-                        height={140}
-                        alt="Icon"
-                        unoptimized
-                      />
+                      <div className="h-[14rem] min-w-[13rem]">
+                        <Image
+                          src={step.icon}
+                          width={130}
+                          height={140}
+                          alt="Icon"
+                          unoptimized
+                        />
+                      </div>
                     </div>
                   </div>
-                </motion.div>
+                </MotionEffect>
               );
             })}
-          </motion.div>
+          </div>
 
           {/* Responsive */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{
-              duration: 1,
-              ease: "easeOut",
-            }}
-            className="mt-[5rem] block w-full xl:hidden"
-          >
+          <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4}>
+            <div className="mt-[5rem] block w-full xl:hidden">
             <Swiper
               pagination={{ clickable: true }}
               modules={[Pagination, Autoplay]}
@@ -278,7 +232,8 @@ const Process4 = () => {
                 );
               })}
             </Swiper>
-          </motion.div>
+            </div>
+          </MotionEffect>
         </div>
       </section>
     </>

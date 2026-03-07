@@ -6,50 +6,10 @@ import SectionDescription from "@/components/ui/SectionDescription";
 import GraphicDesignIcon from "@/assets/icons/ui/graphic-design-icon.svg";
 import SentIcon from "@/assets/icons/ui/sent-icon.svg";
 import LoadingIcon from "@/assets/icons/ui/loading-icon.svg";
-import { motion } from "framer-motion";
+import { MotionEffect } from "@/components/effects/motion-effect";
 import HomeHeroLogoShape2 from "@/components/decorative-elements/HomeHeroLogoShape2";
 
 const CaseStudiesHero = () => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const lineVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <>
       <section className="relative w-full overflow-hidden px-[2rem] pt-[17.2rem] pb-[5rem] xl:px-[0rem] xl:pb-[9.4rem]">
@@ -68,56 +28,30 @@ const CaseStudiesHero = () => {
         </div>
 
         <div className="relative z-[10] container">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-col items-center text-center xl:items-start xl:text-left"
-          >
-            <motion.div variants={itemVariants}>
-              <SectionLabel text="Our Work" textColor="#FF37B3" />
-            </motion.div>
+          <div className="flex flex-col items-center text-center xl:items-start xl:text-left">
+            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1}>
+              <div><SectionLabel text="Our Work" textColor="#FF37B3" /></div>
+            </MotionEffect>
 
-            <h1 className="mt-[1rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8.5rem]">
-              <span className="inline-block overflow-hidden">
-                <motion.span
-                  variants={lineVariants}
-                  initial="hidden"
-                  animate="visible"
-                  transition={{ delay: 0.6 }}
-                  className="block"
-                >
-                  Real work.
-                </motion.span>
-              </span>{" "}
-              <span className="inline-block overflow-hidden">
-                <motion.span
-                  variants={lineVariants}
-                  initial="hidden"
-                  animate="visible"
-                  transition={{ delay: 0.6 }}
-                  className="bg-gradient-pink-orange block bg-clip-text text-transparent"
-                >
-                  Real results.
-                </motion.span>
-              </span>
-            </h1>
+            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.25}>
+              <h1 className="mt-[1rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8.5rem]">
+                <span className="block">Real work.</span>{" "}
+                <span className="bg-gradient-pink-orange bg-clip-text text-transparent">Real results.</span>
+              </h1>
+            </MotionEffect>
 
-            <motion.div variants={itemVariants} className="max-w-[70.6rem]">
-              <SectionDescription
-                text="Explore how we've helped ambitious brands across industries scale their digital presence through strategy, design, and technology."
-                textColor="#625C70"
-              />
-            </motion.div>
-          </motion.div>
+            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.4}>
+              <div className="max-w-[70.6rem]">
+                <SectionDescription
+                  text="Explore how we've helped ambitious brands across industries scale their digital presence through strategy, design, and technology."
+                  textColor="#625C70"
+                />
+              </div>
+            </MotionEffect>
+          </div>
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="mt-[5rem] grid grid-cols-1 gap-[2rem] md:grid-cols-3 xl:mt-[6rem] xl:gap-[3rem]"
-          >
-            <motion.div variants={itemVariants}>
+          <div className="mt-[5rem] grid grid-cols-1 gap-[2rem] md:grid-cols-3 xl:mt-[6rem] xl:gap-[3rem]">
+            <MotionEffect slide={{ direction: "down" }} fade delay={0.4}>
               <div className="flex w-full flex-col items-start justify-center gap-[4rem] overflow-hidden rounded-[3rem] border border-[#EE7621] bg-white p-[2rem] text-left xl:gap-[5.3rem] xl:p-[3.5rem]">
                 <div className="relative size-[6.3rem]">
                   <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
@@ -144,9 +78,9 @@ const CaseStudiesHero = () => {
                   </span>
                 </div>
               </div>
-            </motion.div>
+            </MotionEffect>
 
-            <motion.div variants={itemVariants}>
+            <MotionEffect slide={{ direction: "down" }} fade delay={0.55}>
               <div className="flex w-full flex-col items-start justify-center gap-[4rem] overflow-hidden rounded-[3rem] border border-[#3078FF] bg-white p-[2rem] text-left xl:gap-[5.3rem] xl:p-[3.5rem]">
                 <div className="relative size-[6.3rem]">
                   <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
@@ -167,9 +101,9 @@ const CaseStudiesHero = () => {
                   </span>
                 </div>
               </div>
-            </motion.div>
+            </MotionEffect>
 
-            <motion.div variants={itemVariants}>
+            <MotionEffect slide={{ direction: "down" }} fade delay={0.7}>
               <div className="flex w-full flex-col items-start justify-center gap-[4rem] overflow-hidden rounded-[3rem] border border-[#FF37B3] bg-white p-[2rem] text-left xl:gap-[5.3rem] xl:p-[3.5rem]">
                 <div className="relative size-[6.3rem]">
                   <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
@@ -195,8 +129,8 @@ const CaseStudiesHero = () => {
                   </span>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </MotionEffect>
+          </div>
         </div>
       </section>
     </>
