@@ -192,6 +192,7 @@ const Process4 = () => {
             inView
             delay={0.4}
             transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+            className="w-full"
           >
             <div className="mt-[5rem] block w-full xl:hidden">
               <Swiper

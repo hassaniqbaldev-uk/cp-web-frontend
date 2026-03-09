@@ -130,19 +130,43 @@ const Expertise3 = ({ service }) => {
 
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center justify-center gap-[5px] text-center">
-            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              inView
+              delay={0.1}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            >
               <div>
-                <SectionLabel text="Specialised Expertise" textColor="#EE8D00" />
+                <SectionLabel
+                  text="Specialised Expertise"
+                  textColor="#EE8D00"
+                />
               </div>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              inView
+              delay={0.25}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            >
               <div>
                 <SectionTitle text="What we build" textColor="#312749" />
               </div>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.4} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              inView
+              delay={0.4}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            >
               <div className="max-w-[74rem]">
                 <SectionDescription
                   text="Deep expertise across the entire ecosystem. We don't just 'install themes' — we engineer solutions."
@@ -158,7 +182,14 @@ const Expertise3 = ({ service }) => {
               const theme = getThemeColor(idx);
 
               return (
-                <MotionEffect key={idx} slide={{ direction: "down" }} fade inView delay={0.4 + idx * 0.15} transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}>
+                <MotionEffect
+                  key={idx}
+                  slide={{ direction: "down" }}
+                  fade
+                  inView
+                  delay={0.4 + idx * 0.15}
+                  transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+                >
                   <div
                     onMouseEnter={() => setHovered(idx)}
                     onMouseLeave={() => setHovered(null)}
@@ -221,7 +252,14 @@ const Expertise3 = ({ service }) => {
           </div>
 
           {/* Responsive */}
-          <MotionEffect slide={{ direction: "down" }} fade inView delay={0.6} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+          <MotionEffect
+            slide={{ direction: "down" }}
+            fade
+            inView
+            delay={0.6}
+            transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            className="w-full"
+          >
             <div className="mt-[5rem] block w-full xl:hidden">
               <Swiper
                 pagination={{ clickable: true }}

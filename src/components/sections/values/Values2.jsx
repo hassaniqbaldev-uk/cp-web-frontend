@@ -102,6 +102,7 @@ const Values2 = () => {
             inView
             delay={0.4}
             transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+            className="w-full"
           >
             <div className="block w-full xl:hidden">
               <Swiper

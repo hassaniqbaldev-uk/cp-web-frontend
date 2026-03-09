@@ -21,19 +21,40 @@ const Testimonials = () => {
     <>
       <div className="container">
         <div className="flex flex-col items-center text-center">
-          <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+          <MotionEffect
+            slide={{ direction: "down" }}
+            fade
+            zoom
+            inView
+            delay={0.1}
+            transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+          >
             <div>
               <SectionLabel text="Testimonials" textColor="#3078FF" />
             </div>
           </MotionEffect>
 
-          <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+          <MotionEffect
+            slide={{ direction: "down" }}
+            fade
+            zoom
+            inView
+            delay={0.25}
+            transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+          >
             <div className="mt-[10px] mb-[18px] md:mt-[5px] md:mb-[14px]">
               <SectionTitle text="Built with Pixels. Backed by people." />
             </div>
           </MotionEffect>
 
-          <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.4} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+          <MotionEffect
+            slide={{ direction: "down" }}
+            fade
+            zoom
+            inView
+            delay={0.4}
+            transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+          >
             <div className="flex items-center justify-center gap-[1.2rem]">
               <ul className="flex items-center gap-[3px]">
                 {Array.from({ length: 5 }).map((_, index) => (
@@ -51,7 +72,13 @@ const Testimonials = () => {
         </div>
 
         {/* Desktop Bento Grid — single container animation */}
-        <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4} transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}>
+        <MotionEffect
+          slide={{ direction: "down" }}
+          fade
+          inView
+          delay={0.4}
+          transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+        >
           <div className="my-[5rem] hidden grid-cols-3 gap-[1.3rem] xl:grid">
             {/* Card 1 — row-span-2 */}
             <div className="row-span-2 flex h-full w-full flex-col items-center gap-[2rem] rounded-[2rem] border border-[#E4E3E8] bg-white px-[3rem] pt-[3rem] pb-[4.1rem] backdrop-blur-[10px]">
@@ -77,8 +104,8 @@ const Testimonials = () => {
 
                   <p className="text-[1.8rem] leading-[2.4rem] font-medium tracking-normal text-[#625C70]">
                     &quot;CreativePixels&apos; expertise on our programme
-                    materials was invaluable. Together, we raised over £478,000 to
-                    protect children in danger.&quot;
+                    materials was invaluable. Together, we raised over £478,000
+                    to protect children in danger.&quot;
                   </p>
                 </div>
 
@@ -118,8 +145,8 @@ const Testimonials = () => {
                 </ul>
 
                 <p className="text-[1.8rem] leading-[2.4rem] font-medium tracking-normal text-[#625C70]">
-                  I would highly recommend Hassan, he was excellent throughout the
-                  process of designing and developing our new website.
+                  I would highly recommend Hassan, he was excellent throughout
+                  the process of designing and developing our new website.
                 </p>
               </div>
 
@@ -200,11 +227,11 @@ const Testimonials = () => {
 
                 <p className="text-[1.8rem] leading-[2.4rem] font-medium tracking-normal text-[#625C70]">
                   The new webpage Hassan created for Game Art Brain is a
-                  game-changer for our brand. He developed a signature style that
-                  is both unique and perfectly aligned with our identity,
+                  game-changer for our brand. He developed a signature style
+                  that is both unique and perfectly aligned with our identity,
                   completely revitalizing our online presence. His work is
-                  meticulous, handling a huge number of images and complex layouts
-                  with an artist&apos;s touch.
+                  meticulous, handling a huge number of images and complex
+                  layouts with an artist&apos;s touch.
                 </p>
               </div>
 
@@ -234,7 +261,14 @@ const Testimonials = () => {
         </MotionEffect>
 
         {/* Responsive */}
-        <MotionEffect slide={{ direction: "down" }} fade inView delay={0.6} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+        <MotionEffect
+          slide={{ direction: "down" }}
+          fade
+          inView
+          delay={0.6}
+          transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+          className="w-full"
+        >
           <div className="my-[3rem] block w-full xl:hidden">
             <Swiper
               pagination={{ clickable: true }}
@@ -270,8 +304,9 @@ const Testimonials = () => {
                     </ul>
 
                     <p className="text-[1.4rem] leading-[2.1rem] font-medium tracking-normal text-[#625C70]">
-                      I would highly recommend Hassan, he was excellent throughout
-                      the process of designing and developing our new website.
+                      I would highly recommend Hassan, he was excellent
+                      throughout the process of designing and developing our new
+                      website.
                     </p>
                   </div>
 
@@ -313,10 +348,10 @@ const Testimonials = () => {
                     <p className="text-[1.4rem] leading-[2.1rem] font-medium tracking-normal text-[#625C70]">
                       The new webpage Hassan created for Game Art Brain is a
                       game-changer for our brand. He developed a signature style
-                      that is both unique and perfectly aligned with our identity,
-                      completely revitalizing our online presence. His work is
-                      meticulous, handling a huge number of images and complex
-                      layouts with an artist&apos;s touch.
+                      that is both unique and perfectly aligned with our
+                      identity, completely revitalizing our online presence. His
+                      work is meticulous, handling a huge number of images and
+                      complex layouts with an artist&apos;s touch.
                     </p>
                   </div>
 
@@ -347,7 +382,13 @@ const Testimonials = () => {
           </div>
         </MotionEffect>
 
-        <MotionEffect slide={{ direction: "down" }} fade inView delay={0.5} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+        <MotionEffect
+          slide={{ direction: "down" }}
+          fade
+          inView
+          delay={0.5}
+          transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+        >
           <div className="flex justify-center">
             <PrimaryButton
               text="See More Reviews & Results"

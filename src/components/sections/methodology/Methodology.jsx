@@ -78,19 +78,43 @@ const Methodology = ({ service }) => {
       <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <div className="container">
           <div className="flex flex-col items-center justify-center text-center">
-            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              inView
+              delay={0.1}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            >
               <div>
                 <SectionLabel text="Our Methodology" textColor="#3078FF" />
               </div>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              inView
+              delay={0.25}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            >
               <div className="mt-[.5rem] mb-[1.4rem]">
-                <SectionTitle text="How we deliver results" textColor="#312749" />
+                <SectionTitle
+                  text="How we deliver results"
+                  textColor="#312749"
+                />
               </div>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.4} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              inView
+              delay={0.4}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            >
               <div>
                 <SectionDescription
                   text="A proven process that minimises risk and maximises ROI."
@@ -106,7 +130,14 @@ const Methodology = ({ service }) => {
               const theme = getThemeColor(idx);
 
               return (
-                <MotionEffect key={idx} slide={{ direction: "down" }} fade inView delay={0.4 + idx * 0.15} transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}>
+                <MotionEffect
+                  key={idx}
+                  slide={{ direction: "down" }}
+                  fade
+                  inView
+                  delay={0.4 + idx * 0.15}
+                  transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+                >
                   <div
                     className="flex items-center justify-between rounded-[2rem] border px-[5rem] py-[3.4rem]"
                     style={{ borderColor: theme.color }}
@@ -152,7 +183,14 @@ const Methodology = ({ service }) => {
           </div>
 
           {/* Responsive */}
-          <MotionEffect slide={{ direction: "down" }} fade inView delay={0.6} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+          <MotionEffect
+            slide={{ direction: "down" }}
+            fade
+            inView
+            delay={0.6}
+            transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            className="w-full"
+          >
             <div className="mt-[5rem] block w-full xl:hidden">
               <Swiper
                 pagination={{ clickable: true }}

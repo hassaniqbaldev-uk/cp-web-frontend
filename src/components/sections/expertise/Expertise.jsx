@@ -135,7 +135,14 @@ const Expertise = () => {
           </div>
 
           {/* Responsive */}
-          <MotionEffect slide={{ direction: "down" }} fade inView delay={0.6} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+          <MotionEffect
+            slide={{ direction: "down" }}
+            fade
+            inView
+            delay={0.6}
+            transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            className="w-full"
+          >
             <div className="mt-[3rem] block w-full xl:hidden">
               <Swiper
                 pagination={{ clickable: true }}

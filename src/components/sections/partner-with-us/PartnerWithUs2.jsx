@@ -65,13 +65,27 @@ const PartnerWithUs2 = ({ service }) => {
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center justify-center gap-[5rem]">
             <div className="flex flex-col items-center justify-center gap-[5px] text-center">
-              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                zoom
+                inView
+                delay={0.1}
+                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              >
                 <div>
                   <SectionLabel text="partner with us" textColor="#FF37B3" />
                 </div>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                zoom
+                inView
+                delay={0.25}
+                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              >
                 <div>
                   <SectionTitle
                     text="Stop losing money to..."
@@ -80,7 +94,14 @@ const PartnerWithUs2 = ({ service }) => {
                 </div>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.4} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                zoom
+                inView
+                delay={0.4}
+                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              >
                 <div>
                   <SectionDescription
                     text="We identify and fix the bottlenecks that are choking your growth."
@@ -95,7 +116,18 @@ const PartnerWithUs2 = ({ service }) => {
               {service.card.map((item, idx) => {
                 const theme = getThemeColor(idx);
                 return (
-                  <MotionEffect key={idx} slide={{ direction: "down" }} fade inView delay={0.4 + idx * 0.15} transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}>
+                  <MotionEffect
+                    key={idx}
+                    slide={{ direction: "down" }}
+                    fade
+                    inView
+                    delay={0.4 + idx * 0.15}
+                    transition={{
+                      type: "tween",
+                      duration: 1.0,
+                      ease: "easeOut",
+                    }}
+                  >
                     <div className="partner-with-us-2-card">
                       <div className="flex h-full flex-col items-start p-[3rem] text-left">
                         <div
@@ -123,7 +155,14 @@ const PartnerWithUs2 = ({ service }) => {
             </div>
 
             {/* Responsive */}
-            <MotionEffect slide={{ direction: "down" }} fade inView delay={0.6} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              inView
+              delay={0.6}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              className="w-full"
+            >
               <div className="block w-full xl:hidden">
                 <Swiper
                   pagination={{ clickable: true }}

@@ -77,19 +77,43 @@ const Testimonials2 = () => {
       <div className="container">
         {/* Heading */}
         <div className="flex flex-col items-center text-center">
-          <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+          <MotionEffect
+            slide={{ direction: "down" }}
+            fade
+            zoom
+            inView
+            delay={0.1}
+            transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+          >
             <div>
-              <SectionLabel text="Trusted by growth-focused brands" textColor="#3078FF" />
+              <SectionLabel
+                text="Trusted by growth-focused brands"
+                textColor="#3078FF"
+              />
             </div>
           </MotionEffect>
 
-          <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+          <MotionEffect
+            slide={{ direction: "down" }}
+            fade
+            zoom
+            inView
+            delay={0.25}
+            transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+          >
             <div className="mt-[10px] mb-[18px] md:mt-[5px] md:mb-[14px]">
               <SectionTitle text="Built with Pixels. Backed by people." />
             </div>
           </MotionEffect>
 
-          <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.4} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+          <MotionEffect
+            slide={{ direction: "down" }}
+            fade
+            zoom
+            inView
+            delay={0.4}
+            transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+          >
             <div className="flex items-center justify-center gap-[1.2rem]">
               <ul className="flex items-center gap-[3px]">
                 {Array.from({ length: 5 }).map((_, index) => (
@@ -106,7 +130,13 @@ const Testimonials2 = () => {
         </div>
 
         {/* Desktop Bento Grid — single container animation */}
-        <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4} transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}>
+        <MotionEffect
+          slide={{ direction: "down" }}
+          fade
+          inView
+          delay={0.4}
+          transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+        >
           <div className="my-[5rem] hidden grid-cols-3 gap-[1.3rem] xl:grid">
             {/* Featured Testimonial - Left Column (row-span-2) */}
             <div className="row-span-2 flex h-full w-full flex-col items-start justify-between gap-[4rem] rounded-[2rem] border border-[#E4E3E8] bg-white px-[3rem] pt-[3rem] pb-[4.1rem] backdrop-blur-[10px]">
@@ -206,7 +236,14 @@ const Testimonials2 = () => {
         </MotionEffect>
 
         {/* Responsive Swiper */}
-        <MotionEffect slide={{ direction: "down" }} fade inView delay={0.6} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+        <MotionEffect
+          slide={{ direction: "down" }}
+          fade
+          inView
+          delay={0.6}
+          transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+          className="w-full"
+        >
           <div className="my-[3rem] block w-full xl:hidden">
             <Swiper
               pagination={{ clickable: true }}
