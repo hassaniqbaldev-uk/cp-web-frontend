@@ -61,8 +61,6 @@ const ServicesHero = () => {
               slide={{ direction: "down" }}
               fade
               zoom
-              delay={0.1}
-              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
             >
               <div>
                 <SectionLabel text="Tailored Services" textColor="#FF37B3" />
@@ -73,8 +71,7 @@ const ServicesHero = () => {
               slide={{ direction: "down" }}
               fade
               zoom
-              delay={0.25}
-              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              delay={0.15}
             >
               <h1 className="mt-[1.5rem] mb-[2.5rem] max-w-[89rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8rem]">
                 Services built around your goals, not templates.
@@ -84,8 +81,7 @@ const ServicesHero = () => {
             <MotionEffect
               slide={{ direction: "down" }}
               fade
-              delay={0.4}
-              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              delay={0.3}
             >
               <div className="max-w-[76rem]">
                 <SectionDescription
@@ -98,8 +94,7 @@ const ServicesHero = () => {
             <MotionEffect
               slide={{ direction: "down" }}
               fade
-              delay={0.4}
-              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              delay={0.45}
             >
               <div className="mt-[3rem] mb-[4rem] flex h-[5rem] w-full max-w-[57rem] items-center justify-center gap-[1.2rem] rounded-[1.5rem] border border-[#3078FF] bg-white p-[1rem] text-left md:h-[6.4rem] md:rounded-[2rem] md:p-[2rem]">
                 <i className="inline-flex size-[2.6rem] min-w-[2.6rem] items-center justify-center rounded-full bg-[#3078ff]/20">
@@ -115,8 +110,7 @@ const ServicesHero = () => {
             <MotionEffect
               slide={{ direction: "down" }}
               fade
-              delay={0.4}
-              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              delay={0.6}
             >
               <div className="flex flex-wrap items-center justify-center gap-[1.8rem]">
                 <PrimaryButton

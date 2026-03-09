@@ -11,7 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { motion } from "framer-motion";
+import { MotionEffect } from "@/components/effects/motion-effect";
 
 export const steps = [
   {
@@ -73,201 +73,161 @@ const Methodology = ({ service }) => {
   const getThemeColor = (index) =>
     themeColorList[index % themeColorList.length];
 
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <>
       <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <div className="container">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="flex flex-col items-center justify-center text-center"
-          >
-            <motion.div variants={itemVariants}>
-              <SectionLabel text="Our Methodology" textColor="#3078FF" />
-            </motion.div>
+          <div className="flex flex-col items-center justify-center text-center">
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+              <div>
+                <SectionLabel text="Our Methodology" textColor="#3078FF" />
+              </div>
+            </MotionEffect>
 
-            <motion.div
-              variants={itemVariants}
-              className="mt-[.5rem] mb-[1.4rem]"
-            >
-              <SectionTitle text="How we deliver results" textColor="#312749" />
-            </motion.div>
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+              <div className="mt-[.5rem] mb-[1.4rem]">
+                <SectionTitle text="How we deliver results" textColor="#312749" />
+              </div>
+            </MotionEffect>
 
-            <motion.div variants={itemVariants}>
-              <SectionDescription
-                text="A proven process that minimises risk and maximises ROI."
-                textColor="#625C70"
-              />
-            </motion.div>
-          </motion.div>
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.4} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+              <div>
+                <SectionDescription
+                  text="A proven process that minimises risk and maximises ROI."
+                  textColor="#625C70"
+                />
+              </div>
+            </MotionEffect>
+          </div>
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="mt-[5rem] hidden flex-col gap-[3.5rem] xl:flex"
-          >
+          {/* Desktop cards */}
+          <div className="mt-[5rem] hidden flex-col gap-[3.5rem] xl:flex">
             {service.card.map((step, idx) => {
               const theme = getThemeColor(idx);
 
               return (
-                <motion.div
-                  key={idx}
-                  className="flex items-center justify-between rounded-[2rem] border px-[5rem] py-[3.4rem]"
-                  style={{ borderColor: theme.color }}
-                  variants={itemVariants}
-                >
-                  <h3
-                    style={{
-                      backgroundImage: theme.gradient,
-                      WebkitBackgroundClip: "text",
-                      backgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      display: "inline-block",
-                    }}
-                    className="block text-[16rem] leading-[16rem] font-bold tracking-[-0.03em]"
+                <MotionEffect key={idx} slide={{ direction: "down" }} fade inView delay={0.4 + idx * 0.15} transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}>
+                  <div
+                    className="flex items-center justify-between rounded-[2rem] border px-[5rem] py-[3.4rem]"
+                    style={{ borderColor: theme.color }}
                   >
-                    0{idx + 1}
-                  </h3>
-
-                  <div className="flex items-center gap-[8rem] text-left">
-                    <div className="flex max-w-[60rem] flex-col gap-[1rem]">
-                      <h4 className="text-[3.4rem] leading-[4.8rem] font-bold tracking-[-0.02em] text-[#312749]">
-                        {step.title}
-                      </h4>
-
-                      <p className="text-[2.2rem] leading-[2.8rem] tracking-normal text-[#625C70]">
-                        {step.description}
-                      </p>
-                    </div>
-
-                    <div className="h-[14rem] min-w-[13rem]">
-                      <Image
-                        src={step.icon.asset.url}
-                        width={130}
-                        height={140}
-                        alt="Icon"
-                        unoptimized
-                      />
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-
-          {/* Responsive */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{
-              duration: 1,
-              ease: "easeOut",
-            }}
-            className="mt-[5rem] block w-full xl:hidden"
-          >
-            <Swiper
-              pagination={{ clickable: true }}
-              modules={[Pagination, Autoplay]}
-              loop={true}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              slidesPerView={1}
-              spaceBetween={0}
-              breakpoints={{
-                767: {
-                  slidesPerView: 2,
-                  spaceBetween: 0,
-                },
-                1024: {
-                  slidesPerView: 3,
-                  spaceBetween: 0,
-                },
-              }}
-              className="mySwiper"
-            >
-              {service.card.map((step, idx) => {
-                const theme = getThemeColor(idx);
-
-                return (
-                  <SwiperSlide
-                    key={idx}
-                    className="!flex !h-auto !items-center !justify-center px-[1rem] pt-[.5rem] pb-[10rem]"
-                  >
-                    <div
-                      className="flex h-full flex-col items-center justify-between gap-[3rem] rounded-[2rem] border px-[3rem] py-[3.4rem] xl:gap-[0rem] xl:px-[5rem]"
-                      style={{ borderColor: theme.color }}
+                    <h3
+                      style={{
+                        backgroundImage: theme.gradient,
+                        WebkitBackgroundClip: "text",
+                        backgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        display: "inline-block",
+                      }}
+                      className="block text-[16rem] leading-[16rem] font-bold tracking-[-0.03em]"
                     >
-                      <h3
-                        style={{
-                          backgroundImage: theme.gradient,
-                          WebkitBackgroundClip: "text",
-                          backgroundClip: "text",
-                          WebkitTextFillColor: "transparent",
-                        }}
-                        className="hidden text-[13rem] leading-[13rem] font-bold tracking-[-0.03em] md:inline-block xl:text-[16rem] xl:leading-[16rem]"
-                      >
-                        0{idx + 1}
-                      </h3>
+                      0{idx + 1}
+                    </h3>
 
-                      <div className="flex flex-col items-center gap-[5rem] text-center lg:gap-[8rem]">
-                        <div className="flex max-w-[60rem] flex-col gap-[1rem]">
-                          <h4 className="text-[2.8rem] leading-[3.5rem] font-bold tracking-[-0.02em] text-[#312749] lg:text-[3.4rem] lg:leading-[4.8rem]">
-                            {step.title}
-                          </h4>
+                    <div className="flex items-center gap-[8rem] text-left">
+                      <div className="flex max-w-[60rem] flex-col gap-[1rem]">
+                        <h4 className="text-[3.4rem] leading-[4.8rem] font-bold tracking-[-0.02em] text-[#312749]">
+                          {step.title}
+                        </h4>
 
-                          <p className="text-[1.8rem] leading-[2.4rem] tracking-normal text-[#625C70] lg:text-[2.2rem] lg:leading-[2.8rem]">
-                            {step.description}
-                          </p>
-                        </div>
+                        <p className="text-[2.2rem] leading-[2.8rem] tracking-normal text-[#625C70]">
+                          {step.description}
+                        </p>
+                      </div>
 
-                        <div className="h-[14rem] min-w-[13rem]">
-                          <Image
-                            src={step.icon.asset.url}
-                            width={130}
-                            height={140}
-                            alt="Icon"
-                            unoptimized
-                          />
-                        </div>
+                      <div className="h-[14rem] min-w-[13rem]">
+                        <Image
+                          src={step.icon.asset.url}
+                          width={130}
+                          height={140}
+                          alt="Icon"
+                          unoptimized
+                        />
                       </div>
                     </div>
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
-          </motion.div>
+                  </div>
+                </MotionEffect>
+              );
+            })}
+          </div>
+
+          {/* Responsive */}
+          <MotionEffect slide={{ direction: "down" }} fade inView delay={0.6} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+            <div className="mt-[5rem] block w-full xl:hidden">
+              <Swiper
+                pagination={{ clickable: true }}
+                modules={[Pagination, Autoplay]}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                slidesPerView={1}
+                spaceBetween={0}
+                breakpoints={{
+                  767: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 0,
+                  },
+                }}
+                className="mySwiper"
+              >
+                {service.card.map((step, idx) => {
+                  const theme = getThemeColor(idx);
+
+                  return (
+                    <SwiperSlide
+                      key={idx}
+                      className="!flex !h-auto !items-center !justify-center px-[1rem] pt-[.5rem] pb-[10rem]"
+                    >
+                      <div
+                        className="flex h-full flex-col items-center justify-between gap-[3rem] rounded-[2rem] border px-[3rem] py-[3.4rem] xl:gap-[0rem] xl:px-[5rem]"
+                        style={{ borderColor: theme.color }}
+                      >
+                        <h3
+                          style={{
+                            backgroundImage: theme.gradient,
+                            WebkitBackgroundClip: "text",
+                            backgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                          }}
+                          className="hidden text-[13rem] leading-[13rem] font-bold tracking-[-0.03em] md:inline-block xl:text-[16rem] xl:leading-[16rem]"
+                        >
+                          0{idx + 1}
+                        </h3>
+
+                        <div className="flex flex-col items-center gap-[5rem] text-center lg:gap-[8rem]">
+                          <div className="flex max-w-[60rem] flex-col gap-[1rem]">
+                            <h4 className="text-[2.8rem] leading-[3.5rem] font-bold tracking-[-0.02em] text-[#312749] lg:text-[3.4rem] lg:leading-[4.8rem]">
+                              {step.title}
+                            </h4>
+
+                            <p className="text-[1.8rem] leading-[2.4rem] tracking-normal text-[#625C70] lg:text-[2.2rem] lg:leading-[2.8rem]">
+                              {step.description}
+                            </p>
+                          </div>
+
+                          <div className="h-[14rem] min-w-[13rem]">
+                            <Image
+                              src={step.icon.asset.url}
+                              width={130}
+                              height={140}
+                              alt="Icon"
+                              unoptimized
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+            </div>
+          </MotionEffect>
         </div>
       </section>
     </>

@@ -61,8 +61,6 @@ const SolutionsHero = () => {
               slide={{ direction: "down" }}
               fade
               zoom
-              delay={0.1}
-              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
             >
               <div>
                 <SectionLabel text="Tailored Expertise" textColor="#FF37B3" />
@@ -73,8 +71,7 @@ const SolutionsHero = () => {
               slide={{ direction: "down" }}
               fade
               zoom
-              delay={0.25}
-              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              delay={0.15}
             >
               <h1 className="mt-[1.5rem] mb-[2.5rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8rem]">
                 Solutions <br /> tailored to your Reality.
@@ -84,8 +81,7 @@ const SolutionsHero = () => {
             <MotionEffect
               slide={{ direction: "down" }}
               fade
-              delay={0.4}
-              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              delay={0.3}
             >
               <div className="mb-[4rem] max-w-[74rem]">
                 <SectionDescription
@@ -98,8 +94,7 @@ const SolutionsHero = () => {
             <MotionEffect
               slide={{ direction: "down" }}
               fade
-              delay={0.4}
-              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              delay={0.45}
             >
               <div className="flex flex-wrap items-center justify-center gap-[1.8rem]">
                 <PrimaryButton

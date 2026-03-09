@@ -48,8 +48,6 @@ const CaseStudiesDetailHero = ({ caseStudy }) => {
               slide={{ direction: "down" }}
               fade
               zoom
-              delay={0.1}
-              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
             >
               <div>
                 <SectionLabel
@@ -63,8 +61,7 @@ const CaseStudiesDetailHero = ({ caseStudy }) => {
               slide={{ direction: "down" }}
               fade
               zoom
-              delay={0.25}
-              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              delay={0.15}
             >
               <h1 className="mt-[1rem] mb-[3rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8rem]">
                 {caseStudy.title}
@@ -75,8 +72,7 @@ const CaseStudiesDetailHero = ({ caseStudy }) => {
               <MotionEffect
                 slide={{ direction: "down" }}
                 fade
-                delay={0.4}
-                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+                delay={0.3}
               >
                 <div>
                   <PrimaryButton

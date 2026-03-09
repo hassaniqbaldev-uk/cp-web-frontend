@@ -13,7 +13,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { motion } from "framer-motion";
+import { MotionEffect } from "@/components/effects/motion-effect";
 
 const featuredTestimonial = {
   image: TestimonialCardImg,
@@ -70,162 +70,76 @@ const testimonials = [
 ];
 
 const Testimonials2 = () => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
   const lastIndex = testimonials.length - 1;
 
   return (
     <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
       <div className="container">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="flex flex-col items-center text-center"
-        >
-          <motion.div variants={itemVariants}>
-            <SectionLabel
-              text="Trusted by growth-focused brands"
-              textColor="#3078FF"
-            />
-          </motion.div>
-
-          <motion.div
-            variants={itemVariants}
-            className="mt-[10px] mb-[18px] md:mt-[5px] md:mb-[14px]"
-          >
-            <SectionTitle text="Built with Pixels. Backed by people." />
-          </motion.div>
-
-          <motion.div
-            variants={itemVariants}
-            className="flex items-center justify-center gap-[1.2rem]"
-          >
-            <ul className="flex items-center gap-[3px]">
-              {Array.from({ length: 5 }).map((_, index) => (
-                <li key={index}>
-                  <StarIcon color="#FF37B3" className="size-[1.5rem]" />
-                </li>
-              ))}
-            </ul>
-
-            <span className="text-[1.4rem] leading-[3.2rem] font-bold text-[#625C70] md:text-[2rem]">
-              4.9/5 from 47+ Clients
-            </span>
-          </motion.div>
-        </motion.div>
-
-        {/* Desktop Bento Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="my-[5rem] hidden grid-cols-3 gap-[1.3rem] xl:grid"
-        >
-          {/* Featured Testimonial - Left Column (row-span-2) */}
-          <motion.div
-            variants={itemVariants}
-            className="row-span-2 flex h-full w-full flex-col items-start justify-between gap-[4rem] rounded-[2rem] border border-[#E4E3E8] bg-white px-[3rem] pt-[3rem] pb-[4.1rem] backdrop-blur-[10px]"
-          >
-            <div className="flex flex-col gap-[2rem]">
-              <div className="flex overflow-hidden rounded-[1.2rem]">
-                <Image
-                  src={featuredTestimonial.image}
-                  alt="Card Image"
-                  width={319}
-                  height={319}
-                  unoptimized
-                />
-              </div>
-
-              <div className="flex flex-col items-start gap-[1.9rem] text-left">
-                <ul className="flex items-center gap-[3px]">
-                  {Array.from({ length: 5 }).map((_, index) => (
-                    <li key={index}>
-                      <StarIcon color="#FFBF00" height="20" width="20" />
-                    </li>
-                  ))}
-                </ul>
-
-                <p className="text-[1.8rem] leading-[2.4rem] font-medium tracking-normal text-[#625C70]">
-                  {featuredTestimonial.quote}
-                </p>
-              </div>
+        {/* Heading */}
+        <div className="flex flex-col items-center text-center">
+          <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+            <div>
+              <SectionLabel text="Trusted by growth-focused brands" textColor="#3078FF" />
             </div>
+          </MotionEffect>
 
-            <div className="flex items-center gap-[1.2rem]">
-              <div className="flex overflow-hidden rounded-full">
-                <Image
-                  src={featuredTestimonial.avatar}
-                  alt="Avatar Image"
-                  width={56}
-                  height={56}
-                  unoptimized
-                />
-              </div>
-
-              <div className="flex flex-col items-start text-left">
-                <h6 className="text-[1.8rem] leading-[2.6rem] font-semibold tracking-normal text-[#312749]">
-                  {featuredTestimonial.name}
-                </h6>
-
-                <span className="text-[1.6rem] leading-[2.4rem] font-medium tracking-normal text-[#625C70]">
-                  {featuredTestimonial.role}
-                </span>
-              </div>
+          <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+            <div className="mt-[10px] mb-[18px] md:mt-[5px] md:mb-[14px]">
+              <SectionTitle text="Built with Pixels. Backed by people." />
             </div>
-          </motion.div>
+          </MotionEffect>
 
-          {/* Regular Testimonials */}
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className={`${index === lastIndex ? "col-span-2" : ""} flex h-full w-full flex-col justify-between gap-[4rem] rounded-[2rem] border border-[#E4E3E8] bg-white px-[3rem] py-[4.1rem] backdrop-blur-[10px]`}
-            >
-              <div className="flex flex-col items-start gap-[1.9rem] text-left">
-                <ul className="flex items-center gap-[3px]">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <li key={i}>
-                      <StarIcon color="#FFBF00" height="20" width="20" />
-                    </li>
-                  ))}
-                </ul>
+          <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.4} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+            <div className="flex items-center justify-center gap-[1.2rem]">
+              <ul className="flex items-center gap-[3px]">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <li key={index}>
+                    <StarIcon color="#FF37B3" className="size-[1.5rem]" />
+                  </li>
+                ))}
+              </ul>
+              <span className="text-[1.4rem] leading-[3.2rem] font-bold text-[#625C70] md:text-[2rem]">
+                4.9/5 from 47+ Clients
+              </span>
+            </div>
+          </MotionEffect>
+        </div>
 
-                <p className="text-[1.8rem] leading-[2.4rem] font-medium tracking-normal text-[#625C70]">
-                  {testimonial.quote}
-                </p>
+        {/* Desktop Bento Grid — single container animation */}
+        <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4} transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}>
+          <div className="my-[5rem] hidden grid-cols-3 gap-[1.3rem] xl:grid">
+            {/* Featured Testimonial - Left Column (row-span-2) */}
+            <div className="row-span-2 flex h-full w-full flex-col items-start justify-between gap-[4rem] rounded-[2rem] border border-[#E4E3E8] bg-white px-[3rem] pt-[3rem] pb-[4.1rem] backdrop-blur-[10px]">
+              <div className="flex flex-col gap-[2rem]">
+                <div className="flex overflow-hidden rounded-[1.2rem]">
+                  <Image
+                    src={featuredTestimonial.image}
+                    alt="Card Image"
+                    width={319}
+                    height={319}
+                    unoptimized
+                  />
+                </div>
+
+                <div className="flex flex-col items-start gap-[1.9rem] text-left">
+                  <ul className="flex items-center gap-[3px]">
+                    {Array.from({ length: 5 }).map((_, index) => (
+                      <li key={index}>
+                        <StarIcon color="#FFBF00" height="20" width="20" />
+                      </li>
+                    ))}
+                  </ul>
+
+                  <p className="text-[1.8rem] leading-[2.4rem] font-medium tracking-normal text-[#625C70]">
+                    {featuredTestimonial.quote}
+                  </p>
+                </div>
               </div>
 
               <div className="flex items-center gap-[1.2rem]">
                 <div className="flex overflow-hidden rounded-full">
                   <Image
-                    src={testimonial.avatar}
+                    src={featuredTestimonial.avatar}
                     alt="Avatar Image"
                     width={56}
                     height={56}
@@ -235,94 +149,134 @@ const Testimonials2 = () => {
 
                 <div className="flex flex-col items-start text-left">
                   <h6 className="text-[1.8rem] leading-[2.6rem] font-semibold tracking-normal text-[#312749]">
-                    {testimonial.name}
+                    {featuredTestimonial.name}
                   </h6>
 
                   <span className="text-[1.6rem] leading-[2.4rem] font-medium tracking-normal text-[#625C70]">
-                    {testimonial.role}
+                    {featuredTestimonial.role}
                   </span>
                 </div>
               </div>
-            </motion.div>
-          ))}
-        </motion.div>
+            </div>
 
-        {/* Responsive Swiper */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="my-[3rem] block w-full xl:hidden"
-        >
-          <Swiper
-            pagination={{ clickable: true }}
-            modules={[Pagination, Autoplay]}
-            loop={true}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            slidesPerView={1}
-            spaceBetween={0}
-            breakpoints={{
-              767: {
-                slidesPerView: 2,
-                spaceBetween: 0,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 0,
-              },
-            }}
-            className="mySwiper"
-          >
+            {/* Regular Testimonials */}
             {testimonials.map((testimonial, index) => (
-              <SwiperSlide
+              <div
                 key={index}
-                className="!flex !h-auto !justify-center px-[1rem] pb-[5rem]"
+                className={`${index === lastIndex ? "col-span-2" : ""} flex h-full w-full flex-col justify-between gap-[4rem] rounded-[2rem] border border-[#E4E3E8] bg-white px-[3rem] py-[4.1rem] backdrop-blur-[10px]`}
               >
-                <div className="flex w-full flex-col justify-between gap-[1.5rem] rounded-[2rem] border border-[#E4E3E8] bg-white px-[1.5rem] py-[2.3rem] backdrop-blur-[10px]">
-                  <div className="flex flex-col items-start gap-[1.5rem] text-left">
-                    <ul className="flex items-center gap-[2px]">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <li key={i}>
-                          <StarIcon color="#FFBF00" height="14" width="14" />
-                        </li>
-                      ))}
-                    </ul>
+                <div className="flex flex-col items-start gap-[1.9rem] text-left">
+                  <ul className="flex items-center gap-[3px]">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <li key={i}>
+                        <StarIcon color="#FFBF00" height="20" width="20" />
+                      </li>
+                    ))}
+                  </ul>
 
-                    <p className="text-[1.4rem] leading-[2.1rem] font-medium tracking-normal text-[#625C70]">
-                      {testimonial.quote}
-                    </p>
+                  <p className="text-[1.8rem] leading-[2.4rem] font-medium tracking-normal text-[#625C70]">
+                    {testimonial.quote}
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-[1.2rem]">
+                  <div className="flex overflow-hidden rounded-full">
+                    <Image
+                      src={testimonial.avatar}
+                      alt="Avatar Image"
+                      width={56}
+                      height={56}
+                      unoptimized
+                    />
                   </div>
 
-                  <div className="flex items-center gap-[1rem]">
-                    <div className="flex overflow-hidden rounded-full">
-                      <Image
-                        src={testimonial.avatar}
-                        alt="Avatar Image"
-                        width={40}
-                        height={40}
-                        unoptimized
-                      />
-                    </div>
+                  <div className="flex flex-col items-start text-left">
+                    <h6 className="text-[1.8rem] leading-[2.6rem] font-semibold tracking-normal text-[#312749]">
+                      {testimonial.name}
+                    </h6>
 
-                    <div className="flex flex-col items-start text-left">
-                      <h6 className="text-[1.2rem] leading-[1.8rem] font-semibold tracking-normal text-[#312749]">
-                        {testimonial.name}
-                      </h6>
-
-                      <span className="text-[1.1rem] leading-[1.7rem] font-medium tracking-normal text-[#625C70]">
-                        {testimonial.role}
-                      </span>
-                    </div>
+                    <span className="text-[1.6rem] leading-[2.4rem] font-medium tracking-normal text-[#625C70]">
+                      {testimonial.role}
+                    </span>
                   </div>
                 </div>
-              </SwiperSlide>
+              </div>
             ))}
-          </Swiper>
-        </motion.div>
+          </div>
+        </MotionEffect>
+
+        {/* Responsive Swiper */}
+        <MotionEffect slide={{ direction: "down" }} fade inView delay={0.6} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+          <div className="my-[3rem] block w-full xl:hidden">
+            <Swiper
+              pagination={{ clickable: true }}
+              modules={[Pagination, Autoplay]}
+              loop={true}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              slidesPerView={1}
+              spaceBetween={0}
+              breakpoints={{
+                767: {
+                  slidesPerView: 2,
+                  spaceBetween: 0,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 0,
+                },
+              }}
+              className="mySwiper"
+            >
+              {testimonials.map((testimonial, index) => (
+                <SwiperSlide
+                  key={index}
+                  className="!flex !h-auto !justify-center px-[1rem] pb-[5rem]"
+                >
+                  <div className="flex w-full flex-col justify-between gap-[1.5rem] rounded-[2rem] border border-[#E4E3E8] bg-white px-[1.5rem] py-[2.3rem] backdrop-blur-[10px]">
+                    <div className="flex flex-col items-start gap-[1.5rem] text-left">
+                      <ul className="flex items-center gap-[2px]">
+                        {Array.from({ length: 5 }).map((_, i) => (
+                          <li key={i}>
+                            <StarIcon color="#FFBF00" height="14" width="14" />
+                          </li>
+                        ))}
+                      </ul>
+
+                      <p className="text-[1.4rem] leading-[2.1rem] font-medium tracking-normal text-[#625C70]">
+                        {testimonial.quote}
+                      </p>
+                    </div>
+
+                    <div className="flex items-center gap-[1rem]">
+                      <div className="flex overflow-hidden rounded-full">
+                        <Image
+                          src={testimonial.avatar}
+                          alt="Avatar Image"
+                          width={40}
+                          height={40}
+                          unoptimized
+                        />
+                      </div>
+
+                      <div className="flex flex-col items-start text-left">
+                        <h6 className="text-[1.2rem] leading-[1.8rem] font-semibold tracking-normal text-[#312749]">
+                          {testimonial.name}
+                        </h6>
+
+                        <span className="text-[1.1rem] leading-[1.7rem] font-medium tracking-normal text-[#625C70]">
+                          {testimonial.role}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </MotionEffect>
       </div>
     </section>
   );

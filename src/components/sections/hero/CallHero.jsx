@@ -67,8 +67,6 @@ const CallHero = () => {
                 slide={{ direction: "down" }}
                 fade
                 zoom
-                delay={0.1}
-                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
               >
                 <h1 className="mb-[2rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
                   Book a call with Hassan
@@ -79,8 +77,7 @@ const CallHero = () => {
                 slide={{ direction: "down" }}
                 fade
                 zoom
-                delay={0.25}
-                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+                delay={0.15}
               >
                 <div className="max-w-[62.8rem]">
                   <SectionDescription
@@ -94,8 +91,7 @@ const CallHero = () => {
             <MotionEffect
               slide={{ direction: "down" }}
               fade
-              delay={0.4}
-              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              delay={0.3}
               className="w-full"
             >
               <div className="w-full">

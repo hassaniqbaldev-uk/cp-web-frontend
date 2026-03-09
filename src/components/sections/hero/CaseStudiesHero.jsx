@@ -37,8 +37,6 @@ const CaseStudiesHero = () => {
               slide={{ direction: "down" }}
               fade
               zoom
-              delay={0.1}
-              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
             >
               <div>
                 <SectionLabel text="Our Work" textColor="#FF37B3" />
@@ -49,8 +47,7 @@ const CaseStudiesHero = () => {
               slide={{ direction: "down" }}
               fade
               zoom
-              delay={0.25}
-              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              delay={0.15}
             >
               <h1 className="mt-[1rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8.5rem]">
                 <span className="block">Real work.</span>{" "}
@@ -64,8 +61,7 @@ const CaseStudiesHero = () => {
               slide={{ direction: "down" }}
               fade
               zoom
-              delay={0.4}
-              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              delay={0.3}
             >
               <div className="max-w-[70.6rem]">
                 <SectionDescription
@@ -81,8 +77,7 @@ const CaseStudiesHero = () => {
             <MotionEffect
               slide={{ direction: "down" }}
               fade
-              delay={0.4}
-              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              delay={0.45}
             >
               <div className="flex w-full flex-col items-start justify-center gap-[4rem] overflow-hidden rounded-[3rem] border border-[#EE7621] bg-white p-[2rem] text-left xl:gap-[5.3rem] xl:p-[3.5rem]">
                 <div className="relative size-[6.3rem]">
@@ -112,8 +107,7 @@ const CaseStudiesHero = () => {
             <MotionEffect
               slide={{ direction: "down" }}
               fade
-              delay={0.55}
-              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              delay={0.6}
             >
               <div className="flex w-full flex-col items-start justify-center gap-[4rem] overflow-hidden rounded-[3rem] border border-[#3078FF] bg-white p-[2rem] text-left xl:gap-[5.3rem] xl:p-[3.5rem]">
                 <div className="relative size-[6.3rem]">
@@ -138,8 +132,7 @@ const CaseStudiesHero = () => {
             <MotionEffect
               slide={{ direction: "down" }}
               fade
-              delay={0.7}
-              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              delay={0.75}
             >
               <div className="flex w-full flex-col items-start justify-center gap-[4rem] overflow-hidden rounded-[3rem] border border-[#FF37B3] bg-white p-[2rem] text-left xl:gap-[5.3rem] xl:p-[3.5rem]">
                 <div className="relative size-[6.3rem]">
@@ -171,8 +164,7 @@ const CaseStudiesHero = () => {
           <MotionEffect
             slide={{ direction: "down" }}
             fade
-            delay={0.4}
-            transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            delay={0.45}
           >
             <div className="mt-[3rem] block w-full xl:hidden">
               <Swiper

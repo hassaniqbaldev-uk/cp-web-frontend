@@ -30,8 +30,6 @@ const BlogHero = ({ hero }) => {
               slide={{ direction: "down" }}
               fade
               zoom
-              delay={0.1}
-              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
             >
               <div>
                 <SectionLabel text="Thinking & Research" textColor="#FF37B3" />
@@ -42,8 +40,7 @@ const BlogHero = ({ hero }) => {
               slide={{ direction: "down" }}
               fade
               zoom
-              delay={0.25}
-              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              delay={0.15}
             >
               <h1 className="my-[1.4rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8.5rem]">
                 <span className="block">Insights for the</span>{" "}
@@ -57,8 +54,7 @@ const BlogHero = ({ hero }) => {
               slide={{ direction: "down" }}
               fade
               zoom
-              delay={0.4}
-              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              delay={0.3}
             >
               <div>
                 <SectionDescription
@@ -73,8 +69,7 @@ const BlogHero = ({ hero }) => {
           <MotionEffect
             slide={{ direction: "down" }}
             fade
-            delay={0.4}
-            transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+            delay={0.45}
           >
             <div
               style={{

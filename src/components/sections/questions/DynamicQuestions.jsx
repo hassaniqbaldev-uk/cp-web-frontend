@@ -9,80 +9,48 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { motion } from "framer-motion";
+import { MotionEffect } from "@/components/effects/motion-effect";
 
 const DynamicQuestions = ({ service }) => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 24,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <>
       <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <div className="container">
           <div className="flex flex-col justify-center gap-[5rem] xl:flex-row xl:items-start xl:gap-[12.4rem]">
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              className="flex flex-col items-center text-center xl:w-[33rem] xl:items-start xl:text-left"
-            >
-              <motion.div variants={itemVariants}>
-                <SectionTitle text="Common Questions" textColor="#312749" />
-              </motion.div>
+            {/* Left text column */}
+            <div className="flex flex-col items-center text-center xl:w-[33rem] xl:items-start xl:text-left">
+              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+                <div>
+                  <SectionTitle text="Common Questions" textColor="#312749" />
+                </div>
+              </MotionEffect>
 
-              <motion.div
-                variants={itemVariants}
-                className="mt-[1rem] mb-[3rem]"
-              >
-                <SectionDescription
-                  text="Everything you need to know about partnering with us."
-                  textColor="#625C70"
-                />
-              </motion.div>
+              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+                <div className="mt-[1rem] mb-[3rem]">
+                  <SectionDescription
+                    text="Everything you need to know about partnering with us."
+                    textColor="#625C70"
+                  />
+                </div>
+              </MotionEffect>
 
-              <motion.div variants={itemVariants}>
-                <PrimaryButton
-                  text="Have More Questions?"
-                  textColor="#FFFFFF"
-                  bGcolor="#FF37B3"
-                  href="/contact"
-                />
-              </motion.div>
-            </motion.div>
+              <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+                <div>
+                  <PrimaryButton
+                    text="Have More Questions?"
+                    textColor="#FFFFFF"
+                    bGcolor="#FF37B3"
+                    href="/contact"
+                  />
+                </div>
+              </MotionEffect>
+            </div>
 
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              className="flex-1"
-            >
+            {/* Right accordion column */}
+            <div className="flex-1">
               <Accordion type="single" collapsible>
                 {service.map((item, idx) => (
-                  <motion.div variants={itemVariants} key={idx}>
+                  <MotionEffect key={idx} slide={{ direction: "down" }} fade inView delay={0.25 + idx * 0.1} transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}>
                     <AccordionItem
                       value={`item-${idx}`}
                       className={`border-b-2 border-[#F1F1F3] py-[1.5rem] ${idx === 0 ? "pt-[0rem]" : ""}`}
@@ -97,12 +65,10 @@ const DynamicQuestions = ({ service }) => {
                         <p className="pt-[1rem]">{item.answer}</p>
                       </AccordionContent>
                     </AccordionItem>
-                  </motion.div>
+                  </MotionEffect>
                 ))}
-
-                {/* <hr className="mx-auto my-[1.5rem] w-full border-t-2 border-[#F1F1F3]" /> */}
               </Accordion>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

@@ -42,8 +42,6 @@ const PartnerWithUsHero = () => {
               slide={{ direction: "down" }}
               fade
               zoom
-              delay={0.1}
-              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
             >
               <SectionLabel
                 text="White Label Web Design & Branding"
@@ -55,8 +53,7 @@ const PartnerWithUsHero = () => {
               slide={{ direction: "down" }}
               fade
               zoom
-              delay={0.25}
-              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              delay={0.15}
             >
               <h1 className="mt-[1rem] mb-[2rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
                 <span className="inline-flex">An agency, for</span>{" "}
@@ -69,8 +66,7 @@ const PartnerWithUsHero = () => {
             <MotionEffect
               slide={{ direction: "down" }}
               fade
-              delay={0.4}
-              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              delay={0.3}
             >
               <div className="mb-[4rem] max-w-[76rem]">
                 <SectionDescription
@@ -83,8 +79,7 @@ const PartnerWithUsHero = () => {
             <MotionEffect
               slide={{ direction: "down" }}
               fade
-              delay={0.55}
-              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              delay={0.45}
             >
               <PrimaryButton
                 text="How It Works"

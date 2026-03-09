@@ -43,8 +43,6 @@ const HowWeWorkHero = () => {
                 slide={{ direction: "down" }}
                 fade
                 zoom
-                delay={0.1}
-                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
               >
                 <SectionLabel text="Our Process" textColor="#FF37B3" />
               </MotionEffect>
@@ -53,8 +51,7 @@ const HowWeWorkHero = () => {
                 slide={{ direction: "down" }}
                 fade
                 zoom
-                delay={0.25}
-                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+                delay={0.15}
               >
                 <h1 className="mt-[1rem] mb-[2rem] max-w-[63rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
                   <span className="block">We bring order to</span>
@@ -67,8 +64,7 @@ const HowWeWorkHero = () => {
               <MotionEffect
                 slide={{ direction: "down" }}
                 fade
-                delay={0.4}
-                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+                delay={0.3}
               >
                 <div className="max-w-[54rem]">
                   <SectionDescription
@@ -82,8 +78,7 @@ const HowWeWorkHero = () => {
             <MotionEffect
               slide={{ direction: "down" }}
               fade
-              delay={0.4}
-              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              delay={0.45}
               className="relative hidden h-[48.4rem] w-[48.4rem] items-center justify-center xl:flex"
             >
               <div className="relative hidden h-[48.4rem] w-[48.4rem] items-center justify-center xl:flex">

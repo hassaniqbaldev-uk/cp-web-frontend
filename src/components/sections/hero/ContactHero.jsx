@@ -66,8 +66,6 @@ const ContactHero = () => {
                 slide={{ direction: "down" }}
                 fade
                 zoom
-                delay={0.1}
-                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
               >
                 <SectionLabel text="Contact" textColor="#FF37B3" />
               </MotionEffect>
@@ -76,8 +74,7 @@ const ContactHero = () => {
                 slide={{ direction: "down" }}
                 fade
                 zoom
-                delay={0.25}
-                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+                delay={0.15}
               >
                 <h1 className="mt-[1.4rem] mb-[2rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
                   <span className="block">Let&apos;s build something</span>
@@ -91,8 +88,7 @@ const ContactHero = () => {
                 slide={{ direction: "down" }}
                 fade
                 zoom
-                delay={0.4}
-                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+                delay={0.3}
               >
                 <div className="max-w-[62.8rem]">
                   <SectionDescription
@@ -107,8 +103,7 @@ const ContactHero = () => {
               <MotionEffect
                 slide={{ direction: "down" }}
                 fade
-                delay={0.4}
-                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+                delay={0.45}
               >
                 <div className="contact-hero-card">
                   <div className="absolute inset-0 z-[10] flex flex-col items-center justify-center text-center">
@@ -151,8 +146,7 @@ const ContactHero = () => {
               <MotionEffect
                 slide={{ direction: "down" }}
                 fade
-                delay={0.55}
-                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+                delay={0.6}
               >
                 <div className="contact-hero-card">
                   <div className="absolute inset-0 z-[10] flex flex-col items-center justify-center text-center">
@@ -193,8 +187,7 @@ const ContactHero = () => {
               <MotionEffect
                 slide={{ direction: "down" }}
                 fade
-                delay={0.7}
-                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+                delay={0.75}
               >
                 <div className="contact-hero-card">
                   <div className="absolute inset-0 z-[10] flex flex-col items-center justify-center text-center">
@@ -237,8 +230,7 @@ const ContactHero = () => {
             <MotionEffect
               slide={{ direction: "down" }}
               fade
-              delay={0.4}
-              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              delay={0.45}
             >
               <div className="block w-full xl:hidden">
                 <Swiper

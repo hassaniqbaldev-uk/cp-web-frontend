@@ -41,8 +41,6 @@ const AuditHero = () => {
                 slide={{ direction: "down" }}
                 fade
                 zoom
-                delay={0.1}
-                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
               >
                 <SectionLabel
                   text="Only 3 Free Audit Slots Left This Week"
@@ -54,8 +52,7 @@ const AuditHero = () => {
                 slide={{ direction: "down" }}
                 fade
                 zoom
-                delay={0.25}
-                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+                delay={0.15}
               >
                 <h1 className="mt-[1.3rem] mb-[2rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8.5rem]">
                   Unlock your website&apos;s{" "}
@@ -69,8 +66,7 @@ const AuditHero = () => {
                 slide={{ direction: "down" }}
                 fade
                 zoom
-                delay={0.4}
-                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+                delay={0.3}
               >
                 <div className="max-w-[58.5rem]">
                   <SectionDescription
@@ -83,8 +79,7 @@ const AuditHero = () => {
               <MotionEffect
                 slide={{ direction: "down" }}
                 fade
-                delay={0.55}
-                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+                delay={0.45}
               >
                 <div className="my-[3.7rem] flex w-full flex-col items-start gap-[1.2rem] rounded-[2rem] border border-[#3078FF] bg-white px-[3rem] py-[2.7rem] text-left md:gap-[2.5rem] md:py-[3.5rem]">
                   <div className="flex items-center gap-[.8rem] md:gap-[1.2rem]">
@@ -134,8 +129,7 @@ const AuditHero = () => {
               <MotionEffect
                 slide={{ direction: "down" }}
                 fade
-                delay={0.7}
-                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+                delay={0.6}
               >
                 <div className="flex items-center gap-[1.6rem] text-left">
                   <i>
@@ -157,8 +151,7 @@ const AuditHero = () => {
             <MotionEffect
               slide={{ direction: "down" }}
               fade
-              delay={0.4}
-              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              delay={0.45}
             >
               <AuditForm />
             </MotionEffect>

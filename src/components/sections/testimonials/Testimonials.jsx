@@ -50,17 +50,11 @@ const Testimonials = () => {
           </MotionEffect>
         </div>
 
-        <div className="my-[5rem] hidden grid-cols-3 gap-[1.3rem] xl:grid">
-          {/* Card 1 — row-span-2 on MotionEffect so it's the direct grid child */}
-          <MotionEffect
-            slide={{ direction: "down" }}
-            fade
-            inView
-            delay={0.4}
-            transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
-            className="row-span-2"
-          >
-            <div className="flex h-full w-full flex-col items-center gap-[2rem] rounded-[2rem] border border-[#E4E3E8] bg-white px-[3rem] pt-[3rem] pb-[4.1rem] backdrop-blur-[10px]">
+        {/* Desktop Bento Grid — single container animation */}
+        <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4} transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}>
+          <div className="my-[5rem] hidden grid-cols-3 gap-[1.3rem] xl:grid">
+            {/* Card 1 — row-span-2 */}
+            <div className="row-span-2 flex h-full w-full flex-col items-center gap-[2rem] rounded-[2rem] border border-[#E4E3E8] bg-white px-[3rem] pt-[3rem] pb-[4.1rem] backdrop-blur-[10px]">
               <div className="flex overflow-hidden rounded-[1.2rem]">
                 <Image
                   src={TestimonialCardImg}
@@ -111,16 +105,8 @@ const Testimonials = () => {
                 </div>
               </div>
             </div>
-          </MotionEffect>
 
-          {/* Card 2 */}
-          <MotionEffect
-            slide={{ direction: "down" }}
-            fade
-            inView
-            delay={0.55}
-            transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
-          >
+            {/* Card 2 */}
             <div className="flex h-[31.5rem] w-full flex-col justify-between rounded-[2rem] border border-[#E4E3E8] bg-white px-[3rem] py-[4.1rem] backdrop-blur-[10px]">
               <div className="flex flex-col items-start gap-[1.9rem] text-left">
                 <ul className="flex items-center gap-[3px]">
@@ -159,16 +145,8 @@ const Testimonials = () => {
                 </div>
               </div>
             </div>
-          </MotionEffect>
 
-          {/* Card 3 */}
-          <MotionEffect
-            slide={{ direction: "down" }}
-            fade
-            inView
-            delay={0.7}
-            transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
-          >
+            {/* Card 3 */}
             <div className="flex h-[31.5rem] w-full flex-col justify-between rounded-[2rem] border border-[#E4E3E8] bg-white px-[3rem] py-[4.1rem] backdrop-blur-[10px]">
               <div className="flex flex-col items-start gap-[1.9rem] text-left">
                 <ul className="flex items-center gap-[3px]">
@@ -208,18 +186,9 @@ const Testimonials = () => {
                 </div>
               </div>
             </div>
-          </MotionEffect>
 
-          {/* Card 4 — col-span-2 on MotionEffect so it's the direct grid child */}
-          <MotionEffect
-            slide={{ direction: "down" }}
-            fade
-            inView
-            delay={0.85}
-            transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
-            className="col-span-2"
-          >
-            <div className="flex h-[31.5rem] w-full flex-col justify-between rounded-[2rem] border border-[#E4E3E8] bg-white px-[3rem] py-[4.1rem] backdrop-blur-[10px]">
+            {/* Card 4 — col-span-2 */}
+            <div className="col-span-2 flex h-[31.5rem] w-full flex-col justify-between rounded-[2rem] border border-[#E4E3E8] bg-white px-[3rem] py-[4.1rem] backdrop-blur-[10px]">
               <div className="flex flex-col items-start gap-[1.9rem] text-left">
                 <ul className="flex items-center gap-[3px]">
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -261,8 +230,8 @@ const Testimonials = () => {
                 </div>
               </div>
             </div>
-          </MotionEffect>
-        </div>
+          </div>
+        </MotionEffect>
 
         {/* Responsive */}
         <MotionEffect slide={{ direction: "down" }} fade inView delay={0.6} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>

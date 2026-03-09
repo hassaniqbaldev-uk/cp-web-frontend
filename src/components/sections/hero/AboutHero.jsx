@@ -39,7 +39,7 @@ const AboutHero = () => {
         <div className="relative z-[10] container">
           <div className="flex flex-col">
             <div className="flex flex-col items-center justify-center text-center xl:items-start xl:text-left">
-              <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+              <MotionEffect slide={{ direction: "down" }} fade zoom>
                 <div>
                   <SectionLabel text="Who We Are" textColor="#FF37B3" />
                 </div>
@@ -49,8 +49,7 @@ const AboutHero = () => {
                 slide={{ direction: "down" }}
                 fade
                 zoom
-                delay={0.25}
-                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+                delay={0.15}
               >
                 <h1 className="mt-[1rem] max-w-[66rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
                   <span className="block">A digital agency that</span>
@@ -62,7 +61,7 @@ const AboutHero = () => {
             </div>
           </div>
 
-          <MotionEffect slide={{ direction: "down" }} fade delay={0.4} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
+          <MotionEffect slide={{ direction: "down" }} fade delay={0.3}>
             <div className="relative mt-[6.6rem] h-[30rem] w-full md:h-[45rem] lg:h-[60rem]">
               <Image
                 src={HeroCpLogo}

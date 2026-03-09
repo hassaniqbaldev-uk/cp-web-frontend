@@ -83,7 +83,6 @@ const HomeHero = () => {
                 }}
                 fade
                 zoom
-                inView
               >
                 <div className="flex flex-col-reverse items-center gap-[1.2rem] xl:flex-row">
                   <button
@@ -110,7 +109,6 @@ const HomeHero = () => {
                 }}
                 fade
                 zoom
-                inView
                 delay={0.15}
               >
                 <h1 className="mt-[1.5rem] mb-[1rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
@@ -136,7 +134,6 @@ const HomeHero = () => {
                 }}
                 fade
                 zoom
-                inView
                 delay={0.3}
               >
                 <div className="mb-[3rem] max-w-[62.8rem]">
@@ -219,7 +216,7 @@ const HomeHero = () => {
                     />
                   </div>
 
-                  <div className="absolute bottom-[-7rem] left-[2rem] h-[6.8rem] h-[13.6rem] w-[6.1rem] rotate-[-9deg] md:left-[-5rem] md:w-[12.4rem] md:rotate-[-8.7deg]">
+                  <div className="absolute bottom-[-7rem] left-[2rem] h-[13.6rem] w-[6.1rem] rotate-[-9deg] md:left-[-5rem] md:w-[12.4rem] md:rotate-[-8.7deg]">
                     <Image
                       src={HomeHeroLogo3d}
                       alt="Card Logo"

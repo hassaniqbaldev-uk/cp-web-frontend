@@ -58,8 +58,6 @@ const LegalHero = () => {
               slide={{ direction: "down" }}
               fade
               zoom
-              delay={0.1}
-              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
             >
               <div>
                 <SectionLabel text="LEGAL" textColor="#FF37B3" />
@@ -70,8 +68,7 @@ const LegalHero = () => {
               slide={{ direction: "down" }}
               fade
               zoom
-              delay={0.25}
-              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              delay={0.15}
             >
               <h1 className="mt-[1.5rem] max-w-[89rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8rem]">
                 Legal & Compliance Hub
@@ -81,8 +78,7 @@ const LegalHero = () => {
             <MotionEffect
               slide={{ direction: "down" }}
               fade
-              delay={0.4}
-              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              delay={0.3}
             >
               <div className="mt-[2rem] mb-[6rem] max-w-[76rem]">
                 <SectionDescription
