@@ -85,6 +85,7 @@ const Policies = ({ legal = [] }) => {
                 zoom
                 inView
                 delay={0.1}
+                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
               >
                 <div>
                   <SectionTitle text="Our Policies" textColor="#312749" />
@@ -96,6 +97,7 @@ const Policies = ({ legal = [] }) => {
                 fade
                 inView
                 delay={0.25}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
               >
                 <div>
                   <SectionDescription
@@ -115,6 +117,11 @@ const Policies = ({ legal = [] }) => {
                     fade
                     inView
                     delay={0.4 + idx * 0.15}
+                    transition={{
+                      type: "tween",
+                      duration: 1.0,
+                      ease: "easeOut",
+                    }}
                   >
                     <div
                       style={{
@@ -170,6 +177,7 @@ const Policies = ({ legal = [] }) => {
               fade
               inView
               delay={0.4}
+              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
               className="w-full"
             >
               <div className="block w-full xl:hidden">

@@ -28,13 +28,13 @@ const Process = () => {
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center justify-between gap-[1.5rem] md:gap-[4rem] xl:flex-row xl:items-start">
             <div className="flex w-[30rem] flex-col items-center gap-[1rem] text-center md:w-[58.5rem] xl:items-start xl:text-left">
-              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1}>
+              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
                 <div>
                   <SectionLabel text="The Process" textColor="#FF37B3" />
                 </div>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25}>
+              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
                 <h4 className="text-[3rem] leading-[3.5rem] font-bold tracking-[-0.02em] text-white md:text-[4.8rem] md:leading-[6rem]">
                   Your roadmap from
                   <span className="bg-gradient-orange-pink block bg-clip-text text-transparent">
@@ -45,7 +45,7 @@ const Process = () => {
             </div>
 
             <div className="flex w-[30rem] flex-col items-center gap-[3.2rem] text-center md:w-[58.5rem] xl:items-start xl:text-left">
-              <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4}>
+              <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
                 <div>
                   <SectionDescription
                     text="We've refined our delivery process over 10 years to minimise risk and maximise speed to market."
@@ -54,7 +54,7 @@ const Process = () => {
                 </div>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade inView delay={0.55}>
+              <MotionEffect slide={{ direction: "down" }} fade inView delay={0.55} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
                 <div>
                   <PrimaryButton
                     text="Start Your Project"
@@ -75,7 +75,7 @@ const Process = () => {
                 fade
                 inView
                 delay={0.4 + idx * 0.15}
-                transition={{ type: "tween", duration: 0.7, ease: "easeOut" }}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
               >
                 <div className="flex flex-col items-center gap-[3.8rem]">
                   <div className="relative flex w-full justify-center">
@@ -112,7 +112,7 @@ const Process = () => {
           </div>
 
           {/* Responsive */}
-          <MotionEffect slide={{ direction: "down" }} fade inView delay={0.6}>
+          <MotionEffect slide={{ direction: "down" }} fade inView delay={0.6} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
             <div className="block w-full xl:hidden">
               <Swiper
                 pagination={{ clickable: true }}

@@ -23,7 +23,7 @@ const Estimate = () => {
         <div className="relative z-[10] container">
           <div className="my-[5rem] flex flex-col items-center justify-center gap-[4rem] text-center md:gap-[6.8rem] xl:flex-row xl:gap-[9rem] xl:text-left">
             <div className="w-full md:w-[53.8rem]">
-              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1}>
+              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
                 <div>
                   <SectionLabel
                     text="Est. 2012 • Manchester, UK"
@@ -32,7 +32,7 @@ const Estimate = () => {
                 </div>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25}>
+              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
                 <div className="mt-[1.5rem] mb-[3.5rem]">
                   <SectionTitle
                     text="Born in Manchester, working globally."
@@ -41,7 +41,7 @@ const Estimate = () => {
                 </div>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4}>
+              <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
                 <p className="text-[1.8rem] leading-[3rem] font-normal tracking-normal text-[#625C70] md:text-[2.2rem] md:leading-[3.6rem]">
                   <span className="font-bold text-[#FF37B3]">CreativePixels</span>{" "}
                   is a UK digital agency focused on web design, WordPress
@@ -54,7 +54,7 @@ const Estimate = () => {
               </MotionEffect>
             </div>
 
-            <MotionEffect slide={{ direction: "down" }} fade inView delay={0.25}>
+            <MotionEffect slide={{ direction: "down" }} fade inView delay={0.25} transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}>
               <div className="w-full overflow-hidden rounded-[2rem] md:w-[53.5rem]">
                 <Image
                   src={EstimateCardImg}
@@ -68,7 +68,7 @@ const Estimate = () => {
             </MotionEffect>
           </div>
 
-          <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4}>
+          <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4} transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}>
             <div className="w-full rounded-[3rem] border border-[#EE7621] bg-[#FDF4E7] p-[2rem] md:p-[4rem]">
               <p className="text-center text-[1.8rem] leading-[3rem] font-bold tracking-normal text-[#625C70] md:text-[2.2rem] md:leading-[3.6rem] xl:text-left">
                 <span className="text-[#3078FF]">Over the years,</span> we’ve

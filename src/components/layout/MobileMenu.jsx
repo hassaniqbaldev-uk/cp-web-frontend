@@ -576,7 +576,7 @@ const MobileMenu = () => {
 
                 <div className="flex flex-col items-start text-left">
                   <span className="text-[1.2rem] font-medium tracking-normal text-[#312749]">
-                    Meet Me
+                    Let&apos;s Talk
                   </span>
 
                   <h4 className="text-[2rem] font-bold tracking-[-0.02em] text-[#312749]">

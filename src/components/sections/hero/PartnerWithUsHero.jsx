@@ -38,25 +38,40 @@ const PartnerWithUsHero = () => {
 
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center justify-center text-center">
-            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              delay={0.1}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            >
               <SectionLabel
                 text="White Label Web Design & Branding"
                 textColor="#FF37B3"
               />
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.25}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              delay={0.25}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            >
               <h1 className="mt-[1rem] mb-[2rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
-                <span className="inline-flex">
-                  An agency, for
-                </span>{" "}
+                <span className="inline-flex">An agency, for</span>{" "}
                 <span className="bg-gradient-yellow-pink inline-flex bg-clip-text text-transparent">
                   your agency
                 </span>
               </h1>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade delay={0.4}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              delay={0.4}
+              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+            >
               <div className="mb-[4rem] max-w-[76rem]">
                 <SectionDescription
                   text="Since 2014, CreativePixels has supported agencies across the UK, US & Australia with WordPress websites, branding, and ongoing support—all delivered under your brand."
@@ -65,7 +80,12 @@ const PartnerWithUsHero = () => {
               </div>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade delay={0.55}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              delay={0.55}
+              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+            >
               <PrimaryButton
                 text="How It Works"
                 textColor="#312749"

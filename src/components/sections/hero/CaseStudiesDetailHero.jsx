@@ -44,7 +44,13 @@ const CaseStudiesDetailHero = ({ caseStudy }) => {
 
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center justify-center text-center xl:items-start xl:text-left">
-            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              delay={0.1}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            >
               <div>
                 <SectionLabel
                   text="case studies"
@@ -53,14 +59,25 @@ const CaseStudiesDetailHero = ({ caseStudy }) => {
               </div>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.25}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              delay={0.25}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            >
               <h1 className="mt-[1rem] mb-[3rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8rem]">
                 {caseStudy.title}
               </h1>
             </MotionEffect>
 
             {caseStudy.detailHero?.ctaButton && (
-              <MotionEffect slide={{ direction: "down" }} fade delay={0.4}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                delay={0.4}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              >
                 <div>
                   <PrimaryButton
                     target="_blank"

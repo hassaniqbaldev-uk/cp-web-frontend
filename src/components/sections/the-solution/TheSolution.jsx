@@ -17,7 +17,13 @@ const TheSolution = ({ caseStudy }) => {
       >
         <div className="container">
           <div className="flex flex-col-reverse items-center justify-center gap-[5rem] text-center xl:flex-row xl:items-start xl:gap-[10rem] xl:text-left">
-            <MotionEffect slide={{ direction: "down" }} fade inView delay={0.1}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              inView
+              delay={0.1}
+              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+            >
               <div className="flex w-full items-center justify-center md:w-[51.1rem]">
                 <Image
                   src={urlFor(caseStudy.theSolution.cardImage)
@@ -33,13 +39,26 @@ const TheSolution = ({ caseStudy }) => {
             </MotionEffect>
 
             <div className="w-full md:w-[51.6rem]">
-              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                zoom
+                inView
+                delay={0.1}
+                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              >
                 <h2 className="text-[2.3rem] leading-[3rem] font-bold tracking-[-0.03em] text-white md:text-[4.8rem] md:leading-[6rem]">
                   {caseStudy.theSolution.title}
                 </h2>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade inView delay={0.25}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                inView
+                delay={0.25}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              >
                 <div className="mt-[1.9rem] mb-[5.5rem]">
                   <SectionDescription
                     text={caseStudy.theSolution.description}
@@ -48,7 +67,13 @@ const TheSolution = ({ caseStudy }) => {
                 </div>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                inView
+                delay={0.4}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              >
                 <div>
                   <PrimaryButton
                     href="/call"
@@ -64,7 +89,13 @@ const TheSolution = ({ caseStudy }) => {
       </section>
 
       <div className="px-[2rem] xl:px-[0rem]">
-        <MotionEffect slide={{ direction: "down" }} fade inView delay={0.1}>
+        <MotionEffect
+          slide={{ direction: "down" }}
+          fade
+          inView
+          delay={0.1}
+          transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+        >
           <div className="mx-auto mt-[3rem] flex max-w-[120rem] flex-col items-start justify-start gap-[3.5rem] rounded-[1.5rem] bg-[#f14a58]/15 px-[3rem] py-[2.5rem] md:mt-[5rem] md:flex-row md:items-center md:px-[4.5rem]">
             <div className="relative size-[6.3rem] min-w-[6.3rem]">
               <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">

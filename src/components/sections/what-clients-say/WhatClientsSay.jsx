@@ -24,7 +24,13 @@ const WhatClientsSay = () => {
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center justify-center gap-[6.8rem] xl:flex-row">
             <div className="flex w-full flex-col items-center text-center md:w-[58rem] xl:items-start xl:text-left">
-              <MotionEffect slide={{ direction: "down" }} fade inView delay={0.1}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                inView
+                delay={0.1}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              >
                 <ul className="flex items-center gap-[3px]">
                   {Array.from({ length: 5 }).map((_, index) => (
                     <li key={index}>
@@ -34,7 +40,14 @@ const WhatClientsSay = () => {
                 </ul>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                zoom
+                inView
+                delay={0.25}
+                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              >
                 <div className="mt-[2rem] mb-[1.8rem]">
                   <SectionTitle
                     text="Imaginative vision. Outstanding Web Design."
@@ -43,18 +56,30 @@ const WhatClientsSay = () => {
                 </div>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                inView
+                delay={0.4}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              >
                 <p className="mb-[6.4rem] max-w-[49.8rem] text-[1.4rem] leading-[2.4rem] font-normal tracking-normal text-white md:text-[1.8rem] md:leading-[2.6rem]">
                   &quot;From beginning to end, it was an incredible experience.
                   Working with the entire team was enjoyable due to their
                   creativity and expertise. <br /> <br /> They completely
                   understood our goals as a studio with a very ambitious and
-                  distinctive website, from concept to design. We are quite happy
-                  with the outcome.&quot;
+                  distinctive website, from concept to design. We are quite
+                  happy with the outcome.&quot;
                 </p>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade inView delay={0.55}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                inView
+                delay={0.55}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              >
                 <div className="flex items-center gap-[1.2rem]">
                   <div className="flex inline-flex size-[5.6rem] min-w-[5.6rem] items-center justify-center overflow-hidden rounded-full bg-white">
                     <Image
@@ -79,7 +104,13 @@ const WhatClientsSay = () => {
               </MotionEffect>
             </div>
 
-            <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              inView
+              delay={0.4}
+              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+            >
               <div className="h-[30rem] w-full rounded-[2rem] border border-[#939394]/20 p-[1.8rem] md:h-[51.6rem] md:w-[57.5rem] md:rounded-[3rem]">
                 <div className="flex size-full items-center justify-center rounded-[2rem] bg-[#dbd5dd]/20 backdrop-blur-[10px] md:rounded-[3rem]">
                   <Image

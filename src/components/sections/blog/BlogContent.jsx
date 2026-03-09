@@ -52,7 +52,13 @@ const components = {
 const BlogContent = ({ post }) => {
   return (
     <section className="px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[5.6rem]">
-      <MotionEffect slide={{ direction: "down" }} fade inView delay={0.1}>
+      <MotionEffect
+        slide={{ direction: "down" }}
+        fade
+        inView
+        delay={0.1}
+        transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+      >
         <article className="mx-auto max-w-[105rem]">
           <PortableText value={post} components={components} />
         </article>

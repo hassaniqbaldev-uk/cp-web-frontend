@@ -26,7 +26,13 @@ const BlogDetailHero = ({ post }) => {
         />
 
         <div className="relative z-[10] container">
-          <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1}>
+          <MotionEffect
+            slide={{ direction: "down" }}
+            fade
+            zoom
+            delay={0.1}
+            transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+          >
             <div className="flex flex-wrap items-center gap-[1rem] text-[1.4rem] leading-[1.8rem] font-medium tracking-[-0.02em] text-white uppercase md:gap-[2.5rem] md:text-[1.8rem] md:leading-[2rem] md:font-bold">
               {/* HOME */}
               <Link
@@ -65,13 +71,24 @@ const BlogDetailHero = ({ post }) => {
             </div>
           </MotionEffect>
 
-          <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.25}>
+          <MotionEffect
+            slide={{ direction: "down" }}
+            fade
+            zoom
+            delay={0.25}
+            transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+          >
             <h1 className="mt-[3.4rem] mb-[4rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[6rem] md:leading-[7rem] xl:text-[7rem] xl:leading-[8rem]">
               {post.title}
             </h1>
           </MotionEffect>
 
-          <MotionEffect slide={{ direction: "down" }} fade delay={0.4}>
+          <MotionEffect
+            slide={{ direction: "down" }}
+            fade
+            delay={0.4}
+            transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+          >
             <div
               style={{
                 boxShadow: "0px 12px 40px 0px #00000014",

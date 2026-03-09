@@ -9,7 +9,13 @@ const OurApproach = ({ caseStudy }) => {
   return (
     <>
       <section className="px-[2rem] pb-[5rem] xl:px-[0rem] xl:pb-[10rem]">
-        <MotionEffect slide={{ direction: "down" }} fade inView delay={0.1}>
+        <MotionEffect
+          slide={{ direction: "down" }}
+          fade
+          inView
+          delay={0.1}
+          transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+        >
           <div
             style={{
               background: caseStudy.primaryColor,
@@ -30,7 +36,10 @@ const OurApproach = ({ caseStudy }) => {
 
               <ul className="flex flex-col gap-[3.8rem] text-left">
                 {caseStudy.ourApproach.points.map((item, idx) => (
-                  <li key={idx} className="inline-flex gap-[1rem] md:gap-[2rem]">
+                  <li
+                    key={idx}
+                    className="inline-flex gap-[1rem] md:gap-[2rem]"
+                  >
                     <i>
                       <CheckMarkIcon
                         width="26"

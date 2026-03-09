@@ -29,18 +29,40 @@ const CaseStudiesHero = () => {
 
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center text-center xl:items-start xl:text-left">
-            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1}>
-              <div><SectionLabel text="Our Work" textColor="#FF37B3" /></div>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              delay={0.1}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            >
+              <div>
+                <SectionLabel text="Our Work" textColor="#FF37B3" />
+              </div>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.25}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              delay={0.25}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            >
               <h1 className="mt-[1rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8.5rem]">
                 <span className="block">Real work.</span>{" "}
-                <span className="bg-gradient-pink-orange bg-clip-text text-transparent">Real results.</span>
+                <span className="bg-gradient-pink-orange bg-clip-text text-transparent">
+                  Real results.
+                </span>
               </h1>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.4}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              delay={0.4}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            >
               <div className="max-w-[70.6rem]">
                 <SectionDescription
                   text="Explore how we've helped ambitious brands across industries scale their digital presence through strategy, design, and technology."
@@ -51,7 +73,12 @@ const CaseStudiesHero = () => {
           </div>
 
           <div className="mt-[5rem] grid grid-cols-1 gap-[2rem] md:grid-cols-3 xl:mt-[6rem] xl:gap-[3rem]">
-            <MotionEffect slide={{ direction: "down" }} fade delay={0.4}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              delay={0.4}
+              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+            >
               <div className="flex w-full flex-col items-start justify-center gap-[4rem] overflow-hidden rounded-[3rem] border border-[#EE7621] bg-white p-[2rem] text-left xl:gap-[5.3rem] xl:p-[3.5rem]">
                 <div className="relative size-[6.3rem]">
                   <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
@@ -80,7 +107,12 @@ const CaseStudiesHero = () => {
               </div>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade delay={0.55}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              delay={0.55}
+              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+            >
               <div className="flex w-full flex-col items-start justify-center gap-[4rem] overflow-hidden rounded-[3rem] border border-[#3078FF] bg-white p-[2rem] text-left xl:gap-[5.3rem] xl:p-[3.5rem]">
                 <div className="relative size-[6.3rem]">
                   <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">
@@ -103,7 +135,12 @@ const CaseStudiesHero = () => {
               </div>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade delay={0.7}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              delay={0.7}
+              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+            >
               <div className="flex w-full flex-col items-start justify-center gap-[4rem] overflow-hidden rounded-[3rem] border border-[#FF37B3] bg-white p-[2rem] text-left xl:gap-[5.3rem] xl:p-[3.5rem]">
                 <div className="relative size-[6.3rem]">
                   <div className="absolute top-0 left-0 z-[1] inline-flex size-[5.8rem] items-center justify-center rounded-[1.3rem] border border-white/20 bg-white/35 backdrop-blur-[10px]">

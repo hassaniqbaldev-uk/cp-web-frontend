@@ -57,26 +57,26 @@ const Work = ({ caseStudies }) => {
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-[3rem] xl:flex-row">
             <div className="flex w-[30rem] flex-col items-center text-center md:w-[58.5rem] xl:items-start xl:text-left">
-              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1}>
+              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
                 <div>
                   <SectionLabel text="Our Work" textColor="#EE8D00" />
                 </div>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25}>
+              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
                 <div className="mt-[5px] mb-[14px]">
                   <SectionTitle text="Digital Done Right." />
                 </div>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.4}>
+              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.4} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
                 <div>
                   <SectionDescription text="We've crafted websites and brands that blend design, development, and strategy into measurable success." />
                 </div>
               </MotionEffect>
             </div>
 
-            <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4}>
+            <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
               <div className="hidden md:block">
                 <PrimaryButton
                   text="View All Projects"
@@ -95,7 +95,7 @@ const Work = ({ caseStudies }) => {
                 fade
                 inView
                 delay={0.4}
-                transition={{ type: "tween", duration: 0.7, ease: "easeOut" }}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
               >
                 <Link
                   onMouseEnter={() => setIsHovered(true)}
@@ -155,7 +155,7 @@ const Work = ({ caseStudies }) => {
                 fade
                 inView
                 delay={0.55}
-                transition={{ type: "tween", duration: 0.7, ease: "easeOut" }}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
               >
                 <Link
                   onMouseEnter={() => setIsHovered(true)}
@@ -209,7 +209,7 @@ const Work = ({ caseStudies }) => {
                 fade
                 inView
                 delay={0.7}
-                transition={{ type: "tween", duration: 0.7, ease: "easeOut" }}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
               >
                 <Link
                   onMouseEnter={() => setIsHovered(true)}
@@ -261,7 +261,7 @@ const Work = ({ caseStudies }) => {
           </div>
 
           {/* Responsive */}
-          <MotionEffect slide={{ direction: "down" }} fade inView delay={0.6}>
+          <MotionEffect slide={{ direction: "down" }} fade inView delay={0.6} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
             <div className="mt-[3rem] block w-full xl:hidden">
               <Swiper
                 pagination={{ clickable: true }}

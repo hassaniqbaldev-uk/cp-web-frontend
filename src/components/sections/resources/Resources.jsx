@@ -111,6 +111,7 @@ const Resources = ({ legal = [] }) => {
                 zoom
                 inView
                 delay={0.1}
+                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
               >
                 <div>
                   <SectionTitle text="Client Resources" textColor="#FFFFFF" />
@@ -122,6 +123,7 @@ const Resources = ({ legal = [] }) => {
                 fade
                 inView
                 delay={0.25}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
               >
                 <div>
                   <SectionDescription
@@ -141,6 +143,11 @@ const Resources = ({ legal = [] }) => {
                     fade
                     inView
                     delay={0.4 + idx * 0.15}
+                    transition={{
+                      type: "tween",
+                      duration: 1.0,
+                      ease: "easeOut",
+                    }}
                   >
                     <div className="client-resources-card">
                       <div className="flex h-full flex-col items-start justify-between p-[3rem] text-left">
@@ -189,6 +196,7 @@ const Resources = ({ legal = [] }) => {
               fade
               inView
               delay={0.4}
+              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
               className="w-full"
             >
               <div className="block w-full xl:hidden">

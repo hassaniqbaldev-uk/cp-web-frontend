@@ -57,11 +57,25 @@ const Questions = ({ data = questionsData }) => {
         <div className="container">
           <div className="flex flex-col justify-center gap-[5rem] xl:flex-row xl:items-start xl:gap-[12.4rem]">
             <div className="flex flex-col items-center text-center xl:w-[33rem] xl:items-start xl:text-left">
-              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                zoom
+                inView
+                delay={0.1}
+                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              >
                 <SectionTitle text="Common Questions" textColor="#312749" />
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                zoom
+                inView
+                delay={0.25}
+                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              >
                 <div className="mt-[1rem] mb-[3rem]">
                   <SectionDescription
                     text="Everything you need to know about partnering with us."
@@ -70,7 +84,13 @@ const Questions = ({ data = questionsData }) => {
                 </div>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                inView
+                delay={0.4}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              >
                 <PrimaryButton
                   text="Have More Questions?"
                   textColor="#FFFFFF"
@@ -83,7 +103,18 @@ const Questions = ({ data = questionsData }) => {
             <div className="flex-1">
               <Accordion type="single" collapsible>
                 {data.map((item, idx) => (
-                  <MotionEffect key={idx} slide={{ direction: "down" }} fade inView delay={0.1 + idx * 0.1}>
+                  <MotionEffect
+                    key={idx}
+                    slide={{ direction: "down" }}
+                    fade
+                    inView
+                    delay={0.1 + idx * 0.1}
+                    transition={{
+                      type: "tween",
+                      duration: 1.0,
+                      ease: "easeOut",
+                    }}
+                  >
                     <AccordionItem
                       value={`item-${idx}`}
                       className={`border-b-2 border-[#F1F1F3] py-[1.5rem] ${idx === 0 ? "pt-[0rem]" : ""}`}

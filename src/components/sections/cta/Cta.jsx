@@ -16,7 +16,7 @@ const Cta = () => {
 
   return (
     <>
-      <MotionEffect slide={{ direction: "down" }} fade inView delay={0.1}>
+      <MotionEffect slide={{ direction: "down" }} fade inView delay={0.1} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
         <div className="relative container px-[3rem] pt-[2.3rem] pb-[3rem] md:px-[10rem] md:pt-[5.6rem] md:pb-[4rem]">
           {/*Background Image*/}
           <Image

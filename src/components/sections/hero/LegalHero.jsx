@@ -11,7 +11,6 @@ import { useEffect } from "react";
 import { getCalApi } from "@calcom/embed-react";
 
 const LegalHero = () => {
-
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: "15min" });
@@ -55,17 +54,36 @@ const LegalHero = () => {
 
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center text-center">
-            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1}>
-              <div><SectionLabel text="LEGAL" textColor="#FF37B3" /></div>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              delay={0.1}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            >
+              <div>
+                <SectionLabel text="LEGAL" textColor="#FF37B3" />
+              </div>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.25}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              delay={0.25}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            >
               <h1 className="mt-[1.5rem] max-w-[89rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8rem]">
                 Legal & Compliance Hub
               </h1>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade delay={0.4}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              delay={0.4}
+              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+            >
               <div className="mt-[2rem] mb-[6rem] max-w-[76rem]">
                 <SectionDescription
                   text="Transparency and trust are at the heart of everything we do. Access all our policies, agreements, and legal resources in one place."

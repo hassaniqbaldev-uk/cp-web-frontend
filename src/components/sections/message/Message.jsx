@@ -11,20 +11,41 @@ const Message = () => {
       </div>
 
       <div className="relative mx-auto flex max-w-[113rem] flex-col items-center gap-[2rem] text-center">
-        <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1}>
+        <MotionEffect
+          slide={{ direction: "down" }}
+          fade
+          zoom
+          inView
+          delay={0.1}
+          transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+        >
           <h2 className="text-[3.5rem] leading-[4rem] font-semibold tracking-[-0.02em] text-[#070707] md:text-[4.5rem] md:leading-[5.6rem] lg:text-[5.6rem] lg:leading-[6.4rem]">
             An agency, for your agency
           </h2>
         </MotionEffect>
 
-        <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25}>
+        <MotionEffect
+          slide={{ direction: "down" }}
+          fade
+          zoom
+          inView
+          delay={0.25}
+          transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+        >
           <p className="max-w-[103rem] text-[2.4rem] leading-[3.4rem] font-semibold tracking-[-0.02em] text-[#333333] md:text-[2.8rem] md:leading-[3.8rem] lg:text-[3.4rem] lg:leading-[4.8rem]">
             Expand your services, take on more clients, and deliver results, all
             without the overhead of hiring in-house.
           </p>
         </MotionEffect>
 
-        <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.4}>
+        <MotionEffect
+          slide={{ direction: "down" }}
+          fade
+          zoom
+          inView
+          delay={0.4}
+          transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+        >
           <p className="text-[2.4rem] leading-[3.4rem] font-semibold tracking-[-0.02em] text-[#EE8D00] md:text-[2.8rem] md:leading-[3.8rem] lg:text-[3.4rem] lg:leading-[4.8rem]">
             Access web and graphics designers, developers, and long-term support
             all under your own brand.

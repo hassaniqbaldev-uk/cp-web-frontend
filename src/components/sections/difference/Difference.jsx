@@ -130,6 +130,7 @@ const Difference = () => {
                 zoom
                 inView
                 delay={0.1}
+                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
               >
                 <SectionLabel text="Difference" textColor="#FF37B3" />
               </MotionEffect>
@@ -140,6 +141,7 @@ const Difference = () => {
                 zoom
                 inView
                 delay={0.25}
+                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
               >
                 <SectionTitle
                   text="The white label difference..."
@@ -153,6 +155,7 @@ const Difference = () => {
                 zoom
                 inView
                 delay={0.4}
+                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
               >
                 <SectionDescription
                   text="We identify and fix the bottlenecks that are choking your growth."
@@ -167,6 +170,7 @@ const Difference = () => {
                 fade
                 inView
                 delay={0.4}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
               >
                 <div className="flex items-center justify-center gap-[2rem] text-[2.8rem] leading-[3.5rem] font-semibold tracking-[-0.02em] text-white md:gap-[4rem] md:text-[3.4rem] md:leading-[4.8rem]">
                   <span>With</span>
@@ -183,6 +187,7 @@ const Difference = () => {
                 fade
                 inView
                 delay={0.55}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
                 className="w-full"
               >
                 <div className="w-full">

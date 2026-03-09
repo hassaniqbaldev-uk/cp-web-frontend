@@ -58,21 +58,21 @@ const Values = () => {
       <section className="relative overflow-hidden bg-[#F0F6FF] px-[2rem] py-[5rem] xl:px-[0rem] xl:py-[10rem]">
         <div className="container">
           <div className="flex flex-col items-center text-center">
-            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1}>
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
               <div><SectionLabel text="Our Values" textColor="#FF37B3" /></div>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25}>
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
               <div className="mt-[5px] mb-[14px]"><SectionTitle text="Our Core Values" /></div>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.4}>
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.4} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
               <div><SectionDescription text="The principles that guide every decision we make." /></div>
             </MotionEffect>
           </div>
 
           <div className="mt-[5rem] flex flex-col items-center justify-center gap-[4rem] xl:flex-row xl:items-start">
-            <MotionEffect slide={{ direction: "down" }} fade inView delay={0.1}>
+            <MotionEffect slide={{ direction: "down" }} fade inView delay={0.1} transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}>
               <div className="w-full overflow-hidden rounded-[3rem] md:w-[58rem]">
                 <Image
                   src={ValuesCardImg}
@@ -87,7 +87,7 @@ const Values = () => {
 
             <div className="grid w-full gap-[3.3rem] md:grid-cols-2 xl:w-[58.5rem]">
               {valuesCards.map((item, idx) => (
-                <MotionEffect key={idx} slide={{ direction: "down" }} fade inView delay={0.1 + idx * 0.15}>
+                <MotionEffect key={idx} slide={{ direction: "down" }} fade inView delay={0.1 + idx * 0.15} transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}>
                   <div
                     onMouseEnter={() => setHovered(idx)}
                     onMouseLeave={() => setHovered(null)}

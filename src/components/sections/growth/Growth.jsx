@@ -64,18 +64,43 @@ const Growth = () => {
           <div className="flex flex-col items-center justify-center gap-[5.7rem] xl:flex-row">
             <div className="flex w-full flex-col items-center gap-[3rem] text-center md:w-[61rem] xl:items-start xl:text-left">
               <div className="flex flex-col gap-[1rem]">
-                <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1}>
+                <MotionEffect
+                  slide={{ direction: "down" }}
+                  fade
+                  zoom
+                  inView
+                  delay={0.1}
+                  transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+                >
                   <SectionTitle text={heading} textColor="#312749" />
                 </MotionEffect>
 
-                <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25}>
+                <MotionEffect
+                  slide={{ direction: "down" }}
+                  fade
+                  zoom
+                  inView
+                  delay={0.25}
+                  transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+                >
                   <SectionDescription text={description} textColor="#625C70" />
                 </MotionEffect>
               </div>
 
               <div className="flex flex-col gap-[2rem] text-left">
                 {features.map((item, idx) => (
-                  <MotionEffect key={idx} slide={{ direction: "down" }} fade inView delay={0.4 + idx * 0.15}>
+                  <MotionEffect
+                    key={idx}
+                    slide={{ direction: "down" }}
+                    fade
+                    inView
+                    delay={0.4 + idx * 0.15}
+                    transition={{
+                      type: "tween",
+                      duration: 1.0,
+                      ease: "easeOut",
+                    }}
+                  >
                     <div className="flex items-start gap-[1.7rem]">
                       <i className="inline-flex size-[24px] min-w-[24px] items-center justify-center rounded-[6px] bg-[#ee8d00]/10">
                         <CheckMarkIcon3 fillColor="#EE8D00" />
@@ -96,7 +121,13 @@ const Growth = () => {
               </div>
             </div>
 
-            <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              inView
+              delay={0.4}
+              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+            >
               <div
                 style={{
                   boxShadow: "0px 12px 40px 0px #00000014",

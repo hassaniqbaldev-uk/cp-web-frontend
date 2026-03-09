@@ -21,19 +21,19 @@ const Contact = () => {
       <div className="container">
         <div className="flex flex-col items-center gap-[4rem] xl:flex-row xl:items-start">
           <div className="flex w-[30rem] flex-col items-center text-center md:w-[56.3rem] xl:items-start xl:text-left">
-            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1}>
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
               <div>
                 <SectionLabel text="Book a call" textColor="#FF37B3" />
               </div>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25}>
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
               <div className="mt-[1rem] mb-[2rem]">
                 <SectionTitle text="Unlock your brand's hidden potential." />
               </div>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.4}>
+            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.4} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
               <div>
                 <SectionDescription text="Stop guessing. Let's build a roadmap to scale your digital presence with a custom strategy." />
               </div>
@@ -44,7 +44,7 @@ const Contact = () => {
               fade
               inView
               delay={0.55}
-              transition={{ type: "tween", duration: 0.7, ease: "easeOut" }}
+              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
             >
               <div className="mt-[3.2rem] mb-[2.2rem] flex w-full flex-col items-start gap-[1.2rem] rounded-[2rem] border border-[#3078FF] bg-white px-[3rem] py-[3.5rem] text-left md:mt-[4rem] md:mb-[2rem] md:gap-[2.5rem]">
                 <div className="flex items-start gap-[1.2rem] md:items-center">
@@ -152,7 +152,7 @@ const Contact = () => {
             fade
             inView
             delay={0.4}
-            transition={{ type: "tween", duration: 0.7, ease: "easeOut" }}
+            transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
           >
             <ContactForm />
           </MotionEffect>

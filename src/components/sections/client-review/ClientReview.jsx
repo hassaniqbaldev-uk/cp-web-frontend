@@ -10,7 +10,13 @@ const ClientReview = () => {
   return (
     <>
       <section className="w-full overflow-hidden px-[2rem] pb-[5rem] xl:px-[0rem] xl:pb-[10rem]">
-        <MotionEffect slide={{ direction: "down" }} fade inView delay={0.1}>
+        <MotionEffect
+          slide={{ direction: "down" }}
+          fade
+          inView
+          delay={0.1}
+          transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+        >
           <div className="relative container overflow-hidden rounded-[2rem] px-[2rem] py-[4rem] md:px-[3rem]">
             {/*Background Image*/}
             <Image

@@ -33,18 +33,40 @@ const CareersHero = () => {
 
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center justify-center text-center">
-            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1}>
-              <div><SectionLabel text="Careers" textColor="#FF37B3" /></div>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              delay={0.1}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            >
+              <div>
+                <SectionLabel text="Careers" textColor="#FF37B3" />
+              </div>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.25}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              delay={0.25}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            >
               <h1 className="mt-[1rem] mb-[2rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.5rem]">
                 <span className="block">Build the</span>{" "}
-                <span className="bg-gradient-yellow-orange bg-clip-text text-transparent">Extraordinary.</span>
+                <span className="bg-gradient-yellow-orange bg-clip-text text-transparent">
+                  Extraordinary.
+                </span>
               </h1>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.4}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              delay={0.4}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            >
               <div className="mb-[4rem] max-w-[68rem]">
                 <SectionDescription
                   text="We're a team of strategists, designers, and engineers who refuse to settle for 'good enough.' Join us in Manchester or remotely."
@@ -53,7 +75,12 @@ const CareersHero = () => {
               </div>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade delay={0.55}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              delay={0.55}
+              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+            >
               <div>
                 <PrimaryButton
                   text="View Open Roles"

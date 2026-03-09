@@ -52,7 +52,14 @@ const Blog = ({ blogs }) => {
         <div className="container">
           <div className="hidden grid-cols-2 gap-[3.3rem] xl:grid">
             {blogs.map((item, idx) => (
-              <MotionEffect key={idx} slide={{ direction: "down" }} fade inView delay={0.4 + idx * 0.15}>
+              <MotionEffect
+                key={idx}
+                slide={{ direction: "down" }}
+                fade
+                inView
+                delay={0.4 + idx * 0.15}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              >
                 <BlogCard
                   readTime={item.readTime}
                   publishedDate={item.publishedAt}
@@ -67,47 +74,53 @@ const Blog = ({ blogs }) => {
           </div>
 
           {/* Responsive */}
-          <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4}>
+          <MotionEffect
+            slide={{ direction: "down" }}
+            fade
+            inView
+            delay={0.4}
+            transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+          >
             <div className="block w-full xl:hidden">
-            <Swiper
-              pagination={{ clickable: true }}
-              modules={[Pagination, Autoplay]}
-              loop={true}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              slidesPerView={1}
-              spaceBetween={0}
-              breakpoints={{
-                767: {
-                  slidesPerView: 2,
-                  spaceBetween: 0,
-                },
-                1024: {
-                  slidesPerView: 3,
-                  spaceBetween: 0,
-                },
-              }}
-              className="mySwiper"
-            >
-              {blogs.map((item, idx) => (
-                <SwiperSlide
-                  key={idx}
-                  className="!flex !h-auto !items-center !justify-center px-[1rem] pb-[5rem]"
-                >
-                  <BlogCard
-                    readTime={item.readTime}
-                    publishedDate={item.publishedAt}
-                    category={item.category}
-                    img={item.coverImage.asset.url}
-                    title={item.title}
-                    excerpt={item.excerpt}
-                    link={`/blog/${item.slug.current}`}
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
+              <Swiper
+                pagination={{ clickable: true }}
+                modules={[Pagination, Autoplay]}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                slidesPerView={1}
+                spaceBetween={0}
+                breakpoints={{
+                  767: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 0,
+                  },
+                }}
+                className="mySwiper"
+              >
+                {blogs.map((item, idx) => (
+                  <SwiperSlide
+                    key={idx}
+                    className="!flex !h-auto !items-center !justify-center px-[1rem] pb-[5rem]"
+                  >
+                    <BlogCard
+                      readTime={item.readTime}
+                      publishedDate={item.publishedAt}
+                      category={item.category}
+                      img={item.coverImage.asset.url}
+                      title={item.title}
+                      excerpt={item.excerpt}
+                      link={`/blog/${item.slug.current}`}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </MotionEffect>
         </div>

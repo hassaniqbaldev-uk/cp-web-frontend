@@ -11,13 +11,26 @@ const TheChallenge = ({ caseStudy }) => {
         <div className="container">
           <div className="flex flex-col gap-[2rem] md:gap-[5rem]">
             <div className="flex w-full flex-col items-center justify-between gap-[2rem] text-center xl:flex-row xl:gap-[5rem] xl:text-left">
-              <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                zoom
+                inView
+                delay={0.1}
+                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              >
                 <h2 className="text-[2.3rem] leading-[3rem] font-bold tracking-[-0.03em] text-[#263238] md:text-[4.8rem] md:leading-[6rem]">
                   {caseStudy.theChallenge.title}
                 </h2>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade inView delay={0.25}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                inView
+                delay={0.25}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              >
                 <p className="max-w-[65rem] text-[1.6rem] leading-[2.6rem] font-medium tracking-normal text-[#263238] md:text-[2.2rem] md:leading-[4rem]">
                   {caseStudy.theChallenge.description}
                 </p>
@@ -25,7 +38,13 @@ const TheChallenge = ({ caseStudy }) => {
             </div>
 
             <div className="flex w-full flex-col items-center gap-[4rem] xl:flex-row xl:items-stretch">
-              <MotionEffect slide={{ direction: "down" }} fade inView delay={0.1}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                inView
+                delay={0.1}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              >
                 <div className="flex h-full w-full items-center justify-center md:w-[57.8rem]">
                   <Image
                     src={urlFor(caseStudy.theChallenge.cardImage1)
@@ -43,7 +62,18 @@ const TheChallenge = ({ caseStudy }) => {
               <div className="flex w-full flex-col justify-between gap-[5rem] md:w-[58.4rem]">
                 <ul className="flex flex-col gap-[2rem] md:gap-[3.8rem]">
                   {caseStudy.theChallenge.points.map((item, idx) => (
-                    <MotionEffect key={idx} slide={{ direction: "down" }} fade inView delay={0.1 + idx * 0.15}>
+                    <MotionEffect
+                      key={idx}
+                      slide={{ direction: "down" }}
+                      fade
+                      inView
+                      delay={0.1 + idx * 0.15}
+                      transition={{
+                        type: "tween",
+                        duration: 1.0,
+                        ease: "easeOut",
+                      }}
+                    >
                       <li className="inline-flex gap-[1rem] md:gap-[2rem]">
                         <i>
                           <CheckMarkIcon
@@ -61,7 +91,13 @@ const TheChallenge = ({ caseStudy }) => {
                   ))}
                 </ul>
 
-                <MotionEffect slide={{ direction: "down" }} fade inView delay={0.25}>
+                <MotionEffect
+                  slide={{ direction: "down" }}
+                  fade
+                  inView
+                  delay={0.25}
+                  transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+                >
                   <div className="flex h-full w-full items-end justify-center">
                     <Image
                       src={urlFor(caseStudy.theChallenge.cardImage2)

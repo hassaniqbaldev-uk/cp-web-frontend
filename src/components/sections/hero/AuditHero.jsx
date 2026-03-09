@@ -37,14 +37,26 @@ const AuditHero = () => {
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center justify-center gap-[4rem] xl:flex-row">
             <div className="flex w-full flex-col items-center text-center md:w-[63rem] xl:items-start xl:text-left">
-              <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                zoom
+                delay={0.1}
+                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              >
                 <SectionLabel
                   text="Only 3 Free Audit Slots Left This Week"
                   textColor="#FF37B3"
                 />
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.25}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                zoom
+                delay={0.25}
+                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              >
                 <h1 className="mt-[1.3rem] mb-[2rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8.5rem]">
                   Unlock your website&apos;s{" "}
                   <span className="bg-gradient-orange-yellow bg-clip-text text-transparent">
@@ -53,7 +65,13 @@ const AuditHero = () => {
                 </h1>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.4}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                zoom
+                delay={0.4}
+                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              >
                 <div className="max-w-[58.5rem]">
                   <SectionDescription
                     text="Stop guessing why you aren't growing. We'll manually analyse your site's UX, SEO, and Performance and send you a custom video report."
@@ -62,7 +80,12 @@ const AuditHero = () => {
                 </div>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade delay={0.55}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                delay={0.55}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              >
                 <div className="my-[3.7rem] flex w-full flex-col items-start gap-[1.2rem] rounded-[2rem] border border-[#3078FF] bg-white px-[3rem] py-[2.7rem] text-left md:gap-[2.5rem] md:py-[3.5rem]">
                   <div className="flex items-center gap-[.8rem] md:gap-[1.2rem]">
                     <i>
@@ -108,7 +131,12 @@ const AuditHero = () => {
                 </div>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade delay={0.7}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                delay={0.7}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              >
                 <div className="flex items-center gap-[1.6rem] text-left">
                   <i>
                     <Image
@@ -126,7 +154,12 @@ const AuditHero = () => {
               </MotionEffect>
             </div>
 
-            <MotionEffect slide={{ direction: "down" }} fade delay={0.4}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              delay={0.4}
+              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+            >
               <AuditForm />
             </MotionEffect>
           </div>

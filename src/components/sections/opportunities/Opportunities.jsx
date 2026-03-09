@@ -15,11 +15,27 @@ const Opportunities = () => {
       <section className="px-[2rem] pb-[5rem] xl:px-[0rem] xl:pb-[10rem]">
         <div className="container">
           <div className="flex flex-col items-center xl:items-start">
-            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.1}>
-              <div><SectionLabel text="Opportunities" textColor="#EE8D00" /></div>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              inView
+              delay={0.1}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            >
+              <div>
+                <SectionLabel text="Opportunities" textColor="#EE8D00" />
+              </div>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade zoom inView delay={0.25}>
+            <MotionEffect
+              slide={{ direction: "down" }}
+              fade
+              zoom
+              inView
+              delay={0.25}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+            >
               <div className="mt-[5px] mb-[30px]">
                 <SectionTitle text="Open Positions" textColor="#312749" />
               </div>
@@ -28,7 +44,18 @@ const Opportunities = () => {
             <div className="flex w-full flex-col gap-[1.2rem]">
               {OPPORTUNITIES_DATA.length > 0 ? (
                 OPPORTUNITIES_DATA.map((item, idx) => (
-                  <MotionEffect key={idx} slide={{ direction: "down" }} fade inView delay={0.4 + idx * 0.15}>
+                  <MotionEffect
+                    key={idx}
+                    slide={{ direction: "down" }}
+                    fade
+                    inView
+                    delay={0.4 + idx * 0.15}
+                    transition={{
+                      type: "tween",
+                      duration: 1.0,
+                      ease: "easeOut",
+                    }}
+                  >
                     <div className="flex flex-col items-start justify-between gap-[3rem] rounded-[1.6rem] border border-[#E4E3E8] bg-[#FCFCFD] px-[4rem] py-[3.5rem] lg:flex-row lg:items-center">
                       <div className="flex flex-col items-start gap-[1rem] text-left">
                         <h4 className="text-[2rem] font-semibold tracking-[-0.02em] text-[#312749] md:text-[2.6rem]">
@@ -96,7 +123,13 @@ const Opportunities = () => {
                   </MotionEffect>
                 ))
               ) : (
-                <MotionEffect slide={{ direction: "down" }} fade inView delay={0.4}>
+                <MotionEffect
+                  slide={{ direction: "down" }}
+                  fade
+                  inView
+                  delay={0.4}
+                  transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+                >
                   <div className="rounded-[1.6rem] border border-[#E4E3E8] bg-[#FCFCFD] px-[4rem] py-[5rem] text-center">
                     <p className="text-[1.8rem] font-medium tracking-[-0.02em] text-[#625C70] md:text-[2rem]">
                       No open roles at the moment. Check back soon!

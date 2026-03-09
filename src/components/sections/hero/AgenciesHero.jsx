@@ -57,7 +57,13 @@ const AgenciesHero = () => {
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center justify-between gap-[4rem] xl:flex-row">
             <div className="flex w-full flex-col items-center justify-center gap-[3rem] text-center md:w-[60rem] xl:items-start xl:text-left">
-              <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.1}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                zoom
+                delay={0.1}
+                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              >
                 <h1 className="text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[5rem] md:leading-[6rem]">
                   <span className="block">White Label</span>
                   <span className="bg-gradient-yellow-pink block bg-clip-text text-transparent">
@@ -66,14 +72,24 @@ const AgenciesHero = () => {
                 </h1>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade delay={0.25}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                delay={0.25}
+                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              >
                 <SectionDescription
                   text="Since 2014, CreativePixels has supported agencies across the UK, US & Australia with WordPress websites, branding, and ongoing support all delivered under your brand."
                   textColor="#312749"
                 />
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade delay={0.4}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                delay={0.4}
+                transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
+              >
                 <SecondaryButton
                   data-cal-namespace="15min"
                   data-cal-link="hassan-iqbal-mznzu9/15min"
@@ -87,6 +103,7 @@ const AgenciesHero = () => {
               slide={{ direction: "down" }}
               fade
               delay={0.4}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
               className="h-[25rem] w-full md:h-[35rem] md:w-[52rem]"
             >
               <div className="relative flex h-[25rem] w-full items-center justify-center rounded-[2rem] border-[1.6rem] border-black bg-white md:h-[35rem] md:w-[52rem]">
