@@ -115,6 +115,7 @@ const DesignBuild = ({ services = [] }) => {
               zoom
               inView
               delay={0.1}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
             >
               <div className="flex w-full items-center justify-center gap-[6rem]">
                 <hr className="hidden w-full border-t border-[#625c70]/20 md:block" />
@@ -136,6 +137,11 @@ const DesignBuild = ({ services = [] }) => {
                     fade
                     inView
                     delay={0.4 + idx * 0.15}
+                    transition={{
+                      type: "tween",
+                      duration: 1.0,
+                      ease: "easeOut",
+                    }}
                   >
                     <div
                       onMouseEnter={() => setHovered(idx)}
@@ -194,6 +200,7 @@ const DesignBuild = ({ services = [] }) => {
               fade
               inView
               delay={0.4}
+              transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
               className="w-full"
             >
               <div className="block w-full xl:hidden">
