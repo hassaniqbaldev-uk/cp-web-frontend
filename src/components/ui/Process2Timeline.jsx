@@ -169,7 +169,7 @@ const Process2Timeline = ({
             // style={{
             //   background: item.cardImageBg,
             // }}
-            className="flex h-[23rem] w-full items-center justify-center rounded-[1.6rem] md:h-[42rem] lg:w-[52rem]"
+            className="flex h-auto w-auto w-full items-center justify-center rounded-[1.6rem] lg:h-[42rem] lg:w-[52rem]"
           >
             <Image
               src={item.cardImage}

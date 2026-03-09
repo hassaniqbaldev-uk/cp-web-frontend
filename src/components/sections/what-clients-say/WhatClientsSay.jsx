@@ -110,6 +110,7 @@ const WhatClientsSay = () => {
               inView
               delay={0.4}
               transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              className="h-[30rem] w-full md:h-[51.6rem] md:w-[57.5rem]"
             >
               <div className="h-[30rem] w-full rounded-[2rem] border border-[#939394]/20 p-[1.8rem] md:h-[51.6rem] md:w-[57.5rem] md:rounded-[3rem]">
                 <div className="flex size-full items-center justify-center rounded-[2rem] bg-[#dbd5dd]/20 backdrop-blur-[10px] md:rounded-[3rem]">

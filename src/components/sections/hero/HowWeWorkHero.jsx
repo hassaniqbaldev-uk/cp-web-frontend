@@ -84,6 +84,7 @@ const HowWeWorkHero = () => {
               fade
               delay={0.4}
               transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
+              className="relative hidden h-[48.4rem] w-[48.4rem] items-center justify-center xl:flex"
             >
               <div className="relative hidden h-[48.4rem] w-[48.4rem] items-center justify-center xl:flex">
                 <Image
