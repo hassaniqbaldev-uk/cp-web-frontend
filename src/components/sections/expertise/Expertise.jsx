@@ -30,6 +30,7 @@ const Expertise = () => {
               zoom
               inView
               delay={0.1}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
             >
               <div>
                 <SectionLabel text="Our Expertise" textColor="#FF37B3" />
@@ -44,6 +45,7 @@ const Expertise = () => {
               zoom
               inView
               delay={0.25}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
             >
               <div className="mt-[5px] mb-[14px] max-w-[28rem] md:max-w-[85rem]">
                 <SectionTitle text="We help businesses like yours" />
@@ -58,6 +60,7 @@ const Expertise = () => {
               zoom
               inView
               delay={0.4}
+              transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}
             >
               <div className="max-w-[25rem] md:max-w-[85rem]">
                 <SectionDescription text="Tailored strategies for every stage of growth." />
@@ -73,7 +76,7 @@ const Expertise = () => {
                 fade
                 inView
                 delay={0.4 + idx * 0.15}
-                transition={{ type: "tween", duration: 0.7, ease: "easeOut" }}
+                transition={{ type: "tween", duration: 1.0, ease: "easeOut" }}
               >
                 <div
                   onMouseEnter={() => setHovered(idx)}
@@ -132,7 +135,7 @@ const Expertise = () => {
           </div>
 
           {/* Responsive */}
-          <MotionEffect slide={{ direction: "down" }} fade inView delay={0.6}>
+          <MotionEffect slide={{ direction: "down" }} fade inView delay={0.6} transition={{ type: "tween", duration: 0.8, ease: "easeOut" }}>
             <div className="mt-[3rem] block w-full xl:hidden">
               <Swiper
                 pagination={{ clickable: true }}
