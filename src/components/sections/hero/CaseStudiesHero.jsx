@@ -34,7 +34,7 @@ const CaseStudiesHero = () => {
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center text-center xl:items-start xl:text-left">
             <MotionEffect
-              slide={{ direction: "down" }}
+              slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
               fade
               zoom
             >
@@ -44,7 +44,7 @@ const CaseStudiesHero = () => {
             </MotionEffect>
 
             <MotionEffect
-              slide={{ direction: "down" }}
+              slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
               fade
               zoom
               delay={0.15}
@@ -58,7 +58,7 @@ const CaseStudiesHero = () => {
             </MotionEffect>
 
             <MotionEffect
-              slide={{ direction: "down" }}
+              slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
               fade
               zoom
               delay={0.3}
@@ -75,7 +75,7 @@ const CaseStudiesHero = () => {
           {/* Desktop */}
           <div className="mt-[5rem] hidden grid-cols-3 gap-[3rem] xl:mt-[6rem] xl:grid">
             <MotionEffect
-              slide={{ direction: "down" }}
+              slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
               fade
               delay={0.45}
             >
@@ -105,7 +105,7 @@ const CaseStudiesHero = () => {
             </MotionEffect>
 
             <MotionEffect
-              slide={{ direction: "down" }}
+              slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
               fade
               delay={0.6}
             >
@@ -130,7 +130,7 @@ const CaseStudiesHero = () => {
             </MotionEffect>
 
             <MotionEffect
-              slide={{ direction: "down" }}
+              slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
               fade
               delay={0.75}
             >
@@ -162,7 +162,7 @@ const CaseStudiesHero = () => {
 
           {/* Responsive */}
           <MotionEffect
-            slide={{ direction: "down" }}
+            slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
             fade
             delay={0.45}
           >

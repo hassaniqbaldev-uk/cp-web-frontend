@@ -27,7 +27,7 @@ const BlogDetailHero = ({ post }) => {
 
         <div className="relative z-[10] container">
           <MotionEffect
-            slide={{ direction: "down" }}
+            slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
             fade
             zoom
           >
@@ -70,7 +70,7 @@ const BlogDetailHero = ({ post }) => {
           </MotionEffect>
 
           <MotionEffect
-            slide={{ direction: "down" }}
+            slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
             fade
             zoom
             delay={0.15}
@@ -81,7 +81,7 @@ const BlogDetailHero = ({ post }) => {
           </MotionEffect>
 
           <MotionEffect
-            slide={{ direction: "down" }}
+            slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
             fade
             delay={0.3}
           >

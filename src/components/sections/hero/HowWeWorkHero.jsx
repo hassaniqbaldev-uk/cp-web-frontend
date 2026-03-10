@@ -40,7 +40,7 @@ const HowWeWorkHero = () => {
           <div className="flex items-center justify-center gap-[15rem]">
             <div className="flex flex-col items-center justify-center text-center xl:items-start xl:text-left">
               <MotionEffect
-                slide={{ direction: "down" }}
+                slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
                 fade
                 zoom
               >
@@ -48,7 +48,7 @@ const HowWeWorkHero = () => {
               </MotionEffect>
 
               <MotionEffect
-                slide={{ direction: "down" }}
+                slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
                 fade
                 zoom
                 delay={0.15}
@@ -62,7 +62,7 @@ const HowWeWorkHero = () => {
               </MotionEffect>
 
               <MotionEffect
-                slide={{ direction: "down" }}
+                slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
                 fade
                 delay={0.3}
               >
@@ -76,7 +76,7 @@ const HowWeWorkHero = () => {
             </div>
 
             <MotionEffect
-              slide={{ direction: "down" }}
+              slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
               fade
               delay={0.45}
               className="relative hidden h-[48.4rem] w-[48.4rem] items-center justify-center xl:flex"

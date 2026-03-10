@@ -63,7 +63,7 @@ const ContactHero = () => {
           <div className="flex flex-col items-center gap-[4rem]">
             <div className="flex flex-col items-center text-center">
               <MotionEffect
-                slide={{ direction: "down" }}
+                slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
                 fade
                 zoom
               >
@@ -71,7 +71,7 @@ const ContactHero = () => {
               </MotionEffect>
 
               <MotionEffect
-                slide={{ direction: "down" }}
+                slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
                 fade
                 zoom
                 delay={0.15}
@@ -85,7 +85,7 @@ const ContactHero = () => {
               </MotionEffect>
 
               <MotionEffect
-                slide={{ direction: "down" }}
+                slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
                 fade
                 zoom
                 delay={0.3}
@@ -101,7 +101,7 @@ const ContactHero = () => {
 
             <div className="hidden grid-cols-3 gap-[3.4rem] xl:grid">
               <MotionEffect
-                slide={{ direction: "down" }}
+                slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
                 fade
                 delay={0.45}
               >
@@ -144,7 +144,7 @@ const ContactHero = () => {
               </MotionEffect>
 
               <MotionEffect
-                slide={{ direction: "down" }}
+                slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
                 fade
                 delay={0.6}
               >
@@ -185,7 +185,7 @@ const ContactHero = () => {
               </MotionEffect>
 
               <MotionEffect
-                slide={{ direction: "down" }}
+                slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
                 fade
                 delay={0.75}
               >
@@ -228,7 +228,7 @@ const ContactHero = () => {
 
             {/* Responsive */}
             <MotionEffect
-              slide={{ direction: "down" }}
+              slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
               fade
               delay={0.45}
             >

@@ -58,7 +58,7 @@ const AgenciesHero = () => {
           <div className="flex flex-col items-center justify-between gap-[4rem] xl:flex-row">
             <div className="flex w-full flex-col items-center justify-center gap-[3rem] text-center md:w-[60rem] xl:items-start xl:text-left">
               <MotionEffect
-                slide={{ direction: "down" }}
+                slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
                 fade
                 zoom
               >
@@ -71,7 +71,7 @@ const AgenciesHero = () => {
               </MotionEffect>
 
               <MotionEffect
-                slide={{ direction: "down" }}
+                slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
                 fade
                 delay={0.15}
               >
@@ -82,7 +82,7 @@ const AgenciesHero = () => {
               </MotionEffect>
 
               <MotionEffect
-                slide={{ direction: "down" }}
+                slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
                 fade
                 delay={0.3}
               >
@@ -96,7 +96,7 @@ const AgenciesHero = () => {
             </div>
 
             <MotionEffect
-              slide={{ direction: "down" }}
+              slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
               fade
               delay={0.45}
               className="h-[25rem] w-full md:h-[35rem] md:w-[52rem]"

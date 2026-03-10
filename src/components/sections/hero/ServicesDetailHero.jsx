@@ -57,12 +57,12 @@ const ServicesDetailHero = ({ service }) => {
         <div className="relative z-[10] container">
           <div className="flex w-full flex-col items-center justify-between gap-[4rem] text-center xl:flex-row xl:text-left">
             <div className="w-full md:w-[54rem]">
-              <MotionEffect slide={{ direction: "down" }} fade zoom>
+              <MotionEffect slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }} fade zoom>
                 <SectionLabel text="Our Expertise" textColor="#FF37B3" />
               </MotionEffect>
 
               <MotionEffect
-                slide={{ direction: "down" }}
+                slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
                 fade
                 zoom
                 delay={0.15}
@@ -72,7 +72,7 @@ const ServicesDetailHero = ({ service }) => {
                 </h1>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade delay={0.3}>
+              <MotionEffect slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }} fade delay={0.3}>
                 <div className="mt-[1.5rem] mb-[4rem] max-w-[76rem]">
                   <SectionDescription
                     text={service.description}
@@ -81,7 +81,7 @@ const ServicesDetailHero = ({ service }) => {
                 </div>
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade delay={0.45}>
+              <MotionEffect slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }} fade delay={0.45}>
                 <div className="flex w-full flex-wrap items-center justify-center gap-[1.8rem] xl:justify-start">
                   <PrimaryButton
                     text="See Case Studies"
@@ -124,7 +124,7 @@ const ServicesDetailHero = ({ service }) => {
             </div>
 
             <MotionEffect
-              slide={{ direction: "down" }}
+              slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
               fade
               delay={0.45}
               className="w-full md:w-[50rem]"

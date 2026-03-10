@@ -34,7 +34,7 @@ const CareersHero = () => {
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center justify-center text-center">
             <MotionEffect
-              slide={{ direction: "down" }}
+              slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
               fade
               zoom
             >
@@ -44,7 +44,7 @@ const CareersHero = () => {
             </MotionEffect>
 
             <MotionEffect
-              slide={{ direction: "down" }}
+              slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
               fade
               zoom
               delay={0.15}
@@ -58,7 +58,7 @@ const CareersHero = () => {
             </MotionEffect>
 
             <MotionEffect
-              slide={{ direction: "down" }}
+              slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
               fade
               zoom
               delay={0.3}
@@ -72,7 +72,7 @@ const CareersHero = () => {
             </MotionEffect>
 
             <MotionEffect
-              slide={{ direction: "down" }}
+              slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }}
               fade
               delay={0.45}
             >

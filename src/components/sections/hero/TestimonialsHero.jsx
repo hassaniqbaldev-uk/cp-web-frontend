@@ -58,17 +58,17 @@ const TestimonialsHero = () => {
 
         <div className="relative z-[10] container">
           <div className="flex flex-col items-center text-center">
-            <MotionEffect slide={{ direction: "down" }} fade zoom>
+            <MotionEffect slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }} fade zoom>
               <div><SectionLabel text="TESTIMONIALS" textColor="#FF37B3" /></div>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.15}>
+            <MotionEffect slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }} fade zoom delay={0.15}>
               <h1 className="mt-[1.5rem] mb-[2.5rem] max-w-[89rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8rem]">
                 Let&apos;s simplify your growth strategy.
               </h1>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade delay={0.3}>
+            <MotionEffect slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }} fade delay={0.3}>
               <div className="max-w-[76rem]">
                 <SectionDescription
                   text="No high-pressure sales tactics. Just a friendly chat with Hassan to see if we're a good fit to help you scale."
@@ -77,7 +77,7 @@ const TestimonialsHero = () => {
               </div>
             </MotionEffect>
 
-            <MotionEffect slide={{ direction: "down" }} fade delay={0.45}>
+            <MotionEffect slide={{ direction: "down" }} transition={{ type: "spring", stiffness: 120, damping: 20 }} fade delay={0.45}>
               <div className="mt-[4rem] flex flex-wrap items-center justify-center gap-[1.8rem]">
               <PrimaryButton
                 text="See Case Studies"
