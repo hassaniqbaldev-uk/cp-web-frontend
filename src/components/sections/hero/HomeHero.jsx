@@ -263,7 +263,7 @@ const HomeHero = () => {
                       className="absolute top-1/2 left-1/2 -translate-1/2"
                     >
                       <Link
-                        href="/case-studies/casa-botanica-panama"
+                        href="/case-studies"
                         className="text-text relative inline-flex h-[1.2rem] cursor-none items-center justify-center overflow-hidden rounded-[4rem] bg-[#FFD900] px-[1.5rem] text-center text-[.6rem] font-bold tracking-normal whitespace-nowrap md:h-[2.5rem] md:px-[3rem] md:text-[1.2rem]"
                       >
                         <motion.span

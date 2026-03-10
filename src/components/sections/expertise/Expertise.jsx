@@ -122,10 +122,10 @@ const Expertise = () => {
                     style={{
                       color: item.color,
                     }}
-                    className="inline-flex items-center gap-[.8rem] text-[1.6rem] leading-[1.4rem] font-semibold tracking-normal"
+                    className="group inline-flex items-center gap-[.8rem] text-[1.6rem] leading-[1.4rem] font-semibold tracking-normal"
                   >
                     {item.linkText}{" "}
-                    <i>
+                    <i className="transition-all duration-200 group-hover:-rotate-45">
                       <RightArrowIcon color={item.color} />
                     </i>
                   </Link>
@@ -212,10 +212,10 @@ const Expertise = () => {
                         style={{
                           color: item.color,
                         }}
-                        className="inline-flex items-center gap-[.8rem] text-[1.6rem] leading-[1.4rem] font-semibold tracking-normal"
+                        className="group inline-flex items-center gap-[.8rem] text-[1.6rem] leading-[1.4rem] font-semibold tracking-normal"
                       >
                         {item.linkText}{" "}
-                        <i>
+                        <i className="transition-all duration-200 group-hover:-rotate-45">
                           <RightArrowIcon color={item.color} />
                         </i>
                       </Link>
