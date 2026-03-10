@@ -56,12 +56,17 @@ const ServicesDetailHero = ({ service }) => {
 
         <div className="relative z-[10] container">
           <div className="flex w-full flex-col items-center justify-between gap-[4rem] text-center xl:flex-row xl:text-left">
-            <div className="w-full md:w-[53rem]">
+            <div className="w-full md:w-[54rem]">
               <MotionEffect slide={{ direction: "down" }} fade zoom>
                 <SectionLabel text="Our Expertise" textColor="#FF37B3" />
               </MotionEffect>
 
-              <MotionEffect slide={{ direction: "down" }} fade zoom delay={0.15}>
+              <MotionEffect
+                slide={{ direction: "down" }}
+                fade
+                zoom
+                delay={0.15}
+              >
                 <h1 className="mt-[1.5rem] mb-[2.5rem] max-w-[89rem] text-[3rem] leading-[3.7rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[7rem] md:leading-[8rem]">
                   {service.title}
                 </h1>
