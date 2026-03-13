@@ -16,7 +16,7 @@ const TheSolution = ({ caseStudy }) => {
         className="px-[2rem] pt-[5rem] xl:px-[0rem] xl:pt-[8rem]"
       >
         <div className="container">
-          <div className="flex flex-col-reverse items-center justify-center gap-[5rem] text-center xl:flex-row xl:items-start xl:gap-[10rem] xl:text-left">
+          <div className="flex flex-col-reverse items-center justify-center gap-[5rem] text-center xl:flex-row xl:items-end xl:gap-[10rem] xl:text-left">
             <MotionEffect
               slide={{ direction: "down" }}
               fade
@@ -38,7 +38,7 @@ const TheSolution = ({ caseStudy }) => {
               </div>
             </MotionEffect>
 
-            <div className="w-full md:w-[51.6rem]">
+            <div className="w-full md:w-[51.6rem] xl:pb-[4rem]">
               <MotionEffect
                 slide={{ direction: "down" }}
                 fade

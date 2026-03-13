@@ -8,7 +8,7 @@ import { MotionEffect } from "@/components/effects/motion-effect";
 const OurApproach = ({ caseStudy }) => {
   return (
     <>
-      <section className="px-[2rem] pb-[5rem] xl:px-[0rem] xl:pb-[10rem]">
+      <section className="px-[2rem] pt-[0rem] pb-[5rem] xl:px-[0rem] xl:pt-[10rem] xl:pb-[10rem]">
         <MotionEffect
           slide={{ direction: "down" }}
           fade
@@ -20,9 +20,9 @@ const OurApproach = ({ caseStudy }) => {
             style={{
               background: caseStudy.primaryColor,
             }}
-            className="relative container w-full rounded-[3rem] xl:h-[65.9rem]"
+            className="relative container w-full rounded-[3rem]"
           >
-            <div className="inset-0 flex flex-col items-center justify-center px-[2rem] py-[3rem] text-center xl:absolute xl:items-start xl:px-[5.7rem] xl:py-[0rem] xl:text-left">
+            <div className="flex flex-col items-center justify-center px-[2rem] py-[5rem] text-center xl:items-start xl:px-[5.7rem] xl:text-left">
               <h2 className="text-[2.3rem] leading-[3rem] font-bold tracking-[-0.03em] text-[#312749] md:text-[4.8rem] md:leading-[6rem]">
                 {caseStudy.ourApproach.title}
               </h2>
