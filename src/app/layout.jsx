@@ -28,7 +28,7 @@ export const metadata = {
     siteName: "CreativePixels",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/og-image-assets/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "CreativePixels - Web Design, WordPress & Branding Agency",
@@ -46,7 +46,7 @@ export const metadata = {
     title: "CreativePixels | Web Design, WordPress & Branding Agency",
     description:
       "CreativePixels is a Manchester-based creative agency delivering WordPress websites, branding, and digital solutions for clients across the UK, US & Australia.",
-    images: ["/images/og-image.jpg"],
+    images: ["/images/og-image-assets/og-image.jpg"],
   },
 
   // ------------------------

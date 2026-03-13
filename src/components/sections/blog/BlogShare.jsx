@@ -7,7 +7,7 @@ import FacebookIcon from "@/assets/icons/social/facebook-dark-icon.svg";
 import InstagramIcon from "@/assets/icons/social/instagram-dark-icon.svg";
 import LinkedinIcon from "@/assets/icons/social/linkedin-dark-icon.svg";
 
-const SITE_URL = "https://cp-web-frontend.vercel.app/"; // 🔴 change this
+const SITE_URL = "https://creativepixels.agency/"; // 🔴 change this
 
 const BlogShare = ({ post }) => {
   const pathname = usePathname();

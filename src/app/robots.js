@@ -6,6 +6,6 @@ export default function robots() {
         allow: "/",
       },
     ],
-    sitemap: "https://cp-web-frontend.vercel.app/sitemap.xml",
+    sitemap: "https://creativepixels.agency/sitemap.xml",
   };
 }

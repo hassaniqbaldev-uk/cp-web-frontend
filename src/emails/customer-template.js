@@ -11,19 +11,19 @@ export const getCustomerEmailTemplate = (
     const cards = {
       "Design & Branding": {
         image:
-          "https://cp-web-frontend.vercel.app/images/email-template-assets/design-branding-card-img.png",
+          "https://creativepixels.agency/images/email-template-assets/design-branding-card-img.png",
         link: "https://creativepixels.agency/services",
         alt: "Design & Branding",
       },
       "Website Development": {
         image:
-          "https://cp-web-frontend.vercel.app/images/email-template-assets/website-development-card-img.png",
+          "https://creativepixels.agency/images/email-template-assets/website-development-card-img.png",
         link: "https://creativepixels.agency/services",
         alt: "Website Development",
       },
       "Maintenance & Growth": {
         image:
-          "https://cp-web-frontend.vercel.app/images/email-template-assets/maintenance-growth-card-img.png",
+          "https://creativepixels.agency/images/email-template-assets/maintenance-growth-card-img.png",
         link: "https://creativepixels.agency/services",
         alt: "Maintenance & Growth",
       },
@@ -33,7 +33,7 @@ export const getCustomerEmailTemplate = (
     return (
       cards[serviceType] || {
         image:
-          "https://cp-web-frontend.vercel.app/images/email-template-assets/default-card.png",
+          "https://creativepixels.agency/images/email-template-assets/default-card.png",
         link: "https://creativepixels.agency/services",
         alt: "CreativePixels Case Studies",
       }
@@ -337,7 +337,7 @@ export const getCustomerEmailTemplate = (
       <!--  Banner -->
       <div class="banner">
         <img
-          src="https://cp-web-frontend.vercel.app/images/email-template-assets/email-template-banner-white.jpg"
+          src="https://creativepixels.agency/images/email-template-assets/email-template-banner-white.jpg"
           alt="Banner Image"
         />
       </div>

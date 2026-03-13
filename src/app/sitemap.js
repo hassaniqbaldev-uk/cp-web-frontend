@@ -7,7 +7,7 @@ import { caseStudiesClient } from "@/sanity/sanity.caseStudies";
 import { servicesClient } from "@/sanity/sanity.services";
 import { solutionsClient } from "@/sanity/sanity.solutions";
 
-const SITE_URL = "https://cp-web-frontend.vercel.app/";
+const SITE_URL = "https://creativepixels.agency/";
 
 export default async function sitemap() {
   // Fetch everything in parallel (fast + scalable)

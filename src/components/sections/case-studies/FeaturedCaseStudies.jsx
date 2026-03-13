@@ -249,7 +249,7 @@ const FeaturedCaseStudies = ({
                         />
                       </div>
 
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-center justify-between gap-[2rem] px-[1rem]">
                         <div className="flex flex-col items-start text-left">
                           <h4 className="text-[2.5rem] leading-[3.6rem] font-bold tracking-[-0.02em] text-[#312749]">
                             {caseStudy.title}
@@ -261,7 +261,7 @@ const FeaturedCaseStudies = ({
                         </div>
 
                         <i
-                          className="inline-flex size-[4.6rem] min-w-[4.6rem] items-center justify-center rounded-full xl:size-[6rem] xl:min-w-[6rem]"
+                          className="inline-flex size-[4.6rem] min-w-[4.6rem] items-center justify-center rounded-full xl:size-[5rem] xl:min-w-[5rem]"
                           style={{
                             background: caseStudy.iconBg,
                           }}
